@@ -1,4 +1,33 @@
 Namebook::Application.routes.draw do
+  get "home/index"
+
+  resources :sizes
+
+
+  resources :ships
+
+
+  resources :races
+
+
+  resources :orb_types
+
+
+  resources :orbs
+
+
+  resources :names
+
+
+  resources :families
+
+
+  resources :books
+
+
+  resources :base_types
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

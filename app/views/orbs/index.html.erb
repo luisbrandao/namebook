@@ -1,0 +1,33 @@
+<h1>Listing orbs</h1>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Nome</th>
+    <th>Orbt</th>
+    <th>Descr</th>
+    <th>Book</th>
+    <th>Orb type</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @orbs.each do |orb| %>
+  <tr>
+    <td><%= orb.id %></td>
+    <td><%= orb.nome %></td>
+    <td><%= orb.orbt %></td>
+    <td><%= orb.descr %></td>
+    <td><%= orb.book_id %></td>
+    <td><%= orb.orb_type_id %></td>
+    <td><%= link_to 'Show', orb %></td>
+    <td><%= link_to 'Edit', edit_orb_path(orb) %></td>
+    <td><%= link_to 'Destroy', orb, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Orb', new_orb_path %>

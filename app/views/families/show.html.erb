@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Id:</b>
+  <%= @family.id %>
+</p>
+
+<p>
+  <b>Nome:</b>
+  <%= @family.nome %>
+</p>
+
+<p>
+  <b>Descr:</b>
+  <%= @family.descr %>
+</p>
+
+<p>
+  <b>Race:</b>
+  <%= @family.race_id %>
+</p>
+
+<p>
+  <b>Book:</b>
+  <%= @family.book_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_family_path(@family) %> |
+<%= link_to 'Back', families_path %>

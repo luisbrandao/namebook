@@ -1,0 +1,33 @@
+<h1>Listing ships</h1>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Nome</th>
+    <th>Descr</th>
+    <th>Book</th>
+    <th>Base</th>
+    <th>Size</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @ships.each do |ship| %>
+  <tr>
+    <td><%= ship.id %></td>
+    <td><%= ship.nome %></td>
+    <td><%= ship.descr %></td>
+    <td><%= ship.book_id %></td>
+    <td><%= ship.base_id %></td>
+    <td><%= ship.size_id %></td>
+    <td><%= link_to 'Show', ship %></td>
+    <td><%= link_to 'Edit', edit_ship_path(ship) %></td>
+    <td><%= link_to 'Destroy', ship, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Ship', new_ship_path %>

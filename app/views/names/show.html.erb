@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Id:</b>
+  <%= @name.id %>
+</p>
+
+<p>
+  <b>Nome:</b>
+  <%= @name.nome %>
+</p>
+
+<p>
+  <b>Descr:</b>
+  <%= @name.descr %>
+</p>
+
+<p>
+  <b>Race:</b>
+  <%= @name.race_id %>
+</p>
+
+<p>
+  <b>Book:</b>
+  <%= @name.book_id %>
+</p>
+
+<p>
+  <b>Family:</b>
+  <%= @name.family_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_name_path(@name) %> |
+<%= link_to 'Back', names_path %>

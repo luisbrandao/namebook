@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Id:</b>
+  <%= @ship.id %>
+</p>
+
+<p>
+  <b>Nome:</b>
+  <%= @ship.nome %>
+</p>
+
+<p>
+  <b>Descr:</b>
+  <%= @ship.descr %>
+</p>
+
+<p>
+  <b>Book:</b>
+  <%= @ship.book_id %>
+</p>
+
+<p>
+  <b>Base:</b>
+  <%= @ship.base_id %>
+</p>
+
+<p>
+  <b>Size:</b>
+  <%= @ship.size_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_ship_path(@ship) %> |
+<%= link_to 'Back', ships_path %>
