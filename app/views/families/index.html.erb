@@ -4,9 +4,9 @@
   <tr>
     <th>Id</th>
     <th>Nome</th>
-    <th>Descr</th>
-    <th>Race</th>
-    <th>Book</th>
+    <th>Descrição</th>
+    <th>Raça</th>
+    <th>Livro</th>
     <th></th>
     <th></th>
     <th></th>
@@ -19,13 +19,13 @@
     <td><%= family.descr %></td>
     <td><%= family.race_id %></td>
     <td><%= family.book_id %></td>
-    <td><%= link_to 'Show', family %></td>
-    <td><%= link_to 'Edit', edit_family_path(family) %></td>
-    <td><%= link_to 'Destroy', family, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Detalhes', family %></td>
+    <td><%= link_to 'Editar', edit_family_path(family) %></td>
+    <td><%= link_to 'Remover', family, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Family', new_family_path %>
+<%= link_to 'Nova família', new_family_path %>

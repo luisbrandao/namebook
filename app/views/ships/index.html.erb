@@ -1,13 +1,13 @@
-<h1>Listing ships</h1>
+<h1>Listando naves</h1>
 
 <table>
   <tr>
     <th>Id</th>
     <th>Nome</th>
-    <th>Descr</th>
-    <th>Book</th>
-    <th>Base</th>
-    <th>Size</th>
+    <th>Descrição</th>
+    <th>Livro</th>
+    <th>Tipo básico</th>
+    <th>Tamanho</th>
     <th></th>
     <th></th>
     <th></th>
@@ -21,13 +21,13 @@
     <td><%= ship.book_id %></td>
     <td><%= ship.base_id %></td>
     <td><%= ship.size_id %></td>
-    <td><%= link_to 'Show', ship %></td>
-    <td><%= link_to 'Edit', edit_ship_path(ship) %></td>
-    <td><%= link_to 'Destroy', ship, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Detalhes', ship %></td>
+    <td><%= link_to 'Editar', edit_ship_path(ship) %></td>
+    <td><%= link_to 'Remover', ship, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Ship', new_ship_path %>
+<%= link_to 'Nova nave', new_ship_path %>

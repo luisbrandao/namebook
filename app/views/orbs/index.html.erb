@@ -1,13 +1,13 @@
-<h1>Listing orbs</h1>
+<h1>Listando corpos celestes</h1>
 
 <table>
   <tr>
     <th>Id</th>
     <th>Nome</th>
-    <th>Orbt</th>
-    <th>Descr</th>
-    <th>Book</th>
-    <th>Orb type</th>
+    <th>Orbita</th>
+    <th>Descrição</th>
+    <th>Livro</th>
+    <th>Tipo de corpo celeste</th>
     <th></th>
     <th></th>
     <th></th>
@@ -21,13 +21,13 @@
     <td><%= orb.descr %></td>
     <td><%= orb.book_id %></td>
     <td><%= orb.orb_type_id %></td>
-    <td><%= link_to 'Show', orb %></td>
-    <td><%= link_to 'Edit', edit_orb_path(orb) %></td>
-    <td><%= link_to 'Destroy', orb, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Detalhes', orb %></td>
+    <td><%= link_to 'Editar', edit_orb_path(orb) %></td>
+    <td><%= link_to 'Remover', orb, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Orb', new_orb_path %>
+<%= link_to 'Novo corpo celeste', new_orb_path %>
