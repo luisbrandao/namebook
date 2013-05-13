@@ -13,9 +13,9 @@
   <tr>
     <td><%= orb_type.id %></td>
     <td><%= orb_type.nome %></td>
-    <td><%= link_to 'Show', orb_type %></td>
-    <td><%= link_to 'Edit', edit_orb_type_path(orb_type) %></td>
-    <td><%= link_to 'Destroy', orb_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Detalhes', orb_type %></td>
+    <td><%= link_to 'Editar', edit_orb_type_path(orb_type) %></td>
+    <td><%= link_to 'Remover', orb_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
