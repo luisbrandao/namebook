@@ -1,4 +1,4 @@
-<h1>Listing base_types</h1>
+<h1>Lista dos tipos básicos de naves</h1>
 
 <table>
   <tr>
@@ -13,9 +13,9 @@
   <tr>
     <td><%= base_type.id %></td>
     <td><%= base_type.nome %></td>
-    <td><%= link_to 'Show', base_type %></td>
-    <td><%= link_to 'Edit', edit_base_type_path(base_type) %></td>
-    <td><%= link_to 'Destroy', base_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Detalhes', base_type %></td>
+    <td><%= link_to 'Editar', edit_base_type_path(base_type) %></td>
+    <td><%= link_to 'Remover', base_type, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
   </tr>
 <% end %>
 </table>
