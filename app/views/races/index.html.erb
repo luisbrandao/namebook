@@ -4,7 +4,7 @@
   <tr>
     <th>Id</th>
     <th>Nome</th>
-    <th>Descr</th>
+    <th>Descrição</th>
     <th></th>
     <th></th>
     <th></th>
@@ -15,13 +15,13 @@
     <td><%= race.id %></td>
     <td><%= race.nome %></td>
     <td><%= race.descr %></td>
-    <td><%= link_to 'Show', race %></td>
-    <td><%= link_to 'Edit', edit_race_path(race) %></td>
-    <td><%= link_to 'Destroy', race, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Detalhes', race %></td>
+    <td><%= link_to 'Editar', edit_race_path(race) %></td>
+    <td><%= link_to 'Remover', race, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Race', new_race_path %>
+<%= link_to 'Nova raça', new_race_path %>
