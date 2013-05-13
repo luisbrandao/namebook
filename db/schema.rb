@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130412143137) do
+ActiveRecord::Schema.define(:version => 20130513192740) do
 
   create_table "base_types", :force => true do |t|
     t.string   "nome"
