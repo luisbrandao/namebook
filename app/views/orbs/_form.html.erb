@@ -28,8 +28,8 @@
     <%= f.number_field :book_id %>
   </div>
   <div class="field">
-    <%= f.label :orb_type_id %><br />
-    <%= f.number_field :orb_type_id %>
+    <%= f.label :orb_type_id, "Tipo de corpo celeste" %><br />
+    <%= collection_select(:orb, :orb_type_id, OrbType.all, :id, :nome, { :prompt => "Selecione um Tipo de corpo celeste" }) %>
   </div>
   <div class="actions">
     <%= f.submit %>

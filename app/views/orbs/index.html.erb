@@ -20,7 +20,7 @@
     <td><%= orb.orbt %></td>
     <td><%= orb.descr %></td>
     <td><%= orb.book_id %></td>
-    <td><%= orb.orb_type_id %></td>
+    <td><%= orb.orb_type.nome %></td>
     <td><%= link_to 'Detalhes', orb %></td>
     <td><%= link_to 'Editar', edit_orb_path(orb) %></td>
     <td><%= link_to 'Remover', orb, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
