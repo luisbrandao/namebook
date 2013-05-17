@@ -3,4 +3,6 @@ class Book < ActiveRecord::Base
   
   validates_presence_of :nome
   validates :nome, :uniqueness => true
+  
+  has_and_belongs_to_many :orb
 end

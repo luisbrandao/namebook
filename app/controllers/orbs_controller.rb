@@ -44,10 +44,10 @@ class OrbsController < ApplicationController
 
     respond_to do |format|
       if @orb.save
-        format.html { redirect_to @orb, notice: 'Orb was successfully created.' }
+        format.html { redirect_to @orb, notice: 'Um novo corpo celest foi criado com sucesso' }
         format.json { render json: @orb, status: :created, location: @orb }
       else
-        format.html { render action: "new" }
+        format.html { render action: "Novo" }
         format.json { render json: @orb.errors, status: :unprocessable_entity }
       end
     end
@@ -60,10 +60,10 @@ class OrbsController < ApplicationController
 
     respond_to do |format|
       if @orb.update_attributes(params[:orb])
-        format.html { redirect_to @orb, notice: 'Orb was successfully updated.' }
+        format.html { redirect_to @orb, notice: 'O copo celeste foi atualizado com sucesso' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
+        format.html { render action: "Editar" }
         format.json { render json: @orb.errors, status: :unprocessable_entity }
       end
     end

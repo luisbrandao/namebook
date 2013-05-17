@@ -5,7 +5,6 @@ class CreateOrbs < ActiveRecord::Migration
       t.string :nome
       t.integer :orbt
       t.text :descr
-      t.integer :book_id
       t.integer :orb_type_id
 
       t.timestamps

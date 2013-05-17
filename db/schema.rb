@@ -57,7 +57,6 @@ ActiveRecord::Schema.define(:version => 20130513192740) do
     t.string   "nome"
     t.integer  "orbt"
     t.text     "descr"
-    t.integer  "book_id"
     t.integer  "orb_type_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
