@@ -32,8 +32,6 @@ group :development do
   gem 'binding_of_caller'
 end
 
-gem 'jquery-tokeninput-rails'
-
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -56,10 +54,6 @@ group :development do
     gem 'binding_of_caller'
     end
 
-    gem 'jquery-tokeninput-rails'
-
-
 gem 'jquery-rails'
-gem 'jquery-tokeninput-rails'
 gem 'ransack'
 
