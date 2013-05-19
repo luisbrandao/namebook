@@ -3,7 +3,7 @@ class OrbsController < ApplicationController
   # GET /orbs.json
   def index
     @orbs = Orb.all
-
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @orbs }
@@ -14,6 +14,7 @@ class OrbsController < ApplicationController
   # GET /orbs/1.json
   def show
     @orb = Orb.find(params[:id])
+    @book = @orb.books
 
     respond_to do |format|
       format.html # show.html.erb
@@ -24,6 +25,7 @@ class OrbsController < ApplicationController
   # GET /orbs/new
   # GET /orbs/new.json
   def new
+    @book = Book.all
     @orb = Orb.new
 
     respond_to do |format|
@@ -35,6 +37,7 @@ class OrbsController < ApplicationController
   # GET /orbs/1/edit
   def edit
     @orb = Orb.find(params[:id])
+    @book = Book.all
   end
 
   # POST /orbs
@@ -56,6 +59,7 @@ class OrbsController < ApplicationController
   # PUT /orbs/1
   # PUT /orbs/1.json
   def update
+    params[:orb][:book_ids] ||= []
     @orb = Orb.find(params[:id])
 
     respond_to do |format|

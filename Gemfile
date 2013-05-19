@@ -23,7 +23,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
+gem 'minitest'
 gem 'ransack'
 
 # Better Errors

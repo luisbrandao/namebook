@@ -21,6 +21,14 @@
 </p>
 
 <p>
+  <b>Livros:</b>
+  <% @book.each do |book| %>
+    <%= book.nome %> <br>
+  <% end %>
+</p>
+
+
+<p>
   <b>Tipo do corpo celeste:</b>
   <%= @orb.orb_type.nome %>
 </p>

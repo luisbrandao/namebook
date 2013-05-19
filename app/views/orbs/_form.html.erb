@@ -23,10 +23,19 @@
     <%= f.label :descr %><br />
     <%= f.text_area :descr %>
   </div>
+  
+  <% @book.each do |book| %>
+    <div>
+      <%= check_box_tag "orb[book_id][]", book.id, @orb.books.include?(book) %>
+      <%= book.nome %>
+    </div>
+  <% end %>
+  
   <div class="field">
     <%= f.label :orb_type_id, "Tipo de corpo celeste" %><br />
     <%= collection_select(:orb, :orb_type_id, OrbType.all, :id, :nome, { :prompt => "Selecione um Tipo de corpo celeste" }) %>
   </div>
+  
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -6,5 +6,5 @@ class Orb < ActiveRecord::Base
   
   belongs_to :orb_type
   
-  has_and_belongs_to_many :book
+  has_and_belongs_to_many :books
 end
