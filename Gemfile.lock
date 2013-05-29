@@ -124,7 +124,6 @@ DEPENDENCIES
   binding_of_caller
   coffee-rails (~> 3.2.1)
   jquery-rails
-  jquery-tokeninput-rails
   minitest
   rails (= 3.2.13)
   ransack
