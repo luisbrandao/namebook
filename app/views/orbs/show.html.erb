@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nome:</b>
+  <%= @orb.nome %>
+</p>
+
+<p>
+  <b>Orbita:</b>
+  <%= @orb.orbita %>
+</p>
+
+<p>
+  <b>Descr:</b>
+  <%= @orb.descr %>
+</p>
+
+
+<%= link_to 'Edit', edit_orb_path(@orb) %> |
+<%= link_to 'Back', orbs_path %>

@@ -1,0 +1,29 @@
+<%= form_for(@orb) do |f| %>
+  <% if @orb.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@orb.errors.count, "error") %> prohibited this orb from being saved:</h2>
+
+      <ul>
+      <% @orb.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :orbita %><br />
+    <%= f.text_field :orbita %>
+  </div>
+  <div class="field">
+    <%= f.label :descr %><br />
+    <%= f.text_area :descr %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
