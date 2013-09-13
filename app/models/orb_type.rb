@@ -3,4 +3,5 @@ class OrbType < ActiveRecord::Base
 
   validates :nome, uniqueness: true, presence: true
 
+  belongs_to :orb
 end
