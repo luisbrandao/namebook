@@ -1,0 +1,2 @@
+module ShipSizesHelper
+end

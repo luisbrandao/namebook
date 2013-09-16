@@ -1,0 +1,23 @@
+<h1>Listing ship_sizes</h1>
+
+<table>
+  <tr>
+    <th>Nome</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @ship_sizes.each do |ship_size| %>
+  <tr>
+    <td><%= ship_size.nome %></td>
+    <td><%= link_to 'Show', ship_size %></td>
+    <td><%= link_to 'Edit', edit_ship_size_path(ship_size) %></td>
+    <td><%= link_to 'Destroy', ship_size, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Ship size', new_ship_size_path %>

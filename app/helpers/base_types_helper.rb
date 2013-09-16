@@ -1,0 +1,2 @@
+module BaseTypesHelper
+end

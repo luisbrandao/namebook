@@ -1,4 +1,13 @@
 Namebook::Application.routes.draw do
+  resources :ships
+
+
+  resources :ship_sizes
+
+
+  resources :base_types
+
+
   resources :orbs
 
 
