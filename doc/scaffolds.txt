@@ -1,0 +1,11 @@
+Comandos de geração:
+
+rails generate scaffold orb_type nome
+rails generate scaffold orb nome:string descr:text orb_type_id:integer
+
+rails generate scaffold base_type nome
+rails generate scaffold ship_size nome
+
+rails generate scaffold ship nome descr:text base_type_id:integer ship_size_id:integer
+
+rails generate scaffold book nome descr:text datai dataf
