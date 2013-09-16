@@ -5,6 +5,12 @@ Namebook::Application.routes.draw do
   resources :orb_types
 
 
+  resources :people
+
+
+  resources :orders
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

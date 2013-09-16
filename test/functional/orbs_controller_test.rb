@@ -18,7 +18,7 @@ class OrbsControllerTest < ActionController::TestCase
 
   test "should create orb" do
     assert_difference('Orb.count') do
-      post :create, orb: { descr: @orb.descr, nome: @orb.nome, orbType_id: @orb.orbType_id, orb_id: @orb.orb_id, orbita: @orb.orbita }
+      post :create, orb: { descr: @orb.descr, nome: @orb.nome, orb_type_id: @orb.orb_type_id }
     end
 
     assert_redirected_to orb_path(assigns(:orb))
@@ -35,7 +35,7 @@ class OrbsControllerTest < ActionController::TestCase
   end
 
   test "should update orb" do
-    put :update, id: @orb, orb: { descr: @orb.descr, nome: @orb.nome, orbType_id: @orb.orbType_id, orb_id: @orb.orb_id, orbita: @orb.orbita }
+    put :update, id: @orb, orb: { descr: @orb.descr, nome: @orb.nome, orb_type_id: @orb.orb_type_id }
     assert_redirected_to orb_path(assigns(:orb))
   end
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130912194227) do
+ActiveRecord::Schema.define(:version => 20130916143626) do
 
   create_table "orb_types", :force => true do |t|
     t.string   "nome"
@@ -21,8 +21,23 @@ ActiveRecord::Schema.define(:version => 20130912194227) do
 
   create_table "orbs", :force => true do |t|
     t.string   "nome"
-    t.string   "orbita"
     t.text     "descr"
+    t.integer  "orb_type_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "orders", :force => true do |t|
+    t.integer  "total"
+    t.integer  "person_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "people", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.integer  "age"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

@@ -2,14 +2,10 @@
 
 one:
   nome: MyString
-  orbita: MyString
   descr: MyText
-  orbType_id: 1
-  orb_id: 1
+  orb_type_id: 1
 
 two:
   nome: MyString
-  orbita: MyString
   descr: MyText
-  orbType_id: 1
-  orb_id: 1
+  orb_type_id: 1
