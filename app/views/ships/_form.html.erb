@@ -20,12 +20,12 @@
     <%= f.text_area :descr %>
   </div>
   <div class="field">
-    <%= f.label :base_type_id %><br />
-    <%= f.number_field :base_type_id %>
+    <%= f.label :base_type_id, "Tipo base da nave" %><br />
+    <%= collection_select(:ship, :base_type_id, BaseType.all, :id, :nome, { :prompt => "Selecione um tipo base" }) %>
   </div>
   <div class="field">
-    <%= f.label :ship_size_id %><br />
-    <%= f.number_field :ship_size_id %>
+    <%= f.label :ship_size_id, "Tamanho da nave" %><br />
+    <%= collection_select(:ship, :ship_size_id, ShipSize.all, :id, :nome, { :prompt => "Selecione um tamanho" }) %>
   </div>
   <div class="actions">
     <%= f.submit %>
