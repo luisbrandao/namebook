@@ -1,4 +1,13 @@
 Namebook::Application.routes.draw do
+  resources :names
+
+
+  resources :races
+
+
+  resources :families
+
+
   resources :books
 
 
