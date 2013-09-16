@@ -15,8 +15,8 @@
   <tr>
     <td><%= name.nome %></td>
     <td><%= name.descr %></td>
-    <td><%= name.race_id %></td>
-    <td><%= name.family_id %></td>
+    <td><%= name.race.nome %></td>
+    <td><%= name.family.nome %></td>
     <td><%= link_to 'Show', name %></td>
     <td><%= link_to 'Edit', edit_name_path(name) %></td>
     <td><%= link_to 'Destroy', name, method: :delete, data: { confirm: 'Are you sure?' } %></td>
