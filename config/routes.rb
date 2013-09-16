@@ -1,4 +1,7 @@
 Namebook::Application.routes.draw do
+  resources :books
+
+
   resources :ships
 
 
