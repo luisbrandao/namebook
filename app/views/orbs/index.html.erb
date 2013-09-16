@@ -14,7 +14,7 @@
   <tr>
     <td><%= orb.nome %></td>
     <td><%= orb.descr %></td>
-    <td><%= orb.orb_type_id %></td>
+    <td><%= orb.orb_type.nome %></td>
     <td><%= link_to 'Show', orb %></td>
     <td><%= link_to 'Edit', edit_orb_path(orb) %></td>
     <td><%= link_to 'Destroy', orb, method: :delete, data: { confirm: 'Are you sure?' } %></td>
