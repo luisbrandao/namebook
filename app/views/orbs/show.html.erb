@@ -12,9 +12,17 @@
 
 <p>
   <b>Orb type:</b>
-  <%= @orb.orb_type_id %>
+  <%= @orb.orb_type.nome %>
 </p>
 
+<p>
+  <b>Livros:</b>
+  <ul>
+    <% @orb.books.each do |book| %>
+    <li> <%= book.nome %> </li>
+    <% end %>
+  </ul>
+</p>
 
 <%= link_to 'Edit', edit_orb_path(@orb) %> |
 <%= link_to 'Back', orbs_path %>

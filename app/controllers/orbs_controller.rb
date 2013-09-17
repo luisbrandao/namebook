@@ -14,7 +14,7 @@ class OrbsController < ApplicationController
   # GET /orbs/1.json
   def show
     @orb = Orb.find(params[:id])
-
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @orb }
@@ -24,6 +24,7 @@ class OrbsController < ApplicationController
   # GET /orbs/new
   # GET /orbs/new.json
   def new
+    @book = Book.all
     @orb = Orb.new
 
     respond_to do |format|
@@ -35,13 +36,14 @@ class OrbsController < ApplicationController
   # GET /orbs/1/edit
   def edit
     @orb = Orb.find(params[:id])
+    @book = Book.all
   end
 
   # POST /orbs
   # POST /orbs.json
   def create
     @orb = Orb.new(params[:orb])
-
+    
     respond_to do |format|
       if @orb.save
         format.html { redirect_to @orb, notice: 'Orb was successfully created.' }
