@@ -20,9 +20,9 @@
     <%= f.text_area :descr %>
   </div>
   
+  <%= hidden_field_tag 'orb[book_ids][]', '' %>
   <% @book.each do |book| %>
     <div>
-      <%= hidden_field_tag 'orb[book_ids][]', '' %>
       <%= check_box_tag "orb[book_ids][]", book.id, @orb.books.include?(book) %>
       <%= book.nome %>
     </div>
