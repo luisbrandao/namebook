@@ -13,7 +13,9 @@
 <% @orbs.each do |orb| %>
   <tr>
     <td><%= orb.nome %></td>
-    <td><%= orb.descr %></td>
+    <td>
+      <%= h(orb.descr).gsub(/\n/, '<br/>').html_safe %>
+    </td>
     <td><%= orb.orb_type.nome %></td>
     <td>
       <ul>

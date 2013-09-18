@@ -6,8 +6,8 @@
 </p>
 
 <p>
-  <b>Descrição:</b>
-  <%= @orb.descr %>
+  <b>Descrição: <br/></b>
+  <%= h(@orb.descr).gsub(/\n/, '<br/>').html_safe %>
 </p>
 
 <p>
