@@ -19,6 +19,16 @@
     <%= f.label :descr %><br />
     <%= f.text_area :descr %>
   </div>
+  
+  <%= hidden_field_tag 'ship[book_ids][]', '' %>
+  <%= f.label :books %><br />
+  <% @book.each do |book| %>
+    <div>
+      <%= check_box_tag "ship[book_ids][]", book.id, @ship.books.include?(book) %>
+      <%= book.nome %>
+    </div>
+  <% end %>
+  
   <div class="field">
     <%= f.label :base_type_id, "Tipo base da nave" %><br />
     <%= collection_select(:ship, :base_type_id, BaseType.all, :id, :nome, { :prompt => "Selecione um tipo base" }) %>

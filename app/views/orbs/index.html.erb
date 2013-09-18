@@ -13,9 +13,7 @@
 <% @orbs.each do |orb| %>
   <tr>
     <td><%= orb.nome %></td>
-    <td>
-      <%= h(orb.descr).gsub(/\n/, '<br/>').html_safe %>
-    </td>
+    <td><%= h(orb.descr).gsub(/\n/, '<br/>').html_safe %></td>
     <td><%= orb.orb_type.nome %></td>
     <td>
       <ul>
@@ -24,8 +22,8 @@
         <% end %>
       </ul>
     </td>
-    <td><%= link_to 'Detalhes', orb %> <br>
-    <%= link_to 'Editar', edit_orb_path(orb) %> <br>
+    <td><%= link_to 'Detalhes', orb %> <br/>
+    <%= link_to 'Editar', edit_orb_path(orb) %> <br/>
     <%= link_to 'Remover', orb, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
   </tr>
 <% end %>

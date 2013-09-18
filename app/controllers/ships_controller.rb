@@ -24,6 +24,7 @@ class ShipsController < ApplicationController
   # GET /ships/new
   # GET /ships/new.json
   def new
+    @book = Book.all
     @ship = Ship.new
 
     respond_to do |format|
@@ -35,6 +36,7 @@ class ShipsController < ApplicationController
   # GET /ships/1/edit
   def edit
     @ship = Ship.find(params[:id])
+    @book = Book.all
   end
 
   # POST /ships

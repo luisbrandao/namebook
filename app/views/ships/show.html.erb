@@ -6,20 +6,29 @@
 </p>
 
 <p>
-  <b>Descr:</b>
+  <b>Descrição:</b>
   <%= @ship.descr %>
 </p>
 
 <p>
-  <b>Base type:</b>
+  <b>Livros:</b>
+  <ul>
+    <% @ship.books.each do |book| %>
+    <li> <%= book.nome %> </li>
+    <% end %>
+  </ul>
+</p>
+
+<p>
+  <b>Tipo Base:</b>
   <%= @ship.base_type.nome %>
 </p>
 
 <p>
-  <b>Ship size:</b>
+  <b>Classe da nave:</b>
   <%= @ship.ship_size.nome %>
 </p>
 
 
-<%= link_to 'Edit', edit_ship_path(@ship) %> |
-<%= link_to 'Back', ships_path %>
+<%= link_to 'Editar', edit_ship_path(@ship) %> |
+<%= link_to 'Voltar', ships_path %>
