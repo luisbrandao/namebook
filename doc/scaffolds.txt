@@ -12,3 +12,5 @@ rails generate scaffold book nome descr:text datai dataf
 rails generate scaffold family nome descr:text
 rails generate scaffold race nome descr:text
 rails generate scaffold name nome descr:text race_id:integer family_id:integer
+
+rails generate migration create_books_orbs_join_table
