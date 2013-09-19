@@ -15,6 +15,16 @@
     <%= f.label :nome %><br />
     <%= f.text_field :nome %>
   </div>
+
+  <%= hidden_field_tag 'family[race_ids][]', '' %>
+  <%= f.label :races %><br />
+  <% @race.each do |race| %>
+    <div>
+      <%= check_box_tag "family[race_ids][]", race.id, @family.races.include?(race) %>
+      <%= race.nome %>
+    </div>
+  <% end %>  
+  
   <div class="field">
     <%= f.label :descr %><br />
     <%= f.text_area :descr %>

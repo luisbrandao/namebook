@@ -1,7 +1,7 @@
 class CreateBooksFamiliesJoinTable < ActiveRecord::Migration
   def up
     create_table :books_families do |t|
-      t.references :book, :family
+    t.references :book, :family
     end
   end
 

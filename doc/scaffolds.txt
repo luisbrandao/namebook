@@ -17,3 +17,4 @@ rails generate migration create_books_orbs_join_table
 rails generate migration create_books_ships_join_table
 rails generate migration create_books_families_join_table
 rails generate migration create_books_names_join_table
+rails generate migration create_families_races_join_table

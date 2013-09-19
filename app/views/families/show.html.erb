@@ -6,6 +6,15 @@
 </p>
 
 <p>
+  <b>Raças:</b>
+  <ul>
+    <% @family.races.each do |race| %>
+    <li> <%= race.nome %> </li>
+    <% end %>
+  </ul>
+</p>
+
+<p>
   <b>Descr:</b>
   <%= @family.descr %>
 </p>

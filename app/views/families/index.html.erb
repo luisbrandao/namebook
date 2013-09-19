@@ -3,6 +3,7 @@
 <table>
   <tr>
     <th>Nome</th>
+    <th>Raça</th>
     <th>Descrição</th>
     <th>Livros</th>
     <th>Ações</th>
@@ -11,6 +12,13 @@
 <% @families.each do |family| %>
   <tr>
     <td><%= family.nome %></td>
+    <td>
+      <ul>
+        <% family.races.each do |race| %>
+          <li> <%= race.nome %> </li>
+        <% end %>
+      </ul>
+    </td>
     <td><%= h(family.descr).gsub(/\n/, '<br/>').html_safe %></td>
     <td>
       <ul>
