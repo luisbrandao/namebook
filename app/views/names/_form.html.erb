@@ -24,7 +24,7 @@
     <%= collection_select(:name, :race_id, Race.all, :id, :nome, { :prompt => "Selecione uma raça" }) %>
   </div>
   <div class="field">
-    <%= f.label :family_id, "Raça" %><br />
+    <%= f.label :family_id, "Família" %><br />
     <%= collection_select(:name, :family_id, Family.all, :id, :nome, { :prompt => "Selecione uma família" }) %>
   </div>
   <div class="actions">

@@ -24,6 +24,7 @@ class FamiliesController < ApplicationController
   # GET /families/new
   # GET /families/new.json
   def new
+    @book = Book.all
     @family = Family.new
 
     respond_to do |format|
@@ -35,6 +36,7 @@ class FamiliesController < ApplicationController
   # GET /families/1/edit
   def edit
     @family = Family.find(params[:id])
+    @book = Book.all
   end
 
   # POST /families

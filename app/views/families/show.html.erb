@@ -10,6 +10,15 @@
   <%= @family.descr %>
 </p>
 
+<p>
+  <b>Livros:</b>
+  <ul>
+    <% @family.books.each do |book| %>
+    <li> <%= book.nome %> </li>
+    <% end %>
+  </ul>
+</p>
 
-<%= link_to 'Edit', edit_family_path(@family) %> |
-<%= link_to 'Back', families_path %>
+
+<%= link_to 'Editar', edit_family_path(@family) %> |
+<%= link_to 'Voltar', families_path %>

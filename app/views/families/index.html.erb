@@ -1,25 +1,31 @@
-<h1>Listing families</h1>
+<h1>Lista das famílias</h1>
 
 <table>
   <tr>
     <th>Nome</th>
-    <th>Descr</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Descrição</th>
+    <th>Livros</th>
+    <th>Ações</th>
   </tr>
 
 <% @families.each do |family| %>
   <tr>
     <td><%= family.nome %></td>
-    <td><%= family.descr %></td>
-    <td><%= link_to 'Show', family %></td>
-    <td><%= link_to 'Edit', edit_family_path(family) %></td>
-    <td><%= link_to 'Destroy', family, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= h(family.descr).gsub(/\n/, '<br/>').html_safe %></td>
+    <td>
+      <ul>
+        <% family.books.each do |book| %>
+          <li> <%= book.nome %> </li>
+        <% end %>
+      </ul>
+    </td>
+    <td><%= link_to 'Detalhes', family %><br/>
+    <%= link_to 'Editar', edit_family_path(family) %><br/>
+    <%= link_to 'Remover', family, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Family', new_family_path %>
+<%= link_to 'Nova familia', new_family_path %>
