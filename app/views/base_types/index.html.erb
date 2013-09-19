@@ -1,23 +1,21 @@
-<h1>Listing base_types</h1>
+<h1>Listando tipos base</h1>
 
 <table>
   <tr>
     <th>Nome</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Ações</th>
   </tr>
 
 <% @base_types.each do |base_type| %>
   <tr>
-    <td><%= base_type.nome %></td>
-    <td><%= link_to 'Show', base_type %></td>
-    <td><%= link_to 'Edit', edit_base_type_path(base_type) %></td>
-    <td><%= link_to 'Destroy', base_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= base_type.nome %></td><br/>
+    <td><%= link_to 'Detalhes', base_type %><br/>
+    <%= link_to 'Editar', edit_base_type_path(base_type) %>
+    <%= link_to 'Remover', base_type, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Base type', new_base_type_path %>
+<%= link_to 'Novo tipo base', new_base_type_path %>
