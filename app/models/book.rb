@@ -2,6 +2,7 @@ class Book < ActiveRecord::Base
   has_and_belongs_to_many :orbs
   has_and_belongs_to_many :ships
   has_and_belongs_to_many :families
+  has_and_belongs_to_many :names
   
   attr_accessible :dataf, :datai, :descr, :nome
   

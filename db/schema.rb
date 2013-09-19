@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130918162704) do
+ActiveRecord::Schema.define(:version => 20130919133437) do
 
   create_table "base_types", :force => true do |t|
     t.string   "nome"
@@ -31,6 +31,11 @@ ActiveRecord::Schema.define(:version => 20130918162704) do
   create_table "books_families", :force => true do |t|
     t.integer "book_id"
     t.integer "family_id"
+  end
+
+  create_table "books_names", :force => true do |t|
+    t.integer "book_id"
+    t.integer "name_id"
   end
 
   create_table "books_orbs", :force => true do |t|

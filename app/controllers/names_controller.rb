@@ -24,6 +24,7 @@ class NamesController < ApplicationController
   # GET /names/new
   # GET /names/new.json
   def new
+    @book = Book.all
     @name = Name.new
 
     respond_to do |format|
@@ -35,6 +36,7 @@ class NamesController < ApplicationController
   # GET /names/1/edit
   def edit
     @name = Name.find(params[:id])
+    @book = Book.all
   end
 
   # POST /names

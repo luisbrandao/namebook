@@ -15,10 +15,7 @@
     <%= f.label :nome %><br />
     <%= f.text_field :nome %>
   </div>
-  <div class="field">
-    <%= f.label :descr %><br />
-    <%= f.text_area :descr %>
-  </div>
+  
   <div class="field">
     <%= f.label :race_id, "Raça" %><br />
     <%= collection_select(:name, :race_id, Race.all, :id, :nome, { :prompt => "Selecione uma raça" }) %>
@@ -27,6 +24,21 @@
     <%= f.label :family_id, "Família" %><br />
     <%= collection_select(:name, :family_id, Family.all, :id, :nome, { :prompt => "Selecione uma família" }) %>
   </div>
+  
+  <div class="field">
+    <%= f.label :descr %><br />
+    <%= f.text_area :descr %>
+  </div>
+  
+  <%= hidden_field_tag 'name[book_ids][]', '' %>
+  <%= f.label :books %><br />
+  <% @book.each do |book| %>
+    <div>
+      <%= check_box_tag "name[book_ids][]", book.id, @name.books.include?(book) %>
+      <%= book.nome %>
+    </div>
+  <% end %>
+  
   <div class="actions">
     <%= f.submit %>
   </div>

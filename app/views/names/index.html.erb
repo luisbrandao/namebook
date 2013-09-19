@@ -1,29 +1,35 @@
-<h1>Listing names</h1>
+<h1>Listando Nomes</h1>
 
 <table>
   <tr>
     <th>Nome</th>
-    <th>Descr</th>
-    <th>Race</th>
-    <th>Family</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Familia</th>
+    <th>Raça</th>
+    <th>Descrição</th>
+    <th>Livros</th>
+    <th>Ações</th>
   </tr>
 
 <% @names.each do |name| %>
   <tr>
-    <td><%= name.nome %></td>
-    <td><%= name.descr %></td>
-    <td><%= name.race.nome %></td>
+    <td><%= name.nome %></td>    
     <td><%= name.family.nome %></td>
-    <td><%= link_to 'Show', name %></td>
-    <td><%= link_to 'Edit', edit_name_path(name) %></td>
-    <td><%= link_to 'Destroy', name, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= name.race.nome %></td>
+    <td><%= h(name.descr).gsub(/\n/, '<br/>').html_safe %></td>
+    <td>
+      <ul>
+        <% name.books.each do |book| %>
+          <li> <%= book.nome %> </li>
+        <% end %>
+      </ul>
+    </td>
+    <td><%= link_to 'Detalhes', name %><br/>
+    <%= link_to 'Editar', edit_name_path(name) %><br/>
+    <%= link_to 'Remover', name, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Name', new_name_path %>
+<%= link_to 'Novo nome', new_name_path %>

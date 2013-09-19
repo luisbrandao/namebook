@@ -6,20 +6,29 @@
 </p>
 
 <p>
-  <b>Descr:</b>
-  <%= @name.descr %>
-</p>
-
-<p>
-  <b>Race:</b>
-  <%= @name.race.nome %>
-</p>
-
-<p>
-  <b>Family:</b>
+  <b>Familia:</b>
   <%= @name.family.nome %>
 </p>
 
 
-<%= link_to 'Edit', edit_name_path(@name) %> |
-<%= link_to 'Back', names_path %>
+<p>
+  <b>Descrição: <br/></b>
+  <%= h(@name.descr).gsub(/\n/, '<br/>').html_safe %>
+</p>
+
+<p>
+  <b>Raça:</b>
+  <%= @name.race.nome %>
+</p>
+
+<p>
+  <b>Livros:</b>
+  <ul>
+    <% @name.books.each do |book| %>
+    <li> <%= book.nome %> </li>
+    <% end %>
+  </ul>
+</p>
+
+<%= link_to 'Editar', edit_name_path(@name) %> |
+<%= link_to 'Voltar', names_path %>
