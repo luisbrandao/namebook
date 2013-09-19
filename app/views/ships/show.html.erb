@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nome:</b>
+  <%= @ship.nome %>
+</p>
+
+<p>
+  <b>Descrição:</b>
+  <%= @ship.descr %>
+</p>
+
+<p>
+  <b>Livros:</b>
+  <ul>
+    <% @ship.books.each do |book| %>
+    <li> <%= book.nome %> </li>
+    <% end %>
+  </ul>
+</p>
+
+<p>
+  <b>Tipo Base:</b>
+  <%= @ship.base_type.nome %>
+</p>
+
+<p>
+  <b>Classe da nave:</b>
+  <%= @ship.ship_size.nome %>
+</p>
+
+
+<%= link_to 'Editar', edit_ship_path(@ship) %> |
+<%= link_to 'Voltar', ships_path %> |
+<%= link_to 'Nova nave', new_ship_path %>

@@ -1,0 +1,35 @@
+<h1>Listando naves</h1>
+
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>Descrição</th>
+    <th>Livros</th>
+    <th>Tipo Base</th>
+    <th>Classe da nave</th>
+    <th>Ações</th>
+  </tr>
+
+<% @ships.each do |ship| %>
+  <tr>
+    <td><%= ship.nome %></td>
+    <td><%= h(ship.descr).gsub(/\n/, '<br/>').html_safe %></td>
+    <td>
+      <ul>
+        <% ship.books.each do |book| %>
+          <li> <%= book.nome %> </li>
+        <% end %>
+      </ul>
+    </td>
+    <td><%= ship.base_type.nome %></td>
+    <td><%= ship.ship_size.nome %></td>
+    <td><%= link_to 'Detalhes', ship %><br/>
+    <%= link_to 'Editar', edit_ship_path(ship) %><br/>
+    <%= link_to 'Remover', ship, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nova nave', new_ship_path %>

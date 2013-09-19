@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nome:</b>
+  <%= @orb.nome %>
+</p>
+
+<p>
+  <b>Descrição: <br/></b>
+  <%= h(@orb.descr).gsub(/\n/, '<br/>').html_safe %>
+</p>
+
+<p>
+  <b>Tipo do corpo celeste:</b>
+  <%= @orb.orb_type.nome %>
+</p>
+
+<p>
+  <b>Livros:</b>
+  <ul>
+    <% @orb.books.each do |book| %>
+    <li> <%= book.nome %> </li>
+    <% end %>
+  </ul>
+</p>
+
+<%= link_to 'Editar', edit_orb_path(@orb) %> |
+<%= link_to 'Voltar', orbs_path %> |
+<%= link_to 'Novo corpo celeste', new_orb_path %>

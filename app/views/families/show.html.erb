@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nome:</b>
+  <%= @family.nome %>
+</p>
+
+<p>
+  <b>Raças:</b>
+  <ul>
+    <% @family.races.each do |race| %>
+    <li> <%= race.nome %> </li>
+    <% end %>
+  </ul>
+</p>
+
+<p>
+  <b>Integrantes:</b>
+  <ul>
+    <% @family.names.each do |name| %>
+    <li> <%= name.nome %> </li>
+    <% end %>
+  </ul>
+</p>
+
+<p>
+  <b>Descr:</b>
+  <%= @family.descr %>
+</p>
+
+<p>
+  <b>Livros:</b>
+  <ul>
+    <% @family.books.each do |book| %>
+    <li> <%= book.nome %> </li>
+    <% end %>
+  </ul>
+</p>
+
+
+<%= link_to 'Editar', edit_family_path(@family) %> |
+<%= link_to 'Voltar', families_path %> |
+<%= link_to 'Nova familia', new_family_path %>

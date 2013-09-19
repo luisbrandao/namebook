@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nome:</b>
+  <%= @ship_size.nome %>
+</p>
+
+
+<%= link_to 'Editar', edit_ship_size_path(@ship_size) %> |
+<%= link_to 'Voltar', ship_sizes_path %> |
+<%= link_to 'Novo tamanho de nave', new_ship_size_path %>

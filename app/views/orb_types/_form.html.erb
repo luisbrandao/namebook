@@ -1,0 +1,21 @@
+<%= form_for(@orb_type) do |f| %>
+  <% if @orb_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@orb_type.errors.count, "error") %> prohibited this orb_type from being saved:</h2>
+
+      <ul>
+      <% @orb_type.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

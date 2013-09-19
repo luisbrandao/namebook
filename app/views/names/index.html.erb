@@ -1,0 +1,35 @@
+<h1>Listando Nomes</h1>
+
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>Familia</th>
+    <th>Raça</th>
+    <th>Descrição</th>
+    <th>Livros</th>
+    <th>Ações</th>
+  </tr>
+
+<% @names.each do |name| %>
+  <tr>
+    <td><%= name.nome %></td>    
+    <td><%= name.family.nome %></td>
+    <td><%= name.race.nome %></td>
+    <td><%= h(name.descr).gsub(/\n/, '<br/>').html_safe %></td>
+    <td>
+      <ul>
+        <% name.books.each do |book| %>
+          <li> <%= book.nome %> </li>
+        <% end %>
+      </ul>
+    </td>
+    <td><%= link_to 'Detalhes', name %><br/>
+    <%= link_to 'Editar', edit_name_path(name) %><br/>
+    <%= link_to 'Remover', name, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Novo nome', new_name_path %>

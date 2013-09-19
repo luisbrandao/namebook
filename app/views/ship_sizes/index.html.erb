@@ -1,0 +1,21 @@
+<h1>Listando tamanhos de naves</h1>
+
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>Açoes</th>
+  </tr>
+
+<% @ship_sizes.each do |ship_size| %>
+  <tr>
+    <td><%= ship_size.nome %></td>
+    <td><%= link_to 'Detalhes', ship_size %> 
+    <%= link_to 'Editar', edit_ship_size_path(ship_size) %> 
+    <%= link_to 'Rmover', ship_size, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Novo tamanho de nave', new_ship_size_path %>

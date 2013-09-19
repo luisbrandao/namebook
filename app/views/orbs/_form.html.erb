@@ -1,0 +1,40 @@
+<%= form_for(@orb) do |f| %>
+  <% if @orb.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@orb.errors.count, "error") %> prohibited this orb from being saved:</h2>
+
+      <ul>
+      <% @orb.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :descr %><br />
+    <%= f.text_area :descr %>
+  </div>
+  
+  <%= hidden_field_tag 'orb[book_ids][]', '' %>
+  <%= f.label :books %><br />
+  <% @book.each do |book| %>
+    <div>
+      <%= check_box_tag "orb[book_ids][]", book.id, @orb.books.include?(book) %>
+      <%= book.nome %>
+    </div>
+  <% end %>
+  
+  <div class="field">
+    <%= f.label :orb_type_id, "Tipo de corpo celeste" %><br />
+    <%= collection_select(:orb, :orb_type_id, OrbType.all, :id, :nome, { :prompt => "Selecione um Tipo de corpo celeste" }) %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

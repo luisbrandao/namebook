@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nome:</b>
+  <%= @base_type.nome %>
+</p>
+
+
+<%= link_to 'Editar', edit_base_type_path(@base_type) %> |
+<%= link_to 'Voltar', base_types_path %> |
+<%= link_to 'Novo tipo base', new_base_type_path %>
