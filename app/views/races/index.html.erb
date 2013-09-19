@@ -11,8 +11,8 @@
   <tr>
     <td><%= race.nome %></td>
     <td><%= h(race.descr).gsub(/\n/, '<br/>').html_safe %></td>
-    <td><%= link_to 'Show', race %><br/>
-    <%= link_to 'Editar', edit_race_path(race) %><br/>
+    <td><%= link_to 'Detalhes', race %> 
+    <%= link_to 'Editar', edit_race_path(race) %> 
     <%= link_to 'Remover', race, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
   </tr>
 <% end %>

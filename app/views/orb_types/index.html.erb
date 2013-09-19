@@ -9,8 +9,8 @@
 <% @orb_types.each do |orb_type| %>
   <tr>
     <td><%= orb_type.nome %></td>
-    <td><%= link_to 'Show', orb_type %><br/>
-    <%= link_to 'Editar', edit_orb_type_path(orb_type) %><br/>
+    <td><%= link_to 'Show', orb_type %> 
+    <%= link_to 'Editar', edit_orb_type_path(orb_type) %> 
     <%= link_to 'Remover', orb_type, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
   </tr>
 <% end %>
