@@ -6,10 +6,11 @@
 </p>
 
 <p>
-  <b>Descr:</b>
+  <b>Descrição:</b>
   <%= @race.descr %>
 </p>
 
 
-<%= link_to 'Edit', edit_race_path(@race) %> |
-<%= link_to 'Back', races_path %>
+<%= link_to 'Editar', edit_race_path(@race) %> |
+<%= link_to 'Voltar', races_path %> |
+<%= link_to 'Nova raça', new_race_path %>

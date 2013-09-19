@@ -1,25 +1,23 @@
-<h1>Listing races</h1>
+<h1>Listando raças</h1>
 
 <table>
   <tr>
     <th>Nome</th>
-    <th>Descr</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Descrição</th>
+    <th>Ações</th>
   </tr>
 
 <% @races.each do |race| %>
   <tr>
     <td><%= race.nome %></td>
-    <td><%= race.descr %></td>
-    <td><%= link_to 'Show', race %></td>
-    <td><%= link_to 'Edit', edit_race_path(race) %></td>
-    <td><%= link_to 'Destroy', race, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= h(race.descr).gsub(/\n/, '<br/>').html_safe %></td>
+    <td><%= link_to 'Show', race %><br/>
+    <%= link_to 'Editar', edit_race_path(race) %><br/>
+    <%= link_to 'Remover', race, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Race', new_race_path %>
+<%= link_to 'Nova raça', new_race_path %>
