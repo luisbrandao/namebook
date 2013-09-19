@@ -1,23 +1,21 @@
-<h1>Listing orb_types</h1>
+<h1>Listando corpos celestes</h1>
 
 <table>
   <tr>
     <th>Nome</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Ações</th>
   </tr>
 
 <% @orb_types.each do |orb_type| %>
   <tr>
     <td><%= orb_type.nome %></td>
-    <td><%= link_to 'Show', orb_type %></td>
-    <td><%= link_to 'Edit', edit_orb_type_path(orb_type) %></td>
-    <td><%= link_to 'Destroy', orb_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Show', orb_type %><br/>
+    <%= link_to 'Editar', edit_orb_type_path(orb_type) %><br/>
+    <%= link_to 'Remover', orb_type, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Orb type', new_orb_type_path %>
+<%= link_to 'Novo tipo de corpo celeste', new_orb_type_path %>
