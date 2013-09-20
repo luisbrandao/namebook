@@ -23,6 +23,8 @@ end
 gem 'jquery-rails'
 
 
+gem 'seed_dumper'
+
 # Better Errors
 group :development do
   gem 'better_errors'

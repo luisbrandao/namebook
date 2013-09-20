@@ -1,0 +1,5 @@
+OrbType.create(:id => 1, :nome => "Planeta")
+OrbType.create(:id => 2, :nome => "Lua")
+OrbType.create(:id => 3, :nome => "Estrela")
+OrbType.create(:id => 4, :nome => "Cinturão de asteroides")
+OrbType.create(:id => 5, :nome => "Estação espacial")

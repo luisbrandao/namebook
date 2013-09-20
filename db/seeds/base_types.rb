@@ -1,0 +1,5 @@
+BaseType.create(:id => 1, :nome => "Techmaga")
+BaseType.create(:id => 2, :nome => "Orgânica")
+BaseType.create(:id => 3, :nome => "Nanorobótica")
+BaseType.create(:id => 4, :nome => "Tecnológica pura")
+BaseType.create(:id => 5, :nome => "Hibrida techmaga/organica")
