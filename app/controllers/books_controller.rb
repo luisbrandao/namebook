@@ -13,6 +13,7 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.json
   def show
+    @race = Race.all
     @book = Book.find(params[:id])
 
     respond_to do |format|
@@ -24,6 +25,7 @@ class BooksController < ApplicationController
   # GET /books/new
   # GET /books/new.json
   def new
+    @race = Race.all
     @book = Book.new
 
     respond_to do |format|

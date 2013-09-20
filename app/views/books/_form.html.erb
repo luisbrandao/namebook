@@ -27,6 +27,16 @@
     <%= f.label :dataf %><br />
     <%= f.text_field :dataf %>
   </div>
+  
+  <%= hidden_field_tag 'book[races_ids][]', '' %>
+  <%= f.label :races %><br />
+  <% @race.each do |race| %>
+    <div>
+      <%= check_box_tag "book[race_ids][]", race.id, @book.races.include?(race) %>
+      <%= race.nome %>
+    </div>
+  <% end %>
+  
   <div class="actions">
     <%= f.submit %>
   </div>
