@@ -13,7 +13,7 @@
 <% @names.each do |name| %>
   <tr>
     <td><%= name.nome %></td>    
-    <td><%= name.family.nome %></td>
+    <td><%= name.family.try(:nome) %></td>
     <td><%= name.race.nome %></td>
     <td><%= h(name.descr).gsub(/\n/, '<br/>').html_safe %></td>
     <td>
