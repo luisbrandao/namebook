@@ -17,13 +17,13 @@
 
 <p>
   <b>Raça:</b>
-  <%= @name.race.nome %>
+  <%= @name.race.try(:nome) %>
 </p>
 
 <p>
   <b>Livros:</b>
   <ul>
-    <% @name.family.books.each do |book| %>
+    <% @name.books.each do |book| %>
     <li> <%= book.nome %> </li>
     <% end %>
   </ul>

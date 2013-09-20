@@ -2,7 +2,7 @@ class FamiliesController < ApplicationController
   # GET /families
   # GET /families.json
   def index
-    @families = Family.all
+    @families = Family.order('nome')
 
     respond_to do |format|
       format.html # index.html.erb
@@ -24,8 +24,8 @@ class FamiliesController < ApplicationController
   # GET /families/new
   # GET /families/new.json
   def new
-    @book = Book.all
-    @race = Race.all
+    @book = Book.order('nome')
+    @race = Race.order('nome')
     @family = Family.new
 
     respond_to do |format|
@@ -37,8 +37,8 @@ class FamiliesController < ApplicationController
   # GET /families/1/edit
   def edit
     @family = Family.find(params[:id])
-    @book = Book.all
-    @race = Race.all
+    @book = Book.order('nome')
+    @race = Race.order('nome')
   end
 
   # POST /families

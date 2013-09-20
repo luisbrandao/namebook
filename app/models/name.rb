@@ -6,4 +6,5 @@ class Name < ActiveRecord::Base
   attr_accessible :descr, :family_id, :nome, :race_id, :book_ids
   
   validates :nome, presence: true
+  validates :race_id, presence: true
 end
