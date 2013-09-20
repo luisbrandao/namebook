@@ -7,9 +7,8 @@
 
 <p>
   <b>Familia:</b>
-  <%= @name.family.nome %>
+  <%= @name.family.try(:nome) %>
 </p>
-
 
 <p>
   <b>Descrição: <br/></b>
@@ -24,7 +23,7 @@
 <p>
   <b>Livros:</b>
   <ul>
-    <% @name.books.each do |book| %>
+    <% @name.family.books.each do |book| %>
     <li> <%= book.nome %> </li>
     <% end %>
   </ul>

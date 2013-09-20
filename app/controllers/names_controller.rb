@@ -2,7 +2,7 @@ class NamesController < ApplicationController
   # GET /names
   # GET /names.json
   def index
-    @names = Name.all
+    @names = Name.order('nome')
 
     respond_to do |format|
       format.html # index.html.erb
@@ -24,7 +24,7 @@ class NamesController < ApplicationController
   # GET /names/new
   # GET /names/new.json
   def new
-    @book = Book.all
+    @book = Book.order('nome')
     @name = Name.new
 
     respond_to do |format|
@@ -36,7 +36,7 @@ class NamesController < ApplicationController
   # GET /names/1/edit
   def edit
     @name = Name.find(params[:id])
-    @book = Book.all
+    @book = Book.order('nome')
   end
 
   # POST /names
