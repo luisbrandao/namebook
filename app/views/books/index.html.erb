@@ -6,6 +6,7 @@
     <th>Descrição</th>
     <th>Data do início</th>
     <th>Data de conclusão</th>
+    <th>Raças</th>
     <th>Ações</th>
   </tr>
 
@@ -15,6 +16,13 @@
     <td><%= h(book.descr).gsub(/\n/, '<br/>').html_safe %></td>
     <td><%= book.datai %></td>
     <td><%= book.dataf %></td>
+    <td>
+      <ul>
+        <% book.races.each do |book| %>
+          <li> <%= race.nome %> </li>
+        <% end %>
+      </ul>
+    </td>
     <td><%= link_to 'Detalhes', book %><br/>
     <%= link_to 'Editar', edit_book_path(book) %><br/>
     <%= link_to 'Remover', book, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
