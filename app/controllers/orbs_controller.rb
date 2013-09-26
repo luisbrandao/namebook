@@ -2,7 +2,8 @@ class OrbsController < ApplicationController
   # GET /orbs
   # GET /orbs.json
   def index
-    @orbs = Orb.all
+    @search = Orb.search(params[:q])
+    @orbs = @search.result
 
     respond_to do |format|
       format.html # index.html.erb

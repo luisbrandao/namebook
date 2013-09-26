@@ -6,6 +6,11 @@
 </p>
 
 <p>
+  <b>Tipo do corpo celeste:</b>
+  <%= @orb.orb_type.try(:nome) %>
+</p>
+
+<p>
   <b>Orbita:</b>
   <%= @orb.orbit.try(:nome) %>
 </p>
@@ -16,8 +21,12 @@
 </p>
 
 <p>
-  <b>Tipo do corpo celeste:</b>
-  <%= @orb.orb_type.try(:nome) %>
+  <b>Orbitado por:</b>
+  <ul>
+    <% @orb.orbters.each do |orbter| %>
+    <li> <%= orbter.nome %> </li>
+    <% end %>
+  </ul>
 </p>
 
 <p>
