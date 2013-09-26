@@ -31,6 +31,10 @@ group :development do
   gem 'binding_of_caller'
 end
 
+# Provides methods for searches
+gem 'ransack'
+
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
