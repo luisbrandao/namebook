@@ -2,7 +2,7 @@ class BaseTypesController < ApplicationController
   # GET /base_types
   # GET /base_types.json
   def index
-    @base_types = BaseType.all
+    @base_types = BaseType.order('nome')
 
     respond_to do |format|
       format.html # index.html.erb

@@ -2,7 +2,8 @@ class NamesController < ApplicationController
   # GET /names
   # GET /names.json
   def index
-    @names = Name.order('nome')
+    @search = Name.search(params[:q])
+    @names = @search.result
 
     respond_to do |format|
       format.html # index.html.erb

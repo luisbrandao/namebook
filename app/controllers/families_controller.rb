@@ -2,7 +2,9 @@ class FamiliesController < ApplicationController
   # GET /families
   # GET /families.json
   def index
-    @families = Family.order('nome')
+    @search = Family.search(params[:q])
+    @families = @search.result
+    
 
     respond_to do |format|
       format.html # index.html.erb

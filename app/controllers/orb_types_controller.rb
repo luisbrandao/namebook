@@ -2,7 +2,7 @@ class OrbTypesController < ApplicationController
   # GET /orb_types
   # GET /orb_types.json
   def index
-    @orb_types = OrbType.all
+    @orb_types = OrbType.order('nome')
 
     respond_to do |format|
       format.html # index.html.erb

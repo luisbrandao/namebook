@@ -2,7 +2,8 @@ class ShipsController < ApplicationController
   # GET /ships
   # GET /ships.json
   def index
-    @ships = Ship.all
+    @search = Ship.search(params[:q])
+    @ships = @search.result
 
     respond_to do |format|
       format.html # index.html.erb
@@ -24,7 +25,7 @@ class ShipsController < ApplicationController
   # GET /ships/new
   # GET /ships/new.json
   def new
-    @book = Book.all
+    @book = Book.order('nome')
     @ship = Ship.new
 
     respond_to do |format|
@@ -36,7 +37,7 @@ class ShipsController < ApplicationController
   # GET /ships/1/edit
   def edit
     @ship = Ship.find(params[:id])
-    @book = Book.all
+    @book = Book.order('nome')
   end
 
   # POST /ships

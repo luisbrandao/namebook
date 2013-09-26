@@ -2,7 +2,7 @@ class RacesController < ApplicationController
   # GET /races
   # GET /races.json
   def index
-    @races = Race.all
+    @races = Race.order('nome')
 
     respond_to do |format|
       format.html # index.html.erb

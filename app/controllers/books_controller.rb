@@ -2,7 +2,7 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
-    @books = Book.all
+    @books = Book.order('nome')
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +13,7 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.json
   def show
-    @race = Race.all
+    @race = Race.order('nome')
     @book = Book.find(params[:id])
 
     respond_to do |format|
@@ -25,7 +25,7 @@ class BooksController < ApplicationController
   # GET /books/new
   # GET /books/new.json
   def new
-    @race = Race.all
+    @race = Race.order('nome')
     @book = Book.new
 
     respond_to do |format|
@@ -36,7 +36,7 @@ class BooksController < ApplicationController
 
   # GET /books/1/edit
   def edit
-    @race = Race.all
+    @race = Race.order('nome')
     @book = Book.find(params[:id])
   end
 

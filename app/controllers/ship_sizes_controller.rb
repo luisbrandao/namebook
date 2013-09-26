@@ -2,7 +2,7 @@ class ShipSizesController < ApplicationController
   # GET /ship_sizes
   # GET /ship_sizes.json
   def index
-    @ship_sizes = ShipSize.all
+    @ship_sizes = ShipSize.order('nome')
 
     respond_to do |format|
       format.html # index.html.erb

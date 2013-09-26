@@ -1,10 +1,32 @@
 <h1>Listando Nomes</h1>
+<fieldset>
+  <legend>Buscar por nomes:</legend>
+  <%= search_form_for @search do |f| %>
+    <div class="field">
+	  <%= f.label :nome, "Nome: " %><br />
+	  <%= f.text_field :nome_cont, :class => "search-field"%>
+    </div>
+    <div class="field">
+      <%= f.label :family_id, "Família:" %><br />
+      <%= f.select :family_id_eq, options_from_collection_for_select(Family.all,"id","nome",@search.family_id_eq), 
+          {:include_blank => "Todos"}, {:class => "search-field"} %>
+    </div>
+    <div class="field">
+      <%= f.label :race_id, "Raça:" %><br />
+      <%= f.select :race_id_eq, options_from_collection_for_select(Race.all,"id","nome",@search.race_id_eq), 
+          {:include_blank => "Todos"}, {:class => "search-field"} %>
+    </div>
+	<div class="actions">
+	  <%= f.submit "Buscar" %>
+	</div>
+  <% end %>
+</fieldset>
 
 <table>
   <tr>
-    <th>Nome</th>
-    <th>Familia</th>
-    <th>Raça</th>
+    <th><%= sort_link(@search, :nome, "Nome") %></th>
+    <th><%= sort_link(@search, :family_id, "Familia") %></th>
+    <th><%= sort_link(@search, :race_id, "Raça") %></th>
     <th>Descrição</th>
     <th>Livros</th>
     <th>Ações</th>

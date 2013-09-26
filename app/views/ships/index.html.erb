@@ -1,12 +1,34 @@
 <h1>Listando naves</h1>
+<fieldset>
+  <legend>Buscar por naves:</legend>
+  <%= search_form_for @search do |f| %>
+    <div class="field">
+	  <%= f.label :nome, "Nome: " %><br />
+	  <%= f.text_field :nome_cont, :class => "search-field"%>
+    </div>
+    <div class="field">
+      <%= f.label :base_type_id, "Tipo base:" %><br />
+      <%= f.select :base_type_id_eq, options_from_collection_for_select(BaseType.all,"id","nome",@search.base_type_id_eq), 
+          {:include_blank => "Todos"}, {:class => "search-field"} %>
+    </div>
+    <div class="field">
+      <%= f.label :ship_size_id, "Tamanho da nave:" %><br />
+      <%= f.select :ship_size_id_eq, options_from_collection_for_select(ShipSize.all,"id","nome",@search.ship_size_id_eq), 
+          {:include_blank => "Todos"}, {:class => "search-field"} %>
+    </div>
+	<div class="actions">
+	  <%= f.submit "Buscar" %>
+	</div>
+  <% end %>
+</fieldset>
 
 <table>
   <tr>
-    <th>Nome</th>
+    <th><%= sort_link(@search, :nome, "Nome") %></th>
     <th>Descrição</th>
     <th>Livros</th>
-    <th>Tipo Base</th>
-    <th>Classe da nave</th>
+    <th><%= sort_link(@search, :base_type_id, "Tipo Base") %></th>
+    <th><%= sort_link(@search, :ship_size_id, "Classe da nave") %></th>
     <th>Ações</th>
   </tr>
 

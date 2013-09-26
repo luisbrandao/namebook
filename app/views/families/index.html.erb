@@ -1,8 +1,22 @@
 <h1>Lista das famílias</h1>
 
+<fieldset>
+  <legend>Buscar por famílias:</legend>
+  <%= search_form_for @search do |f| %>
+    <div class="field">
+    <%= f.label :nome, "Nome: " %><br />
+    <%= f.text_field :nome_cont, :class => "search-field"%>
+    </div>
+  <div class="actions">
+    <%= f.submit "Buscar" %>
+    <%= f.submit "Limpar campos", :id => "reset_btn" %>
+  </div>
+  <% end %>
+</fieldset>
+
 <table>
   <tr>
-    <th>Nome</th>
+    <th><%= sort_link(@search, :nome, "Nome") %></th>
     <th>Integrantes</th>
     <th>Raça</th>
     <th>Livros</th>

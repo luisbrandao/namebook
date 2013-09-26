@@ -25,7 +25,7 @@ class OrbsController < ApplicationController
   # GET /orbs/new
   # GET /orbs/new.json
   def new
-    @book = Book.all
+    @book = Book.order('nome')
     @orb = Orb.new
 
     respond_to do |format|
@@ -37,7 +37,7 @@ class OrbsController < ApplicationController
   # GET /orbs/1/edit
   def edit
     @orb = Orb.find(params[:id])
-    @book = Book.all
+    @book = Book.order('nome')
   end
 
   # POST /orbs
