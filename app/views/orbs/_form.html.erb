@@ -15,6 +15,12 @@
     <%= f.label :nome %><br />
     <%= f.text_field :nome %>
   </div>
+  
+  <div class="field">
+    <%= f.label :orb_id, "Orbita" %><br />
+    <%= collection_select(:orb, :orbit_id, Orb.all, :id, :nome, { :include_blank => "Selecione um Tipo de corpo celeste" }) %>
+  </div>
+  
   <div class="field">
     <%= f.label :descr %><br />
     <%= f.text_area :descr %>

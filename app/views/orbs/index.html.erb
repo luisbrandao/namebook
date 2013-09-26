@@ -3,6 +3,7 @@
 <table>
   <tr>
     <th>Nome</th>
+    <th>Orbita</th>
     <th>Descrição</th>
     <th>Tipo do corpo celeste</th>
     <th>Livros</th>
@@ -13,8 +14,9 @@
 <% @orbs.each do |orb| %>
   <tr>
     <td><%= orb.nome %></td>
+    <td><%= orb.orbit.try(:nome) %></td>
     <td><%= h(orb.descr).gsub(/\n/, '<br/>').html_safe %></td>
-    <td><%= orb.orb_type.nome %></td>
+    <td><%= orb.orb_type.try(:nome) %></td>
     <td>
       <ul>
         <% orb.books.each do |book| %>

@@ -6,13 +6,18 @@
 </p>
 
 <p>
+  <b>Orbita:</b>
+  <%= @orb.orbit.try(:nome) %>
+</p>
+
+<p>
   <b>Descrição: <br/></b>
   <%= h(@orb.descr).gsub(/\n/, '<br/>').html_safe %>
 </p>
 
 <p>
   <b>Tipo do corpo celeste:</b>
-  <%= @orb.orb_type.nome %>
+  <%= @orb.orb_type.try(:nome) %>
 </p>
 
 <p>
