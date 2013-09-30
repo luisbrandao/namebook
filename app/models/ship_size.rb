@@ -1,7 +1,7 @@
 class ShipSize < ActiveRecord::Base
-  attr_accessible :nome
-  
   has_many :ships
+
+  attr_accessible :nome
   
   validates :nome, uniqueness: true, presence: true
 end
