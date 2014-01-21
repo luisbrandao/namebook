@@ -16,6 +16,10 @@
       <%= f.select :race_id_eq, options_from_collection_for_select(Race.all,"id","nome",@search.race_id_eq), 
           {:include_blank => "Todos"}, {:class => "search-field"} %>
     </div>
+    <div class="field">
+      <%= f.label :books_id_eq, "Livro:" %><br />
+      <%= f.collection_select :books_id_eq, Book.order(:nome), :id, :nome %> 
+    </div>
 	<div class="actions">
 	  <%= f.submit "Buscar" %>
 	</div>

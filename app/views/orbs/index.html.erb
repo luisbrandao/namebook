@@ -17,6 +17,10 @@
       <%= f.select :orb_type_id_eq, options_from_collection_for_select(OrbType.all,"id","nome",@search.orb_type_id_eq), 
           {:include_blank => "Todos"}, {:class => "search-field"} %>
     </div>
+    <div class="field">
+      <%= f.label :books_id_eq, "Livro:" %><br />
+      <%= f.collection_select :books_id_eq, Book.order(:nome), :id, :nome %> 
+    </div>
 	<div class="actions">
 	  <%= f.submit "Buscar" %>
 	  <%= f.submit "Limpar campos", :id => "reset_btn" %>
