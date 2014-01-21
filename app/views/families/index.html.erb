@@ -8,8 +8,12 @@
     <%= f.text_field :nome_cont, :class => "search-field"%>
     </div>
   <div class="field">
+    <%= f.label :races_id_eq, "Raça:" %><br />
+    <%= f.collection_select :races_id_eq, Race.order(:nome), :id, :nome, :include_blank => "Todos" %> 
+  </div>
+  <div class="field">
     <%= f.label :books_id_eq, "Livro:" %><br />
-    <%= f.collection_select :books_id_eq, Book.order(:nome), :id, :nome %> 
+    <%= f.collection_select :books_id_eq, Book.order(:nome), :id, :nome, :include_blank => "Todos" %> 
   </div>
   <div class="actions">
     <%= f.submit "Buscar" %>
