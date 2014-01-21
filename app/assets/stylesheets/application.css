@@ -172,3 +172,12 @@ a:hover {
 .filename {
   font-style: italic;
 }
+
+#formulario-horizontal .field {
+  display: inline-block;
+  padding: 5px;
+}
+#search-form .field {
+  display: inline-block;
+  padding: 5px;
+}

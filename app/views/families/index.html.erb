@@ -1,6 +1,6 @@
 <h1>Lista das famílias</h1>
 
-<fieldset>
+<div id="search-form"> <fieldset>
   <legend>Buscar por famílias:</legend>
   <%= search_form_for @search do |f| %>
     <div class="field">
@@ -16,7 +16,7 @@
     <%= f.submit "Limpar campos", :id => "reset_btn" %>
   </div>
   <% end %>
-</fieldset>
+</fieldset> </div>
 
 <table>
   <tr>

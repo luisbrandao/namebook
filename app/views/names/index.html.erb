@@ -1,5 +1,6 @@
 <h1>Listando Nomes</h1>
-<fieldset>
+
+<div id="search-form"> <fieldset>
   <legend>Buscar por nomes:</legend>
   <%= search_form_for @search do |f| %>
     <div class="field">
@@ -24,7 +25,7 @@
 	  <%= f.submit "Buscar" %>
 	</div>
   <% end %>
-</fieldset>
+</fieldset> </div>
 
 <table>
   <tr>
