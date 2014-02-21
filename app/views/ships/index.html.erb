@@ -39,7 +39,9 @@
     <th>Ações</th>
   </tr>
 
+<% i=0; %>
 <% @ships.each do |ship| %>
+  <% i= i+1; %>
   <tr>
     <td><%= ship.nome %></td>
     <td><%= h(ship.descr).gsub(/\n/, '<br/>').html_safe %></td>
@@ -57,6 +59,7 @@
     <%= link_to 'Remover', ship, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
   </tr>
 <% end %>
+Há <%= i %> registros.
 </table>
 
 <br />

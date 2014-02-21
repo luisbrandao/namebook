@@ -43,7 +43,9 @@
     <th>Ações</th>
   </tr>
 
+<% i=0; %>
 <% @names.each do |name| %>
+  <% i= i+1; %>
   <tr>
     <td><%= name.nome %></td>    
     <td><%= name.family.try(:nome) %></td>
@@ -61,7 +63,9 @@
     <%= link_to 'Remover', name, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
   </tr>
 <% end %>
+Há <%= i %> registros.
 </table>
+
 
 <br />
 
