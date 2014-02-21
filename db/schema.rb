@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130926165750) do
+ActiveRecord::Schema.define(:version => 20140221140534) do
 
   create_table "base_types", :force => true do |t|
     t.string   "nome"
@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(:version => 20130926165750) do
     t.integer  "family_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "aparencia"
   end
 
   create_table "orb_types", :force => true do |t|

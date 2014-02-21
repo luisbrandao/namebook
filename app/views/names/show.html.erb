@@ -11,14 +11,20 @@
 </p>
 
 <p>
+  <b>Raça:</b>
+  <%= @name.race.try(:nome) %>
+</p>
+
+<p>
   <b>Descrição: <br/></b>
   <%= h(@name.descr).gsub(/\n/, '<br/>').html_safe %>
 </p>
 
 <p>
-  <b>Raça:</b>
-  <%= @name.race.try(:nome) %>
+  <b>Aparência: <br/></b>
+  <%= h(@name.aparencia).gsub(/\n/, '<br/>').html_safe %>
 </p>
+
 
 <p>
   <b>Livros:</b>

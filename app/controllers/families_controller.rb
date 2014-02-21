@@ -1,3 +1,4 @@
+#encoding: utf-8
 class FamiliesController < ApplicationController
   # GET /families
   # GET /families.json
@@ -46,11 +47,13 @@ class FamiliesController < ApplicationController
   # POST /families
   # POST /families.json
   def create
+    @book = Book.order('nome')
+    @race = Race.order('nome')
     @family = Family.new(params[:family])
 
     respond_to do |format|
       if @family.save
-        format.html { redirect_to @family, notice: 'Family was successfully created.' }
+        format.html { redirect_to @family, notice: 'Uma nova família foi criada com sucesso.' }
         format.json { render json: @family, status: :created, location: @family }
       else
         format.html { render action: "new" }
@@ -66,7 +69,7 @@ class FamiliesController < ApplicationController
 
     respond_to do |format|
       if @family.update_attributes(params[:family])
-        format.html { redirect_to @family, notice: 'Family was successfully updated.' }
+        format.html { redirect_to @family, notice: 'A família foi atualizada com sucesso.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

@@ -43,11 +43,12 @@ class OrbsController < ApplicationController
   # POST /orbs
   # POST /orbs.json
   def create
+    @book = Book.order('nome')
     @orb = Orb.new(params[:orb])
     
     respond_to do |format|
       if @orb.save
-        format.html { redirect_to @orb, notice: 'Orb was successfully created.' }
+        format.html { redirect_to @orb, notice: 'Um novo corpo celeste foi criado com sucesso.' }
         format.json { render json: @orb, status: :created, location: @orb }
       else
         format.html { render action: "new" }
@@ -63,7 +64,7 @@ class OrbsController < ApplicationController
 
     respond_to do |format|
       if @orb.update_attributes(params[:orb])
-        format.html { redirect_to @orb, notice: 'Orb was successfully updated.' }
+        format.html { redirect_to @orb, notice: 'O corpo celeste foi atualizado com sucesso.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

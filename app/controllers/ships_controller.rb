@@ -43,11 +43,12 @@ class ShipsController < ApplicationController
   # POST /ships
   # POST /ships.json
   def create
+    @book = Book.order('nome')
     @ship = Ship.new(params[:ship])
 
     respond_to do |format|
       if @ship.save
-        format.html { redirect_to @ship, notice: 'Ship was successfully created.' }
+        format.html { redirect_to @ship, notice: 'Uma nova nave foi criada com sucesso.' }
         format.json { render json: @ship, status: :created, location: @ship }
       else
         format.html { render action: "new" }
@@ -63,7 +64,7 @@ class ShipsController < ApplicationController
 
     respond_to do |format|
       if @ship.update_attributes(params[:ship])
-        format.html { redirect_to @ship, notice: 'Ship was successfully updated.' }
+        format.html { redirect_to @ship, notice: 'A nave foi atualizada com sucesso.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

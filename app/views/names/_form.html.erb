@@ -30,6 +30,11 @@
     <%= f.text_area :descr %>
   </div>
   
+  <div class="field">
+    <%= f.label :aparencia %><br />
+    <%= f.text_area :aparencia %>
+  </div>
+  
   <%= hidden_field_tag 'name[book_ids][]', '' %>
   <%= f.label :books %><br />
   <% @book.each do |book| %>

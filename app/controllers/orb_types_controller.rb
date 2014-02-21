@@ -44,7 +44,7 @@ class OrbTypesController < ApplicationController
 
     respond_to do |format|
       if @orb_type.save
-        format.html { redirect_to @orb_type, notice: 'Orb type was successfully created.' }
+        format.html { redirect_to @orb_type, notice: 'Um novo tipo de corpo celeste foi criado.' }
         format.json { render json: @orb_type, status: :created, location: @orb_type }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class OrbTypesController < ApplicationController
 
     respond_to do |format|
       if @orb_type.update_attributes(params[:orb_type])
-        format.html { redirect_to @orb_type, notice: 'Orb type was successfully updated.' }
+        format.html { redirect_to @orb_type, notice: 'O corpo celeste foi atualizado com sucesso.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

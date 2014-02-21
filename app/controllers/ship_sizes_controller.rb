@@ -44,7 +44,7 @@ class ShipSizesController < ApplicationController
 
     respond_to do |format|
       if @ship_size.save
-        format.html { redirect_to @ship_size, notice: 'Ship size was successfully created.' }
+        format.html { redirect_to @ship_size, notice: 'Um novo tamanho de nave foi criado com sucesso.' }
         format.json { render json: @ship_size, status: :created, location: @ship_size }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class ShipSizesController < ApplicationController
 
     respond_to do |format|
       if @ship_size.update_attributes(params[:ship_size])
-        format.html { redirect_to @ship_size, notice: 'Ship size was successfully updated.' }
+        format.html { redirect_to @ship_size, notice: 'O tamanho de nave foi atualizado com sucesso.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

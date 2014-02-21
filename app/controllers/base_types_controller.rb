@@ -44,7 +44,7 @@ class BaseTypesController < ApplicationController
 
     respond_to do |format|
       if @base_type.save
-        format.html { redirect_to @base_type, notice: 'Base type was successfully created.' }
+        format.html { redirect_to @base_type, notice: 'Um novo tipo de nave foi criado com sucesso.' }
         format.json { render json: @base_type, status: :created, location: @base_type }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class BaseTypesController < ApplicationController
 
     respond_to do |format|
       if @base_type.update_attributes(params[:base_type])
-        format.html { redirect_to @base_type, notice: 'Base type was successfully updated.' }
+        format.html { redirect_to @base_type, notice: 'O tipo base foi atualizado com sucesso.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

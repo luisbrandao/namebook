@@ -43,11 +43,12 @@ class BooksController < ApplicationController
   # POST /books
   # POST /books.json
   def create
+    @race = Race.order('nome')
     @book = Book.new(params[:book])
 
     respond_to do |format|
       if @book.save
-        format.html { redirect_to @book, notice: 'Book was successfully created.' }
+        format.html { redirect_to @book, notice: 'Um novo livro foi criado com sucesso.' }
         format.json { render json: @book, status: :created, location: @book }
       else
         format.html { render action: "new" }
@@ -63,7 +64,7 @@ class BooksController < ApplicationController
 
     respond_to do |format|
       if @book.update_attributes(params[:book])
-        format.html { redirect_to @book, notice: 'Book was successfully updated.' }
+        format.html { redirect_to @book, notice: 'O livro foi atualizado com sucesso.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

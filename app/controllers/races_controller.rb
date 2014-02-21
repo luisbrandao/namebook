@@ -1,3 +1,4 @@
+#encoding: utf-8
 class RacesController < ApplicationController
   # GET /races
   # GET /races.json
@@ -44,7 +45,7 @@ class RacesController < ApplicationController
 
     respond_to do |format|
       if @race.save
-        format.html { redirect_to @race, notice: 'Race was successfully created.' }
+        format.html { redirect_to @race, notice: 'Uma nova raça foi criada com sucesso.' }
         format.json { render json: @race, status: :created, location: @race }
       else
         format.html { render action: "new" }
@@ -60,7 +61,7 @@ class RacesController < ApplicationController
 
     respond_to do |format|
       if @race.update_attributes(params[:race])
-        format.html { redirect_to @race, notice: 'Race was successfully updated.' }
+        format.html { redirect_to @race, notice: 'A raça foi atualizada com sucesso.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
