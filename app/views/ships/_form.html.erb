@@ -1,7 +1,7 @@
 <%= form_for(@ship) do |f| %>
   <% if @ship.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@ship.errors.count, "error") %> prohibited this ship from being saved:</h2>
+      <h2><%= pluralize(@ship.errors.count, "error") %> A nave não pode ser salva:</h2>
 
       <ul>
       <% @ship.errors.full_messages.each do |msg| %>
@@ -15,28 +15,31 @@
     <%= f.label :nome %><br />
     <%= f.text_field :nome %>
   </div>
+  
   <div class="field">
-    <%= f.label :descr %><br />
+    <%= f.label :base_type_id, "Tipo base da nave" %><br />
+    <%= collection_select(:ship, :base_type_id, BaseType.all, :id, :nome, { :prompt => "Selecione um tipo base" }) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :ship_size_id, "Tamanho da nave" %><br />
+    <%= collection_select(:ship, :ship_size_id, ShipSize.all, :id, :nome, { :prompt => "Selecione um tamanho" }) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :descr, "Descrição" %><br />
     <%= f.text_area :descr %>
   </div>
-  
+
   <%= hidden_field_tag 'ship[book_ids][]', '' %>
-  <%= f.label :books %><br />
+  <%= f.label :books, "Livros" %><br />
   <% @book.each do |book| %>
     <div>
       <%= check_box_tag "ship[book_ids][]", book.id, @ship.books.include?(book) %>
       <%= book.nome %>
     </div>
   <% end %>
-  
-  <div class="field">
-    <%= f.label :base_type_id, "Tipo base da nave" %><br />
-    <%= collection_select(:ship, :base_type_id, BaseType.all, :id, :nome, { :prompt => "Selecione um tipo base" }) %>
-  </div>
-  <div class="field">
-    <%= f.label :ship_size_id, "Tamanho da nave" %><br />
-    <%= collection_select(:ship, :ship_size_id, ShipSize.all, :id, :nome, { :prompt => "Selecione um tamanho" }) %>
-  </div>
+ 
   <div class="actions">
     <%= f.submit %>
   </div>

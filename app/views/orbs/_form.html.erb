@@ -1,7 +1,7 @@
 <%= form_for(@orb) do |f| %>
   <% if @orb.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@orb.errors.count, "error") %> prohibited this orb from being saved:</h2>
+      <h2><%= pluralize(@orb.errors.count, "error") %> O corpo celeste não pode ser salvo:</h2>
 
       <ul>
       <% @orb.errors.full_messages.each do |msg| %>
@@ -27,12 +27,12 @@
   </div>
   
   <div class="field">
-    <%= f.label :descr %><br />
+    <%= f.label :descr, "Descrição" %><br />
     <%= f.text_area :descr %>
   </div>
   
   <%= hidden_field_tag 'orb[book_ids][]', '' %>
-  <%= f.label :books %><br />
+  <%= f.label :books, "Livros" %><br />
   <% @book.each do |book| %>
     <div>
       <%= check_box_tag "orb[book_ids][]", book.id, @orb.books.include?(book) %>

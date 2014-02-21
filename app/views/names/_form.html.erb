@@ -1,7 +1,7 @@
 <%= form_for(@name) do |f| %>
   <% if @name.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@name.errors.count, "error") %> prohibited this name from being saved:</h2>
+      <h2><%= pluralize(@name.errors.count, "error") %> O nome não pode ser salvo:</h2>
 
       <ul>
       <% @name.errors.full_messages.each do |msg| %>
@@ -26,7 +26,7 @@
   </div>
   
   <div class="field">
-    <%= f.label :descr %><br />
+    <%= f.label :descr, "Descrição" %><br />
     <%= f.text_area :descr %>
   </div>
   
@@ -36,7 +36,7 @@
   </div>
   
   <%= hidden_field_tag 'name[book_ids][]', '' %>
-  <%= f.label :books %><br />
+  <%= f.label :books, "Livros" %><br />
   <% @book.each do |book| %>
     <div>
       <%= check_box_tag "name[book_ids][]", book.id, @name.books.include?(book) %>

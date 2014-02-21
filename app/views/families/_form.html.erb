@@ -1,7 +1,7 @@
 <%= form_for(@family) do |f| %>
   <% if @family.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@family.errors.count, "error") %> prohibited this family from being saved:</h2>
+      <h2><%= pluralize(@family.errors.count, "error") %> A família não pode ser salva:</h2></h2>
 
       <ul>
       <% @family.errors.full_messages.each do |msg| %>
@@ -17,7 +17,7 @@
   </div>
 
   <%= hidden_field_tag 'family[race_ids][]', '' %>
-  <%= f.label :races %><br />
+  <%= f.label :races, "Raças" %><br />
   <% @race.each do |race| %>
     <div>
       <%= check_box_tag "family[race_ids][]", race.id, @family.races.include?(race) %>
@@ -26,12 +26,12 @@
   <% end %>  
   
   <div class="field">
-    <%= f.label :descr %><br />
+    <%= f.label :descr, "Descrição" %><br />
     <%= f.text_area :descr %>
   </div>
   
   <%= hidden_field_tag 'family[book_ids][]', '' %>
-  <%= f.label :books %><br />
+  <%= f.label :books, "Livros" %><br />
   <% @book.each do |book| %>
     <div>
       <%= check_box_tag "family[book_ids][]", book.id, @family.books.include?(book) %>
