@@ -1,6 +1,6 @@
 class CreateFamiliesRacesJoinTable < ActiveRecord::Migration
   def up
-    create_table :families_races do |t|
+    create_table :families_races, :id => false do |t|
       t.references :family, :race
     end
   end
