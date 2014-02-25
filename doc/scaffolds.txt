@@ -20,3 +20,12 @@ rails generate migration create_books_names_join_table
 rails generate migration create_families_races_join_table
 
 rails generate migration create_books_races_join_table
+
+rails generate migration add_aparencia_to_names aparencia:string
+rails generate migration add_sexo_to_names sexo:string
+
+
+
+
+# Exemplo
+rails generate migration remove_orgao_id_from_profissionais orgao_id:integer
