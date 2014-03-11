@@ -1,3 +1,4 @@
+#encoding: utf-8
 class OrbsController < ApplicationController
   # GET /orbs
   # GET /orbs.json

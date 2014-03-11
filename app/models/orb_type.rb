@@ -1,3 +1,4 @@
+#encoding: utf-8
 class OrbType < ActiveRecord::Base
   has_many :orbs
 

@@ -1,3 +1,4 @@
+#encoding: utf-8
 class Orb < ActiveRecord::Base
   belongs_to :orb_type
   has_and_belongs_to_many :books, :join_table => "books_orbs"
@@ -8,4 +9,9 @@ class Orb < ActiveRecord::Base
   attr_accessible :descr, :nome, :orb_type_id, :book_ids, :orbit_id
 
   validates :nome, uniqueness: true, presence: true
+  validate :has_books?
+  
+  def has_books?
+    errors.add(:base, 'O corpo celeste deve estar em ao menos um livro') if self.books.blank?
+  end
 end

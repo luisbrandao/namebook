@@ -1,3 +1,4 @@
+#encoding: utf-8
 class NamesController < ApplicationController
   # GET /names
   # GET /names.json

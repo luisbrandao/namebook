@@ -1,3 +1,4 @@
+#encoding: utf-8
 class BaseTypesController < ApplicationController
   # GET /base_types
   # GET /base_types.json

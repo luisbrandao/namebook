@@ -1,3 +1,4 @@
+#encoding: utf-8
 class ShipSizesController < ApplicationController
   # GET /ship_sizes
   # GET /ship_sizes.json

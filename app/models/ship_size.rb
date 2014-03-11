@@ -1,3 +1,4 @@
+#encoding: utf-8
 class ShipSize < ActiveRecord::Base
   has_many :ships
 

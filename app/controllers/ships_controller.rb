@@ -1,3 +1,4 @@
+#encoding: utf-8
 class ShipsController < ApplicationController
   # GET /ships
   # GET /ships.json

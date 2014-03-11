@@ -1,3 +1,4 @@
+#encoding: utf-8
 class OrbTypesController < ApplicationController
   # GET /orb_types
   # GET /orb_types.json
