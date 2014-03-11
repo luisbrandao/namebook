@@ -28,27 +28,27 @@ ActiveRecord::Schema.define(:version => 20140221185942) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "books_families", :force => true do |t|
+  create_table "books_families", :id => false, :force => true do |t|
     t.integer "book_id"
     t.integer "family_id"
   end
 
-  create_table "books_names", :force => true do |t|
+  create_table "books_names", :id => false, :force => true do |t|
     t.integer "book_id"
     t.integer "name_id"
   end
 
-  create_table "books_orbs", :force => true do |t|
+  create_table "books_orbs", :id => false, :force => true do |t|
     t.integer "book_id"
     t.integer "orb_id"
   end
 
-  create_table "books_races", :force => true do |t|
+  create_table "books_races", :id => false, :force => true do |t|
     t.integer "book_id"
     t.integer "race_id"
   end
 
-  create_table "books_ships", :force => true do |t|
+  create_table "books_ships", :id => false, :force => true do |t|
     t.integer "book_id"
     t.integer "ship_id"
   end
@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(:version => 20140221185942) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "families_races", :force => true do |t|
+  create_table "families_races", :id => false, :force => true do |t|
     t.integer "family_id"
     t.integer "race_id"
   end
