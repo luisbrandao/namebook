@@ -22,6 +22,10 @@ gem 'seed_dumper'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
+end
+
+# Puma for development
+group :development do
   gem 'puma'
 end
 
