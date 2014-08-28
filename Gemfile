@@ -18,7 +18,7 @@ gem 'actionpack-page_caching'
 gem 'actionpack-xml_parser'
 gem 'activerecord-session_store'
 gem 'activeresource'
-gem 'protected_attributes'
+# gem 'protected_attributes'
 gem 'rails-observers'
 gem 'rails-perftest'
 
@@ -59,4 +59,4 @@ gem 'yaml_db', github: 'jetthoughts/yaml_db', ref: 'fb4b6bd7e12de3cffa93e0a298a1
 # gem 'debugger'
 #
 #
-gem 'rails4_upgrade'
+# gem 'rails4_upgrade'

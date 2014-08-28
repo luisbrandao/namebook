@@ -44,7 +44,7 @@ class BaseTypesController < ApplicationController
   # PATCH/PUT /base_types/1.json
   def update
     respond_to do |format|
-      if @base_type.update_attributes(params[:base_type])
+      if @base_type.update_attributes(base_type_params)
         format.html { redirect_to @base_type, notice: 'O tipo base foi atualizado com sucesso.' }
         format.json { head :no_content }
       else
