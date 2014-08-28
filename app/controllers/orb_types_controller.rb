@@ -1,36 +1,22 @@
 #encoding: utf-8
 class OrbTypesController < ApplicationController
+  before_action :set_orb_type, only: [:show, :edit, :update, :destroy]
   # GET /orb_types
   # GET /orb_types.json
   def index
     @orb_types = OrbType.order('nome')
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @orb_types }
-    end
   end
 
   # GET /orb_types/1
   # GET /orb_types/1.json
   def show
     @orb_type = OrbType.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @orb_type }
-    end
   end
 
   # GET /orb_types/new
   # GET /orb_types/new.json
   def new
     @orb_type = OrbType.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @orb_type }
-    end
   end
 
   # GET /orb_types/1/edit
@@ -41,7 +27,7 @@ class OrbTypesController < ApplicationController
   # POST /orb_types
   # POST /orb_types.json
   def create
-    @orb_type = OrbType.new(params[:orb_type])
+    @orb_type = OrbType.new(orb_type_params)
 
     respond_to do |format|
       if @orb_type.save
@@ -57,10 +43,8 @@ class OrbTypesController < ApplicationController
   # PUT /orb_types/1
   # PUT /orb_types/1.json
   def update
-    @orb_type = OrbType.find(params[:id])
-
     respond_to do |format|
-      if @orb_type.update_attributes(params[:orb_type])
+      if @orb_type.update_attributes(orb_type_params)
         format.html { redirect_to @orb_type, notice: 'O corpo celeste foi atualizado com sucesso.' }
         format.json { head :no_content }
       else
@@ -73,7 +57,6 @@ class OrbTypesController < ApplicationController
   # DELETE /orb_types/1
   # DELETE /orb_types/1.json
   def destroy
-    @orb_type = OrbType.find(params[:id])
     @orb_type.destroy
 
     respond_to do |format|
@@ -81,4 +64,15 @@ class OrbTypesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_orb_type
+      @orb_type = OrbType.find(params[:id])
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def orb_type_params
+      params.require(:orb_type).permit(:nome)
+    end
 end

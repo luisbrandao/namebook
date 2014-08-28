@@ -16,6 +16,6 @@
     <%= f.text_field :nome, :size => "60" %>
   </div>
   <div class="actions">
-    <%= f.submit "Criar novo tipo de nave" %>
+    <%= f.submit @orb_type.new_record? ? "Criar novo tipo de planeta" : "Atualizar o tipo de planeta" %>
   </div>
 <% end %>
