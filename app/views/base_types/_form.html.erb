@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :nome %><br />
-    <%= f.text_field :nome %>
+    <%= f.text_field :nome, :size => "60" %>
   </div>
   <div class="actions">
     <%= f.submit @base_type.new_record? ? "Criar novo tipo base" : "Atualizar tipo base" %>

@@ -13,31 +13,38 @@
 
   <div class="field">
     <%= f.label :nome %><br />
-    <%= f.text_field :nome %>
+    <%= f.text_field :nome, :size => "60"  %>
   </div>
 
-  <%= hidden_field_tag 'family[race_ids][]', '' %>
-  <%= f.label :races, "Raças" %><br />
-  <% @race.each do |race| %>
-    <div>
-      <%= check_box_tag "family[race_ids][]", race.id, @family.races.include?(race) %>
-      <%= race.nome %>
+  <div style="width: 600px;">
+    <div style="float: left; width: 300px;">
+      <%= hidden_field_tag 'family[race_ids][]', '' %>
+      <%= f.label :races, "Raças" %><br />
+      <% @race.each do |race| %>
+        <div>
+          <%= check_box_tag "family[race_ids][]", race.id, @family.races.include?(race) %>
+          <%= race.nome %>
+        </div>
+      <% end %>  
     </div>
-  <% end %>  
+    <div style="float: left; width: 300px;">
+      <%= hidden_field_tag 'family[book_ids][]', '' %>
+      <%= f.label :books, "Livros" %><br />
+      <% @book.each do |book| %>
+        <div>
+          <%= check_box_tag "family[book_ids][]", book.id, @family.books.include?(book) %>
+          <%= book.nome %>
+        </div>
+      <% end %>
+
+    </div>
+    <br style="clear: left;" />
+  </div>
   
   <div class="field">
     <%= f.label :descr, "Descrição" %><br />
-    <%= f.text_area :descr %>
+    <%= f.text_area :descr, :size => "68x10"  %>
   </div>
-  
-  <%= hidden_field_tag 'family[book_ids][]', '' %>
-  <%= f.label :books, "Livros" %><br />
-  <% @book.each do |book| %>
-    <div>
-      <%= check_box_tag "family[book_ids][]", book.id, @family.books.include?(book) %>
-      <%= book.nome %>
-    </div>
-  <% end %>
   
   <div class="actions">
     <%= f.submit @family.new_record? ? "Criar nova familia" : "Atualizar familia" %>

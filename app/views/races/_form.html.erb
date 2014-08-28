@@ -13,11 +13,11 @@
 
   <div class="field">
     <%= f.label :nome %><br />
-    <%= f.text_field :nome %>
+    <%= f.text_field :nome, :size => "60" %>
   </div>
   <div class="field">
     <%= f.label :descr, "Descrição" %><br />
-    <%= f.text_area :descr %>
+    <%= f.text_area :descr, :size => "68x15"  %>
   </div>
   <div class="actions">
     <%= f.submit @race.new_record? ? "Criar nova raça" : "Atualizar raça" %>

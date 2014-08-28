@@ -13,32 +13,38 @@
 
   <div class="field">
     <%= f.label :nome %><br />
-    <%= f.text_field :nome %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :base_type_id, "Tipo base da nave" %><br />
-    <%= collection_select(:ship, :base_type_id, BaseType.all, :id, :nome, { :prompt => "Selecione um tipo base" }) %>
+    <%= f.text_field :nome, :size => "60" %>
   </div>
 
-  <div class="field">
-    <%= f.label :ship_size_id, "Tamanho da nave" %><br />
-    <%= collection_select(:ship, :ship_size_id, ShipSize.all, :id, :nome, { :prompt => "Selecione um tamanho" }) %>
+  <div style="width: 600px;">
+    <div style="float: left; width: 300px;">
+      <div class="field">
+        <%= f.label :base_type_id, "Tipo base da nave" %><br />
+        <%= collection_select(:ship, :base_type_id, BaseType.all, :id, :nome, { :prompt => "Selecione um tipo base" }) %>
+      </div>
+      <div class="field">
+        <%= f.label :ship_size_id, "Tamanho da nave" %><br />
+        <%= collection_select(:ship, :ship_size_id, ShipSize.all, :id, :nome, { :prompt => "Selecione um tamanho" }) %>
+      </div>
+    </div>
+    <div style="float: left; width: 300px;">
+      <%= hidden_field_tag 'ship[book_ids][]', '' %>
+      <%= f.label :books, "Livros" %><br />
+      <% @book.each do |book| %>
+        <div>
+          <%= check_box_tag "ship[book_ids][]", book.id, @ship.books.include?(book) %>
+          <%= book.nome %>
+        </div>
+      <% end %>
+    </div>
+    <br style="clear: left;" />
   </div>
 
   <div class="field">
     <%= f.label :descr, "Descrição" %><br />
-    <%= f.text_area :descr %>
+    <%= f.text_area :descr, :size => "68x15"  %>
   </div>
 
-  <%= hidden_field_tag 'ship[book_ids][]', '' %>
-  <%= f.label :books, "Livros" %><br />
-  <% @book.each do |book| %>
-    <div>
-      <%= check_box_tag "ship[book_ids][]", book.id, @ship.books.include?(book) %>
-      <%= book.nome %>
-    </div>
-  <% end %>
  
   <div class="actions">
     <%= f.submit @ship.new_record? ? "Criar nova nave" : "Atualizar nave" %>

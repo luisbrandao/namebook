@@ -13,32 +13,38 @@
 
   <div class="field">
     <%= f.label :nome %><br />
-    <%= f.text_field :nome %>
+    <%= f.text_field :nome, :size => "60" %>
   </div>
   
-  <div class="field">
-    <%= f.label :orb_id, "Orbita" %><br />
-    <%= collection_select(:orb, :orbit_id, Orb.all, :id, :nome, { :include_blank => "Selecione um Tipo de corpo celeste" }) %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :orb_type_id, "Tipo de corpo celeste" %><br />
-    <%= collection_select(:orb, :orb_type_id, OrbType.all, :id, :nome, { :prompt => "Selecione um Tipo de corpo celeste" }) %>
+  <div style="width: 600px;">
+    <div style="float: left; width: 300px;">
+      <div class="field">
+        <%= f.label :orb_id, "Orbita" %><br />
+        <%= collection_select(:orb, :orbit_id, Orb.all, :id, :nome, { :include_blank => "Selecione um Tipo de corpo celeste" }) %>
+      </div>
+      <div class="field">
+        <%= f.label :orb_type_id, "Tipo de corpo celeste" %><br />
+        <%= collection_select(:orb, :orb_type_id, OrbType.all, :id, :nome, { :prompt => "Selecione um Tipo de corpo celeste" }) %>
+      </div>
+    </div>
+    <div style="float: left; width: 300px;">
+      <%= hidden_field_tag 'orb[book_ids][]', '' %>
+      <%= f.label :books, "Livros" %><br />
+      <% @book.each do |book| %>
+        <div>
+          <%= check_box_tag "orb[book_ids][]", book.id, @orb.books.include?(book) %>
+          <%= book.nome %>
+        </div>
+      <% end %>
+
+    </div>
+    <br style="clear: left;" />
   </div>
   
   <div class="field">
     <%= f.label :descr, "Descrição" %><br />
-    <%= f.text_area :descr %>
+    <%= f.text_area :descr, :size => "68x15"  %>
   </div>
-  
-  <%= hidden_field_tag 'orb[book_ids][]', '' %>
-  <%= f.label :books, "Livros" %><br />
-  <% @book.each do |book| %>
-    <div>
-      <%= check_box_tag "orb[book_ids][]", book.id, @orb.books.include?(book) %>
-      <%= book.nome %>
-    </div>
-  <% end %>
   
   <div class="actions">
     <%= f.submit @orb.new_record? ? "Criar novo corpo celeste" : "Atualizar o corpo celeste" %>
