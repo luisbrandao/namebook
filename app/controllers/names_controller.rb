@@ -1,26 +1,18 @@
 #encoding: utf-8
 class NamesController < ApplicationController
+  before_action :set_name, only: [:show, :edit, :update, :destroy]
+  
   # GET /names
   # GET /names.json
   def index
     @search = Name.search(params[:q])
     @names = @search.result
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @names }
-    end
   end
 
   # GET /names/1
   # GET /names/1.json
   def show
     @name = Name.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @name }
-    end
   end
 
   # GET /names/new
@@ -28,11 +20,6 @@ class NamesController < ApplicationController
   def new
     @book = Book.order('nome')
     @name = Name.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @name }
-    end
   end
 
   # GET /names/1/edit
@@ -45,7 +32,7 @@ class NamesController < ApplicationController
   # POST /names.json
   def create
     @book = Book.order('nome')
-    @name = Name.new(params[:name])
+    @name = Name.new(name_params)
 
     respond_to do |format|
       if @name.save
@@ -58,11 +45,9 @@ class NamesController < ApplicationController
     end
   end
 
-  # PUT /names/1
-  # PUT /names/1.json
+  # PATCH/PUT /names/1
+  # PATCH/PUT /names/1.json
   def update
-    @name = Name.find(params[:id])
-
     respond_to do |format|
       if @name.update_attributes(params[:name])
         format.html { redirect_to @name, notice: 'O nome foi atualizado com sucesso.' }
@@ -77,7 +62,6 @@ class NamesController < ApplicationController
   # DELETE /names/1
   # DELETE /names/1.json
   def destroy
-    @name = Name.find(params[:id])
     @name.destroy
 
     respond_to do |format|
@@ -85,4 +69,15 @@ class NamesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_name
+      @name = Name.find(params[:id])
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def name_params
+      params.require(:name).permit(:nome, :descr, :aparencia, :sexo)
+    end
 end

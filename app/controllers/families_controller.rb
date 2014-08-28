@@ -48,11 +48,9 @@ class FamiliesController < ApplicationController
     end
   end
 
-  # PUT /families/1
-  # PUT /families/1.json
+  # PATCH/PUT /families/1
+  # PATCH/PUT /families/1.json
   def update
-    @family = Family.find(family_params)
-
     respond_to do |format|
       if @family.update_attributes(params[:family])
         format.html { redirect_to @family, notice: 'A família foi atualizada com sucesso.' }
