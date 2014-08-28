@@ -1,26 +1,17 @@
 #encoding: utf-8
 class OrbsController < ApplicationController
+  before_action :set_orb, only: [:show, :edit, :update, :destroy]
   # GET /orbs
   # GET /orbs.json
   def index
     @search = Orb.search(params[:q])
     @orbs = @search.result
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @orbs }
-    end
   end
 
   # GET /orbs/1
   # GET /orbs/1.json
   def show
     @orb = Orb.find(params[:id])
-    
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @orb }
-    end
   end
 
   # GET /orbs/new
@@ -28,11 +19,6 @@ class OrbsController < ApplicationController
   def new
     @book = Book.order('nome')
     @orb = Orb.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @orb }
-    end
   end
 
   # GET /orbs/1/edit
@@ -45,7 +31,7 @@ class OrbsController < ApplicationController
   # POST /orbs.json
   def create
     @book = Book.order('nome')
-    @orb = Orb.new(params[:orb])
+    @orb = Orb.new(orb_params)
     
     respond_to do |format|
       if @orb.save
@@ -61,10 +47,11 @@ class OrbsController < ApplicationController
   # PUT /orbs/1
   # PUT /orbs/1.json
   def update
+    @book = Book.order('nome')
     @orb = Orb.find(params[:id])
 
     respond_to do |format|
-      if @orb.update_attributes(params[:orb])
+      if @orb.update_attributes(orb_params)
         format.html { redirect_to @orb, notice: 'O corpo celeste foi atualizado com sucesso.' }
         format.json { head :no_content }
       else
@@ -77,7 +64,6 @@ class OrbsController < ApplicationController
   # DELETE /orbs/1
   # DELETE /orbs/1.json
   def destroy
-    @orb = Orb.find(params[:id])
     @orb.destroy
 
     respond_to do |format|
@@ -85,4 +71,16 @@ class OrbsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  private
+  
+    # Use callbacks to share common setup or constraints between actions.
+    def set_orb
+      @orb = Orb.find(params[:id])
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def orb_params
+      params.require(:orb).permit(:nome, :descr, :orb_type_id, :orbit_id, :book_ids => [])
+    end
 end

@@ -41,6 +41,6 @@
   <% end %>
   
   <div class="actions">
-    <%= f.submit "Criar novo corpo celeste" %>
+    <%= f.submit @orb.new_record? ? "Criar novo corpo celeste" : "Atualizar o corpo celeste" %>
   </div>
 <% end %>
