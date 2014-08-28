@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :nome %><br />
-    <%= f.text_field :nome %>
+    <%= f.text_field :nome, :size => "60" %>
   </div>
   <div class="actions">
     <%= f.submit @ship_size.new_record? ? "Criar novo tamanho de nave" : "Atualizar tamanho de nave" %>
