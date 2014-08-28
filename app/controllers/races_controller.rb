@@ -1,36 +1,22 @@
 #encoding: utf-8
 class RacesController < ApplicationController
+  before_action :set_race, only: [:show, :edit, :update, :destroy]
   # GET /races
   # GET /races.json
   def index
     @races = Race.order('nome')
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @races }
-    end
   end
 
   # GET /races/1
   # GET /races/1.json
   def show
     @race = Race.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @race }
-    end
   end
 
   # GET /races/new
   # GET /races/new.json
   def new
     @race = Race.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @race }
-    end
   end
 
   # GET /races/1/edit
@@ -41,7 +27,7 @@ class RacesController < ApplicationController
   # POST /races
   # POST /races.json
   def create
-    @race = Race.new(params[:race])
+    @race = Race.new(race_params)
 
     respond_to do |format|
       if @race.save
@@ -54,13 +40,11 @@ class RacesController < ApplicationController
     end
   end
 
-  # PUT /races/1
-  # PUT /races/1.json
+  # PATCH/PUT /races/1
+  # PATCH/races/1.json
   def update
-    @race = Race.find(params[:id])
-
     respond_to do |format|
-      if @race.update_attributes(params[:race])
+      if @race.update_attributes(race_params)
         format.html { redirect_to @race, notice: 'A raça foi atualizada com sucesso.' }
         format.json { head :no_content }
       else
@@ -73,7 +57,6 @@ class RacesController < ApplicationController
   # DELETE /races/1
   # DELETE /races/1.json
   def destroy
-    @race = Race.find(params[:id])
     @race.destroy
 
     respond_to do |format|
@@ -81,4 +64,15 @@ class RacesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_race
+      @race = Race.find(params[:id])
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def race_params
+      params.require(:race).permit(:nome, :descr)
+    end
 end

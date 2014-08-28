@@ -20,6 +20,6 @@
     <%= f.text_area :descr %>
   </div>
   <div class="actions">
-    <%= f.submit "Criar nova raça" %>
+    <%= f.submit @race.new_record? ? "Criar nova raça" : "Atualizar raça" %>
   </div>
 <% end %>
