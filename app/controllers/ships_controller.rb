@@ -1,26 +1,17 @@
 #encoding: utf-8
 class ShipsController < ApplicationController
+  before_action :set_ship, only: [:show, :edit, :update, :destroy]
   # GET /ships
   # GET /ships.json
   def index
     @search = Ship.search(params[:q])
     @ships = @search.result
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @ships }
-    end
   end
 
   # GET /ships/1
   # GET /ships/1.json
   def show
     @ship = Ship.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @ship }
-    end
   end
 
   # GET /ships/new
@@ -28,11 +19,6 @@ class ShipsController < ApplicationController
   def new
     @book = Book.order('nome')
     @ship = Ship.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @ship }
-    end
   end
 
   # GET /ships/1/edit
@@ -45,7 +31,7 @@ class ShipsController < ApplicationController
   # POST /ships.json
   def create
     @book = Book.order('nome')
-    @ship = Ship.new(params[:ship])
+    @ship = Ship.new(ship_params)
 
     respond_to do |format|
       if @ship.save
@@ -61,10 +47,9 @@ class ShipsController < ApplicationController
   # PUT /ships/1
   # PUT /ships/1.json
   def update
-    @ship = Ship.find(params[:id])
-
+    @book = Book.order('nome')
     respond_to do |format|
-      if @ship.update_attributes(params[:ship])
+      if @ship.update_attributes(ship_params)
         format.html { redirect_to @ship, notice: 'A nave foi atualizada com sucesso.' }
         format.json { head :no_content }
       else
@@ -77,7 +62,6 @@ class ShipsController < ApplicationController
   # DELETE /ships/1
   # DELETE /ships/1.json
   def destroy
-    @ship = Ship.find(params[:id])
     @ship.destroy
 
     respond_to do |format|
@@ -85,4 +69,16 @@ class ShipsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_ship
+      @ship = Ship.find(params[:id])
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def ship_params
+      params.require(:ship).permit(:nome, :descr, :base_type_id, :ship_size_id, :book_ids => [])
+    end
 end
+

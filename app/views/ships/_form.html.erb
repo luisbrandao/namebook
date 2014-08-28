@@ -41,6 +41,6 @@
   <% end %>
  
   <div class="actions">
-    <%= f.submit "Criar nova nave" %>
+    <%= f.submit @ship.new_record? ? "Criar nova nave" : "Atualizar nave" %>
   </div>
 <% end %>
