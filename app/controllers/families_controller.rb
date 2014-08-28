@@ -55,7 +55,7 @@ class FamiliesController < ApplicationController
     @book = Book.order('nome')
     @race = Race.order('nome')
     respond_to do |format|
-      if @family.update_attributes(params[:family])
+      if @family.update_attributes(family_params)
         format.html { redirect_to @family, notice: 'A família foi atualizada com sucesso.' }
         format.json { head :no_content }
       else

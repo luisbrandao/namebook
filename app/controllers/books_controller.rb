@@ -49,7 +49,7 @@ class BooksController < ApplicationController
   def update
     @race = Race.order('nome')
     respond_to do |format|
-      if @book.update_attributes(params[:book])
+      if @book.update_attributes(book_params)
         format.html { redirect_to @book, notice: 'O livro foi atualizado com sucesso.' }
         format.json { head :no_content }
       else

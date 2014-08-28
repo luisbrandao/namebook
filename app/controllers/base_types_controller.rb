@@ -1,36 +1,22 @@
 #encoding: utf-8
 class BaseTypesController < ApplicationController
+  before_action :set_base_type, only: [:show, :edit, :update, :destroy]
   # GET /base_types
   # GET /base_types.json
   def index
     @base_types = BaseType.order('nome')
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @base_types }
-    end
   end
 
   # GET /base_types/1
   # GET /base_types/1.json
   def show
     @base_type = BaseType.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @base_type }
-    end
   end
 
   # GET /base_types/new
   # GET /base_types/new.json
   def new
     @base_type = BaseType.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @base_type }
-    end
   end
 
   # GET /base_types/1/edit
@@ -41,7 +27,7 @@ class BaseTypesController < ApplicationController
   # POST /base_types
   # POST /base_types.json
   def create
-    @base_type = BaseType.new(params[:base_type])
+    @base_type = BaseType.new(base_type_params)
 
     respond_to do |format|
       if @base_type.save
@@ -54,11 +40,9 @@ class BaseTypesController < ApplicationController
     end
   end
 
-  # PUT /base_types/1
-  # PUT /base_types/1.json
+  # PATCH/PUT /base_types/1
+  # PATCH/PUT /base_types/1.json
   def update
-    @base_type = BaseType.find(params[:id])
-
     respond_to do |format|
       if @base_type.update_attributes(params[:base_type])
         format.html { redirect_to @base_type, notice: 'O tipo base foi atualizado com sucesso.' }
@@ -73,7 +57,6 @@ class BaseTypesController < ApplicationController
   # DELETE /base_types/1
   # DELETE /base_types/1.json
   def destroy
-    @base_type = BaseType.find(params[:id])
     @base_type.destroy
 
     respond_to do |format|
@@ -81,4 +64,15 @@ class BaseTypesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_base_type
+      @base_type = BaseType.find(params[:id])
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def base_type_params
+      params.require(:base_type).permit(:nome)
+    end
 end

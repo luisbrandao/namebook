@@ -50,7 +50,7 @@ class NamesController < ApplicationController
   def update
     @book = Book.order('nome')
     respond_to do |format|
-      if @name.update_attributes(params[:name])
+      if @name.update_attributes(name_params)
         format.html { redirect_to @name, notice: 'O nome foi atualizado com sucesso.' }
         format.json { head :no_content }
       else

@@ -16,6 +16,6 @@
     <%= f.text_field :nome %>
   </div>
   <div class="actions">
-    <%= f.submit "Criar novo tipo base" %>
+    <%= f.submit @base_type.new_record? ? "Criar novo tipo base" : "Atualizar tipo base" %>
   </div>
 <% end %>
