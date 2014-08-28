@@ -40,6 +40,6 @@
   <% end %>
   
   <div class="actions">
-    <%= f.submit "Criar nova familia" %>
+    <%= f.submit @family.new_record? ? "Criar nova familia" : "Atualizar familia" %>
   </div>
 <% end %>

@@ -48,6 +48,7 @@ class NamesController < ApplicationController
   # PATCH/PUT /names/1
   # PATCH/PUT /names/1.json
   def update
+    @book = Book.order('nome')
     respond_to do |format|
       if @name.update_attributes(params[:name])
         format.html { redirect_to @name, notice: 'O nome foi atualizado com sucesso.' }
@@ -78,6 +79,6 @@ class NamesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def name_params
-      params.require(:name).permit(:nome, :descr, :aparencia, :sexo)
+      params.require(:name).permit(:nome, :descr, :aparencia, :sexo, :race_id, :family_id, :book_ids => [])
     end
 end

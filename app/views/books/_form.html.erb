@@ -38,6 +38,6 @@
   <% end %>
   
   <div class="actions">
-    <%= f.submit "Criar novo livro" %>
+    <%= f.submit @book.new_record? ? "Criar novo livro" : "Atualizar livro" %>
   </div>
 <% end %>

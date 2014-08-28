@@ -50,6 +50,6 @@
   <% end %>
   
   <div class="actions">
-    <%= f.submit "Criar novo nome" %>
+    <%= f.submit @name.new_record? ? "Criar novo nome" : "Atualizar nome" %>
   </div>
 <% end %>

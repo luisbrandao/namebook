@@ -1,14 +1,10 @@
 #encoding: utf-8
 class BooksController < ApplicationController
+  before_action :set_book, only: [:show, :edit, :update, :destroy]
   # GET /books
   # GET /books.json
   def index
     @books = Book.order('nome')
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @books }
-    end
   end
 
   # GET /books/1
@@ -16,11 +12,6 @@ class BooksController < ApplicationController
   def show
     @race = Race.order('nome')
     @book = Book.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @book }
-    end
   end
 
   # GET /books/new
@@ -28,11 +19,6 @@ class BooksController < ApplicationController
   def new
     @race = Race.order('nome')
     @book = Book.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @book }
-    end
   end
 
   # GET /books/1/edit
@@ -45,7 +31,7 @@ class BooksController < ApplicationController
   # POST /books.json
   def create
     @race = Race.order('nome')
-    @book = Book.new(params[:book])
+    @book = Book.new(book_params)
 
     respond_to do |format|
       if @book.save
@@ -58,11 +44,10 @@ class BooksController < ApplicationController
     end
   end
 
-  # PUT /books/1
-  # PUT /books/1.json
+  # PATCH/PUT /books/1
+  # PATCH/PUT /books/1.json
   def update
-    @book = Book.find(params[:id])
-
+    @race = Race.order('nome')
     respond_to do |format|
       if @book.update_attributes(params[:book])
         format.html { redirect_to @book, notice: 'O livro foi atualizado com sucesso.' }
@@ -77,7 +62,6 @@ class BooksController < ApplicationController
   # DELETE /books/1
   # DELETE /books/1.json
   def destroy
-    @book = Book.find(params[:id])
     @book.destroy
 
     respond_to do |format|
@@ -85,4 +69,15 @@ class BooksController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_book
+      @book = Book.find(params[:id])
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def book_params
+      params.require(:book).permit(:nome, :descr, :datai, :dataf, :race_ids => [])
+    end 
 end

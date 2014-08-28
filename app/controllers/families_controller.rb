@@ -18,9 +18,10 @@ class FamiliesController < ApplicationController
   # GET /families/new
   # GET /families/new.json
   def new
+    @family = Family.new
+
     @book = Book.order('nome')
     @race = Race.order('nome')
-    @family = Family.new
   end
 
   # GET /families/1/edit
@@ -51,6 +52,8 @@ class FamiliesController < ApplicationController
   # PATCH/PUT /families/1
   # PATCH/PUT /families/1.json
   def update
+    @book = Book.order('nome')
+    @race = Race.order('nome')
     respond_to do |format|
       if @family.update_attributes(params[:family])
         format.html { redirect_to @family, notice: 'A família foi atualizada com sucesso.' }
@@ -82,6 +85,6 @@ class FamiliesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def family_params
-      params.require(:family).permit(:nome, :descr)
+      params.require(:family).permit(:nome, :descr, :book_ids => [], :race_ids => [] )
     end
 end
