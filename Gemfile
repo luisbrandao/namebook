@@ -40,6 +40,9 @@ gem 'jquery-rails'
 # Pagination library
 gem 'will_paginate'
 
+# Dump database
+gem 'yaml_db', github: 'jetthoughts/yaml_db', ref: 'fb4b6bd7e12de3cffa93e0a298a1e5253d7e92ba'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
