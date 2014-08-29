@@ -5,7 +5,7 @@ class ShipsController < ApplicationController
   # GET /ships.json
   def index
     @search = Ship.search(params[:q])
-    @ships = @search.result
+    @ships = @search.result.order('nome')
   end
 
   # GET /ships/1

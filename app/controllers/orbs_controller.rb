@@ -5,7 +5,7 @@ class OrbsController < ApplicationController
   # GET /orbs.json
   def index
     @search = Orb.search(params[:q])
-    @orbs = @search.result
+    @orbs = @search.result.order('nome')
   end
 
   # GET /orbs/1

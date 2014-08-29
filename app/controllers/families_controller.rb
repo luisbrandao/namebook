@@ -6,7 +6,7 @@ class FamiliesController < ApplicationController
   # GET /families.json
   def index
     @search = Family.search(params[:q])
-    @families = @search.result
+    @families = @search.result.order('nome')
   end
 
   # GET /families/1

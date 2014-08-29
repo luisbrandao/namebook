@@ -4,7 +4,8 @@ class RacesController < ApplicationController
   # GET /races
   # GET /races.json
   def index
-    @races = Race.order('nome')
+    @search = Race.search(params[:q])
+    @races = @search.result.order('nome')
   end
 
   # GET /races/1

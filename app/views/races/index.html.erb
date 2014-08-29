@@ -1,5 +1,27 @@
 <h1>Listando raças</h1>
 
+<div id="search-form"> <fieldset>
+  <legend>Buscar por raças:</legend>
+  <%= search_form_for @search do |f| %>
+    <div style="width: 600px;">
+      <div style="float: left; width: 300px;">
+        <div class="field">
+          <%= f.label :nome, "Nome: " %><br />
+          <%= f.text_field :nome_cont, :class => "search-field", :size => "30" %>
+        </div>
+      </div>
+      <div style="float: left; width: 300px;">
+        <div class="actions">
+          <br/>
+          <%= f.submit "Buscar" %>
+          <%= f.submit "Limpar campos", :id => "reset_btn" %>
+        </div>
+      </div>
+      <br style="clear: left;" />
+    </div>
+  <% end %>
+</fieldset> </div>
+
 <table>
   <tr>
     <th>Nome</th>

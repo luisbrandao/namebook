@@ -9,11 +9,11 @@
     </div>
   <div class="field">
     <%= f.label :races_id_eq, "Raça:" %><br />
-    <%= f.collection_select :races_id_eq, Race.order(:nome), :id, :nome, :include_blank => "Todos" %> 
+    <%= f.collection_select :races_id_eq, Race.order(:nome), :id, :nome, {:include_blank => "Todos"}, {:class => "search-field"} %>
   </div>
   <div class="field">
     <%= f.label :books_id_eq, "Livro:" %><br />
-    <%= f.collection_select :books_id_eq, Book.order(:nome), :id, :nome, :include_blank => "Todos" %> 
+    <%= f.collection_select :books_id_eq, Book.order(:nome), :id, :nome, {:include_blank => "Todos"}, {:class => "search-field"} %>
   </div>
   <div class="actions">
     <%= f.submit "Buscar" %>
