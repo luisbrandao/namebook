@@ -10,7 +10,7 @@
     
     <div class="field">
       <%= f.label :sexo, "Sexo" %><br />
-      <%= f.select :sexo_eq, [["Indefinido", 1], ["Masculino", 2], ["Feminino", 3]], :include_blank => "Todos", :class => "search-field" %>
+      <%= f.select :sexo_eq, [["Indefinido", 1], ["Masculino", 2], ["Feminino", 3]], {:include_blank => "Todos"}, {:class => "search-field"} %>
     </div>
     
     <div class="field">
@@ -25,11 +25,12 @@
     </div>
     <div class="field">
       <%= f.label :books_id_eq, "Livro:" %><br />
-      <%= f.collection_select :books_id_eq, Book.order(:nome), :id, :nome, :include_blank => "Todos" %> 
+      <%= f.collection_select :books_id_eq, Book.order(:nome), :id, :nome, {:include_blank => "Todos"}, {:class => "search-field"} %> 
     </div>
-	<div class="actions">
-	  <%= f.submit "Buscar" %>
-	</div>
+  <div class="actions">
+    <%= f.submit "Buscar" %>
+    <%= f.submit "Limpar campos", :id => "reset_btn" %>
+  </div>
   <% end %>
 </fieldset> </div>
 

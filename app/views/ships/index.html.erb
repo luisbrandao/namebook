@@ -5,8 +5,8 @@
   <legend>Buscar por naves:</legend>
   <%= search_form_for @search do |f| %>
     <div class="field">
-	  <%= f.label :nome, "Nome: " %><br />
-	  <%= f.text_field :nome_cont, :class => "search-field"%>
+    <%= f.label :nome, "Nome: " %><br />
+    <%= f.text_field :nome_cont, :class => "search-field"%>
     </div>
     <div class="field">
       <%= f.label :base_type_id, "Tipo base:" %><br />
@@ -20,11 +20,13 @@
     </div>
     <div class="field">
       <%= f.label :books_id_eq, "Livro:" %><br />
-      <%= f.collection_select :books_id_eq, Book.order(:nome), :id, :nome, :include_blank => "Todos" %> 
+      <%= f.collection_select :books_id_eq, Book.order(:nome), :id, :nome,
+          {:include_blank => "Todos"}, {:class => "search-field"} %>
     </div>
-	<div class="actions">
-	  <%= f.submit "Buscar" %>
-	</div>
+  <div class="actions">
+    <%= f.submit "Buscar" %>
+    <%= f.submit "Limpar campos", :id => "reset_btn" %>
+  </div>
   <% end %>
 </fieldset> </div>
 
