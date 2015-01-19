@@ -7,7 +7,7 @@
 
 <p>
   <b>Descrição:</b>
-  <%= @race.descr %>
+  <%= h(@race.descr).gsub(/\n/, '<br/>').html_safe %>
 </p>
 
 

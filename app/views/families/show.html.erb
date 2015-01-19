@@ -36,8 +36,8 @@
 </div>
 
 <p>
-  <b>Descr:</b>
-  <%= @family.descr %>
+  <b>Descrição:</b>
+  <%= h(@family.descr).gsub(/\n/, '<br/>').html_safe %>
 </p>
 
 <%= link_to 'Editar', edit_family_path(@family) %> |
