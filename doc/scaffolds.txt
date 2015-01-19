@@ -26,7 +26,5 @@ rails generate migration add_sexo_to_names sexo:string
 
 rails generate migration change_Orbit_id_in_Orbs
 
-
-
 # Exemplo
 rails generate migration remove_orgao_id_from_profissionais orgao_id:integer
