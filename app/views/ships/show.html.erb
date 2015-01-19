@@ -5,30 +5,36 @@
   <%= @ship.nome %>
 </p>
 
+<div style="width: 700px;">
+  <div style="float: left; width: 200px;">
+    <b>Livros:</b>
+    <ul>
+      <% @ship.books.each do |book| %>
+      <li> <%= book.nome %> </li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div style="float: left; width: 300px;">
+    <b>Tipo Base:</b>
+      <ul>
+        <li><%= @ship.base_type.nome %> </li>
+      </ul>
+  </div>
+
+  <div style="float: left; width: 200px;">
+    <b>Classe da nave:</b></br>
+      <ul>
+        <li><%= @ship.ship_size.nome %></li>
+      </ul>
+  </div>
+  <br style="clear: left;" />
+</div>
+
 <p>
-  <b>Descrição:</b>
+  <b>Descrição: </b></br>
   <%= h(@ship.descr).gsub(/\n/, '<br/>').html_safe %>
 </p>
-
-<p>
-  <b>Livros:</b>
-  <ul>
-    <% @ship.books.each do |book| %>
-    <li> <%= book.nome %> </li>
-    <% end %>
-  </ul>
-</p>
-
-<p>
-  <b>Tipo Base:</b>
-  <%= @ship.base_type.nome %>
-</p>
-
-<p>
-  <b>Classe da nave:</b>
-  <%= @ship.ship_size.nome %>
-</p>
-
 
 <%= link_to 'Editar', edit_ship_path(@ship) %> |
 <%= link_to 'Voltar', ships_path %> |
