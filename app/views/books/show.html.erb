@@ -1,32 +1,36 @@
 <p id="notice"><%= notice %></p>
-
 <p>
   <b>Nome:</b>
   <%= @book.nome %>
 </p>
 
+<div style="width: 600px;">
+  <div style="float: left; width: 300px;">
+    <b>Raças:</b>
+    <ul>
+      <% @book.races.each do |race| %>
+      <li> <%= race.nome %> </li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div style="float: left; width: 300px;">
+    <p>
+      <b>Data do inicio:</b>
+      <%= @book.datai %>
+    </p>
+
+    <p>
+      <b>Data da conclusão:</b>
+      <%= @book.dataf %>
+    </p>
+  </div>
+  <br style="clear: left;" />
+</div>
+
 <p>
   <b>Descrição:</b>
-  <%= @book.descr %>
-</p>
-
-<p>
-  <b>Data do inicio:</b>
-  <%= @book.datai %>
-</p>
-
-<p>
-  <b>Data da conclusão:</b>
-  <%= @book.dataf %>
-</p>
-
-<p>
-  <b>Races:</b>
-  <ul>
-    <% @book.races.each do |race| %>
-    <li> <%= race.nome %> </li>
-    <% end %>
-  </ul>
+  <%= h(@book.descr).gsub(/\n/, '<br/>').html_safe %>
 </p>
 
 <%= link_to 'Editar', edit_book_path(@book) %> |
