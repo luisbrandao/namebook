@@ -15,8 +15,8 @@ ActiveRecord::Schema.define(version: 20150119134051) do
 
   create_table "base_types", force: true do |t|
     t.string   "nome"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "books", force: true do |t|
@@ -24,8 +24,8 @@ ActiveRecord::Schema.define(version: 20150119134051) do
     t.text     "descr"
     t.string   "datai"
     t.string   "dataf"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "books_families", id: false, force: true do |t|
@@ -56,8 +56,8 @@ ActiveRecord::Schema.define(version: 20150119134051) do
   create_table "families", force: true do |t|
     t.string   "nome"
     t.text     "descr"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "families_races", id: false, force: true do |t|
@@ -70,38 +70,38 @@ ActiveRecord::Schema.define(version: 20150119134051) do
     t.text     "descr"
     t.integer  "race_id"
     t.integer  "family_id"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "aparencia"
     t.integer  "sexo",       default: 1
   end
 
   create_table "orb_types", force: true do |t|
     t.string   "nome"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "orbs", force: true do |t|
     t.string   "nome"
     t.text     "descr"
     t.integer  "orb_type_id"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-    t.integer  "orbit_id",    limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "orbit_id"
   end
 
   create_table "races", force: true do |t|
     t.string   "nome"
     t.text     "descr"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "ship_sizes", force: true do |t|
     t.string   "nome"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "ships", force: true do |t|
@@ -109,8 +109,8 @@ ActiveRecord::Schema.define(version: 20150119134051) do
     t.text     "descr"
     t.integer  "base_type_id"
     t.integer  "ship_size_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
