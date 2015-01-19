@@ -1,4 +1,4 @@
-Comandos de geração:
+# Comandos de geração:
 
 rails generate scaffold orb_type nome
 rails generate scaffold orb nome:string descr:text orb_type_id:integer
@@ -24,6 +24,7 @@ rails generate migration create_books_races_join_table
 rails generate migration add_aparencia_to_names aparencia:string
 rails generate migration add_sexo_to_names sexo:string
 
+rails generate migration change_Orbit_id_in_Orbs
 
 
 
