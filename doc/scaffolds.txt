@@ -28,3 +28,46 @@ rails generate migration change_Orbit_id_in_Orbs
 
 # Exemplo
 rails generate migration remove_orgao_id_from_profissionais orgao_id:integer
+
+
+# Comandos de destruição
+rails destroy scaffold atores
+rails destroy scaffold midia
+rails destroy scaffold filmes
+
+# Comandos de adição
+rails generate migration add_sexo_to_atores sexo:integer
+
+# Plural não regular:
+<app>/config/initializers/inflections.rb
+  ActiveSupport::Inflector.inflections do |inflect|
+    inflect.irregular 'ator', 'atores'
+    inflect.irregular 'diretor', 'diretores'
+    inflect.irregular 'pais', 'paises'
+    inflect.irregular 'midia', 'midias'
+  end
+
+# Divs paralelos:
+  <div style="width: 500px;">
+    <div style="float: left; width: 200px;">
+
+    </div>
+    <div style="float: left; width: 100px;">
+
+    </div>
+    <div style="float: left; width: 200px;">
+
+    </div>
+    <br style="clear: left;" />
+  </div>
+
+
+  <div style="width: 600px;">
+    <div style="float: left; width: 300px;">
+
+    </div>
+    <div style="float: left; width: 300px;">
+
+    </div>
+    <br style="clear: left;" />
+  </div>
