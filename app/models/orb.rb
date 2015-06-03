@@ -7,9 +7,6 @@ class Orb < ActiveRecord::Base
   belongs_to :orbit, class_name: "Orb"
 
   validates :nome, uniqueness: true, presence: true
-  validate :has_books?
+  validates :books, presence: true
   
-  def has_books?
-    errors.add(:base, 'O corpo celeste deve estar em ao menos um livro') if self.books.blank?
-  end
 end

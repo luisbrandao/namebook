@@ -7,6 +7,7 @@ class FamiliesController < ApplicationController
   def index
     @search = Family.search(params[:q])
     @families = @search.result.order('nome')
+      .paginate(page: params[:page], per_page: 50)
   end
 
   # GET /families/1

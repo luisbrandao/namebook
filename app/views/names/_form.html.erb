@@ -1,7 +1,7 @@
 <%= form_for(@name) do |f| %>
   <% if @name.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@name.errors.count, "error") %> O nome não pode ser salvo:</h2>
+      <h2><%= pluralize(@name.errors.count, "erro") %>: O nome não pode ser salvo:</h2>
 
       <ul>
       <% @name.errors.full_messages.each do |msg| %>
@@ -38,7 +38,6 @@
     <br style="clear: left;" />
   </div>
  
- 
    <div style="width: 600px;">
     <div style="float: left; width: 300px;">
       <div class="field">
@@ -54,16 +53,17 @@
     </div>
     <br style="clear: left;" />
   </div>
-  
-  <%= hidden_field_tag 'name[book_ids][]', '' %>
-  <%= f.label :books, "Livros" %><br />
-  <% @book.each do |book| %>
-    <div>
-      <%= check_box_tag "name[book_ids][]", book.id, @name.books.include?(book) %>
-      <%= book.nome %>
-    </div>
-  <% end %>
-  
+
+  <div>
+    <%= hidden_field_tag 'name[book_ids][]', '' %>
+    <%= f.label :books, "Livros" %><br />
+    <% @book.each do |book| %>
+      <div>
+        <%= check_box_tag "name[book_ids][]", book.id, @name.books.include?(book) %> <%= book.nome %>
+      </div>
+    <% end %>
+  </div>
+
   <div class="actions">
     <%= f.submit @name.new_record? ? "Criar novo nome" : "Atualizar nome" %>
   </div>

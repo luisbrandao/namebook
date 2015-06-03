@@ -22,7 +22,8 @@
   <% end %>
 </fieldset> </div>
 
-<table>
+<%= page_entries_info @families %>
+<table class=table>
   <tr>
     <th><%= sort_link(@search, :nome, "Nome") %></th>
     <th>Integrantes</th>
@@ -32,40 +33,38 @@
     <th>Ações</th>
   </tr>
 
-<% i=0; %>
-<% @families.each do |family| %>
-  <% i= i+1; %>
-  <tr>
-    <td><%= family.nome %></td>
-    <td>
-      <ol type="disc">
-        <% family.names.each do |name| %>
-          <li> <%= name.nome %> </li>
-        <% end %>
-      </ol>
-    </td>
-    <td>
-      <ul>
-        <% family.races.each do |race| %>
-          <li> <%= race.nome %> </li>
-        <% end %>
-      </ul>
-    </td>
-    <td>
-      <ol type="disc">
-        <% family.books.each do |book| %>
-          <li> <%= book.nome %> </li>
-        <% end %>
-      </ol>
-    </td>
-    <td><%= h(family.descr).gsub(/\n/, '<br/>').html_safe %></td>
-    <td><%= link_to 'Detalhes', family %><br/>
-    <%= link_to 'Editar', edit_family_path(family) %><br/>
-    <%= link_to 'Remover', family, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
-  </tr>
-<% end %>
-Há <%= i %> registros.
+  <% @families.each do |family| %>
+    <tr>
+      <td><%= family.nome %></td>
+      <td>
+        <ol type="disc">
+          <% family.names.each do |name| %>
+            <li> <%= name.nome %> </li>
+          <% end %>
+        </ol>
+      </td>
+      <td>
+        <ul>
+          <% family.races.each do |race| %>
+            <li> <%= race.nome %> </li>
+          <% end %>
+        </ul>
+      </td>
+      <td>
+        <ol type="disc">
+          <% family.books.each do |book| %>
+            <li> <%= book.nome %> </li>
+          <% end %>
+        </ol>
+      </td>
+      <td><%= h(family.descr).gsub(/\n/, '<br/>').html_safe %></td>
+      <td><%= link_to 'Detalhes', family %><br/>
+      <%= link_to 'Editar', edit_family_path(family) %><br/>
+      <%= link_to 'Remover', family, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+    </tr>
+  <% end %>
 </table>
+<%= will_paginate @families %>
 
 <br />
 

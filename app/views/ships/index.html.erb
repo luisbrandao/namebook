@@ -30,8 +30,8 @@
   <% end %>
 </fieldset> </div>
 
-
-<table>
+<%= page_entries_info @ships %>
+<table class=table>
   <tr>
     <th><%= sort_link(@search, :nome, "Nome") %></th>
     <th>Descrição</th>
@@ -41,29 +41,26 @@
     <th>Ações</th>
   </tr>
 
-<% i=0; %>
-<% @ships.each do |ship| %>
-  <% i= i+1; %>
-  <tr>
-    <td><%= ship.nome %></td>
-    <td><%= h(ship.descr).gsub(/\n/, '<br/>').html_safe %></td>
-    <td>
-      <ul>
-        <% ship.books.each do |book| %>
-          <li> <%= book.nome %> </li>
-        <% end %>
-      </ul>
-    </td>
-    <td><%= ship.base_type.nome %></td>
-    <td><%= ship.ship_size.nome %></td>
-    <td><%= link_to 'Detalhes', ship %><br/>
-    <%= link_to 'Editar', edit_ship_path(ship) %><br/>
-    <%= link_to 'Remover', ship, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
-  </tr>
-<% end %>
-Há <%= i %> registros.
+  <% @ships.each do |ship| %>
+    <tr>
+      <td><%= ship.nome %></td>
+      <td><%= h(ship.descr).gsub(/\n/, '<br/>').html_safe %></td>
+      <td>
+        <ul>
+          <% ship.books.each do |book| %>
+            <li> <%= book.nome %> </li>
+          <% end %>
+        </ul>
+      </td>
+      <td><%= ship.base_type.nome %></td>
+      <td><%= ship.ship_size.nome %></td>
+      <td><%= link_to 'Detalhes', ship %><br/>
+      <%= link_to 'Editar', edit_ship_path(ship) %><br/>
+      <%= link_to 'Remover', ship, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+    </tr>
+  <% end %>
 </table>
-
+<%= will_paginate @ships %>
 <br />
 
 <%= link_to 'Nova nave', new_ship_path %>

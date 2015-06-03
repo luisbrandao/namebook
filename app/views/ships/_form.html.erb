@@ -1,7 +1,7 @@
 <%= form_for(@ship) do |f| %>
   <% if @ship.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@ship.errors.count, "error") %> A nave não pode ser salva:</h2>
+      <h2><%= pluralize(@ship.errors.count, "erro") %>: A nave não pode ser salva:</h2>
 
       <ul>
       <% @ship.errors.full_messages.each do |msg| %>

@@ -36,13 +36,21 @@ div {
 }
 
 #notice {
-  color: green;
+  color: white;
+  background: green;
+  border-radius: 10px;
+  padding: 6px;
+  font-weight: bold;
+  
 }
 
 .field_with_errors {
-  padding: 2px;
+  color: white;
   background-color: red;
   display: table;
+  border-radius: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 #error_explanation {
@@ -52,6 +60,7 @@ div {
   padding-bottom: 0;
   margin-bottom: 20px;
   background-color: #f0f0f0;
+  border-radius: 10px;
   h2 {
     text-align: left;
     font-weight: bold;

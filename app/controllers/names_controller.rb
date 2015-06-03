@@ -7,6 +7,7 @@ class NamesController < ApplicationController
   def index
     @search = Name.search(params[:q])
     @names = @search.result.order('nome')
+      .paginate(page: params[:page], per_page: 50)
   end
 
   # GET /names/1

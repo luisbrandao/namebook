@@ -6,11 +6,7 @@ class Name < ActiveRecord::Base
   
   validates :nome, presence: true
   validates :race_id, presence: true
-  validate :has_books?
-  
-  def has_books?
-    errors.add(:base, 'O nome deve estar em ao menos um livro') if self.books.blank?
-  end
+  validates :books, presence: true
 
   def sexo_txt
     ["", "Masculino", "Feminino"][self.sexo - 1]

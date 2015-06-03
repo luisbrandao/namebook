@@ -11,16 +11,7 @@
  *= require_self
  *= require_tree .
  */
-table {
-  border: 0.5px solid #000;
-  width: 100%;
-}
-tr {
-  border: 0.5px solid #000;
-}
-td {
-  border: 0.5px solid #000;
-}
+
 body {
   margin: 0;
   margin-bottom: 25px;
@@ -181,3 +172,28 @@ a:hover {
   display: inline-block;
   padding: 5px;
 }
+
+.table {
+  border-collapse: collapse;
+  border: 2px solid #000;
+  min-width: 50%;
+  width: auto;
+}
+.table th {
+  padding: 5px;
+  border: 1px solid #000;
+}
+.table td {
+  border: 1px solid #000;
+}
+.table tr:nth-of-type(odd){
+  background-color: #E0E0E0;
+}
+.table tr:hover {
+  background-color: #CCCCCC;
+}
+.table ol,ul {
+  margin: 0px;
+  margin-left: -25px;
+}
+

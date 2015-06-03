@@ -6,6 +6,7 @@ class OrbsController < ApplicationController
   def index
     @search = Orb.search(params[:q])
     @orbs = @search.result.order('nome')
+      .paginate(page: params[:page], per_page: 50)
   end
 
   # GET /orbs/1

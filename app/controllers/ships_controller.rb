@@ -6,6 +6,7 @@ class ShipsController < ApplicationController
   def index
     @search = Ship.search(params[:q])
     @ships = @search.result.order('nome')
+          .paginate(page: params[:page], per_page: 50)
   end
 
   # GET /ships/1

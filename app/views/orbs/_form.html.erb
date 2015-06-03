@@ -1,7 +1,7 @@
 <%= form_for(@orb) do |f| %>
   <% if @orb.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@orb.errors.count, "error") %> O corpo celeste não pode ser salvo:</h2>
+      <h2><%= pluralize(@orb.errors.count, "erro") %>: O corpo celeste não pode ser salvo:</h2>
 
       <ul>
       <% @orb.errors.full_messages.each do |msg| %>
