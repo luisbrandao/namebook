@@ -11,6 +11,9 @@
   <%= render :partial => 'layouts/header' %>
   <%= render :partial => 'layouts/sidebar' %>
   <div id="content">
+    <% if notice %>
+      <p id="notice"><%= notice %></p>
+    <% end %>
     <%= yield %>
   </div>
   <%= render :partial => 'layouts/footer' %>
