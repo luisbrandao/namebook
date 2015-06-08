@@ -59,17 +59,17 @@ a:hover {
   clear: both;
 }
 #header, #about, #getting-started {
-  padding: 5px;                                                                                                                                             
-  padding-left: 50px;    
+  padding: 5px;
+  padding-left: 50px;
 }
 #header {
   height: 64px;
 }
-#header h1, #header h2 {
-  margin-top: 30px;
-  margin: 0
+#header h1 {
 }
 #header h2 {
+  margin-top: 30px;
+  margin: 0;
   color: #888;
   font-weight: normal;
   font-size: 16px;
