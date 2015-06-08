@@ -47,6 +47,7 @@ a:hover {
   padding: 25px;
   width: auto;
   overflow: auto;
+  border-radius: 20px;
 }
 #sidebar {
   margin-left: 10px;
