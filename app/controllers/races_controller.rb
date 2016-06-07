@@ -36,7 +36,7 @@ class RacesController < ApplicationController
         format.html { redirect_to @race}
         format.json { render json: @race, status: :created, location: @race }
       else
-        flash[:success] = 'Houve um problema ao criar uma nova raça.'
+        flash[:danger] = 'Houve um problema ao criar uma nova raça.'
         format.html { render action: "new" }
         format.json { render json: @race.errors, status: :unprocessable_entity }
       end
@@ -52,7 +52,7 @@ class RacesController < ApplicationController
         format.html { redirect_to @race }
         format.json { head :no_content }
       else
-        flash[:success] = 'Houve um problema ao atualizar a raça'
+        flash[:danger] = 'Houve um problema ao atualizar a raça'
         format.html { render action: "edit" }
         format.json { render json: @race.errors, status: :unprocessable_entity }
       end
@@ -62,11 +62,16 @@ class RacesController < ApplicationController
   # DELETE /races/1
   # DELETE /races/1.json
   def destroy
-    @race.destroy
-
     respond_to do |format|
-      format.html { redirect_to races_url }
-      format.json { head :no_content }
+      if @race.destroy
+        flash[:success] = 'A raça foi removida com sucesso.'
+        format.html { redirect_to races_url }
+        format.json { head :no_content }
+      else
+        flash[:danger] = 'Não foi possivel remover a raça: Há dependentes.'
+        format.html { redirect_to races_url }
+        format.json { head :no_content }
+      end
     end
   end
   

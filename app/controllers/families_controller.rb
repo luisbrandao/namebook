@@ -63,22 +63,26 @@ class FamiliesController < ApplicationController
         format.html { redirect_to @family }
         format.json { head :no_content }
       else
-        flash[:success] = 'Houve um problema ao atualizar a família.'
+        flash[:danger] = 'Houve um problema ao atualizar a família.'
         format.html { render action: "edit" }
         format.json { render json: @family.errors, status: :unprocessable_entity }
       end
     end
   end
 
-
   # DELETE /families/1
   # DELETE /families/1.json
   def destroy
-    @family.destroy
-
     respond_to do |format|
-      format.html { redirect_to families_url }
-      format.json { head :no_content }
+      if @family.destroy
+        flash[:success] = 'A família foi removida com sucesso.'
+        format.html { redirect_to families_url }
+        format.json { head :no_content }
+      else
+        flash[:danger] = 'Não foi possivel remover a família: Há dependentes.'
+        format.html { redirect_to families_url }
+        format.json { head :no_content }
+      end
     end
   end
 

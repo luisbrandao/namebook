@@ -36,9 +36,11 @@ class ShipsController < ApplicationController
 
     respond_to do |format|
       if @ship.save
-        format.html { redirect_to @ship, notice: 'Uma nova nave foi criada com sucesso.' }
+        flash[:success] = 'Uma nova nave foi criada com sucesso.'
+        format.html { redirect_to @ship }
         format.json { render json: @ship, status: :created, location: @ship }
       else
+        flash[:danger] = 'Houve um problema ao criar uma nova nave.'
         format.html { render action: "new" }
         format.json { render json: @ship.errors, status: :unprocessable_entity }
       end
@@ -51,9 +53,11 @@ class ShipsController < ApplicationController
     @book = Book.order('nome')
     respond_to do |format|
       if @ship.update_attributes(ship_params)
-        format.html { redirect_to @ship, notice: 'A nave foi atualizada com sucesso.' }
+        flash[:success] = 'A nave foi atualizada com sucesso.'
+        format.html { redirect_to @ship }
         format.json { head :no_content }
       else
+        flash[:danger] = 'Houve um problema ao atualizar a nave.'
         format.html { render action: "edit" }
         format.json { render json: @ship.errors, status: :unprocessable_entity }
       end
@@ -63,11 +67,16 @@ class ShipsController < ApplicationController
   # DELETE /ships/1
   # DELETE /ships/1.json
   def destroy
-    @ship.destroy
-
     respond_to do |format|
-      format.html { redirect_to ships_url }
-      format.json { head :no_content }
+      if @ship.destroy
+        flash[:success] = 'A nave foi removida com sucesso.'
+        format.html { redirect_to ships_url }
+        format.json { head :no_content }
+      else
+        flash[:danger] = 'Não foi possível remover a nave: Há dependentes.'
+        format.html { redirect_to ships_url }
+        format.json { head :no_content }
+      end
     end
   end
   

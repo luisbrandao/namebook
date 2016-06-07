@@ -68,11 +68,16 @@ class NamesController < ApplicationController
   # DELETE /names/1
   # DELETE /names/1.json
   def destroy
-    @name.destroy
-
     respond_to do |format|
-      format.html { redirect_to names_url }
-      format.json { head :no_content }
+      if @name.destroy
+        flash[:success] = 'O nome foi removido com sucesso.'
+        format.html { redirect_to names_url }
+        format.json { head :no_content }
+      else
+        flash[:danger] = 'Não foi possivel remover o nome: Há dependentes.'
+        format.html { redirect_to names_url }
+        format.json { head :no_content }
+      end
     end
   end
   

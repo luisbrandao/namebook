@@ -1,37 +1,34 @@
 <h1>Listando naves</h1>
 
+<div id="flip"> <h5>Buscar por nomes: </h5> <div id="panel">
+  <div id="search-form", :class="form-inline"> <fieldset>
+  <%= search_form_for @search, :html => {:class => "form-inline"} do |f| %>
 
-<div id="search-form"> <fieldset>
-  <legend>Buscar por naves:</legend>
-  <%= search_form_for @search do |f| %>
-    <div class="field">
-    <%= f.label :nome, "Nome: " %><br />
-    <%= f.text_field :nome_cont, :class => "search-field"%>
+    <%= f.label :nome, "Nome: " %>
+    <%= f.text_field :nome_cont, :class => "input-medium search-field" %>
+
+    <%= f.label :base_type_id, "Tipo base:" %>
+    <%= f.select :base_type_id_eq, options_from_collection_for_select(BaseType.all,"id","nome",@search.base_type_id_eq), 
+        {:include_blank => "Todos"}, {:class => "input-medium search-field"} %> 
+
+    <%= f.label :ship_size_id, "Tamanho da nave:" %>
+    <%= f.select :ship_size_id_eq, options_from_collection_for_select(ShipSize.all,"id","nome",@search.ship_size_id_eq), 
+        {:include_blank => "Todos"}, {:class => "input-medium search-field"} %> 
+
+    <%= f.label :books_id_eq, "Livro:" %>
+    <%= f.collection_select :books_id_eq, Book.order(:nome), :id, :nome,
+        {:include_blank => "Todos"}, {:class => "input-medium search-field"} %> 
+
+    <div class="actions">
+      <%= f.submit "Buscar", class: 'btn btn-default' %>
+      <%= f.submit "Limpar campos", :id => "reset_btn", class: 'btn btn-default' %>
     </div>
-    <div class="field">
-      <%= f.label :base_type_id, "Tipo base:" %><br />
-      <%= f.select :base_type_id_eq, options_from_collection_for_select(BaseType.all,"id","nome",@search.base_type_id_eq), 
-          {:include_blank => "Todos"}, {:class => "search-field"} %>
-    </div>
-    <div class="field">
-      <%= f.label :ship_size_id, "Tamanho da nave:" %><br />
-      <%= f.select :ship_size_id_eq, options_from_collection_for_select(ShipSize.all,"id","nome",@search.ship_size_id_eq), 
-          {:include_blank => "Todos"}, {:class => "search-field"} %>
-    </div>
-    <div class="field">
-      <%= f.label :books_id_eq, "Livro:" %><br />
-      <%= f.collection_select :books_id_eq, Book.order(:nome), :id, :nome,
-          {:include_blank => "Todos"}, {:class => "search-field"} %>
-    </div>
-  <div class="actions">
-    <%= f.submit "Buscar" %>
-    <%= f.submit "Limpar campos", :id => "reset_btn" %>
-  </div>
   <% end %>
 </fieldset> </div>
+</div> </div>
 
 <%= page_entries_info @ships %>
-<table class=table>
+<table class="table table-striped">
   <tr>
     <th><%= sort_link(@search, :nome, "Nome") %></th>
     <th>Descrição</th>
@@ -63,4 +60,4 @@
 <%= will_paginate @ships %>
 <br />
 
-<%= link_to 'Nova nave', new_ship_path %>
+<%= link_to 'Nova nave', new_ship_path, class: 'btn btn-success' %>
