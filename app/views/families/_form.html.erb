@@ -1,7 +1,7 @@
 <%= form_for(@family) do |f| %>
   <% if @family.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@family.errors.count, "erro") %>: A família não pode ser salva:</h2></h2>
+      <h2><%= pluralize(@family.errors.count, "erro") %>: </h2>
 
       <ul>
       <% @family.errors.full_messages.each do |msg| %>
@@ -12,14 +12,14 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :nome %><br />
-    <%= f.text_field :nome, :size => "60"  %>
+    <%= f.label :nome, "Nome:"%>
+    <%= f.text_field :nome, :size => "60" %>
   </div>
-
-  <div style="width: 600px;">
-    <div style="float: left; width: 300px;">
+  <br>
+  <div class="twocolunm">
+    <div id="left">
       <%= hidden_field_tag 'family[race_ids][]', '' %>
-      <%= f.label :races, "Raças" %><br />
+      <%= f.label :races, "Raças:" %>
       <% @race.each do |race| %>
         <div>
           <%= check_box_tag "family[race_ids][]", race.id, @family.races.include?(race) %>
@@ -27,22 +27,22 @@
         </div>
       <% end %>  
     </div>
-    <div style="float: left; width: 300px;">
+    <div id="right">
       <%= hidden_field_tag 'family[book_ids][]', '' %>
-      <%= f.label :books, "Livros" %><br />
+      <%= f.label :books, "Livros:" %>
       <% @book.each do |book| %>
         <div>
           <%= check_box_tag "family[book_ids][]", book.id, @family.books.include?(book) %>
           <%= book.nome %>
         </div>
       <% end %>
-
     </div>
     <br style="clear: left;" />
   </div>
   
+  <br>
   <div class="field">
-    <%= f.label :descr, "Descrição" %><br />
+    <%= f.label :descr, "Descrição:" %><br />
     <%= f.text_area :descr, :size => "68x10"  %>
   </div>
   

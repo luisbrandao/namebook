@@ -41,9 +41,11 @@ class FamiliesController < ApplicationController
 
     respond_to do |format|
       if @family.save
-        format.html { redirect_to @family, notice: 'Uma nova família foi criada com sucesso.' }
-        format.json { render action: 'show', status: :created, location: @family }
+        flash[:success] = 'Uma nova família foi criada com sucesso.'
+        format.html { redirect_to @family }
+        format.json { render :show, status: :created, location: @family }
       else
+        flash[:danger] = 'Houve um problema na criação da nova família.'
         format.html { render action: "new" }
         format.json { render json: @family.errors, status: :unprocessable_entity }
       end
@@ -57,9 +59,11 @@ class FamiliesController < ApplicationController
     @race = Race.order('nome')
     respond_to do |format|
       if @family.update_attributes(family_params)
-        format.html { redirect_to @family, notice: 'A família foi atualizada com sucesso.' }
+        flash[:success] = 'A família foi atualizada com sucesso.'
+        format.html { redirect_to @family }
         format.json { head :no_content }
       else
+        flash[:success] = 'Houve um problema ao atualizar a família.'
         format.html { render action: "edit" }
         format.json { render json: @family.errors, status: :unprocessable_entity }
       end

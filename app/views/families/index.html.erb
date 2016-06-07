@@ -1,29 +1,28 @@
 <h1>Lista das famílias</h1>
 
-<div id="search-form"> <fieldset>
-  <legend>Buscar por famílias:</legend>
-  <%= search_form_for @search do |f| %>
-    <div class="field">
-    <%= f.label :nome, "Nome: " %><br />
-    <%= f.text_field :nome_cont, :class => "search-field"%>
+<div id="flip"> <h5>Buscar por famílias: </h5>
+<div id="panel">
+  <div id="search-form", :class="form-inline"> <fieldset>
+    <%= search_form_for @search, :html => {:class => "form-inline"} do |f| %>
+      <%= f.label :nome, "Nome: " %>
+      <%= f.text_field :nome_cont, :class => "input-medium search-field" %>
+
+      <%= f.label :races_id_eq, "Raça:" %>
+      <%= f.collection_select :races_id_eq, Race.order(:nome), :id, :nome, {:include_blank => "Todos"}, :class => "input-medium search-field" %>
+
+      <%= f.label :books_id_eq, "Livro:" %>
+      <%= f.collection_select :books_id_eq, Book.order(:nome), :id, :nome, {:include_blank => "Todos"}, :class => "input-medium search-field" %>
+
+    <div class="actions">
+      <%= f.submit "Buscar", class: 'btn btn-default' %>
+      <%= f.submit "Limpar campos", :id => "reset_btn", class: 'btn btn-default' %>
     </div>
-  <div class="field">
-    <%= f.label :races_id_eq, "Raça:" %><br />
-    <%= f.collection_select :races_id_eq, Race.order(:nome), :id, :nome, {:include_blank => "Todos"}, {:class => "search-field"} %>
-  </div>
-  <div class="field">
-    <%= f.label :books_id_eq, "Livro:" %><br />
-    <%= f.collection_select :books_id_eq, Book.order(:nome), :id, :nome, {:include_blank => "Todos"}, {:class => "search-field"} %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Buscar" %>
-    <%= f.submit "Limpar campos", :id => "reset_btn" %>
-  </div>
-  <% end %>
-</fieldset> </div>
+    <% end %>
+  </fieldset> </div>
+</div> </div>
 
 <%= page_entries_info @families %>
-<table class=table>
+<table class="table table-striped">
   <tr>
     <th><%= sort_link(@search, :nome, "Nome") %></th>
     <th>Integrantes</th>
@@ -68,4 +67,4 @@
 
 <br />
 
-<%= link_to 'Nova familia', new_family_path %>
+<%= link_to 'Nova familia', new_family_path, class: 'btn btn-success' %>

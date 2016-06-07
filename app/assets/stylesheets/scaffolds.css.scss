@@ -16,15 +16,15 @@ div.tricolunm {
 }
 
 div.twocolunm {
-  width: 700px;
+  width: 1000px;
 
   #left{
     float: left;
-    width: 230px;
+    width: 500px;
   }
   #right{
     float: left;
-    width: 230px;
+    width: 500px;
   }
 }
 
@@ -32,7 +32,7 @@ div.twocolunm {
   color: white;
   background-color: red;
   width: 400px;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 #error_explanation {

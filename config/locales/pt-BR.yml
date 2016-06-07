@@ -1,7 +1,7 @@
 pt-BR:
   base_type: tipo base
   book: livro
-  Family: família
+  Family: Família
   Name: Nome
   orb: corpo celeste
   orb_type: tipo de corpo celeste
@@ -210,9 +210,15 @@ pt-BR:
     
   # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
   activemodel:
+    models:
+      book: Livro
+      books: Livros
     errors:
       <<: *errors
   activerecord:
+    models:
+      book: Livro
+      books: Livros
     errors:
       <<: *errors
 
