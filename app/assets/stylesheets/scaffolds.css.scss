@@ -59,3 +59,23 @@ div.twocolunm {
     list-style: square;
   }
 }
+
+#flip {
+  background-color: #f9f9f9;
+  border: solid 1px #c3c3c3;
+  border-radius: 10px;
+}
+
+#flip h5 {
+  text-align: center;
+}
+
+#panel, #flip {
+    padding: 5px;
+}
+
+#panel {
+    padding: 0px;
+    display: none;
+}
+
