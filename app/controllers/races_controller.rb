@@ -32,9 +32,11 @@ class RacesController < ApplicationController
 
     respond_to do |format|
       if @race.save
-        format.html { redirect_to @race, notice: 'Uma nova raça foi criada com sucesso.' }
+        flash[:success] = 'Uma nova raça foi criada com sucesso.'
+        format.html { redirect_to @race}
         format.json { render json: @race, status: :created, location: @race }
       else
+        flash[:success] = 'Houve um problema ao criar uma nova raça.'
         format.html { render action: "new" }
         format.json { render json: @race.errors, status: :unprocessable_entity }
       end
@@ -46,9 +48,11 @@ class RacesController < ApplicationController
   def update
     respond_to do |format|
       if @race.update_attributes(race_params)
-        format.html { redirect_to @race, notice: 'A raça foi atualizada com sucesso.' }
+        flash[:success] = 'A raça foi atualizada com sucesso.'
+        format.html { redirect_to @race }
         format.json { head :no_content }
       else
+        flash[:success] = 'Houve um problema ao atualizar a raça'
         format.html { render action: "edit" }
         format.json { render json: @race.errors, status: :unprocessable_entity }
       end

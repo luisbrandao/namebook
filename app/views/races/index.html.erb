@@ -1,28 +1,21 @@
 <h1>Listando raças</h1>
 
-<div id="search-form"> <fieldset>
-  <legend>Buscar por raças:</legend>
-  <%= search_form_for @search do |f| %>
-    <div style="width: 600px;">
-      <div style="float: left; width: 300px;">
-        <div class="field">
-          <%= f.label :nome, "Nome: " %><br />
-          <%= f.text_field :nome_cont, :class => "search-field", :size => "30" %>
-        </div>
-      </div>
-      <div style="float: left; width: 300px;">
-        <div class="actions">
-          <br/>
-          <%= f.submit "Buscar" %>
-          <%= f.submit "Limpar campos", :id => "reset_btn" %>
-        </div>
-      </div>
-      <br style="clear: left;" />
-    </div>
-  <% end %>
-</fieldset> </div>
+<div id="flip"> <h5>Buscar por nomes: </h5>
+<div id="panel">
+  <div id="search-form", :class="form-inline"> <fieldset>
+    <%= search_form_for @search, :html => {:class => "form-inline"} do |f| %>
+      <%= f.label :nome, "Nome: " %>
+      <%= f.text_field :nome_cont, :class => "input-medium search-field" %>
 
-<table class=table>
+      <div class="actions">
+        <%= f.submit "Buscar" %>
+        <%= f.submit "Limpar campos", :id => "reset_btn" %>
+      </div>
+    <% end %>
+  </fieldset> </div>
+</div> </div>
+
+<table class="table table-striped">
   <tr>
     <th>Nome</th>
     <th>Descrição</th>
@@ -42,4 +35,4 @@
 
 <br />
 
-<%= link_to 'Nova raça', new_race_path %>
+<%= link_to 'Nova raça', new_race_path, class: 'btn btn-success' %>
