@@ -42,14 +42,14 @@
 
   <% @orbs.each do |orb| %>
     <tr>
-      <td><%= orb.nome %></td>
-      <td><%= orb.orbit.try(:nome) %></td>
-      <td><%= orb.orb_type.try(:nome) %></td>
+      <td><%= orb %></td>
+      <td><%= orb.orbit %></td>
+      <td><%= orb.orb_type %></td>
       <td><%= h(orb.descr).gsub(/\n/, '<br/>').html_safe %></td>
       <td>
         <ul>
           <% orb.books.each do |book| %>
-            <li> <%= book.nome %> </li>
+            <li> <%= book %> </li>
           <% end %>
         </ul>
       </td>

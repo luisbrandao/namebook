@@ -1,6 +1,8 @@
+<h1>Detalhes do livro</h1>
+
 <p>
   <b>Nome:</b>
-  <%= @book.nome %>
+  <%= @book %>
 </p>
 
 <div style="width: 600px;">
@@ -8,7 +10,7 @@
     <b>Raças:</b>
     <ul>
       <% @book.races.each do |race| %>
-      <li> <%= race.nome %> </li>
+      <li> <%= race %> </li>
       <% end %>
     </ul>
   </div>

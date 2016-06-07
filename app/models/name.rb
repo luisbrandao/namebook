@@ -11,6 +11,10 @@ class Name < ActiveRecord::Base
   def sexo_txt
     ["", "Masculino", "Feminino"][self.sexo - 1]
   end
+
+  def to_s
+    nome
+  end
 end
 
 

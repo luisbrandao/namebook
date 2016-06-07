@@ -12,14 +12,14 @@
 
 <% @books.each do |book| %>
   <tr>
-    <td><%= book.nome %></td>
+    <td><%= book %></td>
     <td><%= h(book.descr).gsub(/\n/, '<br/>').html_safe %></td>
     <td><%= book.datai %></td>
     <td><%= book.dataf %></td>
     <td>
       <ul>
         <% book.races.each do |race| %>
-          <li> <%= race.nome %> </li>
+          <li> <%= race %> </li>
         <% end %>
       </ul>
     </td>

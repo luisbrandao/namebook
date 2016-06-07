@@ -1,16 +1,17 @@
+<h1>Detalhes do corpo celeste</h1>
 <p>
   <b>Nome:</b>
-  <%= @orb.nome %>
+  <%= @orb %>
 </p>
 
 <p>
   <b>Tipo do corpo celeste:</b>
-  <%= @orb.orb_type.try(:nome) %>
+  <%= @orb.orb_type %>
 </p>
 
 <p>
   <b>Orbita:</b>
-  <%= @orb.orbit.try(:nome) %>
+  <%= @orb.orbit %>
 </p>
 
 <p>
@@ -22,7 +23,7 @@
   <b>Orbitado por:</b>
   <ul>
     <% @orb.orbters.each do |orbter| %>
-    <li> <%= orbter.nome %> </li>
+    <li> <%= orbter %> </li>
     <% end %>
   </ul>
 </p>
@@ -31,7 +32,7 @@
   <b>Livros:</b>
   <ul>
     <% @orb.books.each do |book| %>
-    <li> <%= book.nome %> </li>
+    <li> <%= book %> </li>
     <% end %>
   </ul>
 </p>

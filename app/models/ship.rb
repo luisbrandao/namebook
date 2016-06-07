@@ -6,5 +6,8 @@ class Ship < ActiveRecord::Base
 
   validates :nome, uniqueness: true, presence: true
   validates :books, presence: true
-  
+
+  def to_s
+    nome
+  end
 end

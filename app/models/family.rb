@@ -6,4 +6,8 @@ class Family < ActiveRecord::Base
   
   validates :nome, uniqueness: true, presence: true
   validates :books, :races, presence: true
+
+  def to_s
+    nome
   end
+end

@@ -42,14 +42,14 @@
 
   <% @names.each do |name| %>
     <tr>
-      <td><%= name.nome %></td>    
-      <td><%= name.family.try(:nome) %></td>
-      <td><%= name.race.nome %></td>
+      <td><%= name %></td>    
+      <td><%= name.family %></td>
+      <td><%= name.race %></td>
       <td><%= h(name.descr).gsub(/\n/, '<br/>').html_safe %></td>
       <td>
         <ul>
           <% name.books.each do |book| %>
-            <li> <%= book.nome %> </li>
+            <li> <%= book %> </li>
           <% end %>
         </ul>
       </td>

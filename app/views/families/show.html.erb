@@ -1,7 +1,7 @@
 <h1>Detalhes da Família</h1>
 <p>
   <b>Nome:</b>
-  <%= @family.nome %>
+  <%= @family %>
 </p>
 
 <div style="width: 500px;">
@@ -9,7 +9,7 @@
     <b>Integrantes:</b>
     <ul>
       <% @family.names.each do |name| %>
-      <li> <%= name.nome %> </li>
+      <li> <%= name %> </li>
       <% end %>
     </ul>
   </div>
@@ -18,7 +18,7 @@
     <b>Livros:</b>
     <ul>
       <% @family.books.each do |book| %>
-      <li> <%= book.nome %> </li>
+      <li> <%= book %> </li>
       <% end %>
     </ul>
   </div>
@@ -27,7 +27,7 @@
     <b>Raças:</b>
     <ul>
       <% @family.races.each do |race| %>
-      <li> <%= race.nome %> </li>
+      <li> <%= race %> </li>
       <% end %>
     </ul>
   </div>

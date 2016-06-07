@@ -34,25 +34,25 @@
 
   <% @families.each do |family| %>
     <tr>
-      <td><%= family.nome %></td>
+      <td><%= family %></td>
       <td>
         <ol type="disc">
           <% family.names.each do |name| %>
-            <li> <%= name.nome %> </li>
+            <li> <%= name %> </li>
           <% end %>
         </ol>
       </td>
       <td>
         <ul>
           <% family.races.each do |race| %>
-            <li> <%= race.nome %> </li>
+            <li> <%= race %> </li>
           <% end %>
         </ul>
       </td>
       <td>
         <ol type="disc">
           <% family.books.each do |book| %>
-            <li> <%= book.nome %> </li>
+            <li> <%= book %> </li>
           <% end %>
         </ol>
       </td>

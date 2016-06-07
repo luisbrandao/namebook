@@ -5,4 +5,8 @@ class Race < ActiveRecord::Base
   has_and_belongs_to_many :families, :join_table => "families_races"
 
   validates :nome, uniqueness: true, presence: true
+
+  def to_s
+    nome
+  end
 end

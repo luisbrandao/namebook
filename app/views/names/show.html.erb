@@ -1,6 +1,4 @@
-<h1>Detalhes de um nome</h1>
-<br>
-
+<h1>Detalhes do nome</h1>
 
 <p>
   <b>Nome:</b>
@@ -16,12 +14,12 @@
 
 <p>
   <b>Familia:</b>
-  <%= @name.family.try(:nome) %>
+  <%= @name.family %>
 </p>
 
 <p>
   <b>Raça:</b>
-  <%= @name.race.try(:nome) %>
+  <%= @name.race %>
 </p>
 
 <p>
@@ -39,7 +37,7 @@
   <b>Livros:</b>
   <ul>
     <% @name.books.each do |book| %>
-    <li> <%= book.nome %> </li>
+    <li> <%= book %> </li>
     <% end %>
   </ul>
 </p>

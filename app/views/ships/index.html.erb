@@ -40,17 +40,17 @@
 
   <% @ships.each do |ship| %>
     <tr>
-      <td><%= ship.nome %></td>
+      <td><%= ship %></td>
       <td><%= h(ship.descr).gsub(/\n/, '<br/>').html_safe %></td>
       <td>
         <ul>
           <% ship.books.each do |book| %>
-            <li> <%= book.nome %> </li>
+            <li> <%= book %> </li>
           <% end %>
         </ul>
       </td>
-      <td><%= ship.base_type.nome %></td>
-      <td><%= ship.ship_size.nome %></td>
+      <td><%= ship.base_type %></td>
+      <td><%= ship.ship_size %></td>
       <td><%= link_to 'Detalhes', ship %><br/>
       <%= link_to 'Editar', edit_ship_path(ship) %><br/>
       <%= link_to 'Remover', ship, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>

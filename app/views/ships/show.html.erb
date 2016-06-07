@@ -1,7 +1,7 @@
-<h1>Detalhes de uma nave</h1>
+<h1>Detalhes da nave</h1>
 <p>
   <b>Nome:</b>
-  <%= @ship.nome %>
+  <%= @ship %>
 </p>
 
 <div style="width: 700px;">
@@ -9,7 +9,7 @@
     <b>Livros:</b>
     <ul>
       <% @ship.books.each do |book| %>
-      <li> <%= book.nome %> </li>
+      <li> <%= book %> </li>
       <% end %>
     </ul>
   </div>
@@ -17,14 +17,14 @@
   <div style="float: left; width: 300px;">
     <b>Tipo Base:</b>
       <ul>
-        <li><%= @ship.base_type.nome %> </li>
+        <li><%= @ship.base_type %> </li>
       </ul>
   </div>
 
   <div style="float: left; width: 200px;">
     <b>Classe da nave:</b></br>
       <ul>
-        <li><%= @ship.ship_size.nome %></li>
+        <li><%= @ship.ship_size %></li>
       </ul>
   </div>
   <br style="clear: left;" />
