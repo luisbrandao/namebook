@@ -1,7 +1,7 @@
-<%= form_for(@name) do |f| %>
+<%= form_for(@name, html: {class: 'form-horizontal'}) do |f| %>
   <% if @name.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@name.errors.count, "erro") %>: O nome não pode ser salvo:</h2>
+      <h2><%= pluralize(@name.errors.count, "erro") %>:</h2>
 
       <ul>
       <% @name.errors.full_messages.each do |msg| %>
@@ -11,60 +11,60 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :nome %><br />
-    <%= f.text_field :nome, :size => "60" %>
+  <div class="field form-group">
+    <%= f.label :nome, "Nome:" , class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :nome, class: 'form-control' %>
+    </div>
   </div>
   
-  <div style="width: 500px;">
-    <div style="float: left; width: 110px;">
-      <div class="field">
-        <%= f.label :sexo, "Sexo" %><br />
-        <%= f.select :sexo, [["", 1], ["Masculino", 2], ["Feminino", 3]] %>
-      </div>
+  <div class="field form-group">
+    <%= f.label :sexo, "Sexo:", class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.select :sexo, [["", 1], ["Masculino", 2], ["Feminino", 3]], class: 'form-control' %>
     </div>
-    <div style="float: left; width: 220px;">
-      <div class="field">
-        <%= f.label :race_id, "Raça" %><br />
-        <%= collection_select(:name, :race_id, Race.order('nome'), :id, :nome, { :prompt => "Selecione uma raça" } ) %>
-      </div>
-    </div>
-    <div style="float: left; width: 150px;">
-      <div class="field">
-        <%= f.label :family_id, "Família" %><br />
+  </div>
+  
+  <div class="field form-group">
+    <%= f.label :race_id, "Raça:", class: 'col-sm-2 control-label' %>
+      <div class="col-sm-10">
+    <%= collection_select(:name, :race_id, Race.order('nome'), :id, :nome, { :prompt => "Selecione uma raça" } ) %>
+  </div>
+  
+  <div class="field form-group">
+    <%= f.label :family_id, "Família:", class: 'col-sm-2 control-label' %>
+      <div class="col-sm-10">
         <%= collection_select(:name, :family_id, Family.order('nome'), :id, :nome, { :include_blank => "Selecione uma família" }) %>
       </div>
-    </div>
-    <br style="clear: left;" />
-  </div>
- 
-   <div style="width: 600px;">
-    <div style="float: left; width: 300px;">
-      <div class="field">
-        <%= f.label :descr, "Descrição" %><br />
-        <%= f.text_area :descr, :size => "38x15"  %>
-      </div>
-    </div>
-    <div style="float: left; width: 300px;">
-      <div class="field">
-        <%= f.label :aparencia %><br />
-        <%= f.text_area :aparencia, :size => "38x15"  %>
-      </div>
-    </div>
-    <br style="clear: left;" />
   </div>
 
-  <div>
+  <div class="field form-group">
+    <%= f.label :descr, "Descrição:", class: 'col-sm-2 control-label' %>
+      <div class="col-sm-10">
+        <%= f.text_area :descr %>
+      </div>
+  </div>
+  
+  <div class="field form-group">
+    <%= f.label :aparencia, "Aparência:", class: 'col-sm-2 control-label' %>
+      <div class="col-sm-10">
+        <%= f.text_area :aparencia %>
+      </div>
+  </div>
+
+  <div class="field form-group">
     <%= hidden_field_tag 'name[book_ids][]', '' %>
-    <%= f.label :books, "Livros" %><br />
-    <% @book.each do |book| %>
-      <div>
-        <%= check_box_tag "name[book_ids][]", book.id, @name.books.include?(book) %> <%= book.nome %>
+    <%= f.label :books, "Livros:", class: 'col-sm-2 control-label' %>
+      <div class="col-sm-10">
+        <% @book.each do |book| %>
+          <%= check_box_tag "name[book_ids][]", book.id, @name.books.include?(book) %> <%= book.nome %>
+        <% end %>
       </div>
-    <% end %>
   </div>
 
-  <div class="actions">
-    <%= f.submit @name.new_record? ? "Criar novo nome" : "Atualizar nome" %>
+  <div class="actions form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <%= f.submit @name.new_record? ? "Criar novo nome" : "Atualizar nome" %>
+      </div>
   </div>
 <% end %>

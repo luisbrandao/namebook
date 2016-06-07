@@ -37,9 +37,11 @@ class NamesController < ApplicationController
 
     respond_to do |format|
       if @name.save
-        format.html { redirect_to @name, notice: 'Um novo nome foi criado com sucesso.' }
-        format.json { render json: @name, status: :created, location: @name }
+        flash[:success] = 'Um novo nome foi criado com sucesso.'
+        format.html { redirect_to @name }
+        format.json { render :show, status: :created, location: @name }
       else
+        flash[:danger] = 'Houve um problema na criação do novo nome.'
         format.html { render action: "new" }
         format.json { render json: @name.errors, status: :unprocessable_entity }
       end
@@ -52,10 +54,12 @@ class NamesController < ApplicationController
     @book = Book.order('nome')
     respond_to do |format|
       if @name.update_attributes(name_params)
-        format.html { redirect_to @name, notice: 'O nome foi atualizado com sucesso.' }
+        flash[:success] = 'O nome foi atualizado com sucesso.'
+        format.html { redirect_to @name }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
+        flash[:danger] = 'Houve um problema ao atualizar o nome.'
+        format.html { render :edit }
         format.json { render json: @name.errors, status: :unprocessable_entity }
       end
     end

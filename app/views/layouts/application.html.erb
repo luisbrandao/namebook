@@ -1,22 +1,37 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <title> O grande livro dos nomes </title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body class='<%= controller.controller_name %>'>
-<div id="page">
-  <%= render :partial => 'layouts/header' %>
-  <%= render :partial => 'layouts/sidebar' %>
-  <div id="content">
-    <% if notice %>
-      <p id="notice"><%= notice %></p>
-    <% end %>
-    <%= yield %>
-  </div>
-  <%= render :partial => 'layouts/footer' %>
-</div>
-</body>
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "O Grande Livro dos nomes" %></title>
+    <meta name="description" content="Sistema de apoio a minha produção literária">
+    <meta name="author" content="Luis Alexandre Deschamps Brandão">
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <%= yield(:head) %>
+  </head>
+  <body>
+    <header class="navbar navbar-fixed-top">
+      <nav class="navbar-inner">
+        <div class="container">
+          <%= render 'layouts/links' %>
+        </div>
+      </nav>
+    </header>
+    <div id="main" role="main">
+      <div class="container">
+        <div class="content">
+           <div class="row">
+            <div class="span12">
+              <%= render 'layouts/header' %>
+              <%= yield %>
+            </div>
+          </div>
+          <footer>
+          </footer>
+        </div>
+      </div> <!--! end of .container -->
+    </div> <!--! end of #main -->
+  </body>
 </html>

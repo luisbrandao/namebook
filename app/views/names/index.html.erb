@@ -1,41 +1,38 @@
 <h1>Listando Nomes</h1>
 
-<div id="search-form"> <fieldset>
+<div id="search-form", :class="form-inline"> <fieldset>
   <legend>Buscar por nomes:</legend>
-  <%= search_form_for @search do |f| %>
-    <div class="field">
-      <%= f.label :nome, "Nome: " %><br />
-      <%= f.text_field :nome_cont, :class => "search-field"%>
-    </div>
-    
-    <div class="field">
-      <%= f.label :sexo, "Sexo" %><br />
-      <%= f.select :sexo_eq, [["Indefinido", 1], ["Masculino", 2], ["Feminino", 3]], {:include_blank => "Todos"}, {:class => "search-field"} %>
-    </div>
-    
-    <div class="field">
-      <%= f.label :family_id, "Família:" %><br />
-      <%= f.select :family_id_eq, options_from_collection_for_select(Family.all,"id","nome",@search.family_id_eq), 
-          {:include_blank => "Todos"}, {:class => "search-field"} %>
-    </div>
-    <div class="field">
-      <%= f.label :race_id, "Raça:" %><br />
-      <%= f.select :race_id_eq, options_from_collection_for_select(Race.all,"id","nome",@search.race_id_eq), 
-          {:include_blank => "Todos"}, {:class => "search-field"} %>
-    </div>
-    <div class="field">
-      <%= f.label :books_id_eq, "Livro:" %><br />
-      <%= f.collection_select :books_id_eq, Book.order(:nome), :id, :nome, {:include_blank => "Todos"}, {:class => "search-field"} %> 
-    </div>
+  <%= search_form_for @search, :html => {:class => "form-inline"} do |f| %>
+    <%= f.label :nome, "Nome: " %>
+    <%= f.text_field :nome_cont, :class => "input-medium search-field" %>
+  
+    <%= f.label :sexo, "Sexo" %>
+    <%= f.select :sexo_eq, [["Indefinido", 1], ["Masculino", 2], ["Feminino", 3]], {:include_blank => "Todos"}, {:class => "input-medium search-field"} %>
+  
+    <%= f.label :family_id, "Família:" %>
+    <%= f.select :family_id_eq, options_from_collection_for_select(Family.all,"id","nome",@search.family_id_eq), 
+        {:include_blank => "Todos"}, {:class => "input-medium search-field"} %>
+
+    <%= f.label :race_id, "Raça:" %>
+    <%= f.select :race_id_eq, options_from_collection_for_select(Race.all,"id","nome",@search.race_id_eq), 
+        {:include_blank => "Todos"}, {:class => "input-medium search-field"} %>
+
+    <%= f.label :books_id_eq, "Livro:" %>
+    <%= f.collection_select :books_id_eq, Book.order(:nome), :id, :nome, {:include_blank => "Todos"}, {:class => "input-medium search-field"} %> 
+
   <div class="actions">
-    <%= f.submit "Buscar" %>
-    <%= f.submit "Limpar campos", :id => "reset_btn" %>
+    <%= f.submit "Buscar", class: 'btn btn-default' %>
+    <%= f.submit "Limpar campos", :id => "reset_btn", class: 'btn btn-default' %>
   </div>
   <% end %>
 </fieldset> </div>
 
+<p>
+  <%= link_to 'Novo nome', new_name_path, class: 'btn btn-success' %>
+</p>
+
 <%= page_entries_info @names %>
-<table class=table>
+<table class="table table-striped">
   <tr>
     <th><%= sort_link(@search, :nome, "Nome") %></th>
     <th><%= sort_link(@search, :family_id, "Familia") %></th>
@@ -68,4 +65,4 @@
 
 <br />
 
-<%= link_to 'Novo nome', new_name_path %>
+>

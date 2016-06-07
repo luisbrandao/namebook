@@ -1,56 +1,38 @@
-body {
-  background-color: #fff;
-  color: #333;
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
-}
+div.tricolunm {
+  width: 700px;
 
-p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
-}
-
-pre {
-  background-color: #eee;
-  padding: 10px;
-  font-size: 11px;
-}
-
-a {
-  color: #000;
-  &:visited {
-    color: #666;
+  #left{
+    float: left;
+    width: 230px;
   }
-  &:hover {
-    color: #fff;
-    background-color: #000;
+  #middle{
+    float: left;
+    width: 230px;
+  }
+  #right{
+    float: left;
+    width: 230px;
   }
 }
 
-div {
-  &.field, &.actions {
-    margin-bottom: 10px;
-  }
-}
+div.twocolunm {
+  width: 700px;
 
-#notice {
-  color: white;
-  background: green;
-  border-radius: 10px;
-  padding: 6px;
-  font-weight: bold;
-  
+  #left{
+    float: left;
+    width: 230px;
+  }
+  #right{
+    float: left;
+    width: 230px;
+  }
 }
 
 .field_with_errors {
   color: white;
   background-color: red;
-  display: table;
-  border-radius: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
+  width: 400px;
+  border-radius: 10px;
 }
 
 #error_explanation {
@@ -64,7 +46,7 @@ div {
   h2 {
     text-align: left;
     font-weight: bold;
-    padding: 5px 5px 5px 15px;
+    padding: 0px 0px 0px 15px;
     font-size: 12px;
     margin: -7px;
     margin-bottom: 0px;
@@ -72,6 +54,7 @@ div {
     color: #fff;
   }
   ul li {
+    padding-top: 5px;
     font-size: 12px;
     list-style: square;
   }

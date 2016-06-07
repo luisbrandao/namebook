@@ -7,6 +7,9 @@ gem 'rails', '~> 4.1.5'
 gem 'sqlite3'
 #gem 'mysql2'
 
+gem 'bootstrap-sass'
+gem "twitter-bootstrap-rails"
+
 # Gems used only for assets
 gem 'sass-rails'
 gem 'coffee-rails'
