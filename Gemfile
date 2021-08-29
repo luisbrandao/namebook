@@ -1,13 +1,13 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 4.1.5'
+gem 'rails', '~> 4.1.16'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 gem 'sqlite3'
 #gem 'mysql2'
 
-gem 'json', '~> 1.8.5'
+gem 'json', '~> 1.8.6'
 
 gem 'bootstrap-sass'
 gem "twitter-bootstrap-rails"
