@@ -1,15 +1,15 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 4.1.16'
+gem 'rails', '~> 4.2'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-gem 'sqlite3'
+gem 'sqlite3', '1.3.13'
 #gem 'mysql2'
 
 gem 'json', '~> 1.8.6'
 
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '~> 2'
 gem "twitter-bootstrap-rails"
 
 # Gems used only for assets
@@ -25,7 +25,6 @@ gem 'activerecord-session_store'
 gem 'activeresource'
 # gem 'protected_attributes'
 gem 'rails-observers'
-gem 'rails-perftest'
 
 # Better Errors
 group :development do
