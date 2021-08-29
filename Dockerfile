@@ -1,9 +1,9 @@
-FROM ruby:2.1-alpine
+FROM ruby:2.3.8-alpine
 #FROM centos:7
 MAINTAINER Luis Alexandre Deschamps Brandão <techmago@ymail.com>
 
 RUN ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
-RUN apk --update add git make gcc mysql-dev nodejs nodejs-dev sqlite-dev patch musl-dev tzdata
+RUN apk --update add git make gcc mysql-dev nodejs nodejs-dev sqlite-dev patch musl-dev tzdata g++
 
 ADD . /app
 WORKDIR /app
