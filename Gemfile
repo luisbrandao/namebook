@@ -7,6 +7,8 @@ gem 'rails', '~> 4.1.5'
 gem 'sqlite3'
 #gem 'mysql2'
 
+gem 'json', '~> 1.8.5'
+
 gem 'bootstrap-sass'
 gem "twitter-bootstrap-rails"
 
@@ -31,10 +33,7 @@ group :development do
   gem 'binding_of_caller'
 end
 
-# Puma for development
-group :development do
-  gem 'puma'
-end
+gem 'puma', '~> 3.7.1'
 
 # Provides methods for searches
 gem 'ransack'
