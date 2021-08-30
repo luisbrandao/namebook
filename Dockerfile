@@ -13,5 +13,5 @@ ENV RAILS_ENV=production
 RUN bundle install
 RUN bundle exec rake assets:precompile
 
-EXPOSE 3000
+EXPOSE 3010
 ENTRYPOINT ["/app/start.sh"]
