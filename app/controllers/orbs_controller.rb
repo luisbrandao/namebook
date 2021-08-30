@@ -33,12 +33,14 @@ class OrbsController < ApplicationController
   def create
     @book = Book.order('nome')
     @orb = Orb.new(orb_params)
-    
+
     respond_to do |format|
       if @orb.save
-        format.html { redirect_to @orb, notice: 'Um novo corpo celeste foi criado com sucesso.' }
+        flash[:success] = 'Um novo corpo celeste foi criado com sucesso.'
+        format.html { redirect_to @orb}
         format.json { render json: @orb, status: :created, location: @orb }
       else
+        flash[:danger] = 'Houve um problema na criação do novo corpo celeste.'
         format.html { render action: "new" }
         format.json { render json: @orb.errors, status: :unprocessable_entity }
       end
@@ -53,9 +55,11 @@ class OrbsController < ApplicationController
 
     respond_to do |format|
       if @orb.update_attributes(orb_params)
-        format.html { redirect_to @orb, notice: 'O corpo celeste foi atualizado com sucesso.' }
+        flash[:success] = 'O corpo celeste foi atualizado com sucesso.'
+        format.html { redirect_to @orb}
         format.json { head :no_content }
       else
+        flash[:danger] = 'Houve um problema ao atualizar o corpo celeste.'
         format.html { render action: "edit" }
         format.json { render json: @orb.errors, status: :unprocessable_entity }
       end
@@ -72,9 +76,9 @@ class OrbsController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
+
   private
-  
+
     # Use callbacks to share common setup or constraints between actions.
     def set_orb
       @orb = Orb.find(params[:id])

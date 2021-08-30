@@ -1,4 +1,4 @@
-<%= form_for(@orb) do |f| %>
+<%= form_for(@orb, html: {class: 'form-horizontal'}) do |f| %>
   <% if @orb.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@orb.errors.count, "erro") %>: O corpo celeste não pode ser salvo:</h2>
@@ -15,7 +15,7 @@
     <%= f.label :nome %><br />
     <%= f.text_field :nome, :size => "60" %>
   </div>
-  
+
   <div style="width: 600px;">
     <div style="float: left; width: 300px;">
       <div class="field">
@@ -40,12 +40,12 @@
     </div>
     <br style="clear: left;" />
   </div>
-  
+
   <div class="field">
     <%= f.label :descr, "Descrição" %><br />
     <%= f.text_area :descr, :size => "68x15"  %>
   </div>
-  
+
   <div class="actions">
     <%= f.submit @orb.new_record? ? "Criar novo corpo celeste" : "Atualizar o corpo celeste" %>
   </div>

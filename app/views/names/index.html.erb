@@ -6,20 +6,20 @@
     <%= search_form_for @search, :html => {:class => "form-inline"} do |f| %>
       <%= f.label :nome, "Nome: " %>
       <%= f.text_field :nome_cont, :class => "input-medium search-field" %>
-    
+
       <%= f.label :sexo, "Sexo" %>
       <%= f.select :sexo_eq, [["Indefinido", 1], ["Masculino", 2], ["Feminino", 3]], {:include_blank => "Todos"}, {:class => "input-medium search-field"} %>
-    
+
       <%= f.label :family_id, "Família:" %>
-      <%= f.select :family_id_eq, options_from_collection_for_select(Family.all,"id","nome",@search.family_id_eq), 
+      <%= f.select :family_id_eq, options_from_collection_for_select(Family.all,"id","nome",@search.family_id_eq),
           {:include_blank => "Todos"}, {:class => "input-medium search-field"} %>
 
       <%= f.label :race_id, "Raça:" %>
-      <%= f.select :race_id_eq, options_from_collection_for_select(Race.all,"id","nome",@search.race_id_eq), 
+      <%= f.select :race_id_eq, options_from_collection_for_select(Race.all,"id","nome",@search.race_id_eq),
           {:include_blank => "Todos"}, {:class => "input-medium search-field"} %>
 
       <%= f.label :books_id_eq, "Livro:" %>
-      <%= f.collection_select :books_id_eq, Book.order(:nome), :id, :nome, {:include_blank => "Todos"}, {:class => "input-medium search-field"} %> 
+      <%= f.collection_select :books_id_eq, Book.order(:nome), :id, :nome, {:include_blank => "Todos"}, {:class => "input-medium search-field"} %>
 
     <div class="actions">
       <%= f.submit "Buscar", class: 'btn btn-default' %>
@@ -42,7 +42,7 @@
 
   <% @names.each do |name| %>
     <tr>
-      <td><%= name %></td>    
+      <td><%= name %></td>
       <td><%= name.family %></td>
       <td><%= name.race %></td>
       <td><%= h(name.descr).gsub(/\n/, '<br/>').html_safe %></td>

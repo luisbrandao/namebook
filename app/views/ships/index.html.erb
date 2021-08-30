@@ -8,16 +8,16 @@
     <%= f.text_field :nome_cont, :class => "input-medium search-field" %>
 
     <%= f.label :base_type_id, "Tipo base:" %>
-    <%= f.select :base_type_id_eq, options_from_collection_for_select(BaseType.all,"id","nome",@search.base_type_id_eq), 
-        {:include_blank => "Todos"}, {:class => "input-medium search-field"} %> 
+    <%= f.select :base_type_id_eq, options_from_collection_for_select(BaseType.all,"id","nome",@search.base_type_id_eq),
+        {:include_blank => "Todos"}, {:class => "input-medium search-field"} %>
 
     <%= f.label :ship_size_id, "Tamanho da nave:" %>
-    <%= f.select :ship_size_id_eq, options_from_collection_for_select(ShipSize.all,"id","nome",@search.ship_size_id_eq), 
-        {:include_blank => "Todos"}, {:class => "input-medium search-field"} %> 
+    <%= f.select :ship_size_id_eq, options_from_collection_for_select(ShipSize.all,"id","nome",@search.ship_size_id_eq),
+        {:include_blank => "Todos"}, {:class => "input-medium search-field"} %>
 
     <%= f.label :books_id_eq, "Livro:" %>
     <%= f.collection_select :books_id_eq, Book.order(:nome), :id, :nome,
-        {:include_blank => "Todos"}, {:class => "input-medium search-field"} %> 
+        {:include_blank => "Todos"}, {:class => "input-medium search-field"} %>
 
     <div class="actions">
       <%= f.submit "Buscar", class: 'btn btn-default' %>

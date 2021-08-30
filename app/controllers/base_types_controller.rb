@@ -31,9 +31,11 @@ class BaseTypesController < ApplicationController
 
     respond_to do |format|
       if @base_type.save
-        format.html { redirect_to @base_type, notice: 'Um novo tipo de nave foi criado com sucesso.' }
-        format.json { render json: @base_type, status: :created, location: @base_type }
+        flash[:success] = 'Um novo tipo de nave foi criado com sucesso.'
+        format.html { redirect_to @base_type }
+        format.json { render :show, status: :created, location: @base_type }
       else
+        flash[:danger] = 'Houve um problema na criação do novo nome.'
         format.html { render action: "new" }
         format.json { render json: @base_type.errors, status: :unprocessable_entity }
       end
@@ -45,10 +47,11 @@ class BaseTypesController < ApplicationController
   def update
     respond_to do |format|
       if @base_type.update_attributes(base_type_params)
-        format.html { redirect_to @base_type, notice: 'O tipo base foi atualizado com sucesso.' }
+        flash[:success] = 'O tipo base foi atualizado com sucesso'
+        format.html { redirect_to @base_type }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
+        format.html { render :edit }
         format.json { render json: @base_type.errors, status: :unprocessable_entity }
       end
     end
@@ -64,7 +67,7 @@ class BaseTypesController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_base_type

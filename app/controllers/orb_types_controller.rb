@@ -31,9 +31,11 @@ class OrbTypesController < ApplicationController
 
     respond_to do |format|
       if @orb_type.save
-        format.html { redirect_to @orb_type, notice: 'Um novo tipo de corpo celeste foi criado.' }
+        flash[:success] = 'Um novo tipo de corpo celeste foi criado.'
+        format.html { redirect_to @orb_type}
         format.json { render json: @orb_type, status: :created, location: @orb_type }
       else
+        flash[:danger] = 'Houve um problema na criação do novo tipo de corpo celeste.'
         format.html { render action: "new" }
         format.json { render json: @orb_type.errors, status: :unprocessable_entity }
       end
@@ -45,9 +47,11 @@ class OrbTypesController < ApplicationController
   def update
     respond_to do |format|
       if @orb_type.update_attributes(orb_type_params)
-        format.html { redirect_to @orb_type, notice: 'O corpo celeste foi atualizado com sucesso.' }
+        flash[:success] = 'O tipo de corpo celeste foi atualizado com sucesso.'
+        format.html { redirect_to @orb_type}
         format.json { head :no_content }
       else
+        flash[:danger] = 'Houve um problema ao atualizar o tipo de corpo celeste.'
         format.html { render action: "edit" }
         format.json { render json: @orb_type.errors, status: :unprocessable_entity }
       end
@@ -64,7 +68,7 @@ class OrbTypesController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_orb_type

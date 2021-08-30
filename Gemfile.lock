@@ -127,6 +127,9 @@ GEM
       actionpack (>= 5.0)
       less (~> 2.6.0)
       sprockets (~> 3.0)
+    listen (3.7.0)
+      rb-fsevent (~> 0.10, >= 0.10.3)
+      rb-inotify (~> 0.9, >= 0.9.10)
     loofah (2.12.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -240,6 +243,7 @@ DEPENDENCIES
   execjs
   jquery-rails
   json (~> 2.5.1)
+  listen
   puma (~> 5.4.0)
   rails (~> 6.1.4)
   rails-observers
