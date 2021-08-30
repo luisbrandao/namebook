@@ -1,6 +1,6 @@
 <h1>Listando tipos base</h1>
 
-<table class=table>
+<table class="table table-striped">
   <tr>
     <th>Nome</th>
     <th>Ações</th>
@@ -9,7 +9,7 @@
 <% @base_types.each do |base_type| %>
   <tr>
     <td><%= base_type %></td>
-    <td><%= link_to 'Detalhes', base_type %> 
+    <td><%= link_to 'Detalhes', base_type %>
     <%= link_to 'Editar', edit_base_type_path(base_type) %>
     <%= link_to 'Remover', base_type, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
   </tr>
@@ -18,4 +18,4 @@
 
 <br />
 
-<%= link_to 'Novo tipo base', new_base_type_path %>
+<%= link_to 'Novo tipo base', new_base_type_path, class: 'btn btn-success' %>

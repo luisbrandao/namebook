@@ -31,9 +31,11 @@ class ShipSizesController < ApplicationController
 
     respond_to do |format|
       if @ship_size.save
-        format.html { redirect_to @ship_size, notice: 'Um novo tamanho de nave foi criado com sucesso.' }
+        flash[:success] = 'Um novo tamanho de nave foi criado com sucesso.'
+        format.html { redirect_to @ship_size }
         format.json { render json: @ship_size, status: :created, location: @ship_size }
       else
+        flash[:danger] = 'Houve um problema ao atualizar o tamanho de nave.'
         format.html { render action: "new" }
         format.json { render json: @ship_size.errors, status: :unprocessable_entity }
       end
@@ -45,9 +47,11 @@ class ShipSizesController < ApplicationController
   def update
     respond_to do |format|
       if @ship_size.update_attributes(ship_size_params)
-        format.html { redirect_to @ship_size, notice: 'O tamanho de nave foi atualizado com sucesso.' }
+        flash[:success] = 'O tamanho de nave foi atualizado com sucesso.'
+        format.html { redirect_to @ship_size }
         format.json { head :no_content }
       else
+        flash[:danger] = 'Não foi possivel remover o tamanho de nave: Há dependentes.'
         format.html { render action: "edit" }
         format.json { render json: @ship_size.errors, status: :unprocessable_entity }
       end
@@ -75,5 +79,3 @@ class ShipSizesController < ApplicationController
       params.require(:ship_size).permit(:nome, :descr)
     end
 end
-
-

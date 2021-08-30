@@ -1,7 +1,7 @@
 #encoding: utf-8
 class NamesController < ApplicationController
   before_action :set_name, only: [:show, :edit, :update, :destroy]
-  
+
   # GET /names
   # GET /names.json
   def index
@@ -80,7 +80,7 @@ class NamesController < ApplicationController
       end
     end
   end
-  
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_name

@@ -1,7 +1,7 @@
-<%= form_for(@ship_size) do |f| %>
+<%= form_for(@ship_size, html: {class: 'form-horizontal'}) do |f| %>
   <% if @ship_size.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@ship_size.errors.count, "erro") %>: O tamanho de nave não pode ser salvo:</h2>
+      <h2><%= pluralize(@ship_size.errors.count, "erro") %>:</h2>
 
       <ul>
       <% @ship_size.errors.full_messages.each do |msg| %>
@@ -11,9 +11,11 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :nome %><br />
-    <%= f.text_field :nome, :size => "60" %>
+  <div class="field form-group">
+    <%= f.label :nome, "Nome:" , class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :nome, class: 'form-control' %>
+    </div>
   </div>
   <div class="actions">
     <%= f.submit @ship_size.new_record? ? "Criar novo tamanho de nave" : "Atualizar tamanho de nave" %>

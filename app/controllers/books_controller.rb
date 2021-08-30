@@ -35,9 +35,11 @@ class BooksController < ApplicationController
 
     respond_to do |format|
       if @book.save
-        format.html { redirect_to @book, notice: 'Um novo livro foi criado com sucesso.' }
-        format.json { render json: @book, status: :created, location: @book }
+        flash[:success] = 'Um novo livro foi criado com sucesso.'
+        format.html { redirect_to @book }
+        format.json { render :show, status: :created, location: @book }
       else
+        flash[:danger] = 'Houve um problema na criação do novo livro.'
         format.html { render action: "new" }
         format.json { render json: @book.errors, status: :unprocessable_entity }
       end
@@ -50,10 +52,12 @@ class BooksController < ApplicationController
     @race = Race.order('nome')
     respond_to do |format|
       if @book.update_attributes(book_params)
-        format.html { redirect_to @book, notice: 'O livro foi atualizado com sucesso.' }
+        flash[:success] = 'O livro foi atualizado com sucesso.'
+        format.html { redirect_to @book }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
+        flash[:danger] = 'Houve um problema na criação do novo nome.'
+        format.html { render :edit }
         format.json { render json: @book.errors, status: :unprocessable_entity }
       end
     end
@@ -69,7 +73,7 @@ class BooksController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_book
@@ -79,5 +83,5 @@ class BooksController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_params
       params.require(:book).permit(:nome, :descr, :datai, :dataf, :race_ids => [])
-    end 
+    end
 end
