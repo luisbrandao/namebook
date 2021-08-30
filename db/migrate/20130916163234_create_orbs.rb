@@ -1,4 +1,4 @@
-class CreateOrbs < ActiveRecord::Migration
+class CreateOrbs < ActiveRecord::Migration[6.1]
   def change
     create_table :orbs do |t|
       t.string :nome
