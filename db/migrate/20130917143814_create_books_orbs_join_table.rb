@@ -1,4 +1,4 @@
-class CreateBooksOrbsJoinTable < ActiveRecord::Migration
+class CreateBooksOrbsJoinTable < ActiveRecord::Migration[6.1]
   def up
     create_table :books_orbs, :id => false do |t|
       t.references :book, :orb
