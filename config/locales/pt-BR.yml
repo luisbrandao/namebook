@@ -18,7 +18,7 @@ pt-BR:
     - Sex
     - Sáb
     abbr_month_names:
-    - 
+    -
     - Jan
     - Fev
     - Mar
@@ -44,7 +44,7 @@ pt-BR:
       long: ! '%d de %B de %Y'
       short: ! '%d de %B'
     month_names:
-    - 
+    -
     - Janeiro
     - Fevereiro
     - Março
@@ -108,6 +108,7 @@ pt-BR:
     format: ! '%{attribute} %{message}'
     messages:
       accepted: deve ser aceito
+      required: é necessário
       blank: não pode ficar em branco
       confirmation: não está de acordo com a confirmação
       empty: não pode ficar vazio
@@ -207,7 +208,7 @@ pt-BR:
       long: ! '%d de %B de %Y, %H:%M'
       short: ! '%d de %B, %H:%M'
     pm: ''
-    
+
   # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
   activemodel:
     models:
