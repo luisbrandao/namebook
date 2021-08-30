@@ -237,6 +237,7 @@ DEPENDENCIES
   binding_of_caller
   bootstrap-sass (~> 2)
   coffee-rails
+  execjs
   jquery-rails
   json (~> 2.5.1)
   puma (~> 5.4.0)

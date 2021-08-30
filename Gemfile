@@ -11,6 +11,7 @@ gem 'json', '~> 2.5.1'
 
 gem 'bootstrap-sass', '~> 2'
 gem "twitter-bootstrap-rails"
+gem "execjs"
 
 # Gems used only for assets
 gem 'sass-rails'
