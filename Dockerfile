@@ -1,4 +1,4 @@
-FROM ruby:2.3.8-alpine
+FROM ruby:2.6.8-alpine
 #FROM centos:7
 MAINTAINER Luis Alexandre Deschamps Brandão <techmago@ymail.com>
 

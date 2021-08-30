@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 5'
+gem 'rails', '~> 6.1.4'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-gem 'sqlite3', '1.3.13'
+gem 'sqlite3', '1.4'
 #gem 'mysql2'
 
 gem 'json', '~> 1.8.6'
