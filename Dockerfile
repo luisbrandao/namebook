@@ -9,7 +9,9 @@ RUN gem update bundler
 ADD . /app
 WORKDIR /app
 
+ENV RAILS_ENV=production
 RUN bundle install
+RUN bundle exec rake assets:precompile
 
 EXPOSE 3000
 ENTRYPOINT ["/app/start.sh"]

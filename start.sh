@@ -1,3 +1,4 @@
 #!/bin/sh
-bundle exec rake db:migrate
-bundle exec rails server puma -b 0.0.0.0
+export RAILS_ENV=production
+bundle exec rails db:migrate
+rails s -b 0.0.0.0 --environment=production
