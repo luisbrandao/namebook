@@ -29,19 +29,17 @@ div.twocolunm {
 }
 
 .field_with_errors {
-  color: white;
-  background-color: red;
-  width: 400px;
-  border-radius: 5px;
+  color: red;
+  font-weight: bolder;
 }
 
 #error_explanation {
   width: 450px;
-  border: 2px solid red;
+  border: 1px solid #eed3d7;
   padding: 7px;
   padding-bottom: 0;
   margin-bottom: 20px;
-  background-color: #f0f0f0;
+  background-color: #f2dede;
   border-radius: 10px;
   h2 {
     text-align: left;
@@ -50,8 +48,9 @@ div.twocolunm {
     font-size: 12px;
     margin: -7px;
     margin-bottom: 0px;
-    background-color: #c00;
-    color: #fff;
+    background-color: #f2dede;
+    color: #b94a48;
+    border-radius: 10px;
   }
   ul li {
     padding-top: 5px;
@@ -78,4 +77,3 @@ div.twocolunm {
     padding: 0px;
     display: none;
 }
-
