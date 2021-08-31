@@ -11,6 +11,7 @@ WORKDIR /app
 
 ENV RAILS_ENV=production
 RUN bundle install
+RUN yarn install
 RUN bundle exec rake assets:precompile
 
 EXPOSE 3010
