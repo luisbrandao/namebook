@@ -1,7 +1,7 @@
 # Namebook
 
 Banco de dados de nomes para apoio literário.
- 
+
 ## Historia
 
 Sendo um dos meu hobbies escrever, o universo que ocorrem minhas historias ficou rapidamente bagunçado, com um numero muito grande de personagens, e com informações importantes sobre eles diluídos no meio dos textos. O sistema do Namebook foi criado para organizar os dados, e em vários casos, como atividade para experimentar novos mecanismos e linguagens.
@@ -18,28 +18,24 @@ Ao ser introduzido ao Rails e tendo aprendido a modelar corretamente um banco de
 
 No diretório doc/ estão os modelos do banco de dados, no formato do MySQL Workbench.
 
-Para instalar o sistema, inicialmente é necessário instalar a linguagem Ruby e o framework Rails. Utilizaremos para esta tarefa a ferramenta RVM, que ajuda no gerenciamento de versões e nas instalações. Em um shell execute o seguinte comando:
+Para desenvolver, usar o docker de dev:
 
 ```
-\curl -sSL https://get.rvm.io | bash -s stable --rails
+docker build -t namebook-rails:dev - < Dockerfile.dev
+docker run --name namedev -v $(pwd):/app -p 3000:3000 -it namebook-rails:dev
 ```
 
-O próprio RVM se preocupa em instalar a versão estável mais recente do ruby e a flag --rails informa que desejamos instalar o framework Rails na sequência. O fonte podem ser baixados do github utilizando o clone do git:
-
-```
-git clone https://github.com/techmago/namebook
-```
-
-Depois de baixado, precisamos encontrar as dependências de gemas do sistema. Elas podem ser vistas num arquivo chamado Gemfile que fica dentro do diretório raiz da aplicação. Para baixá-las utilizamos o seguinte comando:
+Uma vez dentro do container, é necessário executar a preparação do ambiente
 
 ```
 bundle install
+yarn install
 ```
 
 Execute todas as migrações:
 
 ```
-rake db:create db:migrate db:seed
+rails db:create db:migrate
 ```
 
 Inicialize o servidor em modo de desenvolvimento:
@@ -51,8 +47,11 @@ rails server
 Agora você pode usar o sistema em modo desenvolvimento através de qualquer navegador acessando o endereço:
 
 ```
-http://localhost:3000
+http://localhost:3010
 ```
 
-
-
+Build para produção:
+```
+docker build  -t registry.techsytes.com/namebook-rails:master-03 .
+docker push registry.techsytes.com/namebook-rails:master-03
+```
