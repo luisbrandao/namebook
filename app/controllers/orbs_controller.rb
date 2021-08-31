@@ -1,6 +1,6 @@
 #encoding: utf-8
 class OrbsController < ApplicationController
-  before_action :set_orb, only: [:show, :edit, :update, :destroy]
+  before_action :set_orb, only: %i[ show edit update destroy ]
   # GET /orbs
   # GET /orbs.json
   def index
@@ -54,7 +54,7 @@ class OrbsController < ApplicationController
     @orb = Orb.find(params[:id])
 
     respond_to do |format|
-      if @orb.update_attributes(orb_params)
+      if @orb.update(orb_params)
         flash[:success] = 'O corpo celeste foi atualizado com sucesso.'
         format.html { redirect_to @orb}
         format.json { head :no_content }

@@ -1,21 +1,36 @@
-<h1>Listando tipos base</h1>
+<p id="notice"><%= notice %></p>
+
+<h1>Tipos base</h1>
 
 <table class="table table-striped">
-  <tr>
-    <th>Nome</th>
-    <th>Ações</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
 
-<% @base_types.each do |base_type| %>
-  <tr>
-    <td><%= base_type %></td>
-    <td><%= link_to 'Detalhes', base_type %>
-    <%= link_to 'Editar', edit_base_type_path(base_type) %>
-    <%= link_to 'Remover', base_type, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
-  </tr>
-<% end %>
+  <tbody>
+    <% @base_types.each do |base_type| %>
+      <tr>
+        <td><%= base_type %></td>
+        <td>
+          <%= link_to base_type , :class => 'btn btn-primary btn-sm' do %>
+            <i class="bi bi-search"></i> Detalhes
+          <% end %>
+          <%= link_to edit_base_type_path(base_type), :class => 'btn btn-primary btn-sm' do %>
+            <i class="bi bi-pencil"></i> Editar
+          <% end %>
+
+          <%= link_to base_type, method: :delete, data: {confirm: 'Você tem certeza?'}, :class => 'btn btn-danger btn-sm' do %>
+            <i class="bi bi-trash"></i> Remover
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
+<br>
 
 <%= link_to 'Novo tipo base', new_base_type_path, class: 'btn btn-success' %>

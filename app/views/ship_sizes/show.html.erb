@@ -1,11 +1,27 @@
-<h1>Detalhes do tamanho da nave</h1>
+<p id="notice"><%= notice %></p>
 
-<p>
-  <b>Nome:</b>
-  <%= @ship_size %>
-</p>
+<div class="page-header">
+  <h1>Detalhes do tamanho da nave</h1>
+</div>
+<dl class="dl-horizontal">
+  <dt><strong>Nome:</strong></dt>
+  <dd><%= @ship_size.nome %> </dd>
+</dl>
 
+<div class="form-actions">
+  <%= link_to new_ship_size_path, :class => 'btn btn-success btn-sm' do %>
+    <i class="bi bi-plus"></i>Novo
+  <% end %>
 
-<%= link_to 'Editar', edit_ship_size_path(@ship_size) %> |
-<%= link_to 'Voltar', ship_sizes_path %> |
-<%= link_to 'Novo tamanho de nave', new_ship_size_path %>
+  <%= link_to edit_ship_size_path(@ship_size), :class => 'btn btn-primary btn-sm' do %>
+    <i class="bi bi-pencil"></i> Editar
+  <% end %>
+
+  <%= link_to ship_sizes_path, :class => 'btn btn-primary btn-sm' do %>
+    <i class="bi bi-x-octagon"></i> Voltar
+  <% end %>
+
+  <%= link_to @ship_size, method: :delete, data: {confirm: 'Você tem certeza?'}, :class => 'btn btn-danger btn-sm' do %>
+    <i class="bi bi-trash"></i> Remover
+  <% end %>
+</div>

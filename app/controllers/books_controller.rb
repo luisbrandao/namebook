@@ -1,6 +1,6 @@
 #encoding: utf-8
 class BooksController < ApplicationController
-  before_action :set_book, only: [:show, :edit, :update, :destroy]
+  before_action :set_book, only: %i[ show edit update destroy ]
   # GET /books
   # GET /books.json
   def index
@@ -51,7 +51,7 @@ class BooksController < ApplicationController
   def update
     @race = Race.order('nome')
     respond_to do |format|
-      if @book.update_attributes(book_params)
+      if @book.update(book_params)
         flash[:success] = 'O livro foi atualizado com sucesso.'
         format.html { redirect_to @book }
         format.json { head :no_content }

@@ -1,38 +1,15 @@
-<h1>Listando raças</h1>
+<p id="notice"><%= notice %></p>
 
-<div id="flip"> <h5>Buscar por nomes: </h5>
-<div id="panel">
-  <div id="search-form", :class="form-inline"> <fieldset>
-    <%= search_form_for @search, :html => {:class => "form-inline"} do |f| %>
-      <%= f.label :nome, "Nome: " %>
-      <%= f.text_field :nome_cont, :class => "input-medium search-field" %>
-
-      <div class="actions">
-        <%= f.submit "Buscar" %>
-        <%= f.submit "Limpar campos", :id => "reset_btn" %>
+<h1>Raças</h1>
+<% @races.in_groups_of(3) do |group| %>
+  <div class="row">
+    <% group.compact.each do |race| %>
+      <div class="col-md-4">
+        <h4><%= link_to race.nome, race %></h4>
+        <%= race.descr %>
       </div>
     <% end %>
-  </fieldset> </div>
-</div> </div>
-
-<table class="table table-striped">
-  <tr>
-    <th>Nome</th>
-    <th>Descrição</th>
-    <th>Ações</th>
-  </tr>
-
-<% @races.each do |race| %>
-  <tr>
-    <td><%= race %></td>
-    <td><%= h(race.descr).gsub(/\n/, '<br/>').html_safe %></td>
-    <td><%= link_to 'Detalhes', race %> 
-    <%= link_to 'Editar', edit_race_path(race) %> 
-    <%= link_to 'Remover', race, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
-  </tr>
+  </div>
 <% end %>
-</table>
-
-<br />
-
+<br>
 <%= link_to 'Nova raça', new_race_path, class: 'btn btn-success' %>

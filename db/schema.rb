@@ -1,116 +1,115 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
 #
-# Note that this schema.rb definition is the authoritative source for your
-# database schema. If you need to create the application database on another
-# system, you should be using db:schema:load, not running all the migrations
-# from scratch. The latter is a flawed and unsustainable approach (the more migrations
-# you'll amass, the slower it'll run and the greater likelihood for issues).
+# This file is the source Rails uses to define your schema when running `bin/rails
+# db:schema:load`. When creating a new database, `bin/rails db:schema:load` tends to
+# be faster and is potentially less error prone than running all of your
+# migrations from scratch. Old migrations may fail to apply correctly if those
+# migrations use external dependencies or application code.
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150119134051) do
+ActiveRecord::Schema.define(version: 2021_08_30_193545) do
 
-  create_table "base_types", force: true do |t|
-    t.string   "nome"
+  create_table "base_types", force: :cascade do |t|
+    t.string "nome", limit: 255
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "books", force: true do |t|
-    t.string   "nome"
-    t.text     "descr"
-    t.string   "datai"
-    t.string   "dataf"
+  create_table "books", force: :cascade do |t|
+    t.string "nome", limit: 255
+    t.text "descr"
+    t.string "datai", limit: 255
+    t.string "dataf", limit: 255
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "books_families", id: false, force: true do |t|
+  create_table "books_families", id: false, force: :cascade do |t|
     t.integer "book_id"
     t.integer "family_id"
   end
 
-  create_table "books_names", id: false, force: true do |t|
+  create_table "books_names", id: false, force: :cascade do |t|
     t.integer "book_id"
     t.integer "name_id"
   end
 
-  create_table "books_orbs", id: false, force: true do |t|
+  create_table "books_orbs", id: false, force: :cascade do |t|
     t.integer "book_id"
     t.integer "orb_id"
   end
 
-  create_table "books_races", id: false, force: true do |t|
+  create_table "books_races", id: false, force: :cascade do |t|
     t.integer "book_id"
     t.integer "race_id"
   end
 
-  create_table "books_ships", id: false, force: true do |t|
+  create_table "books_ships", id: false, force: :cascade do |t|
     t.integer "book_id"
     t.integer "ship_id"
   end
 
-  create_table "families", force: true do |t|
-    t.string   "nome"
-    t.text     "descr"
+  create_table "families", force: :cascade do |t|
+    t.string "nome", limit: 255
+    t.text "descr"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "families_races", id: false, force: true do |t|
+  create_table "families_races", id: false, force: :cascade do |t|
     t.integer "family_id"
     t.integer "race_id"
   end
 
-  create_table "names", force: true do |t|
-    t.string   "nome"
-    t.text     "descr"
-    t.integer  "race_id"
-    t.integer  "family_id"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.string   "aparencia"
-    t.integer  "sexo",       default: 1
+  create_table "names", force: :cascade do |t|
+    t.string "nome", limit: 255
+    t.text "descr"
+    t.integer "race_id"
+    t.integer "family_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "aparencia", limit: 255
+    t.integer "sexo", default: 1
   end
 
-  create_table "orb_types", force: true do |t|
-    t.string   "nome"
+  create_table "orb_types", force: :cascade do |t|
+    t.string "nome", limit: 255
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "orbs", force: true do |t|
-    t.string   "nome"
-    t.text     "descr"
-    t.integer  "orb_type_id"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-    t.integer  "orbit_id",    limit: 255
+  create_table "orbs", force: :cascade do |t|
+    t.string "nome", limit: 255
+    t.text "descr"
+    t.integer "orb_type_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "orbit_id", limit: 255
   end
 
-  create_table "races", force: true do |t|
-    t.string   "nome"
-    t.text     "descr"
+  create_table "races", force: :cascade do |t|
+    t.string "nome", limit: 255
+    t.text "descr"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "ship_sizes", force: true do |t|
-    t.string   "nome"
+  create_table "ship_sizes", force: :cascade do |t|
+    t.string "nome", limit: 255
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "ships", force: true do |t|
-    t.string   "nome"
-    t.text     "descr"
-    t.integer  "base_type_id"
-    t.integer  "ship_size_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+  create_table "ships", force: :cascade do |t|
+    t.string "nome", limit: 255
+    t.text "descr"
+    t.integer "base_type_id"
+    t.integer "ship_size_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

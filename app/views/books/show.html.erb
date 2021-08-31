@@ -1,39 +1,52 @@
-<h1>Detalhes do livro</h1>
+<p id="notice"><%= notice %></p>
 
-<p>
-  <b>Nome:</b>
-  <%= @book %>
-</p>
-
-<div style="width: 600px;">
-  <div style="float: left; width: 300px;">
-    <b>Raças:</b>
-    <ul>
-      <% @book.races.each do |race| %>
-      <li> <%= race %> </li>
-      <% end %>
-    </ul>
-  </div>
-
-  <div style="float: left; width: 300px;">
-    <p>
-      <b>Data do inicio:</b>
-      <%= @book.datai %>
-    </p>
-
-    <p>
-      <b>Data da conclusão:</b>
-      <%= @book.dataf %>
-    </p>
-  </div>
-  <br style="clear: left;" />
+<div class="page-header">
+  <h1>Detalhes do livro</h1>
 </div>
 
-<p>
-  <b>Descrição:</b>
-  <%= h(@book.descr).gsub(/\n/, '<br/>').html_safe %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong>Nome:</strong></dt>
+  <dd><%= @book.nome %> </dd>
+</dl>
 
-<%= link_to 'Editar', edit_book_path(@book) %> |
-<%= link_to 'Voltar', books_path %> |
-<%= link_to 'Novo livro', new_book_path %>
+<dl class="dl-horizontal">
+  <dt><strong>Raças:</strong></dt>
+  <ul>
+    <% @book.races.sort.each do |race| %>
+    <li> <%= race %> </li>
+    <% end %>
+  </ul>
+</dl>
+
+<dl class="dl-horizontal">
+  <dt><strong>Data do inicio:</strong></dt>
+  <dd><%= @book.datai %> </dd>
+</dl>
+
+<dl class="dl-horizontal">
+  <dt><strong>Data da conclusão:</strong></dt>
+  <dd><%= @book.dataf %> </dd>
+</dl>
+
+<dl class="dl-horizontal">
+  <dt><strong>Descrição:</strong></dt>
+  <dd><%= h(@book.descr).gsub(/\n/, '<br/>').html_safe %> </dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to new_book_path, :class => 'btn btn-success btn-sm' do %>
+    <i class="bi bi-plus"></i>Novo
+  <% end %>
+
+  <%= link_to edit_book_path(@book), :class => 'btn btn-primary btn-sm' do %>
+    <i class="bi bi-pencil"></i> Editar
+  <% end %>
+
+  <%= link_to books_path, :class => 'btn btn-primary btn-sm' do %>
+    <i class="bi bi-x-octagon"></i> Voltar
+  <% end %>
+
+  <%= link_to @book, method: :delete, data: {confirm: 'Você tem certeza?'}, :class => 'btn btn-danger btn-sm' do %>
+    <i class="bi bi-trash"></i> Remover
+  <% end %>
+</div>

@@ -1,3 +1,5 @@
+<p id="notice"><%= notice %></p>
+
 <h1>Listando Corpos celestes</h1>
 
 <div id="flip"> <h5>Buscar por corpos celestes:</h5>
@@ -20,8 +22,8 @@
           {:include_blank => "Todos"}, {:class => "search-field"} %>
 
     <div class="actions">
-  	  <%= f.submit "Buscar" %>
-  	  <%= f.submit "Limpar campos", :id => "reset_btn" %>
+      <%= f.submit "Buscar", class: 'btn btn-primary' %>
+      <%= f.submit "Limpar campos", :id => "reset_btn", class: 'btn btn-primary' %>
     </div>
     <% end %>
   </fieldset></div>
@@ -29,35 +31,39 @@
 
 <%= page_entries_info @orbs %>
 <table class="table table-striped">
-  <tr>
-    <th><%= sort_link(@search, :nome, "Nome") %></th>
-    <th><%= sort_link(@search, :orbit_id, "Orbita") %></th>
-    <th><%= sort_link(@search, :orb_type_id, "Tipo do corpo celeste") %></th>
-    <th>Descrição</th>
-    <th>Livros</th>
-    <th>Ações</th>
-  </tr>
-
-  <% @orbs.each do |orb| %>
+  <thead>
     <tr>
-      <td><%= orb %></td>
-      <td><%= orb.orbit %></td>
-      <td><%= orb.orb_type %></td>
-      <td><%= h(orb.descr).gsub(/\n/, '<br/>').html_safe %></td>
-      <td>
-        <ul>
-          <% orb.books.each do |book| %>
-            <li> <%= book %> </li>
-          <% end %>
-        </ul>
-      </td>
-      <td><%= link_to 'Detalhes', orb %> <br/>
-      <%= link_to 'Editar', edit_orb_path(orb) %> <br/>
-      <%= link_to 'Remover', orb, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+      <th><%= sort_link(@search, :nome, "Nome") %></th>
+      <th><%= sort_link(@search, :orbit_id, "Orbita") %></th>
+      <th><%= sort_link(@search, :orb_type_id, "Tipo do corpo celeste") %></th>
+      <th>Descrição</th>
+      <th>Livros</th>
+      <th>Ações</th>
     </tr>
-  <% end %>
+  </thead>
+
+  <tbody>
+    <% @orbs.each do |orb| %>
+      <tr>
+        <td><%= orb %></td>
+        <td><%= orb.orbit %></td>
+        <td><%= orb.orb_type %></td>
+        <td><%= h(orb.descr).gsub(/\n/, '<br/>').html_safe %></td>
+        <td>
+          <ul>
+            <% orb.books.sort.each do |book| %>
+              <li> <%= book %> </li>
+            <% end %>
+          </ul>
+        </td>
+        <td><%= link_to 'Detalhes', orb %> <br/>
+        <%= link_to 'Editar', edit_orb_path(orb) %> <br/>
+        <%= link_to 'Remover', orb, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 <%= will_paginate @orbs %>
-<br/>
+<br>
 
 <%= link_to 'Novo corpo celeste', new_orb_path, class: 'btn btn-success' %>

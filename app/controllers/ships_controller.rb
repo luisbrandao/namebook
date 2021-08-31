@@ -1,6 +1,6 @@
 #encoding: utf-8
 class ShipsController < ApplicationController
-  before_action :set_ship, only: [:show, :edit, :update, :destroy]
+  before_action :set_ship, only: %i[ show edit update destroy ]
   # GET /ships
   # GET /ships.json
   def index
@@ -52,7 +52,7 @@ class ShipsController < ApplicationController
   def update
     @book = Book.order('nome')
     respond_to do |format|
-      if @ship.update_attributes(ship_params)
+      if @ship.update(ship_params)
         flash[:success] = 'A nave foi atualizada com sucesso.'
         format.html { redirect_to @ship }
         format.json { head :no_content }
@@ -79,7 +79,7 @@ class ShipsController < ApplicationController
       end
     end
   end
-  
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_ship
@@ -91,4 +91,3 @@ class ShipsController < ApplicationController
       params.require(:ship).permit(:nome, :descr, :base_type_id, :ship_size_id, :book_ids => [])
     end
 end
-

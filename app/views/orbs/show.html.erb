@@ -1,42 +1,59 @@
-<h1>Detalhes do corpo celeste</h1>
-<p>
-  <b>Nome:</b>
-  <%= @orb %>
-</p>
+<p id="notice"><%= notice %></p>
+<div class="page-header">
+  <h1>Detalhes do corpo celeste</h1>
+</div>
+<dl class="dl-horizontal">
+  <dt><strong>Nome:</strong></dt>
+  <dd><%= @orb.nome %> </dd>
+</dl>
 
-<p>
-  <b>Tipo do corpo celeste:</b>
-  <%= @orb.orb_type %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong>Descrição:</strong></dt>
+  <dd><%= h(@orb.descr).gsub(/\n/, '<br/>').html_safe %> </dd>
+</dl>
 
-<p>
-  <b>Orbita:</b>
-  <%= @orb.orbit %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong>Tipo do corpo celeste:</strong></dt>
+  <dd><%= @orb.orb_type %> </dd>
+</dl>
 
-<p>
-  <b>Descrição: <br/></b>
-  <%= h(@orb.descr).gsub(/\n/, '<br/>').html_safe %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong>Orbita:</strong></dt>
+  <dd><%= @orb.orbit %> </dd>
+</dl>
 
-<p>
-  <b>Orbitado por:</b>
+<dl class="dl-horizontal">
+  <dt><strong>Orbitado por:</strong></dt>
   <ul>
-    <% @orb.orbters.each do |orbter| %>
+    <% @orb.orbters.sort.each do |orbter| %>
     <li> <%= orbter %> </li>
     <% end %>
   </ul>
-</p>
+</dl>
 
-<p>
-  <b>Livros:</b>
+<dl class="dl-horizontal">
+  <dt><strong>Livros:</strong></dt>
   <ul>
-    <% @orb.books.each do |book| %>
+    <% @orb.books.sort.each do |book| %>
     <li> <%= book %> </li>
     <% end %>
   </ul>
-</p>
+</dl>
 
-<%= link_to 'Editar', edit_orb_path(@orb) %> |
-<%= link_to 'Voltar', orbs_path %> |
-<%= link_to 'Novo corpo celeste', new_orb_path %>
+<div class="form-actions">
+  <%= link_to new_orb_path, :class => 'btn btn-success btn-sm' do %>
+    <i class="bi bi-plus"></i>Novo
+  <% end %>
+
+  <%= link_to edit_orb_path(@orb), :class => 'btn btn-primary btn-sm' do %>
+    <i class="bi bi-pencil"></i> Editar
+  <% end %>
+
+  <%= link_to orbs_path, :class => 'btn btn-primary btn-sm' do %>
+    <i class="bi bi-x-octagon"></i> Voltar
+  <% end %>
+
+  <%= link_to @orb, method: :delete, data: {confirm: 'Você tem certeza?'}, :class => 'btn btn-danger btn-sm' do %>
+    <i class="bi bi-trash"></i> Remover
+  <% end %>
+</div>

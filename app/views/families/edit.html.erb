@@ -1,6 +1,5 @@
-<h1>Editando Família</h1>
+<div class="page-header">
+  <h1>Editando família</h1>
+</div>
 
-<%= render 'form' %>
-
-<%= link_to 'Detalhes', @family %> |
-<%= link_to 'Voltar', families_path %>
+<%= render 'form', family: @family %>

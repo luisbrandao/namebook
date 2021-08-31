@@ -1,40 +1,51 @@
-<h1>Detalhes da nave</h1>
-<p>
-  <b>Nome:</b>
-  <%= @ship %>
-</p>
+<p id="notice"><%= notice %></p>
 
-<div style="width: 700px;">
-  <div style="float: left; width: 200px;">
-    <b>Livros:</b>
-    <ul>
-      <% @ship.books.each do |book| %>
-      <li> <%= book %> </li>
-      <% end %>
-    </ul>
-  </div>
-
-  <div style="float: left; width: 300px;">
-    <b>Tipo Base:</b>
-      <ul>
-        <li><%= @ship.base_type %> </li>
-      </ul>
-  </div>
-
-  <div style="float: left; width: 200px;">
-    <b>Classe da nave:</b></br>
-      <ul>
-        <li><%= @ship.ship_size %></li>
-      </ul>
-  </div>
-  <br style="clear: left;" />
+<div class="page-header">
+  <h1>Detalhes da nave</h1>
 </div>
+<dl class="dl-horizontal">
+  <dt><strong>Nome:</strong></dt>
+  <dd><%= @ship.nome %> </dd>
+</dl>
 
-<p>
-  <b>Descrição: </b></br>
-  <%= h(@ship.descr).gsub(/\n/, '<br/>').html_safe %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong>Livros:</strong></dt>
+  <ul>
+    <% @ship.books.sort.each do |book| %>
+    <li> <%= book %> </li>
+    <% end %>
+  </ul>
+</dl>
 
-<%= link_to 'Editar', edit_ship_path(@ship) %> |
-<%= link_to 'Voltar', ships_path %> |
-<%= link_to 'Nova nave', new_ship_path %>
+<dl class="dl-horizontal">
+  <dt><strong>Tipo Base:</strong></dt>
+  <dd><%= @ship.base_type %> </dd>
+</dl>
+
+<dl class="dl-horizontal">
+  <dt><strong>Classe da nave:</strong></dt>
+  <dd><%= @ship.ship_size %> </dd>
+</dl>
+
+<dl class="dl-horizontal">
+  <dt><strong>Descrição:</strong></dt>
+  <dd><%= h(@ship.descr).gsub(/\n/, '<br/>').html_safe %> </dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to new_ship_path, :class => 'btn btn-success btn-sm' do %>
+    <i class="bi bi-plus"></i>Novo
+  <% end %>
+
+  <%= link_to edit_ship_path(@ship), :class => 'btn btn-primary btn-sm' do %>
+    <i class="bi bi-pencil"></i> Editar
+  <% end %>
+
+  <%= link_to ships_path, :class => 'btn btn-primary btn-sm' do %>
+    <i class="bi bi-x-octagon"></i> Voltar
+  <% end %>
+
+  <%= link_to @ship, method: :delete, data: {confirm: 'Você tem certeza?'}, :class => 'btn btn-danger btn-sm' do %>
+    <i class="bi bi-trash"></i> Remover
+  <% end %>
+</div>

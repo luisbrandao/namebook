@@ -1,11 +1,28 @@
-<h1>Detalhes do tipo base</h1>
+<p id="notice"><%= notice %></p>
 
-<p>
-  <b>Nome:</b>
-  <%= @base_type %>
-</p>
+<div class="page-header">
+  <h1>Detalhes do tipo base</h1>
+</div>
 
+<dl class="dl-horizontal">
+  <dt><strong>Nome:</strong></dt>
+  <dd><%= @base_type.nome %> </dd>
+</dl>
 
-<%= link_to 'Editar', edit_base_type_path(@base_type) %> |
-<%= link_to 'Voltar', base_types_path %> |
-<%= link_to 'Novo tipo base', new_base_type_path %>
+<div class="form-actions">
+  <%= link_to new_base_type_path, :class => 'btn btn-success btn-sm' do %>
+    <i class="bi bi-plus"></i>Novo
+  <% end %>
+
+  <%= link_to edit_base_type_path(@base_type), :class => 'btn btn-primary btn-sm' do %>
+    <i class="bi bi-pencil"></i> Editar
+  <% end %>
+
+  <%= link_to base_types_path, :class => 'btn btn-primary btn-sm' do %>
+    <i class="bi bi-x-octagon"></i> Voltar
+  <% end %>
+
+  <%= link_to @base_type, method: :delete, data: {confirm: 'Você tem certeza?'}, :class => 'btn btn-danger btn-sm' do %>
+    <i class="bi bi-trash"></i> Remover
+  <% end %>
+</div>

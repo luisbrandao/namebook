@@ -1,11 +1,27 @@
-<h1>Detalhes do tipo de corpo celeste</h1>
+<p id="notice"><%= notice %></p>
 
-<p>
-  <b>Nome:</b>
-  <%= @orb_type %>
-</p>
+<div class="page-header">
+  <h1>Detalhes do tipo de corpo celeste</h1>
+</div>
+<dl class="dl-horizontal">
+  <dt><strong>Nome:</strong></dt>
+  <dd><%= @orb_type.nome %> </dd>
+</dl>
 
+<div class="form-actions">
+  <%= link_to new_orb_type_path, :class => 'btn btn-success btn-sm' do %>
+    <i class="bi bi-plus"></i>Novo
+  <% end %>
 
-<%= link_to 'Editar', edit_orb_type_path(@orb_type) %> |
-<%= link_to 'Voltar', orb_types_path %> |
-<%= link_to 'Novo tipo de corpo celeste', new_orb_type_path %>
+  <%= link_to edit_orb_type_path(@orb_type), :class => 'btn btn-primary btn-sm' do %>
+    <i class="bi bi-pencil"></i> Editar
+  <% end %>
+
+  <%= link_to orb_types_path, :class => 'btn btn-primary btn-sm' do %>
+    <i class="bi bi-x-octagon"></i> Voltar
+  <% end %>
+
+  <%= link_to @orb_type, method: :delete, data: {confirm: 'Você tem certeza?'}, :class => 'btn btn-danger btn-sm' do %>
+    <i class="bi bi-trash"></i> Remover
+  <% end %>
+</div>

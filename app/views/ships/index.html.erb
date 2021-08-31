@@ -1,3 +1,5 @@
+<p id="notice"><%= notice %></p>
+
 <h1>Listando naves</h1>
 
 <div id="flip"> <h5>Buscar por nomes: </h5> <div id="panel">
@@ -20,8 +22,8 @@
         {:include_blank => "Todos"}, {:class => "input-medium search-field"} %>
 
     <div class="actions">
-      <%= f.submit "Buscar", class: 'btn btn-default' %>
-      <%= f.submit "Limpar campos", :id => "reset_btn", class: 'btn btn-default' %>
+      <%= f.submit "Buscar", class: 'btn btn-primary' %>
+      <%= f.submit "Limpar campos", :id => "reset_btn", class: 'btn btn-primary' %>
     </div>
   <% end %>
 </fieldset> </div>
@@ -29,16 +31,19 @@
 
 <%= page_entries_info @ships %>
 <table class="table table-striped">
-  <tr>
-    <th><%= sort_link(@search, :nome, "Nome") %></th>
-    <th>Descrição</th>
-    <th>Livros</th>
-    <th><%= sort_link(@search, :base_type_id, "Tipo Base") %></th>
-    <th><%= sort_link(@search, :ship_size_id, "Classe da nave") %></th>
-    <th>Ações</th>
-  </tr>
+  <thead>
+    <tr>
+      <th><%= sort_link(@search, :nome, "Nome") %></th>
+      <th>Descrição</th>
+      <th>Livros</th>
+      <th><%= sort_link(@search, :base_type_id, "Tipo Base") %></th>
+      <th><%= sort_link(@search, :ship_size_id, "Classe da nave") %></th>
+      <th>Ações</th>
+    </tr>
+  </thead>
 
-  <% @ships.each do |ship| %>
+  <tbody>
+    <% @ships.each do |ship| %>
     <tr>
       <td><%= ship %></td>
       <td><%= h(ship.descr).gsub(/\n/, '<br/>').html_safe %></td>
@@ -55,9 +60,10 @@
       <%= link_to 'Editar', edit_ship_path(ship) %><br/>
       <%= link_to 'Remover', ship, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
     </tr>
-  <% end %>
+    <% end %>
+  </tbody>
 </table>
 <%= will_paginate @ships %>
-<br />
+<br>
 
 <%= link_to 'Nova nave', new_ship_path, class: 'btn btn-success' %>

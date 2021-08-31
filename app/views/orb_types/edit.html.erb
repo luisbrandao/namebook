@@ -1,6 +1,5 @@
-<h1>Editando tipos de planetas</h1>
+<div class="page-header">
+  <h1>Editando tipos de planetas</h1>
+</div>
 
-<%= render 'form' %>
-
-<%= link_to 'Detalhes', @orb_type %> |
-<%= link_to 'Voltar', orb_types_path %>
+<%= render 'form', orb_type: @orb_type %>

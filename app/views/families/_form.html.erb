@@ -1,52 +1,65 @@
-<%= form_for(@family, html: {class: 'form-horizontal'}) do |f| %>
-  <% if @family.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@family.errors.count, "erro") %>: </h2>
+<%= form_with(model: family) do |form| %>
+  <% if family.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger">
+      <h2><%= pluralize(family.errors.count, "erro") %>:</h2>
 
       <ul>
-      <% @family.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
+        <% family.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :nome, "Nome:"%>
-    <%= f.text_field :nome, :size => "60" %>
+  <div class="mb-3">
+    <strong><%= form.label :nome, :class => "form-label" %></strong>
+    <%= form.text_field :nome, :class => "form-control" %>
   </div>
-  <br>
-  <div class="twocolunm">
-    <div id="left">
-      <%= hidden_field_tag 'family[race_ids][]', '' %>
-      <%= f.label :races, "Raças:" %>
+
+  <div class="mb-3">
+    <%= hidden_field_tag 'family[race_ids][]', '' %>
+    <strong><%= form.label :races, "Raças" %><br /></strong>
+    <div class="form-check">
       <% @race.each do |race| %>
         <div>
-          <%= check_box_tag "family[race_ids][]", race.id, @family.races.include?(race) %>
-          <%= race.nome %>
+          <%= check_box_tag "family[race_ids][]", race.id, @family.races.include?(race), class: 'form-check-input' %>
+          <div class="form-check-label"> <%= race %> </div>
         </div>
       <% end %>
     </div>
-    <div id="right">
-      <%= hidden_field_tag 'family[book_ids][]', '' %>
-      <%= f.label :books, "Livros:" %>
+  </div>
+
+  <div class="mb-3">
+    <%= hidden_field_tag 'family[book_ids][]', '' %>
+    <strong><%= form.label :books, "Livros" %><br /></strong>
+    <div class="form-check">
       <% @book.each do |book| %>
         <div>
-          <%= check_box_tag "family[book_ids][]", book.id, @family.books.include?(book) %>
-          <%= book.nome %>
+          <%= check_box_tag "family[book_ids][]", book.id, @family.books.include?(book), class: 'form-check-input' %>
+          <div class="form-check-label"> <%= book %> </div>
         </div>
       <% end %>
     </div>
-    <br style="clear: left;" />
   </div>
 
-  <br>
-  <div class="field">
-    <%= f.label :descr, "Descrição:" %><br />
-    <%= f.text_area :descr, :size => "68x10"  %>
+  <div class="mb-3">
+    <strong><%= form.label :descr, "Descrição", :class => "form-label" %></strong>
+    <%= form.text_area :descr, :class => "form-control", :rows =>"6" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit @family.new_record? ? "Criar nova familia" : "Atualizar familia" %>
+  <div class="form-group">
+    <div class="actions">
+      <%= form.submit @family.new_record? ? "Criar nova familia" : "Atualizar familia", :class => "btn btn-success btn-sm" %>
+
+      <% unless @family.new_record? %>
+        <%= link_to @family , :class => 'btn btn-primary btn-sm' do %>
+          <i class="bi bi-search"></i> Detalhes
+        <% end %>
+      <% end %>
+
+      <%= link_to families_path, :class => 'btn btn-primary btn-sm' do %>
+        <i class="bi bi-x-octagon"></i> Voltar
+      <% end %>
+    </div>
   </div>
 <% end %>

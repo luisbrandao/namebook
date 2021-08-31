@@ -1,6 +1,6 @@
 #encoding: utf-8
 class OrbTypesController < ApplicationController
-  before_action :set_orb_type, only: [:show, :edit, :update, :destroy]
+  before_action :set_orb_type, only: %i[ show edit update destroy ]
   # GET /orb_types
   # GET /orb_types.json
   def index
@@ -46,7 +46,7 @@ class OrbTypesController < ApplicationController
   # PUT /orb_types/1.json
   def update
     respond_to do |format|
-      if @orb_type.update_attributes(orb_type_params)
+      if @orb_type.update(orb_type_params)
         flash[:success] = 'O tipo de corpo celeste foi atualizado com sucesso.'
         format.html { redirect_to @orb_type}
         format.json { head :no_content }

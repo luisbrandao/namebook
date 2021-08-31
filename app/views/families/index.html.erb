@@ -1,4 +1,6 @@
-<h1>Lista das famílias</h1>
+<p id="notice"><%= notice %></p>
+
+<h1>Famílias</h1>
 
 <div id="flip"> <h5>Buscar por famílias: </h5>
 <div id="panel">
@@ -14,8 +16,8 @@
       <%= f.collection_select :books_id_eq, Book.order(:nome), :id, :nome, {:include_blank => "Todos"}, :class => "input-medium search-field" %>
 
     <div class="actions">
-      <%= f.submit "Buscar", class: 'btn btn-default' %>
-      <%= f.submit "Limpar campos", :id => "reset_btn", class: 'btn btn-default' %>
+      <%= f.submit "Buscar", class: 'btn btn-primary' %>
+      <%= f.submit "Limpar campos", :id => "reset_btn", class: 'btn btn-primary' %>
     </div>
     <% end %>
   </fieldset> </div>
@@ -23,48 +25,60 @@
 
 <%= page_entries_info @families %>
 <table class="table table-striped">
-  <tr>
-    <th><%= sort_link(@search, :nome, "Nome") %></th>
-    <th>Integrantes</th>
-    <th>Raça</th>
-    <th>Livros</th>
-    <th>Descrição</th>
-    <th>Ações</th>
-  </tr>
-
-  <% @families.each do |family| %>
+  <thead>
     <tr>
-      <td><%= family %></td>
-      <td>
-        <ol type="disc">
-          <% family.names.each do |name| %>
-            <li> <%= name %> </li>
-          <% end %>
-        </ol>
-      </td>
-      <td>
-        <ul>
-          <% family.races.each do |race| %>
-            <li> <%= race %> </li>
-          <% end %>
-        </ul>
-      </td>
-      <td>
-        <ol type="disc">
-          <% family.books.each do |book| %>
-            <li> <%= book %> </li>
-          <% end %>
-        </ol>
-      </td>
-      <td><%= h(family.descr).gsub(/\n/, '<br/>').html_safe %></td>
-      <td><%= link_to 'Detalhes', family %><br/>
-      <%= link_to 'Editar', edit_family_path(family) %><br/>
-      <%= link_to 'Remover', family, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+      <th><%= sort_link(@search, :nome, "Nome") %></th>
+      <th>Integrantes</th>
+      <th>Raça</th>
+      <th>Livros</th>
+      <th>Descrição</th>
+      <th>Ações</th>
     </tr>
-  <% end %>
-</table>
-<%= will_paginate @families %>
+  </thead>
 
-<br />
+  <tbody>
+    <% @families.each do |family| %>
+      <tr>
+        <td><%= family %></td>
+        <td>
+          <ul>
+            <% family.names.sort.each do |name| %>
+              <li> <%= name %> </li>
+            <% end %>
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <% family.races.sort.each do |race| %>
+              <li> <%= race %> </li>
+            <% end %>
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <% family.books.sort.each do |book| %>
+              <li> <%= book %> </li>
+            <% end %>
+          </ul>
+        </td>
+        <td><%= h(family.descr).gsub(/\n/, '<br/>').html_safe %></td>
+        <td>
+          <%= link_to family , :class => 'btn btn-primary btn-sm' do %>
+            <i class="bi bi-search"></i> Detalhes
+          <% end %>
+          <%= link_to edit_family_path(family), :class => 'btn btn-primary btn-sm' do %>
+            <i class="bi bi-pencil"></i> Editar
+          <% end %>
+
+          <%= link_to family, method: :delete, data: {confirm: 'Você tem certeza?'}, :class => 'btn btn-danger btn-sm' do %>
+            <i class="bi bi-trash"></i> Remover
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
 
 <%= link_to 'Nova familia', new_family_path, class: 'btn btn-success' %>

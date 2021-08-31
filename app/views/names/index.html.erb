@@ -1,4 +1,6 @@
-<h1>Listando Nomes</h1>
+<p id="notice"><%= notice %></p>
+
+<h1>Nomes</h1>
 
 <div id="flip"> <h5>Buscar por nomes: </h5>
 <div id="panel">
@@ -22,8 +24,8 @@
       <%= f.collection_select :books_id_eq, Book.order(:nome), :id, :nome, {:include_blank => "Todos"}, {:class => "input-medium search-field"} %>
 
     <div class="actions">
-      <%= f.submit "Buscar", class: 'btn btn-default' %>
-      <%= f.submit "Limpar campos", :id => "reset_btn", class: 'btn btn-default' %>
+      <%= f.submit "Buscar", class: 'btn btn-primary' %>
+      <%= f.submit "Limpar campos", :id => "reset_btn", class: 'btn btn-primary' %>
     </div>
     <% end %>
   </fieldset> </div>
@@ -31,36 +33,48 @@
 
 <%= page_entries_info @names %>
 <table class="table table-striped">
-  <tr>
-    <th><%= sort_link(@search, :nome, "Nome") %></th>
-    <th><%= sort_link(@search, :family_id, "Familia") %></th>
-    <th><%= sort_link(@search, :race_id, "Raça") %></th>
-    <th>Descrição</th>
-    <th>Livros</th>
-    <th>Ações</th>
-  </tr>
-
-  <% @names.each do |name| %>
+  <thead>
     <tr>
-      <td><%= name %></td>
-      <td><%= name.family %></td>
-      <td><%= name.race %></td>
-      <td><%= h(name.descr).gsub(/\n/, '<br/>').html_safe %></td>
-      <td>
-        <ul>
-          <% name.books.each do |book| %>
-            <li> <%= book %> </li>
-          <% end %>
-        </ul>
-      </td>
-      <td><%= link_to 'Detalhes', name %><br/>
-      <%= link_to 'Editar', edit_name_path(name) %><br/>
-      <%= link_to 'Remover', name, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+      <th><%= sort_link(@search, :nome, "Nome") %></th>
+      <th><%= sort_link(@search, :family_id, "Familia") %></th>
+      <th><%= sort_link(@search, :race_id, "Raça") %></th>
+      <th>Descrição</th>
+      <th>Livros</th>
+      <th>Ações</th>
     </tr>
-  <% end %>
-</table>
-<%= will_paginate @names %>
+  </thead>
 
-<p>
-  <%= link_to 'Novo nome', new_name_path, class: 'btn btn-success' %>
-</p>
+  <tbody>
+    <% @names.each do |name| %>
+      <tr>
+        <td><%= name %></td>
+        <td><%= name.family %></td>
+        <td><%= name.race %></td>
+        <td><%= h(name.descr).gsub(/\n/, '<br/>').html_safe %></td>
+        <td>
+          <ul>
+            <% name.books.sort.each do |book| %>
+              <li> <%= book %> </li>
+            <% end %>
+          </ul>
+        </td>
+        <td>
+          <%= link_to name , :class => 'btn btn-primary btn-sm' do %>
+            <i class="bi bi-search"></i> Detalhes
+          <% end %>
+          <%= link_to edit_name_path(name), :class => 'btn btn-primary btn-sm' do %>
+            <i class="bi bi-pencil"></i> Editar
+          <% end %>
+
+          <%= link_to name, method: :delete, data: {confirm: 'Você tem certeza?'}, :class => 'btn btn-danger btn-sm' do %>
+            <i class="bi bi-trash"></i> Remover
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Novo nome', new_name_path, class: 'btn btn-success' %>

@@ -1,6 +1,6 @@
 #encoding: utf-8
 class ShipSizesController < ApplicationController
-  before_action :set_ship_size, only: [:show, :edit, :update, :destroy]
+  before_action :set_ship_size, only: %i[ show edit update destroy ]
   # GET /ship_sizes
   # GET /ship_sizes.json
   def index
@@ -46,7 +46,7 @@ class ShipSizesController < ApplicationController
   # PUT /ship_sizes/1.json
   def update
     respond_to do |format|
-      if @ship_size.update_attributes(ship_size_params)
+      if @ship_size.update(ship_size_params)
         flash[:success] = 'O tamanho de nave foi atualizado com sucesso.'
         format.html { redirect_to @ship_size }
         format.json { head :no_content }

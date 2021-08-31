@@ -1,6 +1,5 @@
-<h1>Editando o tamanho de uma nave</h1>
+<div class="page-header">
+  <h1>Editando o tamanho de nave</h1>
+</div>
 
-<%= render 'form' %>
-
-<%= link_to 'Detalhes', @ship_size %> |
-<%= link_to 'Voltar', ship_sizes_path %>
+<%= render 'form', ship_size: @ship_size %>

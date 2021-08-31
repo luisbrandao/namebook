@@ -1,6 +1,6 @@
 #encoding: utf-8
 class NamesController < ApplicationController
-  before_action :set_name, only: [:show, :edit, :update, :destroy]
+  before_action :set_name, only: %i[ show edit update destroy ]
 
   # GET /names
   # GET /names.json
@@ -53,7 +53,7 @@ class NamesController < ApplicationController
   def update
     @book = Book.order('nome')
     respond_to do |format|
-      if @name.update_attributes(name_params)
+      if @name.update(name_params)
         flash[:success] = 'O nome foi atualizado com sucesso.'
         format.html { redirect_to @name }
         format.json { head :no_content }

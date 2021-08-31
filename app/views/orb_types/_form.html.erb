@@ -1,23 +1,34 @@
-<%= form_for(@orb_type, html: {class: 'form-horizontal'}) do |f| %>
-  <% if @orb_type.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@orb_type.errors.count, "erro") %>:</h2>
+<%= form_with(model: orb_type) do |form| %>
+  <% if orb_type.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger">
+      <h2><%= pluralize(orb_type.errors.count, "erro") %>:</h2>
 
       <ul>
-      <% @orb_type.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
+        <% orb_type.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="field form-group">
-    <%= f.label :nome, "Nome:" , class: 'col-sm-2 control-label' %>
-    <div class="col-sm-10">
-      <%= f.text_field :nome, class: 'form-control' %>
-    </div>
+  <div class="mb-3">
+    <strong><%= form.label :nome, :class => "form-label" %></strong>
+    <%= form.text_field :nome, :class => "form-control" %>
   </div>
-  <div class="actions">
-    <%= f.submit @orb_type.new_record? ? "Criar novo tipo de planeta" : "Atualizar o tipo de planeta" %>
+
+  <div class="form-group">
+    <div class="actions">
+      <%= form.submit @orb_type.new_record? ? "Criar novo tipo de planeta" : "Atualizar o tipo de planeta", :class => "btn btn-success btn-sm" %>
+
+      <% unless @orb_type.new_record? %>
+        <%= link_to @orb_type , :class => 'btn btn-primary btn-sm' do %>
+          <i class="bi bi-search"></i> Detalhes
+        <% end %>
+      <% end %>
+
+      <%= link_to orb_types_path, :class => 'btn btn-primary btn-sm' do %>
+        <i class="bi bi-x-octagon"></i> Voltar
+      <% end %>
+    </div>
   </div>
 <% end %>

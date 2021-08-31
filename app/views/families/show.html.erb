@@ -1,44 +1,59 @@
-<h1>Detalhes da Família</h1>
-<p>
-  <b>Nome:</b>
-  <%= @family %>
-</p>
+<p id="notice"><%= notice %></p>
 
-<div style="width: 500px;">
-  <div style="float: left; width: 200px;">
-    <b>Integrantes:</b>
-    <ul>
-      <% @family.names.each do |name| %>
-      <li> <%= name %> </li>
-      <% end %>
-    </ul>
-  </div>
-
-  <div style="float: left; width: 200px;">
-    <b>Livros:</b>
-    <ul>
-      <% @family.books.each do |book| %>
-      <li> <%= book %> </li>
-      <% end %>
-    </ul>
-  </div>
-
-  <div style="float: left; width: 100px;">
-    <b>Raças:</b>
-    <ul>
-      <% @family.races.each do |race| %>
-      <li> <%= race %> </li>
-      <% end %>
-    </ul>
-  </div>
-  <br style="clear: left;" />
+<div class="page-header">
+  <h1>Detalhes da familia</h1>
 </div>
+<dl class="dl-horizontal">
+  <dt><strong>Nome:</strong></dt>
+  <dd><%= @family.nome %> </dd>
+</dl>
 
-<p>
-  <b>Descrição:</b>
-  <%= h(@family.descr).gsub(/\n/, '<br/>').html_safe %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong>Integrantes:</strong></dt>
+  <ul>
+    <% @family.names.sort.each do |race| %>
+    <li> <%= race %> </li>
+    <% end %>
+  </ul>
+</dl>
 
-<%= link_to 'Editar', edit_family_path(@family) %> |
-<%= link_to 'Voltar', families_path %> |
-<%= link_to 'Nova familia', new_family_path %>
+<dl class="dl-horizontal">
+  <dt><strong>Livros:</strong></dt>
+  <ul>
+    <% @family.books.sort.each do |book| %>
+    <li> <%= book %> </li>
+    <% end %>
+  </ul>
+</dl>
+
+<dl class="dl-horizontal">
+  <dt><strong>Raças:</strong></dt>
+  <ul>
+    <% @family.races.sort.each do |race| %>
+    <li> <%= race %> </li>
+    <% end %>
+  </ul>
+</dl>
+
+<dl class="dl-horizontal">
+  <dt><strong>Descrição:</strong></dt>
+  <dd><%= h(@family.descr).gsub(/\n/, '<br/>').html_safe %> </dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to new_family_path, :class => 'btn btn-success btn-sm' do %>
+    <i class="bi bi-plus"></i>Novo
+  <% end %>
+
+  <%= link_to edit_family_path(@family), :class => 'btn btn-primary btn-sm' do %>
+    <i class="bi bi-pencil"></i> Editar
+  <% end %>
+
+  <%= link_to families_path, :class => 'btn btn-primary btn-sm' do %>
+    <i class="bi bi-x-octagon"></i> Voltar
+  <% end %>
+
+  <%= link_to @family, method: :delete, data: {confirm: 'Você tem certeza?'}, :class => 'btn btn-danger btn-sm' do %>
+    <i class="bi bi-trash"></i> Remover
+  <% end %>
+</div>

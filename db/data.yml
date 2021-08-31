@@ -1,345 +1,3 @@
-
----
-orb_types:
-  columns:
-  - id
-  - nome
-  - created_at
-  - updated_at
-  records: 
-  - - 1
-    - Planeta
-    - '2013-09-20 13:27:58.842937'
-    - '2013-09-20 13:27:58.842937'
-  - - 2
-    - Lua
-    - '2013-09-20 13:27:59.003047'
-    - '2013-09-20 13:27:59.003047'
-  - - 3
-    - Estrela
-    - '2013-09-20 13:27:59.148230'
-    - '2013-09-20 13:27:59.148230'
-  - - 4
-    - Cinturão de asteroides
-    - '2013-09-20 13:27:59.291245'
-    - '2013-09-20 13:27:59.291245'
-  - - 5
-    - Estação espacial
-    - '2013-09-20 13:27:59.439877'
-    - '2013-09-20 13:27:59.439877'
-
----
-orbs:
-  columns:
-  - id
-  - nome
-  - descr
-  - orb_type_id
-  - created_at
-  - updated_at
-  - orbit_id
-  records: 
-  - - 1
-    - Aghaphos
-    - A estrela do sistema
-    - 3
-    - '2013-09-26 17:35:36.265053'
-    - '2013-09-26 17:35:36.265053'
-    - ''
-  - - 2
-    - Batalha
-    - "2 planeta do sistema\nPlaneta onde a história do ilhas de batalha acontece.
-      Já houve uma tentativa de colonização aqui, mas por ser um planeta importante
-      para os dragões, eles mantiveram o seu domínio. "
-    - 1
-    - '2013-09-26 17:36:19.238714'
-    - '2013-09-26 17:39:46.619046'
-    - '6'
-  - - 3
-    - Exos
-    - A estrela do sistema.
-    - 3
-    - '2013-09-26 17:37:42.384767'
-    - '2013-09-26 17:37:42.384767'
-    - ''
-  - - 4
-    - Foris
-    - A estrela do sistema.
-    - 3
-    - '2013-09-26 17:38:34.875115'
-    - '2013-09-26 17:38:34.875115'
-    - ''
-  - - 5
-    - Gatina
-    - A estrela do sistema.
-    - 3
-    - '2013-09-26 17:38:59.386111'
-    - '2013-09-26 17:38:59.386111'
-    - ''
-  - - 6
-    - Rainos
-    - A estrela do sistema.
-    - 3
-    - '2013-09-26 17:39:18.581591'
-    - '2013-09-26 17:39:18.581591'
-    - ''
-  - - 7
-    - Cinturão Koid
-    - |-
-      Um dos cinturões de asteroides do sistema Foris.
-      Koid é o cinturão interno, rico em recursos.
-    - 4
-    - '2013-09-26 17:40:27.132881'
-    - '2013-09-26 17:40:27.132881'
-    - '4'
-  - - 8
-    - Creator
-    - |-
-      3 luas, (Rines) (Gravis) (Ruar)
-      Planeta newkie, população 8 milhões, 2 planeta do sistema.
-    - 1
-    - '2013-09-26 17:41:18.257570'
-    - '2013-09-26 17:41:18.257570'
-    - '6'
-  - - 9
-    - Dermis
-    - "2 luas, (Tami) (Lua falsa)\nEsse planeta é o centro do império techmago. "
-    - 1
-    - '2013-09-26 17:41:57.592338'
-    - '2013-09-26 17:41:57.592338'
-    - ''
-  - - 10
-    - Tami
-    - A primeira lua de dermis
-    - 2
-    - '2013-09-26 17:42:22.010340'
-    - '2013-09-26 17:42:22.010340'
-    - '9'
-  - - 11
-    - Frogis
-    - "1 lua, ()\nPlaneta newkie, população 3 milhões.\n2º planeta do sistema. "
-    - 1
-    - '2013-09-26 17:43:30.241598'
-    - '2013-09-26 17:43:30.241598'
-    - '1'
-  - - 12
-    - Hegon
-    - 'Hegon é uma perola dos Plyorns, uma das centrais de contro dos portais, com
-      uma peculiar orbita elíptica ao redor de Gatina. '
-    - 5
-    - '2013-09-26 17:44:10.483969'
-    - '2013-09-26 17:44:10.483969'
-    - '5'
-  - - 13
-    - Hollus
-    - "1 lua, (Luna)\nEste planeta é o planeta onde a historia do livro Cristais começa,
-      quando \"ele\" estava em um parque reclamando que a vida era muito comum e então
-      duas naves, uma a serviço dos techmagos e com Terra na tripulação, entram em
-      orbita e começam a se matar.\nEste também é o planeta onde os lobisomens e gat`arks
-      originalmente habitavam. "
-    - 1
-    - '2013-09-26 17:44:51.325580'
-    - '2013-09-26 17:44:51.325580'
-    - ''
-  - - 14
-    - Luna
-    - Única lua de Hollus.
-    - 2
-    - '2013-09-26 17:45:48.192660'
-    - '2013-09-26 17:45:48.192660'
-    - '13'
-  - - 15
-    - Irea
-    - |-
-      0 luas
-      Planeta newkie
-      População 3 milhões
-      2 planeta do sistema
-    - 1
-    - '2013-09-26 17:46:40.865072'
-    - '2013-09-26 17:46:40.865072'
-    - '3'
-  - - 16
-    - Nokris
-    - |-
-      0 luas.
-      1 planeta do sistema
-      Planeta inabitável.
-    - 1
-    - '2013-09-26 17:47:09.819543'
-    - '2013-09-26 17:47:09.819543'
-    - '6'
-  - - 17
-    - Oroa
-    - "1 lua, (Katis)\nPlaneta humana\nPopulação 200 milhões\n3 planeta do sistema\nA
-      capital humana no nova era. "
-    - 1
-    - '2013-09-26 17:48:16.786784'
-    - '2013-09-26 17:48:16.786784'
-    - '5'
-  - - 18
-    - Katis
-    - Única lua de Oroa, usada como deposito de lixo.
-    - 2
-    - '2013-09-26 17:48:58.933007'
-    - '2013-09-26 17:48:58.933007'
-    - '17'
-  - - 19
-    - Radus
-    - "0 luas.\n3 planeta do sistema.\nPlaneta inabitável. "
-    - 1
-    - '2013-09-26 17:49:45.267890'
-    - '2013-09-26 17:50:34.492472'
-    - '20'
-  - - 20
-    - Rãe
-    - A estrela do sistema.
-    - 3
-    - '2013-09-26 17:50:20.015330'
-    - '2013-09-26 17:50:20.015330'
-    - ''
-  - - 21
-    - Starats
-    - |-
-      0 luas
-      Planeta humano
-      População 500 milhões
-      1º planeta do sistema
-    - 1
-    - '2013-09-26 17:51:23.392142'
-    - '2013-09-26 17:51:23.392142'
-    - '3'
-  - - 22
-    - UNCentury
-    - "1 lua, (Lunis)\nPlaneta newkie, população aproximada 10 bilhões. Segundo planeta
-      do sistema.\nEsse planeta se torna a capital da união newkie assim que eles
-      abandonam o sistema solar.\nAno com 300 dias e dia com 30 horas. "
-    - 1
-    - '2013-09-26 17:52:49.191161'
-    - '2013-09-26 17:52:49.191161'
-    - '5'
-  - - 23
-    - Lunis
-    - Lua de UNcentury
-    - 2
-    - '2013-09-26 17:53:13.310943'
-    - '2013-09-26 17:53:13.310943'
-    - '22'
-  - - 24
-    - Unos
-    - |-
-      2 luas, ()()
-      Planeta newkie
-      População 500 milhões
-      1 planeta do sistema.
-      Colonia de mineração, que se aproveita dos numerosos asteroides do sistema.
-    - 1
-    - '2013-09-26 17:53:51.768158'
-    - '2013-09-26 17:53:51.768158'
-    - '4'
-  - - 25
-    - Utery
-    - |-
-      0 luas
-      1º planeta do sistema
-      Planeta inabitável
-    - 1
-    - '2013-09-26 17:54:38.461692'
-    - '2013-09-26 17:54:38.461692'
-    - '20'
-  - - 26
-    - Wolmron-3
-    - |-
-      2 luas, (Wolmron-3-1, Nesti) (Wolmron-3-2, Sikeya)
-      Wolmrom-3 é um planeta afastado do eixo central do império techmago sem nenhum recurso valioso conhecido. Seu nome vem simplesmente da sua posição no sistema. (terceiro planeta)
-      Sendo um planeta habitável, ele é escolhido como possível novo lar para as tribos dos lobisomens.
-    - 1
-    - '2013-09-26 17:56:00.756337'
-    - '2013-09-26 18:05:30.333475'
-    - '29'
-  - - 27
-    - Wolmron-3-1 (Nesti)
-    - |
-      Lua inóspita de Wolmron.
-      Seu nome original é originário da sua posição planetária. (primeira lua do terceiro planeta)
-      Quando ocorre o contato com o espirito da lua desse planeta, ela se identificou como Nesti e esse se tornou o nome oficial da lua.
-    - 2
-    - '2013-09-26 18:01:42.761505'
-    - '2013-09-26 18:01:53.015966'
-    - '26'
-  - - 28
-    - Wolmron-3-2 (Sikeya)
-    - |-
-      Grande lua habitável de Wolmron
-      Seu nome original é originário da sua posição planetária. (Segunda lua do terceiro planeta)
-      Quando ocorre o contato com o espirito da lua desse planeta, ela se identificou como Sikeya e esse se tornou o nome oficial da lua.
-      Esse planeta era o lar original dos arkains, um povo que foi dizimado por piratas espaciais.
-    - 2
-    - '2013-09-26 18:04:04.023439'
-    - '2013-09-26 18:04:04.023439'
-    - '26'
-  - - 29
-    - Wolmron
-    - A estrela do sistema
-    - 3
-    - '2013-09-26 18:05:18.176229'
-    - '2013-09-26 18:05:18.176229'
-    - ''
-  - - 30
-    - Xinos
-    - "1 lua, (Agatha)\nPlaneta newkie, população aproximada 900 milhões\n2 planeta
-      do sistema. "
-    - 1
-    - '2013-09-26 18:06:48.340727'
-    - '2013-09-26 18:06:48.340727'
-    - '20'
-  - - 31
-    - Agatha
-    - Lua de xinos
-    - 2
-    - '2013-09-26 18:07:32.787534'
-    - '2013-09-26 18:07:32.787534'
-    - '30'
-  - - 32
-    - Zeas
-    - |-
-      1 luas. (Nyx)
-      Planeta newkie
-      População 4 milhões
-      3 planeta do sistema
-    - 1
-    - '2013-09-26 18:08:20.158831'
-    - '2013-09-26 18:08:20.158831'
-    - '3'
-  - - 33
-    - Nyx
-    - Lua de zeas
-    - 2
-    - '2013-09-26 18:08:46.106917'
-    - '2013-09-26 18:08:46.106917'
-    - '32'
-  - - 34
-    - Rines
-    - Lua de creator
-    - 2
-    - '2013-09-26 18:10:35.823332'
-    - '2013-09-26 18:10:35.823332'
-    - '8'
-  - - 35
-    - Gravis
-    - Lua de creator
-    - 2
-    - '2013-09-26 18:10:39.118935'
-    - '2013-09-26 18:10:39.118935'
-    - '8'
-  - - 36
-    - Ruar
-    - Lua de creator
-    - 1
-    - '2013-09-26 18:10:41.746487'
-    - '2013-09-26 18:10:41.746487'
-    - '8'
-
 ---
 base_types:
   columns:
@@ -347,105 +5,27 @@ base_types:
   - nome
   - created_at
   - updated_at
-  records: 
+  records:
   - - 1
     - Techmaga
-    - '2013-09-20 13:27:52.343508'
-    - '2013-09-20 13:27:52.343508'
+    - 2013-09-20 13:27:52.000000000 Z
+    - 2013-09-20 13:27:52.000000000 Z
   - - 2
     - Orgânica
-    - '2013-09-20 13:27:52.545322'
-    - '2013-09-20 13:27:52.545322'
+    - 2013-09-20 13:27:52.000000000 Z
+    - 2013-09-20 13:27:52.000000000 Z
   - - 3
     - Nanorobótica
-    - '2013-09-20 13:27:52.697628'
-    - '2013-09-20 13:27:52.697628'
+    - 2013-09-20 13:27:52.000000000 Z
+    - 2013-09-20 13:27:52.000000000 Z
   - - 4
     - Tecnológica pura
-    - '2013-09-20 13:27:52.842642'
-    - '2013-09-20 13:27:52.842642'
+    - 2013-09-20 13:27:52.000000000 Z
+    - 2013-09-20 13:27:52.000000000 Z
   - - 5
     - Hibrida techmaga/organica
-    - '2013-09-20 13:27:52.987997'
-    - '2013-09-20 13:27:52.987997'
-
----
-ship_sizes:
-  columns:
-  - id
-  - nome
-  - created_at
-  - updated_at
-  records: 
-  - - 1
-    - Nave de guerra
-    - '2013-09-20 13:28:01.245896'
-    - '2013-09-20 13:28:01.245896'
-  - - 2
-    - Cruzador
-    - '2013-09-20 13:28:01.421731'
-    - '2013-09-20 13:28:01.421731'
-  - - 3
-    - Estrela
-    - '2013-09-20 13:28:01.574725'
-    - '2013-09-20 13:28:01.574725'
-  - - 4
-    - Explorador
-    - '2013-09-20 13:28:01.798315'
-    - '2013-09-20 13:28:01.798315'
-  - - 5
-    - Transportador
-    - '2013-09-20 13:28:01.985471'
-    - '2013-09-20 13:28:01.985471'
-  - - 6
-    - Caça
-    - '2013-09-20 13:28:02.122544'
-    - '2013-09-20 13:28:02.122544'
-
----
-ships:
-  columns:
-  - id
-  - nome
-  - descr
-  - base_type_id
-  - ship_size_id
-  - created_at
-  - updated_at
-  records: 
-  - - 1
-    - Elidrion
-    - 'Essa nave foi usada por "Ele" no ataque a lua falsa. Para isso, várias atualizações
-      no projeto da mesma, então ela provavelmente é a mais poderosa das technaves. '
-    - 1
-    - 1
-    - '2013-09-20 14:02:11.354692'
-    - '2013-09-20 14:02:11.354692'
-  - - 2
-    - Natayu
-    - Cruzador de combate orgânico. A nave foi criada pelos nanorobôs controlados
-      por Amy, no "meu planetinha". Natayu incorpora o melhor de toda a tecnologia
-      que "ele" conhecia, destacando-se os canhões de proton-invertido e o gerador
-      de rifts, ambos obtidos a partir da lua falsa.
-    - 5
-    - 2
-    - '2013-09-20 14:02:47.168078'
-    - '2013-09-20 14:02:47.168078'
-  - - 3
-    - Terket
-    - Essa foi a nave que acabou levando Negro ao planeta batalha. Ela foi destruída
-      por um ataque misterioso no processo.
-    - 4
-    - 4
-    - '2013-09-20 14:03:13.439069'
-    - '2013-09-20 14:03:13.439069'
-  - - 4
-    - Turarion
-    - Nave que Terra estava quando sofreu o acidente em Dermis.
-    - 4
-    - 2
-    - '2013-10-16 19:58:04.750585'
-    - '2013-10-16 19:58:04.750585'
+    - 2013-09-20 13:27:52.000000000 Z
+    - 2013-09-20 13:27:52.000000000 Z
 
 ---
 books:
@@ -457,1045 +37,63 @@ books:
   - dataf
   - created_at
   - updated_at
-  records: 
+  records:
   - - 1
     - Ilhas de Batalha
-    - A historia de Negro, o dragão
+    - "Entre os dragões, o planeta “Batalha” era um famoso circuito de desafios onde
+      apenas os melhores dele retornavam. Negro, um jovem dragão, estava a ponderar
+      sobre qual seria seu próximo caminho a seguir na vida quando, ao ter sua atenção
+      chamada por uma recém chegada nave de exploração, que estava de passagem pelo
+      espaçoporto local, acabou embarcando em uma aventura muito maior do que imaginara.\r\n\r\nAssim
+      que a nave partiu do planeta, em uma missão de exploração, um acidente a fez
+      cair em um planeta vizinho antes mesmo que ela pudesse deixar o sistema que
+      se encontrava. Surpreendido por, ao invés de encontrar um planeta desconhecido,
+      acabar caindo em Batalha, Negro decide, em prol da fama e das futuras historias
+      que poderia contar sobre o planeta, enfrentar o desafio e só partir do planeta
+      quando estivesse de posse do medalhão supremo, o simbolo dos campeões.\r\n\r\nLogo
+      após aprender sobre os perigos que enfrentaria, o protagonista conhece uma outra
+      dragoa, Branca que torna-se sua companheira de aventura, após confessar que
+      havia se arrependido da decisão de ter vindo para o planeta. Juntos eles começam
+      a treinar e a explorar a ilha, finalmente chegando ao castelo de lutas e enfrentando
+      seu dono, ganhando assim o primeiro dos vários medalhões necessários para se
+      qualificar para a luta final.\r\n\r\nDai em diante, eles enfrentam muitos mais
+      lutas, enfrentam criminosos, exploram ruínas antigas de outras civilizações
+      e eras, além de conhecer muitos outros dragões e suas historias, na jornada
+      que os leva até a ilha suprema, onde o duelo contra Tylant definirá o resultado
+      de sua jornada.\r\n"
     - '2003'
     - '2013'
-    - '2013-09-20 13:27:53.256137'
-    - '2013-09-20 13:27:53.256137'
+    - 2013-09-20 13:27:53.000000000 Z
+    - 2015-06-03 17:49:05.000000000 Z
   - - 2
     - Cristais
-    - A historia de um techmago
+    - Icris, um viajante de vários mundos, por um golpe do acaso entra em contato
+      com os techmagos, um povo que domina tanto a magia quanto a tecnologia.
     - '2007'
-    - '?'
-    - '2013-09-20 13:27:53.402922'
-    - '2013-09-20 13:27:53.402922'
+    - "?"
+    - 2013-09-20 13:27:53.000000000 Z
+    - 2015-01-19 18:34:39.000000000 Z
   - - 3
     - Newkies
     - ''
     - ''
     - ''
-    - '2013-09-20 13:27:53.571752'
-    - '2013-09-20 13:42:09.278413'
+    - 2013-09-20 13:27:53.000000000 Z
+    - 2013-09-20 13:42:09.000000000 Z
   - - 4
     - Nova era
     - ''
     - ''
     - ''
-    - '2013-09-20 13:27:53.715747'
-    - '2013-09-20 13:42:28.327937'
-
----
-families:
-  columns:
-  - id
-  - nome
-  - descr
-  - created_at
-  - updated_at
-  records: 
-  - - 1
-    - Datter
-    - Branca e Auro não são parentes próximos, ainda que sejam da mesma família.
-    - '2013-09-20 13:27:53.918375'
-    - '2013-09-20 13:27:53.918375'
-  - - 2
-    - Delcan
-    - Todos os lideres de castelo do planeta Batalha são dessa família. (Mas não necessariamente
-      irmãos.)
-    - '2013-09-20 13:27:54.072912'
-    - '2013-09-20 13:27:54.072912'
-  - - 3
-    - Erathur
-    - Uma das famílias que integram o clã estrela negra. Essa família não é uma das
-      mais importantes.
-    - '2013-09-20 13:27:54.237919'
-    - '2013-09-20 13:50:38.922713'
-  - - 4
-    - Foldane
-    - ''
-    - '2013-09-20 13:27:54.409069'
-    - '2013-09-20 13:50:57.600959'
-  - - 5
-    - Gama III Blackfield
-    - Família da protagonista do nova era. A parte newkie é da mãe e a parte humana
-      é do pai da Nidja.
-    - '2013-09-20 13:27:54.565103'
-    - '2013-09-20 15:08:33.376113'
-  - - 6
-    - Kreer
-    - |-
-      Uma das fámilias da tribo dos lobisomens vermelhos.
-      Sildon e Kalryne são irmãos. Kalryne é a mais nova.
-    - '2013-09-20 13:27:54.717935'
-    - '2013-09-20 13:27:54.717935'
-  - - 7
-    - Lelin
-    - Foi essa familia que originalmente criou os felks.
-    - '2013-09-20 13:27:54.878190'
-    - '2013-09-20 13:27:54.878190'
-  - - 8
-    - Mabert
-    - Uma família antiga e pouco conhecida aos dragões comuns. Geralmente seus membros
-      tem atribuições importantes.
-    - '2013-09-20 13:27:55.042553'
-    - '2013-09-20 13:27:55.042553'
-  - - 9
-    - Mainat
-    - |-
-      Uma das famílias que integram o clã estrela negra.
-      Essa família não é a mais importante, nem a menos.
-    - '2013-09-20 13:27:55.225611'
-    - '2013-09-20 13:55:54.478977'
-  - - 10
-    - Morland
-    - ''
-    - '2013-09-20 13:27:55.381017'
-    - '2013-09-20 13:56:44.261986'
-  - - 11
-    - Netrick
-    - Lyia é filha de Tieg e Lua, por ter sido simplesmente um "presente" da lua de
-      Hollus (Luna), não tem realmente pais. Pode se dizer até que ela é adotada.
-    - '2013-09-20 13:27:55.548997'
-    - '2013-09-20 13:27:55.548997'
-  - - 12
-    - Reaven
-    - Família do protagonista do newkies
-    - '2013-09-20 13:27:55.706491'
-    - '2013-09-20 13:27:55.706491'
-  - - 13
-    - Ressek
-    - Uma das famílias da tribo dos lobisomens vermelhos.
-    - '2013-09-20 13:27:55.874540'
-    - '2013-09-20 13:27:55.874540'
-  - - 14
-    - Rettack
-    - Família do líder dos lobos vermelhos. Não se sabe se Nith tem algum parentesco
-      com Rayka.
-    - '2013-09-20 13:27:56.064123'
-    - '2013-09-20 13:27:56.064123'
-  - - 15
-    - Ristair
-    - Família do protagonista do ilhas de batalha. Alguns membros certamente vivem
-      em Xuim, uma vila próxima a um penhasco.
-    - '2013-09-20 13:27:56.232114'
-    - '2013-09-20 13:27:56.232114'
-  - - 16
-    - Roanim
-    - ''
-    - '2013-09-20 13:27:56.388270'
-    - '2013-09-20 13:58:29.752171'
-  - - 17
-    - Rollinor
-    - Família do líder dos lobisomens brancos.
-    - '2013-09-20 13:27:56.543169'
-    - '2013-09-20 13:27:56.543169'
-  - - 18
-    - Sashvaret
-    - Uma das famílias da tribo dos lobisomens vermelhos.
-    - '2013-09-20 13:27:56.699635'
-    - '2013-09-20 13:27:56.699635'
-  - - 19
-    - Sastar
-    - ''
-    - '2013-09-20 13:27:56.857919'
-    - '2013-09-20 13:58:58.504399'
-  - - 20
-    - Shoukat
-    - ''
-    - '2013-09-20 13:27:57.014039'
-    - '2013-09-20 13:59:12.185549'
-  - - 21
-    - Torcom
-    - ''
-    - '2013-09-20 13:27:57.204003'
-    - '2013-09-20 13:59:26.990661'
-  - - 22
-    - Tuerem
-    - ''
-    - '2013-09-20 13:27:57.416219'
-    - '2013-09-20 13:59:46.661948'
-  - - 23
-    - Tylladon
-    - 'Família do líder dos lobisomens negros. '
-    - '2013-09-20 13:27:57.573789'
-    - '2013-09-20 13:27:57.573789'
-  - - 24
-    - Ducan
-    - 'Família techmaga com integrantes pertencentes a cúpula. '
-    - '2013-09-20 13:27:57.796869'
-    - '2013-09-20 14:00:42.653685'
-  - - 25
-    - Delta IV Beta X
-    - Tradicional família Newkie.
-    - '2013-09-20 13:27:57.976250'
-    - '2013-09-20 14:01:09.156644'
-  - - 26
-    - Sigma II
-    - ''
-    - '2013-09-20 14:27:43.362177'
-    - '2013-09-20 14:27:43.362177'
-  - - 27
-    - Temark
-    - Família com membros na cúpula techmaga.
-    - '2013-09-20 14:49:37.296981'
-    - '2013-09-20 14:49:37.296981'
-  - - 28
-    - Gama
-    - ''
-    - '2013-09-20 14:55:29.091252'
-    - '2013-09-20 14:55:29.091252'
-  - - 29
-    - Alfa II
-    - ''
-    - '2013-09-20 14:56:25.485558'
-    - '2013-09-20 14:56:25.485558'
-  - - 30
-    - Eta V Teta VI
-    - Tipica família newkie
-    - '2013-09-20 15:00:40.709837'
-    - '2013-09-20 15:00:40.709837'
-  - - 31
-    - Cowina
-    - ''
-    - '2013-09-20 15:05:29.583609'
-    - '2013-09-20 15:05:29.583609'
-
----
-races:
-  columns:
-  - id
-  - nome
-  - descr
-  - created_at
-  - updated_at
-  records: 
-  - - 1
-    - Humano
-    - Humanos são uma raça normal.
-    - '2013-09-20 13:27:59.731739'
-    - '2013-09-20 13:27:59.731739'
-  - - 2
-    - Newkie
-    - Uma raça criada artificialmente. Pelos humanos.
-    - '2013-09-20 13:27:59.889521'
-    - '2013-09-20 14:06:59.712250'
-  - - 3
-    - Lobisomem
-    - Raça originaria de Hollus capaz de se transformar na forma de um lobo.
-    - '2013-09-20 13:28:00.041198'
-    - '2013-09-20 13:28:00.041198'
-  - - 4
-    - Dragão
-    - "Os dragões conviveram com os plyorns antes da chegada dos newkies a galaxia.\nMesmo
-      sendo uma raça inteligente, os dragões estão presos em um eterno período tribal.
-      Seus braços não permitem o manuseio de ferramentas ou aparelhos delicados, sendo
-      justamente por isso que suas obras máximas se resumem a rústicas cidades de
-      barro e à complexa escrita rúnica, geralmente feita em paredes de pedra ou grandes
-      placas de argila.\nMesmo sem conseguir desenvolver sua própria tecnologia, os
-      dragões são capazes de entender as criações de outros povos e até operá-las,
-      se algumas modificações forem feitas. Muitas vezes, aparelhos eletrônicos e
-      até instalações mais complexas são trocados por metais e pedras preciosas, bens
-      que os dragões parecem ter certa facilidade em encontrar e gosto em colecionar. "
-    - '2013-09-20 13:28:00.197908'
-    - '2013-09-26 14:56:07.657320'
-  - - 5
-    - Arcain
-    - |-
-      Raça com características de raposa originara da lua Sikeya, no sistema de wolmrom-3.
-      Eles foram dizimados por conquistadores a muitos seculos.
-    - '2013-09-20 13:28:00.356564'
-    - '2014-01-21 21:08:49.729747'
-  - - 6
-    - Consciência independente
-    - Consciências independentes são aquelas que existem independentemente de um corpo
-      físico bem definido.
-    - '2013-09-20 13:28:00.513532'
-    - '2013-09-26 14:59:58.280971'
-  - - 7
-    - Espírito da lua
-    - Um espirito da lua é a manifestação física do espirito de uma lua, que pode
-      ser invocado somente por um processo denominado "Ritual da lua" desenvolvido
-      originalmente pelos lobisomens, no planeta Hollus.
-    - '2013-09-20 13:28:00.690019'
-    - '2013-09-26 15:01:21.055221'
-  - - 8
-    - Hibrido newkie-humano
-    - Resultado da união entre um humano e um newkie.
-    - '2013-09-20 13:28:00.848091'
-    - '2013-09-26 14:57:36.557299'
-  - - 9
-    - Inteligencia artificial
-    - Inteligencias artificiais são maquinas inteligentes. A grande maioria das IA
-      são de origem nanorobótica.
-    - '2013-09-20 13:28:01.027279'
-    - '2013-09-26 14:59:23.416063'
-
----
-names:
-  columns:
-  - id
-  - nome
-  - descr
-  - race_id
-  - family_id
-  - created_at
-  - updated_at
-  - aparencia
-  - sexo
-  records: 
-  - - 1
-    - Accith
-    - Lobisomem vermelho, caçador experiente.
-    - 3
-    - 18
-    - '2013-09-20 13:27:58.173914'
-    - '2014-02-21 19:11:13.714728'
-    - ''
-    - 2
-  - - 2
-    - Aline
-    - Responsável geral pela educação mágica. (Cúpula techmaga)
-    - 1
-    - 24
-    - '2013-09-20 13:27:58.332009'
-    - '2013-09-20 13:27:58.332009'
-    - 
-    - 3
-  - - 3
-    - Anna
-    - Cabelo/Olho azuis claros. Originalmente ela havia sido salva por Vitur em Oram,
-      e ficou psicologicamente dependente dele.
-    - 2
-    - 
-    - '2013-09-20 13:27:58.485889'
-    - '2013-09-20 14:22:55.924460'
-    - 
-    - 3
-  - - 4
-    - Argon
-    - Líder de um dos castelos do planeta batalha.
-    - 4
-    - 2
-    - '2013-09-20 13:27:58.642399'
-    - '2013-09-20 13:27:58.642399'
-    - 
-    - 2
-  - - 5
-    - Amy
-    - Amy é a consciência nanorobôtica "dele", a única a ultrapassar as restrições
-      de segurança comuns a outras consciências e se tornar capaz de fazer o que bem
-      entender, até criar outra consciências por conta própria. Apesar de Amy ter
-      criado várias outras entidades nanorobôticas para lhe ajudar, nenhuma delas
-      entrou em contato direto com "ele".
-    - 9
-    - 
-    - '2013-09-20 14:04:25.252838'
-    - '2013-09-20 14:04:25.252838'
-    - 
-    - 1
-  - - 6
-    - Arina
-    - Cabelo/olho laranjas. Se não me engano, ela era um newkie comandante protótipo,
-      abandonada em estase em um dos tanques de imersão, no domo 2.
-    - 2
-    - 
-    - '2013-09-20 14:06:47.362574'
-    - '2013-09-20 14:06:47.362574'
-    - 
-    - 3
-  - - 7
-    - Aura
-    - Concorrente de nidja no concurso de hegon, Cabelo e olho Verde claro liso, pintas
-      azuis claras (404dp 16 anos)
-    - 2
-    - 25
-    - '2013-09-20 14:08:03.894709'
-    - '2013-09-20 14:08:03.894709'
-    - 
-    - 3
-  - - 8
-    - Auro
-    - Auro é o primeiro professor de combate de Branca.
-    - 4
-    - 1
-    - '2013-09-20 14:08:29.245719'
-    - '2013-09-20 14:08:29.245719'
-    - 
-    - 2
-  - - 9
-    - Branca
-    - Amiga do negro. Eles se conheceram no planeta batalha.
-    - 4
-    - 1
-    - '2013-09-20 14:10:30.194061'
-    - '2013-09-20 14:10:30.194061'
-    - 
-    - 3
-  - - 10
-    - Carim
-    - Carim é uma "enfermeira" que ajuda dragões que foram feridos na batalha contra
-      Argon, o líder do quarto castelo da ilha suprema.
-    - 4
-    - 21
-    - '2013-09-20 14:11:20.733238'
-    - '2013-09-20 14:11:20.733238'
-    - 
-    - 3
-  - - 11
-    - Certh
-    - Dragão que se alia a negro no planeta batalha para tentar ultrapassar a ilha
-      de Electro. A aliança não da certo.
-    - 4
-    - 16
-    - '2013-09-20 14:17:01.514858'
-    - '2013-09-20 14:17:01.514858'
-    - 
-    - 2
-  - - 12
-    - Cley
-    - "Concorrente de Nidja no concurso de Hegon\nCabelo curto roxo e Olhos e pintas
-      azuis "
-    - 2
-    - 26
-    - '2013-09-20 14:28:27.323636'
-    - '2013-09-20 14:28:27.323636'
-    - 
-    - 2
-  - - 13
-    - Cryoth
-    - Líder de um dos castelos do planeta batalha. Nome atualizado Gélido »» Cryoth
-    - 4
-    - 2
-    - '2013-09-20 14:29:11.154652'
-    - '2013-09-20 14:29:11.154652'
-    - 
-    - 2
-  - - 14
-    - Dallan Ilmuu Langrath
-    - Esse é o nome com que o personagem do Cristais se apresenta aos Techmagos.
-    - 6
-    - 
-    - '2013-09-20 14:39:43.009106'
-    - '2013-09-26 20:01:42.012725'
-    - 
-    - 2
-  - - 15
-    - Draco
-    - Guardião do olho da sabedoria no planeta batalha
-    - 4
-    - 8
-    - '2013-09-20 14:40:12.362666'
-    - '2013-09-20 14:40:12.362666'
-    - 
-    - 2
-  - - 16
-    - Electro
-    - Líder de um dos castelos do planeta batalha.
-    - 4
-    - 2
-    - '2013-09-20 14:40:33.620657'
-    - '2013-09-20 14:40:33.620657'
-    - 
-    - 2
-  - - 17
-    - Gaulon
-    - Líder de um dos castelos do planeta batalha. Nome atualizado Preto »» Gaulon
-    - 4
-    - 2
-    - '2013-09-20 14:42:48.582551'
-    - '2013-09-26 20:03:43.256680'
-    - 
-    - 2
-  - - 18
-    - Hermy
-    - Líder de um dos castelos do planeta batalha.
-    - 4
-    - 2
-    - '2013-09-20 14:45:00.045969'
-    - '2013-09-20 14:45:00.045969'
-    - 
-    - 3
-  - - 19
-    - Icris
-    - Esse é o nome que Nagina usa para conversar com o personagem principal do Cristais.
-      Ou esse era o nome original dele, ou era o nome que ele usava quando encontrou
-      Nagina.
-    - 6
-    - 
-    - '2013-09-20 14:48:09.041523'
-    - '2013-09-26 20:01:29.385407'
-    - 
-    - 2
-  - - 20
-    - Jadd
-    - Responsável por uma importante divisão de pesquisa militar. (Cúpula techmaga)
-    - 1
-    - 27
-    - '2013-09-20 14:50:06.660270'
-    - '2013-09-20 14:50:06.660270'
-    - 
-    - 2
-  - - 21
-    - Kalryne
-    - Lobisomem vermelha, irmã mais nova de Sildon. Ela é responsável por preparar
-      temperos e remédios baseados em ervas para a tribo. (botânica - druida)
-    - 3
-    - 6
-    - '2013-09-20 14:54:23.078574'
-    - '2013-09-20 14:54:23.078574'
-    - 
-    - 3
-  - - 22
-    - Kuanos
-    - Líder Newkie, Dono original do Negro
-    - 2
-    - 28
-    - '2013-09-20 14:55:12.587562'
-    - '2013-09-20 14:55:44.238264'
-    - 
-    - 2
-  - - 23
-    - Lans
-    - Chefe da policia do quadrante; Cabelo/Olho/Pintas Azul acinzentado (404 dp 35
-      Anos.)
-    - 2
-    - 29
-    - '2013-09-20 14:56:49.933878'
-    - '2013-09-20 14:56:49.933878'
-    - 
-    - 2
-  - - 24
-    - Lao
-    - Líder de um dos castelos do planeta batalha.
-    - 4
-    - 2
-    - '2013-09-20 14:57:15.221996'
-    - '2013-09-20 14:57:15.221996'
-    - 
-    - 3
-  - - 25
-    - Lara
-    - Filha de Leucadio e <>, Vitur originalmente a encontra pela primeira vez num
-      passeio a praia com os newkies, no Brasil. A história provavelmente vai ser
-      bem diferente quando eu reescrevê-la.
-    - 1
-    - 7
-    - '2013-09-20 14:57:47.131531'
-    - '2013-09-20 14:57:47.131531'
-    - 
-    - 3
-  - - 26
-    - Leonardo
-    - Primeiro nome usado pelo personagem principal do cristais. Esse era o seu nome
-      originalmente em Hollus.
-    - 6
-    - 
-    - '2013-09-20 14:58:13.509915'
-    - '2013-09-26 20:02:00.612855'
-    - 
-    - 2
-  - - 27
-    - Léucadio
-    - Primeiro nome usado pelo personagem principal do cristais. Esse era o seu nome
-      originalmente em Hollus.
-    - 1
-    - 7
-    - '2013-09-20 14:58:55.056139'
-    - '2013-09-20 14:58:55.056139'
-    - 
-    - 2
-  - - 28
-    - Ligy
-    - Cabelo/olho roxos. Controladora newkie. A segunda newkie criada por Vitur.
-    - 2
-    - 
-    - '2013-09-20 14:59:39.750350'
-    - '2013-09-20 14:59:39.750350'
-    - 
-    - 3
-  - - 29
-    - Linea
-    - Líder de um dos castelos do planeta batalha.
-    - 4
-    - 2
-    - '2013-09-20 15:00:06.720450'
-    - '2013-09-20 15:00:06.720450'
-    - 
-    - 3
-  - - 30
-    - Lithos
-    - Filho de Stara
-    - 2
-    - 30
-    - '2013-09-20 15:02:09.658782'
-    - '2013-09-20 15:02:09.658782'
-    - 
-    - 2
-  - - 31
-    - Lua
-    - Lobisomem prateada. Garota escolhida para acabar com o "grande evento x"
-    - 3
-    - 11
-    - '2013-09-20 15:02:38.906829'
-    - '2013-09-20 15:02:38.906829'
-    - 
-    - 3
-  - - 32
-    - Lucia
-    - Lucia é a diretora da techcidade em Hollus.
-    - 1
-    - 10
-    - '2013-09-20 15:03:12.348019'
-    - '2013-09-20 15:03:12.348019'
-    - 
-    - 3
-  - - 33
-    - Luna
-    - O espírito da lua de Hollus
-    - 7
-    - 
-    - '2013-09-20 15:03:36.883569'
-    - '2013-09-20 15:03:36.883569'
-    - 
-    - 3
-  - - 34
-    - Lyia
-    - "Lobisomem Prateada. Ela é o primeiro contado \"dele\" com os lobisomens.\nFilha
-      do líder do líder dourado (que também é o líder dos lobisomens prateados), ela
-      é uma figura importante, e acompanha \"ele\" nas visitas ás outras tribos dos
-      lobisomens. "
-    - 3
-    - 11
-    - '2013-09-20 15:04:06.176742'
-    - '2013-09-20 15:04:06.176742'
-    - 
-    - 3
-  - - 35
-    - Marin
-    - Líder de um dos castelos do planeta batalha.
-    - 4
-    - 2
-    - '2013-09-20 15:04:34.540037'
-    - '2013-09-20 15:04:34.540037'
-    - 
-    - 3
-  - - 36
-    - Morí
-    - Líder de um dos castelos do planeta batalha.
-    - 4
-    - 2
-    - '2013-09-20 15:04:49.775709'
-    - '2014-02-21 19:32:51.922990'
-    - ''
-    - 3
-  - - 37
-    - Mynn
-    - Integrante de uma das equipes de exploração da união newkie. Negro a encontra
-      rodeando a nave de exploração "Terket" a procura de alguma falha estrutural,
-      os dois conversam, ficam amigos e Mynn convida Negro para participar de uma
-      missão de exploração e eles acabam caindo no planeta batalha.
-    - 4
-    - 31
-    - '2013-09-20 15:06:08.015638'
-    - '2013-09-20 15:06:08.015638'
-    - 
-    - 3
-  - - 38
-    - Nagina
-    - Nagina é uma espada com consciência, criada há vários planos abaixo milênios
-      atrás e que costuma ser fiel a apenas um mestre, o único que pode tocá-la. Nagina
-      existe a talvez centenas de milênios, e é particularmente homicida. Seu propósito
-      de existência é matar.
-    - 6
-    - 
-    - '2013-09-20 15:06:36.605641'
-    - '2013-09-20 15:06:36.605641'
-    - 
-    - 1
-  - - 39
-    - Nautza
-    - 'líder de um dos castelos do planeta batalha. Nome atualizado Athena »» Nautza '
-    - 4
-    - 2
-    - '2013-09-20 15:06:57.539700'
-    - '2013-09-20 15:06:57.539700'
-    - 
-    - 3
-  - - 40
-    - Negro
-    - Protagonista do ilhas de batalha. Nasceu em Xuim, uma vila perto de um penhasco.
-    - 4
-    - 15
-    - '2013-09-20 15:07:17.579033'
-    - '2013-09-20 15:07:17.579033'
-    - 
-    - 2
-  - - 41
-    - Nesti
-    - O espírito da primeira lua de Wolmron-3 (a lua menor)
-    - 7
-    - 
-    - '2013-09-20 15:07:38.069048'
-    - '2013-09-20 15:07:38.069048'
-    - 
-    - 3
-  - - 42
-    - Niagara
-    - Mãe de Nidja, Programadora do OM, Olho verde, Cabelo laranja, pintas Ciano
-    - 2
-    - 5
-    - '2013-09-20 15:08:09.668083'
-    - '2013-09-20 15:08:09.668083'
-    - 
-    - 3
-  - - 43
-    - Nidja
-    - |-
-      Meio-newkie. Protagonista do nova era.
-      Olho marrom, cabelo preto, SEM PINTAS
-    - 8
-    - 5
-    - '2013-09-20 15:09:16.673887'
-    - '2013-09-20 15:09:16.673887'
-    - 
-    - 3
-  - - 44
-    - Nith
-    - Lobisomem vermelha. Não se sabe se é parente de Rayka.
-    - 3
-    - 14
-    - '2013-09-20 15:09:37.727188'
-    - '2013-09-20 15:09:37.727188'
-    - 
-    - 3
-  - - 45
-    - Psíco
-    - Psíco cuida da grande biblioteca no planeta batalha. Ilha do Electro.
-    - 4
-    - 22
-    - '2013-09-20 15:09:54.115543'
-    - '2013-09-20 15:09:54.115543'
-    - 
-    - 2
-  - - 46
-    - Rayka
-    - Lobisomem vermelha. Rayka é a líder dos lobos vermelhos.
-    - 3
-    - 14
-    - '2013-09-20 15:10:16.801269'
-    - '2013-09-20 15:10:16.801269'
-    - 
-    - 3
-  - - 47
-    - Ress
-    - Líder de um dos castelos do planeta batalha.
-    - 4
-    - 2
-    - '2013-09-20 15:10:47.136392'
-    - '2013-09-20 15:10:47.136392'
-    - 
-    - 2
-  - - 48
-    - Rigo
-    - Pai da Nidja, Jardineiro do Jardim, Olho marrom, cabelo preto
-    - 2
-    - 5
-    - '2013-09-20 15:11:16.965899'
-    - '2013-09-26 20:10:10.264553'
-    - 
-    - 2
-  - - 49
-    - Rika
-    - Cabelo/olho vermelhos. Primeira newkie criada por Vitur
-    - 9
-    - 
-    - '2013-09-20 15:11:37.075553'
-    - '2013-09-20 15:11:37.075553'
-    - 
-    - 3
-  - - 50
-    - Sideam
-    - Lobisomem branco. Sideam é o líder do lobisomens brancos.
-    - 3
-    - 17
-    - '2013-09-20 15:11:57.589261'
-    - '2013-09-20 15:11:57.589261'
-    - 
-    - 2
-  - - 51
-    - Sikeya
-    - O espírito da segunda lua de Wolmron-3 (a lua maior, habitável e lar designado
-      para os lobos vermelhos.)
-    - 7
-    - 
-    - '2013-09-20 15:12:16.820838'
-    - '2013-09-20 15:12:16.820838'
-    - 
-    - 3
-  - - 52
-    - Sildon
-    - Lobisomem vermelho, irmão mais velho de Kalryne
-    - 3
-    - 6
-    - '2013-09-20 15:12:38.395016'
-    - '2013-09-20 15:12:38.395016'
-    - 
-    - 2
-  - - 53
-    - Skyra
-    - Integrante do clã estrela negra que comete o crime de mostrar o esconderijo
-      do clã no planeta batalha para Negro e Branca.
-    - 4
-    - 3
-    - '2013-09-20 15:13:03.747448'
-    - '2013-09-20 15:13:03.747448'
-    - 
-    - 3
-  - - 54
-    - Stara
-    - Mãe de Lithos.
-    - 2
-    - 30
-    - '2013-09-20 15:13:34.765878'
-    - '2013-09-20 15:13:34.765878'
-    - 
-    - 3
-  - - 55
-    - Syan
-    - Um dos techmagos responsável pelo estudo dos lobisomens.
-    - 1
-    - 4
-    - '2013-09-20 15:13:56.138575'
-    - '2013-09-20 15:13:56.138575'
-    - 
-    - 2
-  - - 56
-    - Tâmara
-    - Líder de um dos castelos do planeta batalha.
-    - 4
-    - 2
-    - '2013-09-20 15:14:20.629966'
-    - '2013-09-20 15:14:20.629966'
-    - 
-    - 3
-  - - 57
-    - Tami
-    - Integrante do clã estrela negra. Ela que levou Skyra sob custódia após encontra-la
-      com Negro e Branca dentro do esconderijo do clã no planeta batalha.
-    - 4
-    - 9
-    - '2013-09-20 15:15:45.289669'
-    - '2013-09-20 15:15:45.289669'
-    - 
-    - 3
-  - - 58
-    - Tami
-    - O espírito da primeira lua de Dermis
-    - 7
-    - 
-    - '2013-09-20 15:16:04.936067'
-    - '2013-09-20 15:16:04.936067'
-    - 
-    - 3
-  - - 59
-    - Terra
-    - A primeira techmaga encontrada por "ele" e responsável por encaminhá-lo aos
-      techmagos. Morreu durante o "grande evento x", vítima de um dos guardiões da
-      segunda arma mágica. Foi ainda ressuscitada pelos seres do nódulo interdimensional
-      e controlada por aqueles seres, até finalmente ser morta por "Ele" que no evento
-      da destruição do posto intra-dimencional.
-    - 1
-    - 20
-    - '2013-09-20 15:17:07.741224'
-    - '2014-02-26 15:02:15.263085'
-    - |-
-      "(…) Uma jovem com cabelos castanhos (…)"
-
-      "(…) Ainda que ela tivesse um corpo formoso (…)"
-    - 3
-  - - 60
-    - Thasani
-    - Thasani foi selada em uma pedra selo e libertada por Rayka, em um plano arquitetado
-      por Sikeya. Os lobisomens vermelhos originalmente haviam entendido que Sikeya
-      desejava testá-los, apresentando-lhes um oponente poderoso. No fim, "Ele" impediu
-      que a batalha tivesse uma conclusão, percebendo que o espirito na verdade desejava
-      que a Arkain fosse libertada e pudesse retornar para junto de seu povo.
-    - 5
-    - 
-    - '2013-09-20 15:17:35.763357'
-    - '2013-09-20 15:17:35.763357'
-    - 
-    - 3
-  - - 61
-    - Tieg
-    - Lobisomem prateado/dourado. Tieg é o líder dourado e líder dos lobisomens prateados
-      e é o lobo dourado.
-    - 3
-    - 11
-    - '2013-09-20 15:18:00.432122'
-    - '2013-09-20 15:18:00.432122'
-    - 
-    - 2
-  - - 62
-    - Tylanth
-    - 'Líder do castelo supremo no planeta batalha. '
-    - 4
-    - 2
-    - '2013-09-20 15:18:28.763890'
-    - '2013-09-20 15:18:28.763890'
-    - 
-    - 2
-  - - 63
-    - Uthos
-    - Lobisomem vermelho responsável pelo caldeirão de sangue, um dos sábios da tribo
-      de Rayka. Ela sempre o consultou para pedir conselhos.
-    - 3
-    - 13
-    - '2013-09-20 15:19:05.401205'
-    - '2013-09-20 15:19:05.401205'
-    - 
-    - 2
-  - - 64
-    - Vitur
-    - Protagonista do Newkies. Originalmente ele era um descendente de Bruno, o cientista
-      líder dos newkies e saiu a procura do domo ao encontrar um diário de seu avô.
-      Na história nova vai ser algo bem diferente.
-    - 1
-    - 12
-    - '2013-09-20 15:19:24.256988'
-    - '2013-09-20 15:19:24.256988'
-    - 
-    - 2
-  - - 65
-    - Xaon
-    - Lobisomem negro. Xaon é o líder dos lobos Negros.
-    - 3
-    - 23
-    - '2013-09-20 15:20:08.316356'
-    - '2013-09-20 15:20:08.316356'
-    - 
-    - 2
-  - - 66
-    - Zara
-    - Techmaga responsável pelo estudo dos lobisomens.
-    - 1
-    - 19
-    - '2013-09-20 15:20:44.287462'
-    - '2013-09-20 15:20:44.287462'
-    - 
-    - 3
-
----
-books_orbs:
-  columns:
-  - book_id
-  - orb_id
-  records: 
-  - - 1
-    - 2
-  - - 1
-    - 12
-  - - 1
-    - 22
-  - - 1
-    - 23
-  - - 2
-    - 9
-  - - 2
-    - 10
-  - - 2
-    - 14
-  - - 2
-    - 26
-  - - 2
-    - 27
-  - - 2
-    - 28
-  - - 2
-    - 29
-  - - 3
-    - 13
-  - - 4
-    - 1
-  - - 4
-    - 2
-  - - 4
-    - 3
-  - - 4
-    - 4
-  - - 4
-    - 5
-  - - 4
-    - 6
-  - - 4
-    - 7
-  - - 4
-    - 8
-  - - 4
-    - 11
-  - - 4
-    - 12
-  - - 4
-    - 15
-  - - 4
-    - 16
-  - - 4
-    - 17
-  - - 4
-    - 18
-  - - 4
-    - 19
-  - - 4
-    - 20
-  - - 4
-    - 21
-  - - 4
-    - 22
-  - - 4
-    - 23
-  - - 4
-    - 24
-  - - 4
-    - 25
-  - - 4
-    - 30
-  - - 4
-    - 31
-  - - 4
-    - 32
-  - - 4
-    - 33
-  - - 4
-    - 34
-  - - 4
-    - 35
-  - - 4
-    - 36
-
----
-books_ships:
-  columns:
-  - book_id
-  - ship_id
-  records: 
-  - - 1
-    - 3
-  - - 2
-    - 1
-  - - 2
-    - 2
-  - - 2
-    - 4
+    - 2013-09-20 13:27:53.000000000 Z
+    - 2013-09-20 13:42:28.000000000 Z
 
 ---
 books_families:
   columns:
   - book_id
   - family_id
-  records: 
+  records:
   - - 1
     - 1
   - - 1
@@ -1564,7 +162,9 @@ books_names:
   columns:
   - book_id
   - name_id
-  records: 
+  records:
+  - - 1
+    - 4
   - - 1
     - 8
   - - 1
@@ -1573,8 +173,6 @@ books_names:
     - 10
   - - 1
     - 11
-  - - 1
-    - 4
   - - 1
     - 13
   - - 1
@@ -1612,11 +210,11 @@ books_names:
   - - 1
     - 62
   - - 2
-    - 5
-  - - 2
     - 1
   - - 2
     - 2
+  - - 2
+    - 5
   - - 2
     - 14
   - - 2
@@ -1666,9 +264,9 @@ books_names:
   - - 2
     - 66
   - - 3
-    - 6
-  - - 3
     - 3
+  - - 3
+    - 6
   - - 3
     - 25
   - - 3
@@ -1699,11 +297,328 @@ books_names:
     - 54
 
 ---
+books_orbs:
+  columns:
+  - book_id
+  - orb_id
+  records:
+  - - 1
+    - 2
+  - - 1
+    - 12
+  - - 1
+    - 22
+  - - 1
+    - 23
+  - - 2
+    - 9
+  - - 2
+    - 10
+  - - 2
+    - 14
+  - - 2
+    - 26
+  - - 2
+    - 27
+  - - 2
+    - 28
+  - - 2
+    - 29
+  - - 3
+    - 13
+  - - 4
+    - 1
+  - - 4
+    - 2
+  - - 4
+    - 3
+  - - 4
+    - 4
+  - - 4
+    - 5
+  - - 4
+    - 6
+  - - 4
+    - 7
+  - - 4
+    - 8
+  - - 4
+    - 11
+  - - 4
+    - 12
+  - - 4
+    - 15
+  - - 4
+    - 16
+  - - 4
+    - 17
+  - - 4
+    - 18
+  - - 4
+    - 19
+  - - 4
+    - 20
+  - - 4
+    - 21
+  - - 4
+    - 22
+  - - 4
+    - 23
+  - - 4
+    - 24
+  - - 4
+    - 25
+  - - 4
+    - 30
+  - - 4
+    - 31
+  - - 4
+    - 32
+  - - 4
+    - 33
+  - - 4
+    - 34
+  - - 4
+    - 35
+  - - 4
+    - 36
+
+---
+books_races:
+  columns:
+  - book_id
+  - race_id
+  records:
+  - - 1
+    - 1
+  - - 1
+    - 2
+  - - 1
+    - 4
+  - - 2
+    - 1
+  - - 2
+    - 3
+  - - 2
+    - 5
+  - - 2
+    - 6
+  - - 2
+    - 7
+  - - 2
+    - 9
+  - - 3
+    - 1
+  - - 3
+    - 2
+  - - 4
+    - 1
+  - - 4
+    - 2
+  - - 4
+    - 4
+  - - 4
+    - 8
+
+---
+books_ships:
+  columns:
+  - book_id
+  - ship_id
+  records:
+  - - 1
+    - 3
+  - - 2
+    - 1
+  - - 2
+    - 2
+  - - 2
+    - 4
+  - - 2
+    - 5
+
+---
+families:
+  columns:
+  - id
+  - nome
+  - descr
+  - created_at
+  - updated_at
+  records:
+  - - 1
+    - Datter
+    - Branca e Auro não são parentes próximos, ainda que sejam da mesma família.
+    - 2013-09-20 13:27:53.000000000 Z
+    - 2013-09-20 13:27:53.000000000 Z
+  - - 2
+    - Delcan
+    - Todos os lideres de castelo do planeta Batalha são dessa família. (Mas não necessariamente
+      irmãos.)
+    - 2013-09-20 13:27:54.000000000 Z
+    - 2013-09-20 13:27:54.000000000 Z
+  - - 3
+    - Erathur
+    - Uma das famílias que integram o clã estrela negra. Essa família não é uma das
+      mais importantes.
+    - 2013-09-20 13:27:54.000000000 Z
+    - 2013-09-20 13:50:38.000000000 Z
+  - - 4
+    - Foldane
+    - ''
+    - 2013-09-20 13:27:54.000000000 Z
+    - 2013-09-20 13:50:57.000000000 Z
+  - - 5
+    - Gama III Blackfield
+    - Família da protagonista do nova era. A parte newkie é da mãe e a parte humana
+      é do pai da Nidja.
+    - 2013-09-20 13:27:54.000000000 Z
+    - 2013-09-20 15:08:33.000000000 Z
+  - - 6
+    - Kreer
+    - |-
+      Uma das fámilias da tribo dos lobisomens vermelhos.
+      Sildon e Kalryne são irmãos. Kalryne é a mais nova.
+    - 2013-09-20 13:27:54.000000000 Z
+    - 2013-09-20 13:27:54.000000000 Z
+  - - 7
+    - Lelin
+    - Foi essa familia que originalmente criou os felks.
+    - 2013-09-20 13:27:54.000000000 Z
+    - 2013-09-20 13:27:54.000000000 Z
+  - - 8
+    - Mabert
+    - Uma família antiga e pouco conhecida aos dragões comuns. Geralmente seus membros
+      tem atribuições importantes.
+    - 2013-09-20 13:27:55.000000000 Z
+    - 2013-09-20 13:27:55.000000000 Z
+  - - 9
+    - Mainat
+    - |-
+      Uma das famílias que integram o clã estrela negra.
+      Essa família não é a mais importante, nem a menos.
+    - 2013-09-20 13:27:55.000000000 Z
+    - 2013-09-20 13:55:54.000000000 Z
+  - - 10
+    - Morland
+    - ''
+    - 2013-09-20 13:27:55.000000000 Z
+    - 2013-09-20 13:56:44.000000000 Z
+  - - 11
+    - Netrick
+    - Lyia é filha de Tieg e Lua, por ter sido simplesmente um "presente" da lua de
+      Hollus (Luna), não tem realmente pais. Pode se dizer até que ela é adotada.
+    - 2013-09-20 13:27:55.000000000 Z
+    - 2013-09-20 13:27:55.000000000 Z
+  - - 12
+    - Reaven
+    - Família do protagonista do newkies
+    - 2013-09-20 13:27:55.000000000 Z
+    - 2013-09-20 13:27:55.000000000 Z
+  - - 13
+    - Ressek
+    - Uma das famílias da tribo dos lobisomens vermelhos.
+    - 2013-09-20 13:27:55.000000000 Z
+    - 2013-09-20 13:27:55.000000000 Z
+  - - 14
+    - Rettack
+    - Família do líder dos lobos vermelhos. Não se sabe se Nith tem algum parentesco
+      com Rayka.
+    - 2013-09-20 13:27:56.000000000 Z
+    - 2013-09-20 13:27:56.000000000 Z
+  - - 15
+    - Ristair
+    - Família do protagonista do ilhas de batalha. Alguns membros certamente vivem
+      em Xuim, uma vila próxima a um penhasco.
+    - 2013-09-20 13:27:56.000000000 Z
+    - 2013-09-20 13:27:56.000000000 Z
+  - - 16
+    - Roanim
+    - ''
+    - 2013-09-20 13:27:56.000000000 Z
+    - 2013-09-20 13:58:29.000000000 Z
+  - - 17
+    - Rollinor
+    - Família do líder dos lobisomens brancos.
+    - 2013-09-20 13:27:56.000000000 Z
+    - 2013-09-20 13:27:56.000000000 Z
+  - - 18
+    - Sashvaret
+    - Uma das famílias da tribo dos lobisomens vermelhos.
+    - 2013-09-20 13:27:56.000000000 Z
+    - 2013-09-20 13:27:56.000000000 Z
+  - - 19
+    - Sastar
+    - ''
+    - 2013-09-20 13:27:56.000000000 Z
+    - 2013-09-20 13:58:58.000000000 Z
+  - - 20
+    - Shoukat
+    - ''
+    - 2013-09-20 13:27:57.000000000 Z
+    - 2013-09-20 13:59:12.000000000 Z
+  - - 21
+    - Torcom
+    - ''
+    - 2013-09-20 13:27:57.000000000 Z
+    - 2013-09-20 13:59:26.000000000 Z
+  - - 22
+    - Tuerem
+    - ''
+    - 2013-09-20 13:27:57.000000000 Z
+    - 2013-09-20 13:59:46.000000000 Z
+  - - 23
+    - Tylladon
+    - 'Família do líder dos lobisomens negros. '
+    - 2013-09-20 13:27:57.000000000 Z
+    - 2013-09-20 13:27:57.000000000 Z
+  - - 24
+    - Ducan
+    - 'Família techmaga com integrantes pertencentes a cúpula. '
+    - 2013-09-20 13:27:57.000000000 Z
+    - 2013-09-20 14:00:42.000000000 Z
+  - - 25
+    - Delta IV Beta X
+    - Tradicional família Newkie.
+    - 2013-09-20 13:27:57.000000000 Z
+    - 2013-09-20 14:01:09.000000000 Z
+  - - 26
+    - Sigma II
+    - ''
+    - 2013-09-20 14:27:43.000000000 Z
+    - 2013-09-20 14:27:43.000000000 Z
+  - - 27
+    - Temark
+    - Família com membros na cúpula techmaga.
+    - 2013-09-20 14:49:37.000000000 Z
+    - 2013-09-20 14:49:37.000000000 Z
+  - - 28
+    - Gama
+    - ''
+    - 2013-09-20 14:55:29.000000000 Z
+    - 2013-09-20 14:55:29.000000000 Z
+  - - 29
+    - Alfa II
+    - ''
+    - 2013-09-20 14:56:25.000000000 Z
+    - 2013-09-20 14:56:25.000000000 Z
+  - - 30
+    - Eta V Teta VI
+    - Tipica família newkie
+    - 2013-09-20 15:00:40.000000000 Z
+    - 2013-09-20 15:00:40.000000000 Z
+  - - 31
+    - Cowina
+    - ''
+    - 2013-09-20 15:05:29.000000000 Z
+    - 2013-09-20 15:05:29.000000000 Z
+
+---
 families_races:
   columns:
   - family_id
   - race_id
-  records: 
+  records:
   - - 1
     - 4
   - - 2
@@ -1713,11 +628,11 @@ families_races:
   - - 4
     - 1
   - - 5
-    - 8
-  - - 5
     - 1
   - - 5
     - 2
+  - - 5
+    - 8
   - - 6
     - 3
   - - 7
@@ -1772,38 +687,1152 @@ families_races:
     - 4
 
 ---
-books_races:
+names:
   columns:
-  - book_id
+  - id
+  - nome
+  - descr
   - race_id
-  records: 
+  - family_id
+  - created_at
+  - updated_at
+  - aparencia
+  - sexo
+  records:
   - - 1
-    - 1
-  - - 1
-    - 2
-  - - 1
-    - 4
-  - - 2
-    - 1
-  - - 2
+    - Accith
+    - Lobisomem vermelho, caçador experiente.
     - 3
-  - - 2
-    - 5
-  - - 2
-    - 6
-  - - 2
-    - 7
-  - - 2
-    - 9
-  - - 3
-    - 1
-  - - 3
+    - 18
+    - 2013-09-20 13:27:58.000000000 Z
+    - 2014-02-21 19:11:13.000000000 Z
+    - ''
     - 2
-  - - 4
+  - - 2
+    - Aline
+    - Responsável geral pela educação mágica. (Cúpula techmaga)
     - 1
-  - - 4
+    - 24
+    - 2013-09-20 13:27:58.000000000 Z
+    - 2013-09-20 13:27:58.000000000 Z
+    -
+    - 3
+  - - 3
+    - Anna
+    - Cabelo/Olho azuis claros. Originalmente ela havia sido salva por Vitur em Oram,
+      e ficou psicologicamente dependente dele.
     - 2
+    -
+    - 2013-09-20 13:27:58.000000000 Z
+    - 2013-09-20 14:22:55.000000000 Z
+    -
+    - 3
   - - 4
+    - Argon
+    - Líder de um dos castelos do planeta batalha.
     - 4
-  - - 4
+    - 2
+    - 2013-09-20 13:27:58.000000000 Z
+    - 2013-09-20 13:27:58.000000000 Z
+    -
+    - 2
+  - - 5
+    - Amy
+    - Amy é a consciência nanorobôtica "dele", a única a ultrapassar as restrições
+      de segurança comuns a outras consciências e se tornar capaz de fazer o que bem
+      entender, até criar outra consciências por conta própria. Apesar de Amy ter
+      criado várias outras entidades nanorobôticas para lhe ajudar, nenhuma delas
+      entrou em contato direto com "ele".
+    - 9
+    -
+    - 2013-09-20 14:04:25.000000000 Z
+    - 2013-09-20 14:04:25.000000000 Z
+    -
+    - 1
+  - - 6
+    - Arina
+    - Cabelo/olho laranjas. Se não me engano, ela era um newkie comandante protótipo,
+      abandonada em estase em um dos tanques de imersão, no domo 2.
+    - 2
+    -
+    - 2013-09-20 14:06:47.000000000 Z
+    - 2013-09-20 14:06:47.000000000 Z
+    -
+    - 3
+  - - 7
+    - Aura
+    - Concorrente de nidja no concurso de hegon, Cabelo e olho Verde claro liso, pintas
+      azuis claras (404dp 16 anos)
+    - 2
+    - 25
+    - 2013-09-20 14:08:03.000000000 Z
+    - 2013-09-20 14:08:03.000000000 Z
+    -
+    - 3
+  - - 8
+    - Auro
+    - Auro é o primeiro professor de combate de Branca.
+    - 4
+    - 1
+    - 2013-09-20 14:08:29.000000000 Z
+    - 2013-09-20 14:08:29.000000000 Z
+    -
+    - 2
+  - - 9
+    - Branca
+    - Amiga do negro. Eles se conheceram no planeta batalha.
+    - 4
+    - 1
+    - 2013-09-20 14:10:30.000000000 Z
+    - 2013-09-20 14:10:30.000000000 Z
+    -
+    - 3
+  - - 10
+    - Carim
+    - Carim é uma "enfermeira" que ajuda dragões que foram feridos na batalha contra
+      Argon, o líder do quarto castelo da ilha suprema.
+    - 4
+    - 21
+    - 2013-09-20 14:11:20.000000000 Z
+    - 2013-09-20 14:11:20.000000000 Z
+    -
+    - 3
+  - - 11
+    - Certh
+    - Dragão que se alia a negro no planeta batalha para tentar ultrapassar a ilha
+      de Electro. A aliança não da certo.
+    - 4
+    - 16
+    - 2013-09-20 14:17:01.000000000 Z
+    - 2013-09-20 14:17:01.000000000 Z
+    -
+    - 2
+  - - 12
+    - Cley
+    - "Concorrente de Nidja no concurso de Hegon\nCabelo curto roxo e Olhos e pintas
+      azuis "
+    - 2
+    - 26
+    - 2013-09-20 14:28:27.000000000 Z
+    - 2013-09-20 14:28:27.000000000 Z
+    -
+    - 2
+  - - 13
+    - Cryoth
+    - Líder de um dos castelos do planeta batalha. Nome atualizado Gélido »» Cryoth
+    - 4
+    - 2
+    - 2013-09-20 14:29:11.000000000 Z
+    - 2013-09-20 14:29:11.000000000 Z
+    -
+    - 2
+  - - 14
+    - Dallan Ilmuu Langrath
+    - Esse é o nome com que o personagem do Cristais se apresenta aos Techmagos.
+    - 6
+    -
+    - 2013-09-20 14:39:43.000000000 Z
+    - 2013-09-26 20:01:42.000000000 Z
+    -
+    - 2
+  - - 15
+    - Draco
+    - Guardião do olho da sabedoria no planeta batalha
+    - 4
     - 8
+    - 2013-09-20 14:40:12.000000000 Z
+    - 2013-09-20 14:40:12.000000000 Z
+    -
+    - 2
+  - - 16
+    - Electro
+    - Líder de um dos castelos do planeta batalha.
+    - 4
+    - 2
+    - 2013-09-20 14:40:33.000000000 Z
+    - 2013-09-20 14:40:33.000000000 Z
+    -
+    - 2
+  - - 17
+    - Gaulon
+    - Líder de um dos castelos do planeta batalha. Nome atualizado Preto »» Gaulon
+    - 4
+    - 2
+    - 2013-09-20 14:42:48.000000000 Z
+    - 2013-09-26 20:03:43.000000000 Z
+    -
+    - 2
+  - - 18
+    - Hermy
+    - Líder de um dos castelos do planeta batalha.
+    - 4
+    - 2
+    - 2013-09-20 14:45:00.000000000 Z
+    - 2013-09-20 14:45:00.000000000 Z
+    -
+    - 3
+  - - 19
+    - Icris
+    - Esse é o nome que Nagina usa para conversar com o personagem principal do Cristais.
+      Ou esse era o nome original dele, ou era o nome que ele usava quando encontrou
+      Nagina.
+    - 6
+    -
+    - 2013-09-20 14:48:09.000000000 Z
+    - 2013-09-26 20:01:29.000000000 Z
+    -
+    - 2
+  - - 20
+    - Jadd
+    - Responsável por uma importante divisão de pesquisa militar. (Cúpula techmaga)
+    - 1
+    - 27
+    - 2013-09-20 14:50:06.000000000 Z
+    - 2013-09-20 14:50:06.000000000 Z
+    -
+    - 2
+  - - 21
+    - Kalryne
+    - Lobisomem vermelha, irmã mais nova de Sildon. Ela é responsável por preparar
+      temperos e remédios baseados em ervas para a tribo. (botânica - druida)
+    - 3
+    - 6
+    - 2013-09-20 14:54:23.000000000 Z
+    - 2013-09-20 14:54:23.000000000 Z
+    -
+    - 3
+  - - 22
+    - Kuanos
+    - Líder Newkie, Dono original do Negro
+    - 2
+    - 28
+    - 2013-09-20 14:55:12.000000000 Z
+    - 2013-09-20 14:55:44.000000000 Z
+    -
+    - 2
+  - - 23
+    - Lans
+    - Chefe da policia do quadrante; Cabelo/Olho/Pintas Azul acinzentado (404 dp 35
+      Anos.)
+    - 2
+    - 29
+    - 2013-09-20 14:56:49.000000000 Z
+    - 2013-09-20 14:56:49.000000000 Z
+    -
+    - 2
+  - - 24
+    - Lao
+    - Líder de um dos castelos do planeta batalha.
+    - 4
+    - 2
+    - 2013-09-20 14:57:15.000000000 Z
+    - 2013-09-20 14:57:15.000000000 Z
+    -
+    - 3
+  - - 25
+    - Lara
+    - Filha de Leucadio e <>, Vitur originalmente a encontra pela primeira vez num
+      passeio a praia com os newkies, no Brasil. A história provavelmente vai ser
+      bem diferente quando eu reescrevê-la.
+    - 1
+    - 7
+    - 2013-09-20 14:57:47.000000000 Z
+    - 2013-09-20 14:57:47.000000000 Z
+    -
+    - 3
+  - - 26
+    - Leonardo
+    - Primeiro nome usado pelo personagem principal do cristais. Esse era o seu nome
+      originalmente em Hollus.
+    - 6
+    -
+    - 2013-09-20 14:58:13.000000000 Z
+    - 2013-09-26 20:02:00.000000000 Z
+    -
+    - 2
+  - - 27
+    - Léucadio
+    - Primeiro nome usado pelo personagem principal do cristais. Esse era o seu nome
+      originalmente em Hollus.
+    - 1
+    - 7
+    - 2013-09-20 14:58:55.000000000 Z
+    - 2013-09-20 14:58:55.000000000 Z
+    -
+    - 2
+  - - 28
+    - Ligy
+    - Cabelo/olho roxos. Controladora newkie. A segunda newkie criada por Vitur.
+    - 2
+    -
+    - 2013-09-20 14:59:39.000000000 Z
+    - 2013-09-20 14:59:39.000000000 Z
+    -
+    - 3
+  - - 29
+    - Linea
+    - Líder de um dos castelos do planeta batalha.
+    - 4
+    - 2
+    - 2013-09-20 15:00:06.000000000 Z
+    - 2013-09-20 15:00:06.000000000 Z
+    -
+    - 3
+  - - 30
+    - Lithos
+    - Filho de Stara
+    - 2
+    - 30
+    - 2013-09-20 15:02:09.000000000 Z
+    - 2013-09-20 15:02:09.000000000 Z
+    -
+    - 2
+  - - 31
+    - Lua
+    - Lobisomem prateada. Garota escolhida para acabar com o "grande evento x"
+    - 3
+    - 11
+    - 2013-09-20 15:02:38.000000000 Z
+    - 2013-09-20 15:02:38.000000000 Z
+    -
+    - 3
+  - - 32
+    - Lucia
+    - Lucia é a diretora da techcidade em Hollus.
+    - 1
+    - 10
+    - 2013-09-20 15:03:12.000000000 Z
+    - 2013-09-20 15:03:12.000000000 Z
+    -
+    - 3
+  - - 33
+    - Luna
+    - O espírito da lua de Hollus
+    - 7
+    -
+    - 2013-09-20 15:03:36.000000000 Z
+    - 2013-09-20 15:03:36.000000000 Z
+    -
+    - 3
+  - - 34
+    - Lyia
+    - "Lobisomem Prateada. Ela é o primeiro contado \"dele\" com os lobisomens.\nFilha
+      do líder do líder dourado (que também é o líder dos lobisomens prateados), ela
+      é uma figura importante, e acompanha \"ele\" nas visitas ás outras tribos dos
+      lobisomens. "
+    - 3
+    - 11
+    - 2013-09-20 15:04:06.000000000 Z
+    - 2013-09-20 15:04:06.000000000 Z
+    -
+    - 3
+  - - 35
+    - Marin
+    - Líder de um dos castelos do planeta batalha.
+    - 4
+    - 2
+    - 2013-09-20 15:04:34.000000000 Z
+    - 2013-09-20 15:04:34.000000000 Z
+    -
+    - 3
+  - - 36
+    - Morí
+    - Líder de um dos castelos do planeta batalha.
+    - 4
+    - 2
+    - 2013-09-20 15:04:49.000000000 Z
+    - 2014-02-21 19:32:51.000000000 Z
+    - ''
+    - 3
+  - - 37
+    - Mynn
+    - Integrante de uma das equipes de exploração da união newkie. Negro a encontra
+      rodeando a nave de exploração "Terket" a procura de alguma falha estrutural,
+      os dois conversam, ficam amigos e Mynn convida Negro para participar de uma
+      missão de exploração e eles acabam caindo no planeta batalha.
+    - 4
+    - 31
+    - 2013-09-20 15:06:08.000000000 Z
+    - 2013-09-20 15:06:08.000000000 Z
+    -
+    - 3
+  - - 38
+    - Nagina
+    - Nagina é uma espada com consciência, criada há vários planos abaixo milênios
+      atrás e que costuma ser fiel a apenas um mestre, o único que pode tocá-la. Nagina
+      existe a talvez centenas de milênios, e é particularmente homicida. Seu propósito
+      de existência é matar.
+    - 6
+    -
+    - 2013-09-20 15:06:36.000000000 Z
+    - 2013-09-20 15:06:36.000000000 Z
+    -
+    - 1
+  - - 39
+    - Nautza
+    - 'líder de um dos castelos do planeta batalha. Nome atualizado Athena »» Nautza '
+    - 4
+    - 2
+    - 2013-09-20 15:06:57.000000000 Z
+    - 2013-09-20 15:06:57.000000000 Z
+    -
+    - 3
+  - - 40
+    - Negro
+    - Protagonista do ilhas de batalha. Nasceu em Xuim, uma vila perto de um penhasco.
+    - 4
+    - 15
+    - 2013-09-20 15:07:17.000000000 Z
+    - 2013-09-20 15:07:17.000000000 Z
+    -
+    - 2
+  - - 41
+    - Nesti
+    - O espírito da primeira lua de Wolmron-3 (a lua menor)
+    - 7
+    -
+    - 2013-09-20 15:07:38.000000000 Z
+    - 2013-09-20 15:07:38.000000000 Z
+    -
+    - 3
+  - - 42
+    - Niagara
+    - Mãe de Nidja, Programadora do OM, Olho verde, Cabelo laranja, pintas Ciano
+    - 2
+    - 5
+    - 2013-09-20 15:08:09.000000000 Z
+    - 2013-09-20 15:08:09.000000000 Z
+    -
+    - 3
+  - - 43
+    - Nidja
+    - |-
+      Meio-newkie. Protagonista do nova era.
+      Olho marrom, cabelo preto, SEM PINTAS
+    - 8
+    - 5
+    - 2013-09-20 15:09:16.000000000 Z
+    - 2013-09-20 15:09:16.000000000 Z
+    -
+    - 3
+  - - 44
+    - Nith
+    - Lobisomem vermelha. Não se sabe se é parente de Rayka.
+    - 3
+    - 14
+    - 2013-09-20 15:09:37.000000000 Z
+    - 2013-09-20 15:09:37.000000000 Z
+    -
+    - 3
+  - - 45
+    - Psíco
+    - Psíco cuida da grande biblioteca no planeta batalha. Ilha do Electro.
+    - 4
+    - 22
+    - 2013-09-20 15:09:54.000000000 Z
+    - 2013-09-20 15:09:54.000000000 Z
+    -
+    - 2
+  - - 46
+    - Rayka
+    - Lobisomem vermelha. Rayka é a líder dos lobos vermelhos.
+    - 3
+    - 14
+    - 2013-09-20 15:10:16.000000000 Z
+    - 2013-09-20 15:10:16.000000000 Z
+    -
+    - 3
+  - - 47
+    - Ress
+    - Líder de um dos castelos do planeta batalha.
+    - 4
+    - 2
+    - 2013-09-20 15:10:47.000000000 Z
+    - 2013-09-20 15:10:47.000000000 Z
+    -
+    - 2
+  - - 48
+    - Rigo
+    - Pai da Nidja, Jardineiro do Jardim, Olho marrom, cabelo preto
+    - 2
+    - 5
+    - 2013-09-20 15:11:16.000000000 Z
+    - 2013-09-26 20:10:10.000000000 Z
+    -
+    - 2
+  - - 49
+    - Rika
+    - Cabelo/olho vermelhos. Primeira newkie criada por Vitur
+    - 9
+    -
+    - 2013-09-20 15:11:37.000000000 Z
+    - 2013-09-20 15:11:37.000000000 Z
+    -
+    - 3
+  - - 50
+    - Sideam
+    - Lobisomem branco. Sideam é o líder do lobisomens brancos.
+    - 3
+    - 17
+    - 2013-09-20 15:11:57.000000000 Z
+    - 2013-09-20 15:11:57.000000000 Z
+    -
+    - 2
+  - - 51
+    - Sikeya
+    - O espírito da segunda lua de Wolmron-3 (a lua maior, habitável e lar designado
+      para os lobos vermelhos.)
+    - 7
+    -
+    - 2013-09-20 15:12:16.000000000 Z
+    - 2013-09-20 15:12:16.000000000 Z
+    -
+    - 3
+  - - 52
+    - Sildon
+    - Lobisomem vermelho, irmão mais velho de Kalryne
+    - 3
+    - 6
+    - 2013-09-20 15:12:38.000000000 Z
+    - 2013-09-20 15:12:38.000000000 Z
+    -
+    - 2
+  - - 53
+    - Skyra
+    - Integrante do clã estrela negra que comete o crime de mostrar o esconderijo
+      do clã no planeta batalha para Negro e Branca.
+    - 4
+    - 3
+    - 2013-09-20 15:13:03.000000000 Z
+    - 2013-09-20 15:13:03.000000000 Z
+    -
+    - 3
+  - - 54
+    - Stara
+    - Mãe de Lithos.
+    - 2
+    - 30
+    - 2013-09-20 15:13:34.000000000 Z
+    - 2013-09-20 15:13:34.000000000 Z
+    -
+    - 3
+  - - 55
+    - Syan
+    - Um dos techmagos responsável pelo estudo dos lobisomens.
+    - 1
+    - 4
+    - 2013-09-20 15:13:56.000000000 Z
+    - 2013-09-20 15:13:56.000000000 Z
+    -
+    - 2
+  - - 56
+    - Tâmara
+    - Líder de um dos castelos do planeta batalha.
+    - 4
+    - 2
+    - 2013-09-20 15:14:20.000000000 Z
+    - 2013-09-20 15:14:20.000000000 Z
+    -
+    - 3
+  - - 57
+    - Tami
+    - Integrante do clã estrela negra. Ela que levou Skyra sob custódia após encontra-la
+      com Negro e Branca dentro do esconderijo do clã no planeta batalha.
+    - 4
+    - 9
+    - 2013-09-20 15:15:45.000000000 Z
+    - 2013-09-20 15:15:45.000000000 Z
+    -
+    - 3
+  - - 58
+    - Tami
+    - O espírito da primeira lua de Dermis
+    - 7
+    -
+    - 2013-09-20 15:16:04.000000000 Z
+    - 2013-09-20 15:16:04.000000000 Z
+    -
+    - 3
+  - - 59
+    - Terra
+    - A primeira techmaga encontrada por "ele" e responsável por encaminhá-lo aos
+      techmagos. Morreu durante o "grande evento x", vítima de um dos guardiões da
+      segunda arma mágica. Foi ainda ressuscitada pelos seres do nódulo interdimensional
+      e controlada por aqueles seres, até finalmente ser morta por "Ele" que no evento
+      da destruição do posto intra-dimencional.
+    - 1
+    - 20
+    - 2013-09-20 15:17:07.000000000 Z
+    - 2014-08-28 19:11:54.000000000 Z
+    - "\"(…) Uma jovem com cabelos castanhos (…)\"\r\n\"(…) Ainda que ela tivesse
+      um corpo formoso (…)\""
+    - 3
+  - - 60
+    - Thasani
+    - Thasani foi selada em uma pedra selo e libertada por Rayka, em um plano arquitetado
+      por Sikeya. Os lobisomens vermelhos originalmente haviam entendido que Sikeya
+      desejava testá-los, apresentando-lhes um oponente poderoso. No fim, "Ele" impediu
+      que a batalha tivesse uma conclusão, percebendo que o espirito na verdade desejava
+      que a Arkain fosse libertada e pudesse retornar para junto de seu povo.
+    - 5
+    -
+    - 2013-09-20 15:17:35.000000000 Z
+    - 2013-09-20 15:17:35.000000000 Z
+    -
+    - 3
+  - - 61
+    - Tieg
+    - Lobisomem prateado/dourado. Tieg é o líder dourado e líder dos lobisomens prateados
+      e é o lobo dourado.
+    - 3
+    - 11
+    - 2013-09-20 15:18:00.000000000 Z
+    - 2013-09-20 15:18:00.000000000 Z
+    -
+    - 2
+  - - 62
+    - Tylanth
+    - 'Líder do castelo supremo no planeta batalha. '
+    - 4
+    - 2
+    - 2013-09-20 15:18:28.000000000 Z
+    - 2013-09-20 15:18:28.000000000 Z
+    -
+    - 2
+  - - 63
+    - Uthos
+    - Lobisomem vermelho responsável pelo caldeirão de sangue, um dos sábios da tribo
+      de Rayka. Ela sempre o consultou para pedir conselhos.
+    - 3
+    - 13
+    - 2013-09-20 15:19:05.000000000 Z
+    - 2013-09-20 15:19:05.000000000 Z
+    -
+    - 2
+  - - 64
+    - Vitur
+    - Protagonista do Newkies. Originalmente ele era um descendente de Bruno, o cientista
+      líder dos newkies e saiu a procura do domo ao encontrar um diário de seu avô.
+      Na história nova vai ser algo bem diferente.
+    - 1
+    - 12
+    - 2013-09-20 15:19:24.000000000 Z
+    - 2013-09-20 15:19:24.000000000 Z
+    -
+    - 2
+  - - 65
+    - Xaon
+    - Lobisomem negro. Xaon é o líder dos lobos Negros.
+    - 3
+    - 23
+    - 2013-09-20 15:20:08.000000000 Z
+    - 2013-09-20 15:20:08.000000000 Z
+    -
+    - 2
+  - - 66
+    - Zara
+    - Techmaga responsável pelo estudo dos lobisomens.
+    - 1
+    - 19
+    - 2013-09-20 15:20:44.000000000 Z
+    - 2013-09-20 15:20:44.000000000 Z
+    -
+    - 3
+
+---
+orb_types:
+  columns:
+  - id
+  - nome
+  - created_at
+  - updated_at
+  records:
+  - - 1
+    - Planeta
+    - 2013-09-20 13:27:58.000000000 Z
+    - 2013-09-20 13:27:58.000000000 Z
+  - - 2
+    - Lua
+    - 2013-09-20 13:27:59.000000000 Z
+    - 2013-09-20 13:27:59.000000000 Z
+  - - 3
+    - Estrela
+    - 2013-09-20 13:27:59.000000000 Z
+    - 2013-09-20 13:27:59.000000000 Z
+  - - 4
+    - Cinturão de asteroides
+    - 2013-09-20 13:27:59.000000000 Z
+    - 2013-09-20 13:27:59.000000000 Z
+  - - 5
+    - Estação espacial
+    - 2013-09-20 13:27:59.000000000 Z
+    - 2013-09-20 13:27:59.000000000 Z
+
+---
+orbs:
+  columns:
+  - id
+  - nome
+  - descr
+  - orb_type_id
+  - created_at
+  - updated_at
+  - orbit_id
+  records:
+  - - 1
+    - Aghaphos
+    - A estrela do sistema
+    - 3
+    - 2013-09-26 17:35:36.000000000 Z
+    - 2015-01-19 15:16:25.000000000 Z
+    -
+  - - 2
+    - Batalha
+    - "2 planeta do sistema\nPlaneta onde a história do ilhas de batalha acontece.
+      Já houve uma tentativa de colonização aqui, mas por ser um planeta importante
+      para os dragões, eles mantiveram o seu domínio. "
+    - 1
+    - 2013-09-26 17:36:19.000000000 Z
+    - 2013-09-26 17:39:46.000000000 Z
+    - 6
+  - - 3
+    - Exos
+    - A estrela do sistema.
+    - 3
+    - 2013-09-26 17:37:42.000000000 Z
+    - 2015-01-19 15:15:37.000000000 Z
+    -
+  - - 4
+    - Foris
+    - A estrela do sistema.
+    - 3
+    - 2013-09-26 17:38:34.000000000 Z
+    - 2015-01-19 15:15:42.000000000 Z
+    -
+  - - 5
+    - Gatina
+    - A estrela do sistema.
+    - 3
+    - 2013-09-26 17:38:59.000000000 Z
+    - 2015-01-19 15:15:48.000000000 Z
+    -
+  - - 6
+    - Rainos
+    - A estrela do sistema.
+    - 3
+    - 2013-09-26 17:39:18.000000000 Z
+    - 2015-01-19 15:16:14.000000000 Z
+    -
+  - - 7
+    - Cinturão Koid
+    - |-
+      Um dos cinturões de asteroides do sistema Foris.
+      Koid é o cinturão interno, rico em recursos.
+    - 4
+    - 2013-09-26 17:40:27.000000000 Z
+    - 2013-09-26 17:40:27.000000000 Z
+    - 4
+  - - 8
+    - Creator
+    - |-
+      3 luas, (Rines) (Gravis) (Ruar)
+      Planeta newkie, população 8 milhões, 2 planeta do sistema.
+    - 1
+    - 2013-09-26 17:41:18.000000000 Z
+    - 2013-09-26 17:41:18.000000000 Z
+    - 6
+  - - 9
+    - Dermis
+    - "2 luas, (Tami) (Lua falsa)\r\nEsse planeta é o centro do império techmago. "
+    - 1
+    - 2013-09-26 17:41:57.000000000 Z
+    - 2015-01-19 15:15:32.000000000 Z
+    -
+  - - 10
+    - Tami
+    - A primeira lua de dermisselect * from books;
+    - 2
+    - 2013-09-26 17:42:22.000000000 Z
+    - 2013-09-26 17:42:22.000000000 Z
+    - 9
+  - - 11
+    - Frogis
+    - "1 lua, ()\nPlaneta newkie, população 3 milhões.\n2º planeta do sistema. "
+    - 1
+    - 2013-09-26 17:43:30.000000000 Z
+    - 2013-09-26 17:43:30.000000000 Z
+    - 1
+  - - 12
+    - Hegon
+    - 'Hegon é uma perola dos Plyorns, uma das centrais de contro dos portais, com
+      uma peculiar orbita elíptica ao redor de Gatina. '
+    - 5
+    - 2013-09-26 17:44:10.000000000 Z
+    - 2013-09-26 17:44:10.000000000 Z
+    - 5
+  - - 13
+    - Hollus
+    - "1 lua, (Luna)\r\nEste planeta é o planeta onde a historia do livro Cristais
+      começa, quando \"ele\" estava em um parque reclamando que a vida era muito comum
+      e então duas naves, uma a serviço dos techmagos e com Terra na tripulação, entram
+      em orbita e começam a se matar.\r\nEste também é o planeta onde os lobisomens
+      e gat`arks originalmente habitavam. "
+    - 1
+    - 2013-09-26 17:44:51.000000000 Z
+    - 2015-01-19 15:15:54.000000000 Z
+    -
+  - - 14
+    - Luna
+    - Única lua de Hollus.
+    - 2
+    - 2013-09-26 17:45:48.000000000 Z
+    - 2013-09-26 17:45:48.000000000 Z
+    - 13
+  - - 15
+    - Irea
+    - |-
+      0 luas
+      Planeta newkie
+      População 3 milhões
+      2 planeta do sistema
+    - 1
+    - 2013-09-26 17:46:40.000000000 Z
+    - 2013-09-26 17:46:40.000000000 Z
+    - 3
+  - - 16
+    - Nokris
+    - |-
+      0 luas.
+      1 planeta do sistema
+      Planeta inabitável.
+    - 1
+    - 2013-09-26 17:47:09.000000000 Z
+    - 2013-09-26 17:47:09.000000000 Z
+    - 6
+  - - 17
+    - Oroa
+    - "1 lua, (Katis)\nPlaneta humana\nPopulação 200 milhões\n3 planeta do sistema\nA
+      capital humana no nova era. "
+    - 1
+    - 2013-09-26 17:48:16.000000000 Z
+    - 2013-09-26 17:48:16.000000000 Z
+    - 5
+  - - 18
+    - Katis
+    - Única lua de Oroa, usada como deposito de lixo.
+    - 2
+    - 2013-09-26 17:48:58.000000000 Z
+    - 2013-09-26 17:48:58.000000000 Z
+    - 17
+  - - 19
+    - Radus
+    - "0 luas.\n3 planeta do sistema.\nPlaneta inabitável. "
+    - 1
+    - 2013-09-26 17:49:45.000000000 Z
+    - 2013-09-26 17:50:34.000000000 Z
+    - 20
+  - - 20
+    - Rãe
+    - A estrela do sistema.
+    - 3
+    - 2013-09-26 17:50:20.000000000 Z
+    - 2015-01-19 15:16:09.000000000 Z
+    -
+  - - 21
+    - Starats
+    - |-
+      0 luas
+      Planeta humano
+      População 500 milhões
+      1º planeta do sistema
+    - 1
+    - 2013-09-26 17:51:23.000000000 Z
+    - 2013-09-26 17:51:23.000000000 Z
+    - 3
+  - - 22
+    - UNCentury
+    - "1 lua, (Lunis)\nPlaneta newkie, população aproximada 10 bilhões. Segundo planeta
+      do sistema.\nEsse planeta se torna a capital da união newkie assim que eles
+      abandonam o sistema solar.\nAno com 300 dias e dia com 30 horas. "
+    - 1
+    - 2013-09-26 17:52:49.000000000 Z
+    - 2013-09-26 17:52:49.000000000 Z
+    - 5
+  - - 23
+    - Lunis
+    - Lua de UNcentury
+    - 2
+    - 2013-09-26 17:53:13.000000000 Z
+    - 2013-09-26 17:53:13.000000000 Z
+    - 22
+  - - 24
+    - Unos
+    - |-
+      2 luas, ()()
+      Planeta newkie
+      População 500 milhões
+      1 planeta do sistema.
+      Colonia de mineração, que se aproveita dos numerosos asteroides do sistema.
+    - 1
+    - 2013-09-26 17:53:51.000000000 Z
+    - 2013-09-26 17:53:51.000000000 Z
+    - 4
+  - - 25
+    - Utery
+    - |-
+      0 luas
+      1º planeta do sistema
+      Planeta inabitável
+    - 1
+    - 2013-09-26 17:54:38.000000000 Z
+    - 2013-09-26 17:54:38.000000000 Z
+    - 20
+  - - 26
+    - Wolmron-3
+    - |-
+      2 luas, (Wolmron-3-1, Nesti) (Wolmron-3-2, Sikeya)
+      Wolmrom-3 é um planeta afastado do eixo central do império techmago sem nenhum recurso valioso conhecido. Seu nome vem simplesmente da sua posição no sistema. (terceiro planeta)
+      Sendo um planeta habitável, ele é escolhido como possível novo lar para as tribos dos lobisomens.
+    - 1
+    - 2013-09-26 17:56:00.000000000 Z
+    - 2013-09-26 18:05:30.000000000 Z
+    - 29
+  - - 27
+    - Wolmron-3-1 (Nesti)
+    - |
+      Lua inóspita de Wolmron.
+      Seu nome original é originário da sua posição planetária. (primeira lua do terceiro planeta)
+      Quando ocorre o contato com o espirito da lua desse planeta, ela se identificou como Nesti e esse se tornou o nome oficial da lua.
+    - 2
+    - 2013-09-26 18:01:42.000000000 Z
+    - 2013-09-26 18:01:53.000000000 Z
+    - 26
+  - - 28
+    - Wolmron-3-2 (Sikeya)
+    - |-
+      Grande lua habitável de Wolmron
+      Seu nome original é originário da sua posição planetária. (Segunda lua do terceiro planeta)
+      Quando ocorre o contato com o espirito da lua desse planeta, ela se identificou como Sikeya e esse se tornou o nome oficial da lua.
+      Esse planeta era o lar original dos arkains, um povo que foi dizimado por piratas espaciais.
+    - 2
+    - 2013-09-26 18:04:04.000000000 Z
+    - 2013-09-26 18:04:04.000000000 Z
+    - 26
+  - - 29
+    - Wolmron
+    - A estrela do sistema
+    - 3
+    - 2013-09-26 18:05:18.000000000 Z
+    - 2015-01-19 15:16:19.000000000 Z
+    -
+  - - 30
+    - Xinos
+    - "1 lua, (Agatha)\nPlaneta newkie, população aproximada 900 milhões\n2 planeta
+      do sistema. "
+    - 1
+    - 2013-09-26 18:06:48.000000000 Z
+    - 2013-09-26 18:06:48.000000000 Z
+    - 20
+  - - 31
+    - Agatha
+    - Lua de xinos
+    - 2
+    - 2013-09-26 18:07:32.000000000 Z
+    - 2013-09-26 18:07:32.000000000 Z
+    - 30
+  - - 32
+    - Zeas
+    - |-
+      1 luas. (Nyx)
+      Planeta newkie
+      População 4 milhões
+      3 planeta do sistema
+    - 1
+    - 2013-09-26 18:08:20.000000000 Z
+    - 2013-09-26 18:08:20.000000000 Z
+    - 3
+  - - 33
+    - Nyx
+    - Lua de zeas
+    - 2
+    - 2013-09-26 18:08:46.000000000 Z
+    - 2013-09-26 18:08:46.000000000 Z
+    - 32
+  - - 34
+    - Rines
+    - Lua de creator
+    - 2
+    - 2013-09-26 18:10:35.000000000 Z
+    - 2013-09-26 18:10:35.000000000 Z
+    - 8
+  - - 35
+    - Gravis
+    - Lua de creator
+    - 2
+    - 2013-09-26 18:10:39.000000000 Z
+    - 2013-09-26 18:10:39.000000000 Z
+    - 8
+  - - 36
+    - Ruar
+    - Lua de creator
+    - 1
+    - 2013-09-26 18:10:41.000000000 Z
+    - 2013-09-26 18:10:41.000000000 Z
+    - 8
+
+---
+races:
+  columns:
+  - id
+  - nome
+  - descr
+  - created_at
+  - updated_at
+  records:
+  - - 1
+    - Humano
+    - Humanos são uma raça normal.
+    - 2013-09-20 13:27:59.000000000 Z
+    - 2013-09-20 13:27:59.000000000 Z
+  - - 2
+    - Newkie
+    - Uma raça criada artificialmente. Pelos humanos.
+    - 2013-09-20 13:27:59.000000000 Z
+    - 2013-09-20 14:06:59.000000000 Z
+  - - 3
+    - Lobisomem
+    - Raça originaria de Hollus capaz de se transformar na forma de um lobo.
+    - 2013-09-20 13:28:00.000000000 Z
+    - 2013-09-20 13:28:00.000000000 Z
+  - - 4
+    - Dragão
+    - "Os dragões conviveram com os plyorns antes da chegada dos newkies a galaxia.\nMesmo
+      sendo uma raça inteligente, os dragões estão presos em um eterno período tribal.
+      Seus braços não permitem o manuseio de ferramentas ou aparelhos delicados, sendo
+      justamente por isso que suas obras máximas se resumem a rústicas cidades de
+      barro e à complexa escrita rúnica, geralmente feita em paredes de pedra ou grandes
+      placas de argila.\nMesmo sem conseguir desenvolver sua própria tecnologia, os
+      dragões são capazes de entender as criações de outros povos e até operá-las,
+      se algumas modificações forem feitas. Muitas vezes, aparelhos eletrônicos e
+      até instalações mais complexas são trocados por metais e pedras preciosas, bens
+      que os dragões parecem ter certa facilidade em encontrar e gosto em colecionar. "
+    - 2013-09-20 13:28:00.000000000 Z
+    - 2013-09-26 14:56:07.000000000 Z
+  - - 5
+    - Arcain
+    - |-
+      Raça com características de raposa originara da lua Sikeya, no sistema de wolmrom-3.
+      Eles foram dizimados por conquistadores a muitos seculos.
+    - 2013-09-20 13:28:00.000000000 Z
+    - 2014-01-21 21:08:49.000000000 Z
+  - - 6
+    - Consciência independente
+    - Consciências independentes são aquelas que existem independentemente de um corpo
+      físico bem definido.
+    - 2013-09-20 13:28:00.000000000 Z
+    - 2013-09-26 14:59:58.000000000 Z
+  - - 7
+    - Espírito da lua
+    - Um espirito da lua é a manifestação física do espirito de uma lua, que pode
+      ser invocado somente por um processo denominado "Ritual da lua" desenvolvido
+      originalmente pelos lobisomens, no planeta Hollus.
+    - 2013-09-20 13:28:00.000000000 Z
+    - 2013-09-26 15:01:21.000000000 Z
+  - - 8
+    - Hibrido newkie-humano
+    - Resultado da união entre um humano e um newkie.
+    - 2013-09-20 13:28:00.000000000 Z
+    - 2013-09-26 14:57:36.000000000 Z
+  - - 9
+    - Inteligencia artificial
+    - Inteligencias artificiais são maquinas inteligentes. A grande maioria das IA
+      são de origem nanorobótica.
+    - 2013-09-20 13:28:01.000000000 Z
+    - 2013-09-26 14:59:23.000000000 Z
+
+---
+ship_sizes:
+  columns:
+  - id
+  - nome
+  - created_at
+  - updated_at
+  records:
+  - - 1
+    - Nave de guerra
+    - 2013-09-20 13:28:01.000000000 Z
+    - 2013-09-20 13:28:01.000000000 Z
+  - - 2
+    - Cruzador
+    - 2013-09-20 13:28:01.000000000 Z
+    - 2013-09-20 13:28:01.000000000 Z
+  - - 3
+    - Estrela
+    - 2013-09-20 13:28:01.000000000 Z
+    - 2013-09-20 13:28:01.000000000 Z
+  - - 4
+    - Explorador
+    - 2013-09-20 13:28:01.000000000 Z
+    - 2013-09-20 13:28:01.000000000 Z
+  - - 5
+    - Transportador
+    - 2013-09-20 13:28:01.000000000 Z
+    - 2013-09-20 13:28:01.000000000 Z
+  - - 6
+    - Caça
+    - 2013-09-20 13:28:02.000000000 Z
+    - 2013-09-20 13:28:02.000000000 Z
+
+---
+ships:
+  columns:
+  - id
+  - nome
+  - descr
+  - base_type_id
+  - ship_size_id
+  - created_at
+  - updated_at
+  records:
+  - - 1
+    - Elidrion
+    - 'Essa nave foi usada por "Ele" no ataque a lua falsa. Para isso, várias atualizações
+      no projeto da mesma, então ela provavelmente é a mais poderosa das technaves. '
+    - 1
+    - 1
+    - 2013-09-20 14:02:11.000000000 Z
+    - 2013-09-20 14:02:11.000000000 Z
+  - - 2
+    - Natayu
+    - Cruzador de combate orgânico. A nave foi criada pelos nanorobôs controlados
+      por Amy, no "meu planetinha". Natayu incorpora o melhor de toda a tecnologia
+      que "ele" conhecia, destacando-se os canhões de proton-invertido e o gerador
+      de rifts, ambos obtidos a partir da lua falsa.
+    - 5
+    - 2
+    - 2013-09-20 14:02:47.000000000 Z
+    - 2013-09-20 14:02:47.000000000 Z
+  - - 3
+    - Terket
+    - Essa foi a nave que acabou levando Negro ao planeta batalha. Ela foi destruída
+      por um ataque misterioso no processo.
+    - 4
+    - 4
+    - 2013-09-20 14:03:13.000000000 Z
+    - 2013-09-20 14:03:13.000000000 Z
+  - - 4
+    - Turarion
+    - Nave que Terra estava quando sofreu o acidente em Dermis.
+    - 4
+    - 2
+    - 2013-10-16 19:58:04.000000000 Z
+    - 2013-10-16 19:58:04.000000000 Z
+  - - 5
+    - Seishin
+    - "\"Subimos, e assim que entramos na floresta, fui até uma pedra com o formato
+      aproximado de um grão de arroz, com uns três metros e meio de altura e dez de
+      comprimento, parando ao seu lado.\"\r\n"
+    - 4
+    - 6
+    - 2015-01-19 17:42:18.000000000 Z
+    - 2015-10-29 04:09:30.000000000 Z

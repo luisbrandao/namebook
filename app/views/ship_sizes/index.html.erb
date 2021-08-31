@@ -1,21 +1,36 @@
+<p id="notice"><%= notice %></p>
+
 <h1>Listando tamanhos de naves</h1>
 
-<table class="table table-striped">
-  <tr>
-    <th>Nome</th>
-    <th>Ações</th>
-  </tr>
-
-  <% @ship_sizes.each do |ship_size| %>
+<table class="table table-striped"
+  <thead>
     <tr>
-      <td><%= ship_size %></td>
-      <td><%= link_to 'Detalhes', ship_size %>
-      <%= link_to 'Editar', edit_ship_size_path(ship_size) %>
-      <%= link_to 'Rmover', ship_size, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+      <th>Nome</th>
+      <th>Ações</th>
     </tr>
-  <% end %>
+  </thead>
+
+  <tbody>
+    <% @ship_sizes.each do |ship_size| %>
+      <tr>
+        <td><%= ship_size %></td>
+        <td>
+          <%= link_to ship_size , :class => 'btn btn-primary btn-sm' do %>
+            <i class="bi bi-search"></i> Detalhes
+          <% end %>
+          <%= link_to edit_ship_size_path(ship_size), :class => 'btn btn-primary btn-sm' do %>
+            <i class="bi bi-pencil"></i> Editar
+          <% end %>
+
+          <%= link_to ship_size, method: :delete, data: {confirm: 'Você tem certeza?'}, :class => 'btn btn-danger btn-sm' do %>
+            <i class="bi bi-trash"></i> Remover
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
+<br>
 
 <%= link_to 'Novo tamanho de nave', new_ship_size_path, class: 'btn btn-success' %>

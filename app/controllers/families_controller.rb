@@ -1,6 +1,6 @@
 #encoding: utf-8
 class FamiliesController < ApplicationController
-  before_action :set_family, only: [:show, :edit, :update, :destroy]
+  before_action :set_family, only: %i[ show edit update destroy ]
 
   # GET /families
   # GET /families.json
@@ -58,7 +58,7 @@ class FamiliesController < ApplicationController
     @book = Book.order('nome')
     @race = Race.order('nome')
     respond_to do |format|
-      if @family.update_attributes(family_params)
+      if @family.update(family_params)
         flash[:success] = 'A família foi atualizada com sucesso.'
         format.html { redirect_to @family }
         format.json { head :no_content }

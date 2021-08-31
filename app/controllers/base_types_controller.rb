@@ -1,6 +1,6 @@
 #encoding: utf-8
 class BaseTypesController < ApplicationController
-  before_action :set_base_type, only: [:show, :edit, :update, :destroy]
+  before_action :set_base_type, only: %i[ show edit update destroy ]
   # GET /base_types
   # GET /base_types.json
   def index
@@ -46,7 +46,7 @@ class BaseTypesController < ApplicationController
   # PATCH/PUT /base_types/1.json
   def update
     respond_to do |format|
-      if @base_type.update_attributes(base_type_params)
+      if @base_type.update(base_type_params)
         flash[:success] = 'O tipo base foi atualizado com sucesso'
         format.html { redirect_to @base_type }
         format.json { head :no_content }

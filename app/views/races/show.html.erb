@@ -1,16 +1,31 @@
-<h1>Detalhes da raça</h1>
+<p id="notice"><%= notice %></p>
 
-<p>
-  <b>Nome:</b>
-  <%= @race %>
-</p>
+<div class="page-header">
+  <h1>Detalhes da raça</h1>
+</div>
+<dl class="dl-horizontal">
+  <dt><strong>Nome:</strong></dt>
+  <dd><%= @race %> </dd>
+</dl>
+<dl class="dl-horizontal">
+  <dt><strong>Descrição:</strong></dt>
+  <dd><%= h(@race.descr).gsub(/\n/, '<br/>').html_safe %> </dd>
+</dl>
 
-<p>
-  <b>Descrição:</b>
-  <%= h(@race.descr).gsub(/\n/, '<br/>').html_safe %>
-</p>
+<div class="form-actions">
+  <%= link_to new_race_path, :class => 'btn btn-success btn-sm' do %>
+    <i class="bi bi-plus"></i>Novo
+  <% end %>
 
+  <%= link_to edit_race_path(@race), :class => 'btn btn-primary btn-sm' do %>
+    <i class="bi bi-pencil"></i> Editar
+  <% end %>
 
-<%= link_to 'Editar', edit_race_path(@race) %> |
-<%= link_to 'Voltar', races_path %> |
-<%= link_to 'Nova raça', new_race_path %>
+  <%= link_to races_path, :class => 'btn btn-primary btn-sm' do %>
+    <i class="bi bi-x-octagon"></i> Voltar
+  <% end %>
+
+  <%= link_to @race, method: :delete, data: {confirm: 'Você tem certeza?'}, :class => 'btn btn-danger btn-sm' do %>
+    <i class="bi bi-trash"></i> Remover
+  <% end %>
+</div>

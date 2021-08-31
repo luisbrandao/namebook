@@ -1,6 +1,6 @@
 #encoding: utf-8
 class RacesController < ApplicationController
-  before_action :set_race, only: [:show, :edit, :update, :destroy]
+  before_action :set_race, only: %i[ show edit update destroy ]
   # GET /races
   # GET /races.json
   def index
@@ -47,7 +47,7 @@ class RacesController < ApplicationController
   # PATCH/races/1.json
   def update
     respond_to do |format|
-      if @race.update_attributes(race_params)
+      if @race.update(race_params)
         flash[:success] = 'A raça foi atualizada com sucesso.'
         format.html { redirect_to @race }
         format.json { head :no_content }
@@ -74,7 +74,7 @@ class RacesController < ApplicationController
       end
     end
   end
-  
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_race

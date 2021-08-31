@@ -1,52 +1,62 @@
-<%= form_for(@ship) do |f| %>
-  <% if @ship.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@ship.errors.count, "erro") %>: </h2>
+<%= form_with(model: ship) do |form| %>
+  <% if ship.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger">
+      <h2><%= pluralize(ship.errors.count, "erro") %>:</h2>
 
       <ul>
-      <% @ship.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
+        <% ship.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :nome, "Nome:" %><br />
-    <%= f.text_field :nome, :size => "60" %>
+  <div class="mb-3">
+    <strong><%= form.label :nome, :class => "form-label" %></strong>
+    <%= form.text_field :nome, :class => "form-control" %>
   </div>
 
-  <div style="width: 600px;">
-    <div style="float: left; width: 300px;">
-      <div class="field">
-        <%= f.label :base_type_id, "Tipo base da nave:" %><br />
-        <%= collection_select(:ship, :base_type_id, BaseType.all, :id, :nome, { :prompt => "Selecione um tipo base" }) %>
-      </div>
-      <div class="field">
-        <%= f.label :ship_size_id, "Tamanho da nave:" %><br />
-        <%= collection_select(:ship, :ship_size_id, ShipSize.all, :id, :nome, { :prompt => "Selecione um tamanho" }) %>
-      </div>
-    </div>
-    <div style="float: left; width: 300px;">
-      <%= hidden_field_tag 'ship[book_ids][]', '' %>
-      <%= f.label :books, "Livros:" %>
+  <div class="mb-3">
+    <strong><%= form.label :descr, "Descrição", :class => "form-label" %></strong>
+    <%= form.text_area :descr, :class => "form-control", :rows =>"6" %>
+  </div>
+
+  <div class="mb-3">
+    <strong><%= form.label :base_type_id, "Tipo base da nave:", :class => "form-label"  %><br /></strong>
+    <%= collection_select(:ship, :base_type_id, BaseType.order('nome'), :id, :nome, { :prompt => "Selecione um tipo base" }, {:class=>'form-select'} ) %>
+  </div>
+
+  <div class="mb-3">
+    <strong><%= form.label :ship_size_id, "Tamanho da nave:", :class => "form-label"  %><br /></strong>
+    <%= collection_select(:ship, :ship_size_id, ShipSize.order('nome'), :id, :nome, { :prompt => "Selecione um tamanho" }, {:class=>'form-select'} ) %>
+  </div>
+
+  <div class="mb-3">
+    <%= hidden_field_tag 'ship[book_ids][]', '' %>
+    <strong><%= form.label :books, "Livros" %><br /></strong>
+    <div class="form-check">
       <% @book.each do |book| %>
         <div>
-          <%= check_box_tag "ship[book_ids][]", book.id, @ship.books.include?(book) %>
-          <%= book.nome %>
+          <%= check_box_tag "ship[book_ids][]", book.id, @ship.books.include?(book), class: 'form-check-input' %>
+          <div class="form-check-label"> <%= book %> </div>
         </div>
       <% end %>
     </div>
-    <br style="clear: left;" />
   </div>
 
-  <div class="field">
-    <%= f.label :descr, "Descrição:" %><br />
-    <%= f.text_area :descr, :size => "15x15"  %>
-  </div>
+  <div class="form-group">
+    <div class="actions">
+      <%= form.submit @ship.new_record? ? "Criar nova nave" : "Atualizar nave", :class => "btn btn-success btn-sm" %>
 
- 
-  <div class="actions">
-    <%= f.submit @ship.new_record? ? "Criar nova nave" : "Atualizar nave" %>
+      <% unless @ship.new_record? %>
+        <%= link_to @ship , :class => 'btn btn-primary btn-sm' do %>
+          <i class="bi bi-search"></i> Detalhes
+        <% end %>
+      <% end %>
+
+      <%= link_to ships_path, :class => 'btn btn-primary btn-sm' do %>
+        <i class="bi bi-x-octagon"></i> Voltar
+      <% end %>
+    </div>
   </div>
 <% end %>

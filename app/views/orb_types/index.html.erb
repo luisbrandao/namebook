@@ -1,21 +1,36 @@
+<p id="notice"><%= notice %></p>
+
 <h1>Listando tipos de corpos celestes</h1>
 
 <table class="table table-striped">
-  <tr>
-    <th>Nome</th>
-    <th>Ações</th>
-  </tr>
-
-  <% @orb_types.each do |orb_type| %>
+  <thead>
     <tr>
-      <td><%= orb_type %></td>
-      <td><%= link_to 'Detalhes', orb_type %>
-      <%= link_to 'Editar', edit_orb_type_path(orb_type) %>
-      <%= link_to 'Remover', orb_type, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+      <th>Nome</th>
+      <th>Ações</th>
     </tr>
-  <% end %>
+  </thead>
+
+  <tbody>
+    <% @orb_types.each do |orb_type| %>
+      <tr>
+        <td><%= orb_type %></td>
+        <td>
+          <%= link_to orb_type , :class => 'btn btn-primary btn-sm' do %>
+            <i class="bi bi-search"></i> Detalhes
+          <% end %>
+          <%= link_to edit_orb_type_path(orb_type), :class => 'btn btn-primary btn-sm' do %>
+            <i class="bi bi-pencil"></i> Editar
+          <% end %>
+
+          <%= link_to orb_type, method: :delete, data: {confirm: 'Você tem certeza?'}, :class => 'btn btn-danger btn-sm' do %>
+            <i class="bi bi-trash"></i> Remover
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
+<br>
 
 <%= link_to 'Novo tipo de corpo celeste', new_orb_type_path, class: 'btn btn-success' %>
