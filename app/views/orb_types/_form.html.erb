@@ -1,7 +1,7 @@
 <%= form_with(model: orb_type) do |form| %>
   <% if orb_type.errors.any? %>
     <div id="error_explanation" class="alert alert-danger">
-      <h2><%= pluralize(orb_type.errors.count, "erro") %>:</h2>
+      <h2><%= pluralize(orb_type.errors.count, 'erro', plural: 'erros') %>:</h2>
 
       <ul>
         <% orb_type.errors.each do |error| %>

@@ -1,7 +1,7 @@
 <%= form_with(model: ship) do |form| %>
   <% if ship.errors.any? %>
     <div id="error_explanation" class="alert alert-danger">
-      <h2><%= pluralize(ship.errors.count, "erro") %>:</h2>
+      <h2><%= pluralize(ship.errors.count, 'erro', plural: 'erros') %>:</h2>
 
       <ul>
         <% ship.errors.each do |error| %>

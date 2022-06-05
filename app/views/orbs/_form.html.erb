@@ -1,15 +1,17 @@
 <%= form_with(model: orb) do |form| %>
   <% if orb.errors.any? %>
     <div id="error_explanation" class="alert alert-danger">
-      <h2><%= pluralize(orb.errors.count, "erro") %>:</h2>
+      <h2><%= pluralize(orb.errors.count, 'erro', plural: 'erros') %>:</h2>
 
       <ul>
         <% orb.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+          <li><%= error.full_message %> </li>
         <% end %>
       </ul>
     </div>
   <% end %>
+
+<h1><%= t('.welcome') %></h1>
 
   <div class="mb-3">
     <strong><%= form.label :nome, :class => "form-label" %></strong>

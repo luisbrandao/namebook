@@ -1,7 +1,7 @@
 <%= form_with(model: family) do |form| %>
   <% if family.errors.any? %>
     <div id="error_explanation" class="alert alert-danger">
-      <h2><%= pluralize(family.errors.count, "erro") %>:</h2>
+      <h2><%= pluralize(family.errors.count, 'erro', plural: 'erros') %>:</h2>
 
       <ul>
         <% family.errors.each do |error| %>

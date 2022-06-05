@@ -1,7 +1,7 @@
 <%= form_with(model: race) do |form| %>
   <% if race.errors.any? %>
     <div id="error_explanation" class="alert alert-danger">
-      <h2><%= pluralize(race.errors.count, "erro") %>:</h2>
+      <h2><%= pluralize(race.errors.count, 'erro', plural: 'erros') %>:</h2>
 
       <ul>
         <% race.errors.each do |error| %>
