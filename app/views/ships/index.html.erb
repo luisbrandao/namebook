@@ -63,9 +63,18 @@
       </td>
       <td><%= ship.base_type %></td>
       <td><%= ship.ship_size %></td>
-      <td><%= link_to 'Detalhes', ship %><br/>
-      <%= link_to 'Editar', edit_ship_path(ship) %><br/>
-      <%= link_to 'Remover', ship, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+      <td>
+        <%= link_to ship , :class => 'btn btn-primary btn-sm' do %>
+          <i class="bi bi-search"></i> Detalhes
+        <% end %>
+        <%= link_to edit_family_path(ship), :class => 'btn btn-primary btn-sm' do %>
+          <i class="bi bi-pencil"></i> Editar
+        <% end %>
+
+        <%= link_to ship, method: :delete, data: {confirm: 'Você tem certeza?'}, :class => 'btn btn-danger btn-sm' do %>
+          <i class="bi bi-trash"></i> Remover
+        <% end %>
+      </td>
     </tr>
     <% end %>
   </tbody>

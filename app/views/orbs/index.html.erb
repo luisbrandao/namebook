@@ -62,9 +62,18 @@
             <% end %>
           </ul>
         </td>
-        <td><%= link_to 'Detalhes', orb %> <br/>
-        <%= link_to 'Editar', edit_orb_path(orb) %> <br/>
-        <%= link_to 'Remover', orb, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+        <td>
+          <%= link_to orb , :class => 'btn btn-primary btn-sm' do %>
+            <i class="bi bi-search"></i> Detalhes
+          <% end %>
+          <%= link_to edit_family_path(orb), :class => 'btn btn-primary btn-sm' do %>
+            <i class="bi bi-pencil"></i> Editar
+          <% end %>
+
+          <%= link_to orb, method: :delete, data: {confirm: 'Você tem certeza?'}, :class => 'btn btn-danger btn-sm' do %>
+            <i class="bi bi-trash"></i> Remover
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
