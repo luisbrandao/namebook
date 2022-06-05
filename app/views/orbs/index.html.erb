@@ -4,7 +4,7 @@
 
 <p>
   <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseSearch" role="button" aria-expanded="false" aria-controls="collapseSearch">
-    <i class="bi bi-search"></i> Busca
+    <i class="fa-solid fa-magnifying-glass"></i> Busca
   </a>
 </p>
 <div class="collapse" id="collapseSearch">
@@ -64,14 +64,14 @@
         </td>
         <td>
           <%= link_to orb , :class => 'btn btn-primary btn-sm' do %>
-            <i class="bi bi-search"></i> Detalhes
+            <i class="fa-solid fa-magnifying-glass"></i> Detalhes
           <% end %>
           <%= link_to edit_family_path(orb), :class => 'btn btn-primary btn-sm' do %>
-            <i class="bi bi-pencil"></i> Editar
+            <i class="fa fa-pencil"></i> Editar
           <% end %>
 
           <%= link_to orb, method: :delete, data: {confirm: 'Você tem certeza?'}, :class => 'btn btn-danger btn-sm' do %>
-            <i class="bi bi-trash"></i> Remover
+            <i class="fa fa-trash"></i> Remover
           <% end %>
         </td>
       </tr>
@@ -81,5 +81,5 @@
 <%= will_paginate @orbs %>
 <br>
 <%= link_to  new_orb_path, class: 'btn btn-success' do %>
-  <i class="bi bi-plus"></i> Novo corpo celeste
+  <i class="fa-solid fa-plus"></i> Novo corpo celeste
 <% end %>

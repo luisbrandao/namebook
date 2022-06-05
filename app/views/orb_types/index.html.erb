@@ -16,14 +16,14 @@
         <td><%= orb_type %></td>
         <td>
           <%= link_to orb_type , :class => 'btn btn-primary btn-sm' do %>
-            <i class="bi bi-search"></i> Detalhes
+            <i class="fa-solid fa-magnifying-glass"></i> Detalhes
           <% end %>
           <%= link_to edit_orb_type_path(orb_type), :class => 'btn btn-primary btn-sm' do %>
-            <i class="bi bi-pencil"></i> Editar
+            <i class="fa fa-pencil"></i> Editar
           <% end %>
 
           <%= link_to orb_type, method: :delete, data: {confirm: 'Você tem certeza?'}, :class => 'btn btn-danger btn-sm' do %>
-            <i class="bi bi-trash"></i> Remover
+            <i class="fa fa-trash"></i> Remover
           <% end %>
         </td>
       </tr>
@@ -33,5 +33,5 @@
 
 <br>
 <%= link_to  new_orb_type_path, class: 'btn btn-success' do %>
-  <i class="bi bi-plus"></i> Novo tipo de corpo celeste
+  <i class="fa-solid fa-plus"></i> Novo tipo de corpo celeste
 <% end %>

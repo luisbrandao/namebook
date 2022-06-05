@@ -42,18 +42,18 @@
 
 <div class="form-actions">
   <%= link_to new_orb_path, :class => 'btn btn-success btn-sm' do %>
-    <i class="bi bi-plus"></i>Novo
+    <i class="fa-solid fa-plus"></i>Novo
   <% end %>
 
   <%= link_to edit_orb_path(@orb), :class => 'btn btn-primary btn-sm' do %>
-    <i class="bi bi-pencil"></i> Editar
+    <i class="fa fa-pencil"></i> Editar
   <% end %>
 
   <%= link_to orbs_path, :class => 'btn btn-primary btn-sm' do %>
-    <i class="bi bi-x-octagon"></i> Voltar
+    <i class="fa-solid fa-arrow-left"></i> Voltar
   <% end %>
 
   <%= link_to @orb, method: :delete, data: {confirm: 'Você tem certeza?'}, :class => 'btn btn-danger btn-sm' do %>
-    <i class="bi bi-trash"></i> Remover
+    <i class="fa fa-trash"></i> Remover
   <% end %>
 </div>

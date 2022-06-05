@@ -59,12 +59,12 @@
 
       <% unless @name.new_record? %>
         <%= link_to @name , :class => 'btn btn-primary btn-sm' do %>
-          <i class="bi bi-search"></i> Detalhes
+          <i class="fa-solid fa-magnifying-glass"></i> Detalhes
         <% end %>
       <% end %>
 
       <%= link_to names_path, :class => 'btn btn-primary btn-sm' do %>
-        <i class="bi bi-x-octagon"></i> Voltar
+        <i class="fa-solid fa-arrow-left"></i> Voltar
       <% end %>
     </div>
   </div>

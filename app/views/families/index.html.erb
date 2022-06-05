@@ -4,7 +4,7 @@
 
 <p>
   <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseSearch" role="button" aria-expanded="false" aria-controls="collapseExample">
-    <i class="bi bi-search"></i> Busca
+    <i class="fa-solid fa-magnifying-glass"></i> Busca
   </a>
 </p>
 <div class="collapse" id="collapseSearch">
@@ -70,14 +70,14 @@
         <td><%= h(family.descr).gsub(/\n/, '<br/>').html_safe %></td>
         <td>
           <%= link_to family , :class => 'btn btn-primary btn-sm' do %>
-            <i class="bi bi-search"></i> Detalhes
+            <i class="fa-solid fa-magnifying-glass"></i> Detalhes
           <% end %>
           <%= link_to edit_family_path(family), :class => 'btn btn-primary btn-sm' do %>
-            <i class="bi bi-pencil"></i> Editar
+            <i class="fa fa-pencil"></i> Editar
           <% end %>
 
           <%= link_to family, method: :delete, data: {confirm: 'Você tem certeza?'}, :class => 'btn btn-danger btn-sm' do %>
-            <i class="bi bi-trash"></i> Remover
+            <i class="fa fa-trash"></i> Remover
           <% end %>
         </td>
       </tr>
@@ -87,5 +87,5 @@
 <%= will_paginate @families %>
 <br>
 <%= link_to  new_family_path, class: 'btn btn-success' do %>
-  <i class="bi bi-plus"></i> Nova familia
+  <i class="fa-solid fa-plus"></i> Nova familia
 <% end %>
