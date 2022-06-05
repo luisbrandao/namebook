@@ -1,7 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Tipos base</h1>
-
+<h1>Tipos base de naves</h1>
+<p>
+  <%= link_to new_base_type_path, class: 'btn btn-success' do %>
+    <i class="fa-solid fa-plus"></i> Novo tipo base
+  <% end %>
+</p>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -30,8 +34,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-<%= link_to new_base_type_path, class: 'btn btn-success' do %>
-  <i class="fa-solid fa-plus"></i> Novo tipo base
-<% end %>

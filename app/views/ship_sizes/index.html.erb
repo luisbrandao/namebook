@@ -1,7 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listando tamanhos de naves</h1>
-
+<p>
+  <%= link_to  new_ship_size_path, class: 'btn btn-success' do %>
+    <i class="fa-solid fa-plus"></i> Novo tamanho de nave
+  <% end %>
+</p>
 <table class="table table-striped"
   <thead>
     <tr>
@@ -30,7 +34,3 @@
     <% end %>
   </tbody>
 </table>
-<br>
-<%= link_to  new_ship_size_path, class: 'btn btn-success' do %>
-  <i class="fa-solid fa-plus"></i> Novo tamanho de nave
-<% end %>

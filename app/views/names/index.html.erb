@@ -3,6 +3,9 @@
 <h1>Nomes</h1>
 
 <p>
+  <%= link_to new_name_path, class: 'btn btn-success' do %>
+    <i class="fa-solid fa-plus"></i> Novo nome
+  <% end %>
   <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseSearch" role="button" aria-expanded="false" aria-controls="collapseSearch">
     <i class="fa-solid fa-magnifying-glass"></i> Busca
   </a>
@@ -81,7 +84,3 @@
   </tbody>
 </table>
 <%= will_paginate @names %>
-<br>
-<%= link_to new_name_path, class: 'btn btn-success' do %>
-  <i class="fa-solid fa-plus"></i> Novo nome
-<% end %>

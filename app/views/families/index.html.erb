@@ -3,6 +3,9 @@
 <h1>Famílias</h1>
 
 <p>
+  <%= link_to  new_family_path, class: 'btn btn-success' do %>
+    <i class="fa-solid fa-plus"></i> Nova familia
+  <% end %>
   <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseSearch" role="button" aria-expanded="false" aria-controls="collapseExample">
     <i class="fa-solid fa-magnifying-glass"></i> Busca
   </a>
@@ -85,7 +88,3 @@
   </tbody>
 </table>
 <%= will_paginate @families %>
-<br>
-<%= link_to  new_family_path, class: 'btn btn-success' do %>
-  <i class="fa-solid fa-plus"></i> Nova familia
-<% end %>

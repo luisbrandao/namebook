@@ -3,6 +3,9 @@
 <h1>Listando naves</h1>
 
 <p>
+  <%= link_to  new_ship_path, class: 'btn btn-success' do %>
+    <i class="fa-solid fa-plus"></i> Nova nave
+  <% end %>
   <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseSearch" role="button" aria-expanded="false" aria-controls="collapseSearch">
     <i class="fa-solid fa-magnifying-glass"></i> Busca
   </a>
@@ -80,7 +83,3 @@
   </tbody>
 </table>
 <%= will_paginate @ships %>
-<br>
-<%= link_to  new_ship_path, class: 'btn btn-success' do %>
-  <i class="fa-solid fa-plus"></i> Nova nave
-<% end %>

@@ -1,7 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listando tipos de corpos celestes</h1>
-
+<p>
+  <%= link_to  new_orb_type_path, class: 'btn btn-success' do %>
+    <i class="fa-solid fa-plus"></i> Novo tipo de corpo celeste
+  <% end %>
+</p>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -30,8 +34,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-<%= link_to  new_orb_type_path, class: 'btn btn-success' do %>
-  <i class="fa-solid fa-plus"></i> Novo tipo de corpo celeste
-<% end %>
