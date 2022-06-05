@@ -22,7 +22,7 @@ Para desenvolver, usar o docker de dev:
 
 ```
 docker build -t namebook-rails:dev - < Dockerfile.dev
-docker run --name namedev -v $(pwd):/app -p 3000:3000 -it namebook-rails:dev
+docker run --name namedev -v $(pwd):/app -p 3010:3010 -it namebook-rails:dev
 ```
 
 Uma vez dentro do container, é necessário executar a preparação do ambiente
@@ -55,3 +55,7 @@ Build para produção:
 docker build  -t registry.techsytes.com/namebook-rails:master-03 .
 docker push registry.techsytes.com/namebook-rails:master-03
 ```
+
+        run: bin/bundler-audit --update
+        run: bin/brakeman -q -w2
+        run: bin/rubocop --parallel

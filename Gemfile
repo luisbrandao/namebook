@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
-gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
+gem 'rails', '~> 6.1.4', '>= 6.1.4.2'
 # Use sqlite3 as the database for Active Record
 group :development do
   gem 'sqlite3', '~> 1.4'
@@ -25,7 +25,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'image_processing', '~> 1.2'
 
 # Provides methods for searches
-gem 'ransack'
+gem 'ransack' , '~> 2.6'
 gem 'jquery-rails'
 
 # Pagination library
@@ -50,3 +50,7 @@ gem 'yaml_db'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+
+gem 'bundler-audit'
+gem 'brakeman'
