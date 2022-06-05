@@ -54,3 +54,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'bundler-audit'
 gem 'brakeman'
+
+
+gem 'pascoale', git: 'https://github.com/luisbrandao/pascoale.git'
