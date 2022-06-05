@@ -56,5 +56,10 @@ docker build  -t registry.techsytes.com/namebook-rails:master-03 .
 docker push registry.techsytes.com/namebook-rails:master-03
 ```
 
-        bundler-audit --update
-        brakeman -q -w2
+Em prod, rodar passando:
+SITE_USER=user
+SITE_PASSWORD=password
+
+
+bundler-audit --update
+brakeman -q -w2
