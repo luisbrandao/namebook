@@ -30,7 +30,7 @@
     <% end %>
   </tbody>
 </table>
-
 <br>
-
-<%= link_to 'Novo tamanho de nave', new_ship_size_path, class: 'btn btn-success' %>
+<%= link_to  new_ship_size_path, class: 'btn btn-success' do %>
+  <i class="bi bi-plus"></i> Novo tamanho de nave
+<% end %>

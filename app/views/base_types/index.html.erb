@@ -32,5 +32,6 @@
 </table>
 
 <br>
-
-<%= link_to 'Novo tipo base', new_base_type_path, class: 'btn btn-success' %>
+<%= link_to new_base_type_path, class: 'btn btn-success' do %>
+  <i class="bi bi-plus"></i> Novo tipo base
+<% end %>

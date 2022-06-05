@@ -32,5 +32,6 @@
 </table>
 
 <br>
-
-<%= link_to 'Novo tipo de corpo celeste', new_orb_type_path, class: 'btn btn-success' %>
+<%= link_to  new_orb_type_path, class: 'btn btn-success' do %>
+  <i class="bi bi-plus"></i> Novo tipo de corpo celeste
+<% end %>

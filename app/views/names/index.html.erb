@@ -2,34 +2,40 @@
 
 <h1>Nomes</h1>
 
-<div id="flip"> <h5>Busca </h5>
-<div id="panel">
-  <div id="search-form", :class="form-inline"> <fieldset>
-    <%= search_form_for @search, :html => {:class => "form-inline"} do |f| %>
-      <%= f.label :nome, "Nome: " %>
-      <%= f.text_field :nome_cont, :class => "input-medium search-field" %>
+<p>
+  <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseSearch" role="button" aria-expanded="false" aria-controls="collapseSearch">
+    <i class="bi bi-search"></i> Busca
+  </a>
+</p>
+<div class="collapse" id="collapseSearch">
+  <div class="card card-body">
+    <div id="search-form", :class="form-inline"> <fieldset>
+      <%= search_form_for @search, :html => {:class => "form-inline"} do |f| %>
+        <%= f.label :nome, "Nome: " %>
+        <%= f.text_field :nome_cont, :class => "input-medium search-field" %>
 
-      <%= f.label :sexo, "Sexo" %>
-      <%= f.select :sexo_eq, [["Indefinido", 1], ["Masculino", 2], ["Feminino", 3]], {:include_blank => "Todos"}, {:class => "input-medium search-field"} %>
+        <%= f.label :sexo, "Sexo" %>
+        <%= f.select :sexo_eq, [["Indefinido", 1], ["Masculino", 2], ["Feminino", 3]], {:include_blank => "Todos"}, {:class => "input-medium search-field"} %>
 
-      <%= f.label :family_id, "Família:" %>
-      <%= f.select :family_id_eq, options_from_collection_for_select(Family.all,"id","nome",@search.family_id_eq),
-          {:include_blank => "Todos"}, {:class => "input-medium search-field"} %>
+        <%= f.label :family_id, "Família:" %>
+        <%= f.select :family_id_eq, options_from_collection_for_select(Family.all,"id","nome",@search.family_id_eq),
+            {:include_blank => "Todos"}, {:class => "input-medium search-field"} %>
 
-      <%= f.label :race_id, "Raça:" %>
-      <%= f.select :race_id_eq, options_from_collection_for_select(Race.all,"id","nome",@search.race_id_eq),
-          {:include_blank => "Todos"}, {:class => "input-medium search-field"} %>
+        <%= f.label :race_id, "Raça:" %>
+        <%= f.select :race_id_eq, options_from_collection_for_select(Race.all,"id","nome",@search.race_id_eq),
+            {:include_blank => "Todos"}, {:class => "input-medium search-field"} %>
 
-      <%= f.label :books_id_eq, "Livro:" %>
-      <%= f.collection_select :books_id_eq, Book.order(:nome), :id, :nome, {:include_blank => "Todos"}, {:class => "input-medium search-field"} %>
+        <%= f.label :books_id_eq, "Livro:" %>
+        <%= f.collection_select :books_id_eq, Book.order(:nome), :id, :nome, {:include_blank => "Todos"}, {:class => "input-medium search-field"} %>
 
-    <div class="actions">
-      <%= f.submit "Buscar", class: 'btn btn-primary' %>
-      <%= f.submit "Limpar campos", :id => "reset_btn", class: 'btn btn-primary' %>
-    </div>
-    <% end %>
-  </fieldset> </div>
-</div> </div>
+      <div class="actions">
+        <%= f.submit "Buscar", class: 'btn btn-primary' %>
+        <%= f.submit "Limpar campos", :id => "reset_btn", class: 'btn btn-primary' %>
+      </div>
+      <% end %>
+    </fieldset> </div>
+  </div>
+</div>
 
 <%= page_entries_info @names %>
 <table class="table table-striped">
@@ -74,7 +80,8 @@
     <% end %>
   </tbody>
 </table>
-
+<%= will_paginate @names %>
 <br>
-
-<%= link_to 'Novo nome', new_name_path, class: 'btn btn-success' %>
+<%= link_to new_name_path, class: 'btn btn-success' do %>
+  <i class="bi bi-plus"></i> Novo nome
+<% end %>

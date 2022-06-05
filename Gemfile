@@ -20,17 +20,13 @@ gem 'webpacker', '~> 5.0'
 gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
 gem 'rails-i18n'
-gem 'jquery-rails'
-
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
 # Provides methods for searches
 gem 'ransack' , '~> 2.6'
-gem 'jquery-rails'
 
 # Pagination library
 gem 'will_paginate'

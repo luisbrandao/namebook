@@ -6,9 +6,7 @@
 import Rails from "@rails/ujs"
 import * as ActiveStorage from "@rails/activestorage"
 import 'bootstrap'
-import 'jquery'
 import '../stylesheets/application'
-import 'css/site'
 
 Rails.start()
 ActiveStorage.start()

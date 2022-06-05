@@ -2,26 +2,32 @@
 
 <h1>Famílias</h1>
 
-<div id="flip"> <h5>Buscar por famílias: </h5>
-<div id="panel">
-  <div id="search-form", :class="form-inline"> <fieldset>
-    <%= search_form_for @search, :html => {:class => "form-inline"} do |f| %>
-      <%= f.label :nome, "Nome: " %>
-      <%= f.text_field :nome_cont, :class => "input-medium search-field" %>
+<p>
+  <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseSearch" role="button" aria-expanded="false" aria-controls="collapseExample">
+    <i class="bi bi-search"></i> Busca
+  </a>
+</p>
+<div class="collapse" id="collapseSearch">
+  <div class="card card-body">
+    <div id="search-form", :class="form-inline"> <fieldset>
+      <%= search_form_for @search, :html => {:class => "form-inline"} do |f| %>
+        <%= f.label :nome, "Nome: " %>
+        <%= f.text_field :nome_cont, :class => "input-medium search-field" %>
 
-      <%= f.label :races_id_eq, "Raça:" %>
-      <%= f.collection_select :races_id_eq, Race.order(:nome), :id, :nome, {:include_blank => "Todos"}, :class => "input-medium search-field" %>
+        <%= f.label :races_id_eq, "Raça:" %>
+        <%= f.collection_select :races_id_eq, Race.order(:nome), :id, :nome, {:include_blank => "Todos"}, :class => "input-medium search-field" %>
 
-      <%= f.label :books_id_eq, "Livro:" %>
-      <%= f.collection_select :books_id_eq, Book.order(:nome), :id, :nome, {:include_blank => "Todos"}, :class => "input-medium search-field" %>
+        <%= f.label :books_id_eq, "Livro:" %>
+        <%= f.collection_select :books_id_eq, Book.order(:nome), :id, :nome, {:include_blank => "Todos"}, :class => "input-medium search-field" %>
 
-    <div class="actions">
-      <%= f.submit "Buscar", class: 'btn btn-primary' %>
-      <%= f.submit "Limpar campos", :id => "reset_btn", class: 'btn btn-primary' %>
-    </div>
-    <% end %>
-  </fieldset> </div>
-</div> </div>
+      <div class="actions">
+        <%= f.submit "Buscar", class: 'btn btn-primary' %>
+        <%= f.submit "Limpar campos", :id => "reset_btn", class: 'btn btn-primary' %>
+      </div>
+      <% end %>
+    </fieldset> </div>
+  </div>
+</div>
 
 <%= page_entries_info @families %>
 <table class="table table-striped">
@@ -78,7 +84,8 @@
     <% end %>
   </tbody>
 </table>
-
+<%= will_paginate @families %>
 <br>
-
-<%= link_to 'Nova familia', new_family_path, class: 'btn btn-success' %>
+<%= link_to  new_family_path, class: 'btn btn-success' do %>
+  <i class="bi bi-plus"></i> Nova familia
+<% end %>
