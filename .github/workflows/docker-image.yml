@@ -22,7 +22,7 @@ jobs:
 
     - name: Push the Docker image to DockerHub and Techsytes
       run: |
-        docker push registry.techsytes.com/docker-ftpython:master-${GITHUB_RUN_NUMBER}
+        docker push registry.techsytes.com/namebook-rails:master-${GITHUB_RUN_NUMBER}
 
   hadolint:
     name: Run hadolint scanning
