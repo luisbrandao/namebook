@@ -4,7 +4,7 @@ class Orb < ActiveRecord::Base
   has_and_belongs_to_many :books, :join_table => "books_orbs"
 
   has_many :orbters, class_name: "Orb", foreign_key: "orbit_id"
-  belongs_to :orbit, class_name: "Orb"
+  belongs_to :orbit, class_name: "Orb", required: false
 
   validates :nome, uniqueness: true, presence: true
   validates :books, presence: true

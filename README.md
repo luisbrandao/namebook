@@ -56,6 +56,5 @@ docker build  -t registry.techsytes.com/namebook-rails:master-03 .
 docker push registry.techsytes.com/namebook-rails:master-03
 ```
 
-        run: bin/bundler-audit --update
-        run: bin/brakeman -q -w2
-        run: bin/rubocop --parallel
+        bundler-audit --update
+        brakeman -q -w2

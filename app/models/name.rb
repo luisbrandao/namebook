@@ -1,6 +1,6 @@
 #encoding: utf-8
 class Name < ActiveRecord::Base
-  belongs_to :family
+  belongs_to :family, required: false
   belongs_to :race
   has_and_belongs_to_many :books, :join_table => "books_names"
 
