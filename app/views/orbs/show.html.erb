@@ -41,11 +41,7 @@
 </dl>
 
 <div class="form-actions">
-  <%= link_to new_orb_path, :class => 'btn btn-success btn-sm' do %>
-    <i class="fa fa-plus"></i>Novo
-  <% end %>
-
-  <%= link_to edit_orb_path(@orb), :class => 'btn btn-primary btn-sm' do %>
+  <%= link_to edit_orb_path(@orb), :class => 'btn btn-success btn-sm' do %>
     <i class="fa fa-edit"></i> Editar
   <% end %>
 
@@ -55,5 +51,9 @@
 
   <%= link_to @orb, method: :delete, data: {confirm: 'Você tem certeza?'}, :class => 'btn btn-danger btn-sm' do %>
     <i class="fa fa-trash"></i> Remover
+  <% end %>
+
+  <%= link_to new_orb_path, :class => 'btn btn-success btn-sm' do %>
+    <i class="fa fa-plus"></i> Novo
   <% end %>
 </div>

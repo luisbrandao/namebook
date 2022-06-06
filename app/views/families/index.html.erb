@@ -72,16 +72,18 @@
         </td>
         <td><%= h(family.descr).gsub(/\n/, '<br/>').html_safe %></td>
         <td>
-          <%= link_to family , :class => 'btn btn-primary btn-sm' do %>
-            <i class="fa fa-search"></i> Detalhes
-          <% end %>
-          <%= link_to edit_family_path(family), :class => 'btn btn-primary btn-sm' do %>
-            <i class="fa fa-edit"></i> Editar
-          <% end %>
+          <div class="d-grid mx-auto">
+            <%= link_to family , :class => 'btn btn-primary btn-sm' do %>
+              <i class="fa fa-search"></i> Detalhes
+            <% end %>
+            <%= link_to edit_family_path(family), :class => 'btn btn-success btn-sm' do %>
+              <i class="fa fa-edit"></i> Editar
+            <% end %>
 
-          <%= link_to family, method: :delete, data: {confirm: 'Você tem certeza?'}, :class => 'btn btn-danger btn-sm' do %>
-            <i class="fa fa-trash"></i> Remover
-          <% end %>
+            <%= link_to family, method: :delete, data: {confirm: 'Você tem certeza?'}, :class => 'btn btn-danger btn-sm' do %>
+              <i class="fa fa-trash"></i> Remover
+            <% end %>
+          </div>
         </td>
       </tr>
     <% end %>

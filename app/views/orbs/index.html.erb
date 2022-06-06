@@ -66,16 +66,18 @@
           </ul>
         </td>
         <td>
-          <%= link_to orb , :class => 'btn btn-primary btn-sm' do %>
-            <i class="fa fa-search"></i> Detalhes
-          <% end %>
-          <%= link_to edit_family_path(orb), :class => 'btn btn-primary btn-sm' do %>
-            <i class="fa fa-edit"></i> Editar
-          <% end %>
+          <div class="d-grid mx-auto">
+            <%= link_to orb , :class => 'btn btn-success btn-sm' do %>
+              <i class="fa fa-search"></i> Detalhes
+            <% end %>
+            <%= link_to edit_family_path(orb), :class => 'btn btn-primary btn-sm' do %>
+              <i class="fa fa-edit"></i> Editar
+            <% end %>
 
-          <%= link_to orb, method: :delete, data: {confirm: 'Você tem certeza?'}, :class => 'btn btn-danger btn-sm' do %>
-            <i class="fa fa-trash"></i> Remover
-          <% end %>
+            <%= link_to orb, method: :delete, data: {confirm: 'Você tem certeza?'}, :class => 'btn btn-danger btn-sm' do %>
+              <i class="fa fa-trash"></i> Remover
+            <% end %>
+          </div>
         </td>
       </tr>
     <% end %>
