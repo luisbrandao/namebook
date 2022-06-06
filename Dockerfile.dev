@@ -1,6 +1,6 @@
 # docker build -f Dockerfile.dev -t namebook-rails:dev .
 # docker run -v $(pwd):/app -p 3010:3010 -it namebook-rails:dev
-FROM ruby:2.7.4-alpine
+FROM ruby:2.7.6-alpine
 
 RUN ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
 RUN apk --update add git make gcc mysql-dev nodejs nodejs-dev sqlite-dev patch musl-dev tzdata g++ yarn

@@ -1,4 +1,4 @@
-FROM ruby:2.7.4-alpine
+FROM ruby:2.7.6-alpine
 
 RUN ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime && \
     gem update bundler && \
