@@ -1,1 +1,73 @@
-<%= render 'form', name: @name %>
+<p id="notice"><%= notice %></p>
+<div class="row">
+   <div class="col-xl-12">
+      <div class="card mb-4">
+         <div class="card-header">Detalhes do nome</div>
+         <div class="card-body">
+             <!-- Form Group (Nome)-->
+             <div class="mb-3">
+                <p class="small mb-1"> Nome </p>
+                <p class="small mb-1"> <%= @name.nome %> </p>
+             </div>
+             <!-- Form Row-->
+             <div class="row gx-3 mb-3">
+               <!-- Form Group (Família)-->
+               <div class="col-md-4">
+                  <p class="small mb-1"> Família </p>
+                  <p class="small mb-1"> <%= @name.family %> </p>
+               </div>
+               <!-- Form Group (raça)-->
+               <div class="col-md-4">
+                  <p class="small mb-1"> Raça </p>
+                  <p class="small mb-1"> <%= @name.race %> </p>
+               </div>
+                <!-- Form Group (Sexo)-->
+                <div class="col-md-4">
+                   <p class="small mb-1"> Sexo </p>
+                   <p class="small mb-1"> <%= @name.sexo_txt %> </p>
+                </div>
+             </div>
+             <!-- Form Row-->
+             <!-- Form Group (Aparência)-->
+             <div class="mb-3">
+                <p class="small mb-1"> Aparência </p>
+                <p class="small mb-1"> <%= h(@name.aparencia).gsub(/\n/, '<br/>').html_safe %> </p>
+             </div>
+             <!-- Form Row-->
+             <!-- Form Group (Descrição)-->
+             <div class="mb-3">
+                <p class="small mb-1"> Descrição </p>
+                <p class="small mb-1"> <%= h(@name.descr).gsub(/\n/, '<br/>').html_safe %>
+             </div>
+             <!-- Form Row-->
+             <!-- Form Group (Livros)-->
+             <div class="mb-3">
+                <p class="small mb-1"> Livros </p>
+                <ul>
+                  <% @name.books.sort.each do |book| %>
+                  <li> <%= book %> </li>
+                  <% end %>
+                </ul>
+             </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+<div class="form-actions">
+  <%= link_to new_name_path, :class => 'btn btn-success btn-sm' do %>
+    <i class="fa fa-plus"></i>Novo
+  <% end %>
+
+  <%= link_to edit_name_path(@name), :class => 'btn btn-primary btn-sm' do %>
+    <i class="fa fa-edit"></i> Editar
+  <% end %>
+
+  <%= link_to names_path, :class => 'btn btn-primary btn-sm' do %>
+    <i class="fa fa-arrow-left"></i> Voltar
+  <% end %>
+
+  <%= link_to @name, method: :delete, data: {confirm: 'Você tem certeza?'}, :class => 'btn btn-danger btn-sm' do %>
+    <i class="fa fa-trash"></i> Remover
+  <% end %>
+</div>
