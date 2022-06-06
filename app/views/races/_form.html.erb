@@ -10,29 +10,40 @@
       </ul>
     </div>
   <% end %>
+  <div class="row">
+     <div class="col-xl-12">
+        <div class="card mb-4">
+           <div class="card-header"><%= @race.new_record? ? "Nova raça" : "Detalhes da raça" %></div>
+           <div class="card-body">
+              <form>
+                <!-- Form Row-->
+                <!-- Form Group (Nome)-->
+                <div class="mb-3">
+                  <%= form.label :nome, :class => "small mb-1" %>
+                  <%= form.text_field :nome, :class => "form-control" %>
+                </div>
+                <!-- Form Row-->
+                <!-- Form Group (Descrição)-->
+                <div class="mb-3">
+                  <%= form.label :descr, "Descrição", :class => "small mb-1" %>
+                  <%= form.text_area :descr, :class => "form-control", :rows =>"6" %>
+                </div>
+                <div class="actions">
+                  <%= form.submit @race.new_record? ? "Criar nova raça" : "Atualizar raça", :class => "btn btn-success btn-sm" %>
 
-  <div class="mb-3">
-    <%= form.label :nome, :class => "form-label" %>
-    <%= form.text_field :nome, :class => "form-control" %>
-  </div>
-  <div class="mb-3">
-    <%= form.label :descr, :class => "form-label" %>
-    <%= form.text_area :descr, :class => "form-control" %>
-  </div>
+                  <% unless @race.new_record? %>
+                    <%= link_to @race , :class => 'btn btn-primary btn-sm' do %>
+                      <i class="fa fa-search"></i> Detalhes
+                    <% end %>
+                  <% end %>
 
-  <div class="form-group">
-    <div class="actions">
-      <%= form.submit @race.new_record? ? "Criar nova raça" : "Atualizar raça", :class => "btn btn-success btn-sm" %>
-
-      <% unless @race.new_record? %>
-        <%= link_to @race , :class => 'btn btn-primary btn-sm' do %>
-          <i class="fa fa-search"></i> Detalhes
-        <% end %>
-      <% end %>
-
-      <%= link_to races_path, :class => 'btn btn-primary btn-sm' do %>
-        <i class="fa fa-arrow-left"></i> Voltar
-      <% end %>
-    </div>
+                  <%= link_to races_path, :class => 'btn btn-primary btn-sm' do %>
+                    <i class="fa fa-arrow-left"></i> Voltar
+                  <% end %>
+                </div>
+              </form>
+           </div>
+        </div>
+     </div>
   </div>
 <% end %>
