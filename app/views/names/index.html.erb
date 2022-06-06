@@ -59,7 +59,7 @@
         <td><%= name %></td>
         <td><%= name.family %></td>
         <td><%= name.race %></td>
-        <td><%= h(name.descr).gsub(/\n/, '<br/>').html_safe %></td>
+        <td><%= h(name.descr.truncate(320)).gsub(/\n/, '<br/>').html_safe %></td>
         <td>
           <ul>
             <% name.books.sort.each do |book| %>
@@ -68,16 +68,16 @@
           </ul>
         </td>
         <td>
-          <div class="d-grid mx-auto">
-          <%= link_to name, :class => 'btn btn-primary btn-sm' do %>
-            <i class="fa fa-search"></i> Detalhes
-          <% end %>
-          <%= link_to edit_name_path(name), :class => 'btn btn-success btn-sm' do %>
-            <i class="fa fa-edit"></i> Editar
-          <% end %>
-          <%= link_to name, method: :delete, data: {confirm: 'Você tem certeza?'}, :class => 'btn btn-danger btn-sm' do %>
-            <i class="fa fa-trash"></i> Remover
-          <% end %>
+          <div class="d-grid" style="width: 6rem;">
+            <%= link_to name, :class => 'btn btn-primary btn-sm' do %>
+              <i class="fa fa-search"></i> Detalhes
+            <% end %>
+            <%= link_to edit_name_path(name), :class => 'btn btn-success btn-sm' do %>
+              <i class="fa fa-edit"></i> Editar
+            <% end %>
+            <%= link_to name, method: :delete, data: {confirm: 'Você tem certeza?'}, :class => 'btn btn-danger btn-sm' do %>
+              <i class="fa fa-trash"></i> Remover
+            <% end %>
           </div>
         </td>
       </tr>

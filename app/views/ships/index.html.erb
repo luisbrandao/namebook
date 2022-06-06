@@ -56,7 +56,7 @@
     <% @ships.each do |ship| %>
     <tr>
       <td><%= ship %></td>
-      <td><%= h(ship.descr).gsub(/\n/, '<br/>').html_safe %></td>
+      <td><%= h(ship.descr.truncate(400)).gsub(/\n/, '<br/>').html_safe %></td>
       <td>
         <ul>
           <% ship.books.each do |book| %>
@@ -67,7 +67,7 @@
       <td><%= ship.base_type %></td>
       <td><%= ship.ship_size %></td>
       <td>
-        <div class="d-grid mx-auto">
+        <div class="d-grid" style="width: 6rem;">
           <%= link_to ship , :class => 'btn btn-primary btn-sm' do %>
             <i class="fa fa-search"></i> Detalhes
           <% end %>
