@@ -10,7 +10,8 @@ WORKDIR /app
 ENV RAILS_ENV=production
 RUN bundle install && \
     yarn install && yarn cache clean && \
-    bundle exec rake assets:precompile
+    bundle exec rake assets:precompile && \
+    rm -rf node_modules
 
 EXPOSE 3010
 CMD ["/app/start.sh"]
