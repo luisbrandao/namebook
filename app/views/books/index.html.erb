@@ -5,13 +5,16 @@
     <i class="fa fa-plus"></i> Novo Livro
   <% end %>
 </p>
+
 <% @books.in_groups_of(3) do |group| %>
   <div class="row">
-    <% group.compact.each do |book| %>
-      <div class="col-md-4">
-        <h4><%= link_to book.nome, book %></h4>
-        <%= book.descr %>
+  <% group.compact.each do |book| %>
+    <div class="card ms-2 mb-2" style="width: 26rem;">
+      <div class="card-body">
+        <h5 class="card-title"><%= link_to book.nome, book %></h5>
+        <p class="card-text"><%= book.descr.truncate(380) %></p>
       </div>
-    <% end %>
+    </div>
+  <% end %>
   </div>
 <% end %>

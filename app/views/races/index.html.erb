@@ -1,19 +1,20 @@
 <p id="notice"><%= notice %></p>
-
 <h1>Raças</h1>
 <p>
   <%= link_to  new_race_path, class: 'btn btn-success' do %>
     <i class="fa fa-plus"></i> Nova raça
   <% end %>
 </p>
+
 <% @races.in_groups_of(3) do |group| %>
   <div class="row">
-    <% group.compact.each do |race| %>
-      <div class="col-md-4">
-        <h4><%= link_to race.nome, race %></h4>
-        <%= race.descr %>
+  <% group.compact.each do |race| %>
+    <div class="card ms-2 mb-2" style="width: 26rem;">
+      <div class="card-body">
+        <h5 class="card-title"><%= link_to race.nome, race %></h5>
+        <p class="card-text"><%= race.descr.truncate(380) %></p>
       </div>
-    <% end %>
+    </div>
+  <% end %>
   </div>
 <% end %>
-<br>
