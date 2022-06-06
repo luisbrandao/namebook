@@ -10,62 +10,79 @@
     </div>
   <% end %>
 
-  <div class="mb-3">
-    <strong><%= form.label :nome, :class => "form-label" %></strong>
-    <%= form.text_field :nome, :class => "form-control" %>
-  </div>
+  <hr class="mt-0 mb-4">
+  <div class="row">
+     <div class="col-xl-12">
+        <div class="card mb-4">
+           <div class="card-header"><%= @name.new_record? ? "Novo nome" : "Detalhes do nome" %></div>
+           <div class="card-body">
+              <form>
+                 <!-- Form Group (Nome)-->
+                 <div class="mb-3">
+                    <%= form.label :nome, :class => "small mb-1" %>
+                    <%= form.text_field :nome, :class => "form-control" %>
+                 </div>
+                 <!-- Form Row-->
+                 <div class="row gx-3 mb-3">
+                   <!-- Form Group (Família)-->
+                   <div class="col-md-4">
+                      <%= form.label :descr, "Família", :class => "small mb-1" %>
+                      <%= collection_select(:name, :family_id, Family.order('nome'), :id, :nome, { :include_blank => "Selecione uma família" }, {:class=>'form-select'} ) %>
+                   </div>
+                   <!-- Form Group (raça)-->
+                   <div class="col-md-4">
+                      <%= form.label :race_id, "Raça", :class => "small mb-1" %>
+                      <%= collection_select(:name, :race_id, Race.order('nome'), :id, :nome, { :prompt => "Selecione uma raça" }, {:class=>'form-select'} ) %>
+                   </div>
+                    <!-- Form Group (Sexo)-->
+                    <div class="col-md-4">
+                       <%= form.label :sexo, :class => "small mb-1" %>
+                       <%= form.select(:sexo, [["", 1], ["Masculino", 2], ["Feminino", 3]], {}, { :class => 'form-select' }) %>
+                    </div>
+                 </div>
+                 <!-- Form Row-->
+                 <!-- Form Group (Aparência)-->
+                 <div class="mb-3">
+                    <%= form.label :aparencia, "Aparência" , :class => "small mb-1" %>
+                    <%= form.text_area :aparencia, :class => "form-control", :rows =>"6" %>
+                 </div>
+                 <!-- Form Row-->
+                 <!-- Form Group (Descrição)-->
+                 <div class="mb-3">
+                    <%= form.label :descr, "Descrição", :class => "small mb-1" %>
+                    <%= form.text_area :descr, :class => "form-control", :rows =>"6" %>
+                 </div>
+                 <!-- Form Row-->
+                 <!-- Form Group (Livros)-->
+                 <div class="mb-3">
+                    <%= hidden_field_tag 'nome[book_ids][]', '' %>
+                    <%= form.label :books, "Livros", :class => "small mb-1" %><br />
+                    <div class="form-check">
+                       <% @book.each do |book| %>
+                       <div>
+                          <%= check_box_tag "name[book_ids][]", book.id, @name.books.include?(book), class: 'form-check-input' %>
+                          <div class="form-check-label"> <%= book %> </div>
+                       </div>
+                       <% end %>
+                    </div>
+                 </div>
+                 <!-- Save changes button-->
+                 <div class="actions">
+                    <%= form.submit @name.new_record? ? "Criar novo nome" : "Atualizar nome", :class => "btn btn-success btn-sm" %>
 
-  <div class="field">
-    <strong><%= form.label :sexo, :class => "form-label" %></strong>
-    <%= form.select(:sexo, [["", 1], ["Masculino", 2], ["Feminino", 3]], {}, { :class => 'form-select' }) %>
-  </div>
+                    <%= link_to names_path, :class => 'btn btn-primary btn-sm' do %>
+                      <i class="fa-solid fa-arrow-left"></i> Voltar
+                    <% end %>
 
-  <div class="mb-3">
-    <strong><%= form.label :aparencia, "Aparência" , :class => "form-label" %></strong>
-    <%= form.text_area :aparencia, :class => "form-control", :rows =>"6" %>
-  </div>
-
-  <div class="mb-3">
-    <strong><%= form.label :descr, "Descrição", :class => "form-label" %></strong>
-    <%= form.text_area :descr, :class => "form-control", :rows =>"6" %>
-  </div>
-
-  <div class="mb-3">
-    <strong><%= form.label :race_id, "Raça", :class => "form-label"  %><br /></strong>
-    <%= collection_select(:name, :race_id, Race.order('nome'), :id, :nome, { :prompt => "Selecione uma raça" }, {:class=>'form-select'} ) %>
-  </div>
-
-  <div class="mb-3">
-    <strong><%= form.label :family_id, "Família", :class => "form-label"  %><br /></strong>
-    <%= collection_select(:name, :family_id, Family.order('nome'), :id, :nome, { :include_blank => "Selecione uma família" }, {:class=>'form-select'} ) %>
-  </div>
-
-  <div class="mb-3">
-    <%= hidden_field_tag 'nome[book_ids][]', '' %>
-    <strong><%= form.label :books, "Livros" %><br /></strong>
-    <div class="form-check">
-      <% @book.each do |book| %>
-        <div>
-          <%= check_box_tag "name[book_ids][]", book.id, @name.books.include?(book), class: 'form-check-input' %>
-          <div class="form-check-label"> <%= book %> </div>
+                    <% unless @name.new_record? %>
+                      <%= link_to @name, method: :delete, data: {confirm: 'Você tem certeza?'}, :class => 'btn btn-danger btn-sm' do %>
+                        <i class="fa fa-trash"></i> Remover
+                      <% end %>
+                    <% end %>
+                 </div>
+              </form>
+           </div>
         </div>
-      <% end %>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <div class="actions">
-      <%= form.submit @name.new_record? ? "Criar novo nome" : "Atualizar nome", :class => "btn btn-success btn-sm" %>
-
-      <% unless @name.new_record? %>
-        <%= link_to @name , :class => 'btn btn-primary btn-sm' do %>
-          <i class="fa-solid fa-magnifying-glass"></i> Detalhes
-        <% end %>
-      <% end %>
-
-      <%= link_to names_path, :class => 'btn btn-primary btn-sm' do %>
-        <i class="fa-solid fa-arrow-left"></i> Voltar
-      <% end %>
-    </div>
+     </div>
   </div>
 <% end %>

@@ -13,6 +13,7 @@ class NamesController < ApplicationController
   # GET /names/1
   # GET /names/1.json
   def show
+    @book = Book.order('nome')
     @name = Name.find(params[:id])
   end
 
