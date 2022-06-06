@@ -11,52 +11,66 @@
     </div>
   <% end %>
 
-  <div class="mb-3">
-    <strong><%= form.label :nome, :class => "form-label" %></strong>
-    <%= form.text_field :nome, :class => "form-control" %>
-  </div>
+  <div class="row">
+     <div class="col-xl-12">
+        <div class="card mb-4">
+           <div class="card-header"><%= @book.new_record? ? "Novo Livro" : "Editando livro" %></div>
+           <div class="card-body">
+              <form>
+                <!-- Form Group (Nome)-->
+                <div class="mb-3">
+                  <%= form.label :nome, :class => "small mb-1" %>
+                  <%= form.text_field :nome, :class => "form-control" %>
+                </div>
+                <!-- Form Row-->
+                <div class="row gx-3 mb-3">
+                  <!-- Form Group (raça)-->
+                  <div class="col-md-6">
+                    <%= hidden_field_tag 'book[race_ids][]', '' %>
+                    <%= form.label :races, "Raças", :class => "small mb-1" %>
+                    <div class="form-check">
+                      <% @race.each do |race| %>
+                        <div>
+                          <%= check_box_tag "book[race_ids][]", race.id, @book.races.include?(race), class: 'form-check-input' %>
+                          <div class="form-check-label"> <%= race %> </div>
+                        </div>
+                      <% end %>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="col-md-6">
+                      <%= form.label :datai, "Data do inicio", :class => "small mb-1" %>
+                      <%= form.text_field :datai, :class => "form-control" %>
+                    </div>
+                    <div class="col-md-6">
+                      <%= form.label :dataf, "Data da conclusão", :class => "small mb-1" %>
+                      <%= form.text_field :dataf, :class => "form-control" %>
+                    </div>
+                  </div>
+                </div>
+                <!-- Form Row-->
+                <!-- Form Group (Descrição)-->
+                <div class="mb-3">
+                  <%= form.label :descr, "Descrição", :class => "small mb-1" %>
+                  <%= form.text_area :descr, :class => "form-control", :rows =>"6" %>
+                </div>
+                <!-- Save changes button-->
+                <div class="actions">
+                  <%= form.submit @book.new_record? ? "Criar novo livro" : "Atualizar livro", :class => "btn btn-success btn-sm" %>
 
-  <div class="mb-3">
-    <%= hidden_field_tag 'book[race_ids][]', '' %>
-    <strong><%= form.label :races, "Raças" %><br /></strong>
-    <div class="form-check">
-      <% @race.each do |race| %>
-        <div>
-          <%= check_box_tag "book[race_ids][]", race.id, @book.races.include?(race), class: 'form-check-input' %>
-          <div class="form-check-label"> <%= race %> </div>
+                  <% unless @book.new_record? %>
+                    <%= link_to @book , :class => 'btn btn-primary btn-sm' do %>
+                      <i class="fa fa-search"></i> Detalhes
+                    <% end %>
+                  <% end %>
+
+                  <%= link_to books_path, :class => 'btn btn-primary btn-sm' do %>
+                    <i class="fa fa-arrow-left"></i> Voltar
+                  <% end %>
+                </div>
+              </form>
+           </div>
         </div>
-      <% end %>
-    </div>
-  </div>
-
-  <div class="mb-3">
-    <strong><%= form.label :descr, "Descrição", :class => "form-label" %></strong>
-    <%= form.text_area :descr, :class => "form-control", :rows =>"6" %>
-  </div>
-
-  <div class="mb-3">
-    <strong><%= form.label :datai, "Data do inicio", :class => "form-label" %></strong>
-    <%= form.text_field :datai, :class => "form-control" %>
-  </div>
-
-  <div class="mb-3">
-    <strong><%= form.label :dataf, "Data da conclusão", :class => "form-label" %></strong>
-    <%= form.text_field :dataf, :class => "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <div class="actions">
-      <%= form.submit @book.new_record? ? "Criar novo livro" : "Atualizar livro", :class => "btn btn-success btn-sm" %>
-
-      <% unless @book.new_record? %>
-        <%= link_to @book , :class => 'btn btn-primary btn-sm' do %>
-          <i class="fa fa-search"></i> Detalhes
-        <% end %>
-      <% end %>
-
-      <%= link_to books_path, :class => 'btn btn-primary btn-sm' do %>
-        <i class="fa fa-arrow-left"></i> Voltar
-      <% end %>
-    </div>
+     </div>
   </div>
 <% end %>
