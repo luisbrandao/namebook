@@ -20,7 +20,7 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag registry.techsytes.com/namebook-rails:master-${GITHUB_RUN_NUMBER}
 
-    - name: Push the Docker image to DockerHub and Techsytes
+    - name: Push the Docker image to Techsytes
       run: |
         docker push registry.techsytes.com/namebook-rails:master-${GITHUB_RUN_NUMBER}
 
