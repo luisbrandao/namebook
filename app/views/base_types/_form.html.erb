@@ -11,25 +11,34 @@
     </div>
   <% end %>
 
-  <div class="mb-3">
-    <strong><%= form.label :nome, :class => "form-label" %></strong>
-    <%= form.text_field :nome, :class => "form-control" %>
+  <div class="row">
+     <div class="col-xl-12">
+        <div class="card mb-4">
+           <div class="card-header"><%= @base_type.new_record? ? "Novo tipo de nave" : "Editando tipo de nave" %></div>
+           <div class="card-body">
+              <form>
+                <!-- Form Row-->
+                <!-- Form Group (Nome)-->
+                <div class="mb-3">
+                  <%= form.label :nome, :class => "small mb-1" %>
+                  <%= form.text_field :nome, :class => "form-control" %>
+                </div>
+                <div class="actions">
+                  <%= form.submit @base_type.new_record? ? "Criar novo tipo base" : "Atualizar tipo base", :class => "btn btn-success btn-sm" %>
+
+                  <% unless @base_type.new_record? %>
+                    <%= link_to @base_type , :class => 'btn btn-primary btn-sm' do %>
+                      <i class="fa fa-search"></i> Detalhes
+                    <% end %>
+                  <% end %>
+
+                  <%= link_to base_types_path, :class => 'btn btn-primary btn-sm' do %>
+                    <i class="fa fa-arrow-left"></i> Voltar
+                  <% end %>
+                </div>
+              </form>
+           </div>
+        </div>
+     </div>
   </div>
-
-  <div class="form-group">
-    <div class="actions">
-      <%= form.submit @base_type.new_record? ? "Criar novo tipo base" : "Atualizar tipo base", :class => "btn btn-success btn-sm" %>
-
-      <% unless @base_type.new_record? %>
-        <%= link_to @base_type , :class => 'btn btn-primary btn-sm' do %>
-          <i class="fa fa-search"></i> Detalhes
-        <% end %>
-      <% end %>
-
-      <%= link_to base_types_path, :class => 'btn btn-primary btn-sm' do %>
-        <i class="fa fa-arrow-left"></i> Voltar
-      <% end %>
-    </div>
-  </div>
-
 <% end %>
