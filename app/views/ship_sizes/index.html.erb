@@ -3,7 +3,7 @@
 <h1>Listando tamanhos de naves</h1>
 <p>
   <%= link_to  new_ship_size_path, class: 'btn btn-success' do %>
-    <i class="fa-solid fa-plus"></i> Novo tamanho de nave
+    <i class="fa fa-plus"></i> Novo tamanho de nave
   <% end %>
 </p>
 <table class="table table-striped"
@@ -20,10 +20,10 @@
         <td><%= ship_size %></td>
         <td>
           <%= link_to ship_size , :class => 'btn btn-primary btn-sm' do %>
-            <i class="fa-solid fa-magnifying-glass"></i> Detalhes
+            <i class="fa fa-search"></i> Detalhes
           <% end %>
           <%= link_to edit_ship_size_path(ship_size), :class => 'btn btn-primary btn-sm' do %>
-            <i class="fa fa-pencil"></i> Editar
+            <i class="fa fa-edit"></i> Editar
           <% end %>
 
           <%= link_to ship_size, method: :delete, data: {confirm: 'Você tem certeza?'}, :class => 'btn btn-danger btn-sm' do %>

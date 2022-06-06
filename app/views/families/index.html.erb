@@ -4,10 +4,10 @@
 
 <p>
   <%= link_to  new_family_path, class: 'btn btn-success' do %>
-    <i class="fa-solid fa-plus"></i> Nova familia
+    <i class="fa fa-plus"></i> Nova familia
   <% end %>
   <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseSearch" role="button" aria-expanded="false" aria-controls="collapseExample">
-    <i class="fa-solid fa-magnifying-glass"></i> Busca
+    <i class="fa fa-search"></i> Busca
   </a>
 </p>
 <div class="collapse" id="collapseSearch">
@@ -73,10 +73,10 @@
         <td><%= h(family.descr).gsub(/\n/, '<br/>').html_safe %></td>
         <td>
           <%= link_to family , :class => 'btn btn-primary btn-sm' do %>
-            <i class="fa-solid fa-magnifying-glass"></i> Detalhes
+            <i class="fa fa-search"></i> Detalhes
           <% end %>
           <%= link_to edit_family_path(family), :class => 'btn btn-primary btn-sm' do %>
-            <i class="fa fa-pencil"></i> Editar
+            <i class="fa fa-edit"></i> Editar
           <% end %>
 
           <%= link_to family, method: :delete, data: {confirm: 'Você tem certeza?'}, :class => 'btn btn-danger btn-sm' do %>

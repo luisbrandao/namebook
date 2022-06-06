@@ -1,7 +1,7 @@
-$fa-font-path: '~@fortawesome/fontawesome-free/webfonts/';
-@import '~@fortawesome/fontawesome-free/scss/fontawesome';
-@import '~@fortawesome/fontawesome-free/scss/solid.scss' ;
+$fa-font-path: '~fontawesome-free/webfonts/';
+@import '~fontawesome-free/scss/fontawesome';
+@import '~fontawesome-free/scss/solid.scss' ;
 //@import '~@fortawesome/fontawesome-free/scss/regular.scss' ;
 //@import '~@fortawesome/fontawesome-free/scss/brands.scss' ;
 //@import '~@fortawesome/fontawesome-free/scss/v4-shims.scss' ;
-@import '~bootstrap/scss/bootstrap';
+@import 'bootstrap/scss/bootstrap';
