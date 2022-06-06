@@ -11,24 +11,34 @@
     </div>
   <% end %>
 
-  <div class="mb-3">
-    <strong><%= form.label :nome, :class => "form-label" %></strong>
-    <%= form.text_field :nome, :class => "form-control" %>
-  </div>
+  <div class="row">
+     <div class="col-xl-12">
+        <div class="card mb-4">
+           <div class="card-header"><%= @orb_type.new_record? ? "Novo tipo de corpo celeste" : "Editando tipo de corpo celeste" %></div>
+           <div class="card-body">
+              <form>
+                <!-- Form Row-->
+                <!-- Form Group (Nome)-->
+                <div class="mb-3">
+                  <%= form.label :nome, :class => "small mb-1" %>
+                  <%= form.text_field :nome, :class => "form-control" %>
+                </div>
+                <div class="actions">
+                  <%= form.submit @orb_type.new_record? ? "Criar novo tipo de corpo celeste" : "Atualizar o tipo de corpo celeste", :class => "btn btn-success btn-sm" %>
 
-  <div class="form-group">
-    <div class="actions">
-      <%= form.submit @orb_type.new_record? ? "Criar novo tipo de planeta" : "Atualizar o tipo de planeta", :class => "btn btn-success btn-sm" %>
+                  <% unless @orb_type.new_record? %>
+                    <%= link_to @orb_type , :class => 'btn btn-primary btn-sm' do %>
+                      <i class="fa fa-search"></i> Detalhes
+                    <% end %>
+                  <% end %>
 
-      <% unless @orb_type.new_record? %>
-        <%= link_to @orb_type , :class => 'btn btn-primary btn-sm' do %>
-          <i class="fa fa-search"></i> Detalhes
-        <% end %>
-      <% end %>
-
-      <%= link_to orb_types_path, :class => 'btn btn-primary btn-sm' do %>
-        <i class="fa fa-arrow-left"></i> Voltar
-      <% end %>
-    </div>
+                  <%= link_to orb_types_path, :class => 'btn btn-primary btn-sm' do %>
+                    <i class="fa fa-arrow-left"></i> Voltar
+                  <% end %>
+                </div>
+              </form>
+           </div>
+        </div>
+     </div>
   </div>
 <% end %>
