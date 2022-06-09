@@ -60,6 +60,5 @@ Em prod, rodar passando:
 SITE_USER=user
 SITE_PASSWORD=password
 
-
 bundler-audit --update
 brakeman -q -w2
