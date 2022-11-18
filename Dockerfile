@@ -2,7 +2,7 @@ FROM ruby:3.1.2-alpine
 
 RUN ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime && \
     gem update bundler && \
-    apk --no-cache add git make gcc mysql-dev nodejs nodejs-dev sqlite-dev patch musl-dev tzdata g++ yarn
+    apk --no-cache add git make gcc mysql-dev sqlite-dev nodejs nodejs-dev patch musl-dev tzdata g++ yarn
 
 COPY . /app
 WORKDIR /app
