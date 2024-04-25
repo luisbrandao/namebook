@@ -8,6 +8,7 @@ COPY . /app
 WORKDIR /app
 
 ENV RAILS_ENV=production
+ENV NODE_OPTIONS=--openssl-legacy-provider
 RUN bundle install && \
     yarn install && yarn cache clean && \
     bundle exec rake assets:precompile && \
