@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_30_193545) do
+ActiveRecord::Schema.define(version: 2024_04_25_204920) do
 
   create_table "base_types", force: :cascade do |t|
     t.string "nome", limit: 255
@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(version: 2021_08_30_193545) do
     t.integer "family_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "aparencia", limit: 255
+    t.text "aparencia", limit: 255
     t.integer "sexo", default: 1
   end
 

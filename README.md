@@ -21,8 +21,8 @@ No diretório doc/ estão os modelos do banco de dados, no formato do MySQL Work
 Para desenvolver, usar o docker de dev:
 
 ```
-docker build -f Dockerfile.dev -t namebook-rails:dev .
-docker run --name namedev -v $(pwd):/app -p 3010:3010 -it namebook-rails:dev
+docker build -f Dockerfile.dev -t registry.techsytes.com/namebook-rails:dev .
+docker run --name namedev -v $(pwd):/app -p 3010:3010 -it registry.techsytes.com/namebook-rails:dev
 ```
 
 Uma vez dentro do container, é necessário executar a preparação do ambiente
