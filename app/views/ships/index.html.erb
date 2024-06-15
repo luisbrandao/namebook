@@ -56,7 +56,7 @@
     <% @ships.each do |ship| %>
     <tr>
       <td><%= ship %></td>
-      <td><%= h(ship.descr.truncate(400)).gsub(/\n/, '<br/>').html_safe %></td>
+      <td><%= ship.descr.truncate(400).gsub(/\n/, '<br/>').html_safe %></td>
       <td>
         <ul>
           <% ship.books.each do |book| %>

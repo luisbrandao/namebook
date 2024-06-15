@@ -57,7 +57,7 @@
         <td><%= orb %></td>
         <td><%= orb.orbit %></td>
         <td><%= orb.orb_type %></td>
-        <td><%= h(orb.descr.truncate(380)).gsub(/\n/, '<br/>').html_safe %></td>
+        <td><%= orb.descr.truncate(380).gsub(/\n/, '<br/>').html_safe %></td>
         <td>
           <ul>
             <% orb.books.sort.each do |book| %>
