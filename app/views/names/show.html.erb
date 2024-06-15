@@ -30,13 +30,13 @@
              <!-- Form Group (Descrição)-->
              <div class="mb-3">
                 <p class="small mb-1 card-header"> Descrição </p>
-                <p class="small mb-1 card-body"> <%= h(@name.descr).gsub(/\n/, '<br/>').html_safe %>
+                <p class="small mb-1 card-body"> <%= @name.descr.gsub(/\n/, '<br/>').html_safe %>
              </div>
              <!-- Form Row-->
              <!-- Form Group (Aparência)-->
              <div class="mb-3">
                 <p class="small mb-1 card-header"> Aparência </p>
-                <p class="small mb-1 card-body"> <%= h(@name.aparencia).gsub(/\n/, '<br/>').html_safe %> </p>
+                <p class="small mb-1 card-body"> <%= @name.aparencia.gsub(/\n/, '<br/>').html_safe %> </p>
              </div>
              <!-- Form Row-->
              <!-- Form Group (Livros)-->

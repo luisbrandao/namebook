@@ -59,7 +59,7 @@
         <td><%= name %></td>
         <td><%= name.family %></td>
         <td><%= name.race %></td>
-        <td><%= h(name.descr.truncate(320)).gsub(/\n/, '<br/>').html_safe %></td>
+        <td><%= name.descr.truncate(290).gsub(/\n/, '<br/>').html_safe %></td>
         <td>
           <ul>
             <% name.books.sort.each do |book| %>
