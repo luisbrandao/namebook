@@ -1,22 +1,23 @@
 # docker build -f Dockerfile.dev -t namebook-rails:dev .
 # docker run -v $(pwd):/app -p 3010:3010 -it namebook-rails:dev
-FROM docker.io/library/ruby:3.3.1-alpine
+FROM docker.io/library/ruby:3.2.4-alpine
 
 RUN ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
 RUN apk --update add git make gcc mysql-dev nodejs nodejs-dev sqlite-dev patch musl-dev tzdata g++ yarn
 
 # Add local user
 RUN adduser -D -u 1000 user
-RUN mkdir /cachemaker && chown user:user /cachemaker
-USER user
-
-# gem update bundler Precisa ser executado como user!!!
-RUN gem update bundler
 # Generate a static cache
+RUN mkdir /cachemaker
 COPY ./Gemfile /cachemaker
 COPY Gemfile.lock /cachemaker
 COPY package.json /cachemaker
 COPY yarn.lock /cachemaker
+RUN chown -R user:user /cachemaker 
+USER user
+
+# gem update bundler Precisa ser executado como user!!!
+RUN gem update bundler
 WORKDIR /cachemaker
 RUN bundler install && yarn install
 
