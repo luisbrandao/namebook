@@ -70,7 +70,7 @@
             <% end %>
           </ul>
         </td>
-        <td><%= family.descr.truncate(400).gsub(/\n/, '<br/>').html_safe %></td>
+        <td><%= family.descr&.truncate(400).gsub(/\n/, '<br/>')&.html_safe %></td>
         <td>
           <div class="d-grid" style="width: 6rem;">
             <%= link_to family , :class => 'btn btn-primary btn-sm' do %>
