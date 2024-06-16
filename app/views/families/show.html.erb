@@ -1,51 +1,72 @@
-<p id="notice"><%= notice %></p>
-
-<div class="page-header">
-  <h1>Detalhes da familia</h1>
+<div class="row">
+   <div class="col-xl-12">
+      <div class="card mb-4">
+         <div class="card-header">Detalhes da Família</div>
+         <div class="card-body">
+             <!-- Form Group (Nome)-->
+             <div class="mb-3">
+                <p class="small mb-1 card-header"> Nome </p>
+                <p class="small mb-1 card-body"> <%= @family.nome %> </p>
+             </div>
+             <!-- Form Row-->
+             <div class="row gx-3 mb-3">
+                <!-- Form Group (Integrantes)-->
+                <div class="col-md-4">
+                   <p class="small mb-1 card-header"> Integrantes </p>
+                   <p class="small mb-1 card-body">
+                      <ul>
+                         <% @family.names.sort.each do |name| %>
+                         <li>
+                            <%= name %>
+                            <% if name.present? %>
+                               <%= link_to name_path(name) do %>
+                                  <i class="fa fa-link green-icon"></i>
+                               <% end %>
+                            <% end %>
+                         </li>
+                         <% end %>
+                      </ul>
+                   </p>
+                </div>
+                <!-- Form Group (Livros)-->
+                <div class="col-md-4">
+                   <p class="small mb-1 card-header"> Livros </p>
+                   <p class="small mb-1 card-body">
+                      <ul>
+                         <% @family.books.sort.each do |book| %>
+                         <li>
+                            <%= book %>
+                            <% if book.present? %>
+                              <%= link_to book_path(book) do %>
+                                <i class="fa fa-link green-icon"></i>
+                              <% end %>
+                            <% end %>
+                         </li>
+                         <% end %>
+                      </ul>
+                   </p>
+                </div>
+                <!-- Form Group (Raças)-->
+                <div class="col-md-4">
+                   <p class="small mb-1 card-header"> Raças </p>
+                   <p class="small mb-1 card-body">
+                      <ul>
+                         <% @family.races.sort.each do |race| %>
+                         <li> <%= race %> </li>
+                         <% end %>
+                      </ul>
+                   </p>
+                </div>
+             </div>
+             <!-- Form Group (Descrição)-->
+             <div class="mb-3">
+                <p class="small mb-1 card-header"> Descrição </p>
+                <p class="small mb-1 card-body"> <%= @family.descr&.gsub(/\n/, '<br/>')&.html_safe %> </p>
+             </div>
+         </div>
+      </div>
+   </div>
 </div>
-<dl class="dl-horizontal">
-  <dt><strong>Nome:</strong></dt>
-  <dd><%= @family.nome %> </dd>
-</dl>
-
-<dl class="dl-horizontal">
-  <dt><strong>Integrantes:</strong></dt>
-  <ul>
-    <% @family.names.sort.each do |name| %>
-      <li>
-        <%= name %>
-        <% if name.present? %>
-          <%= link_to name_path(name) do %>
-            <i class="fa fa-link green-icon"></i>
-          <% end %>
-        <% end %>
-      </li>
-    <% end %>
-  </ul>
-</dl>
-
-<dl class="dl-horizontal">
-  <dt><strong>Livros:</strong></dt>
-  <ul>
-    <% @family.books.sort.each do |book| %>
-    <li> <%= book %> </li>
-    <% end %>
-  </ul>
-</dl>
-
-<dl class="dl-horizontal">
-  <dt><strong>Raças:</strong></dt>
-  <ul>
-    <% @family.races.sort.each do |race| %>
-    <li> <%= race %> </li>
-    <% end %>
-  </ul>
-</dl>
-
-<dl class="dl-horizontal">
-  <dt><strong>Descrição:</strong></dt>
-  <dd><%= @family.descr&.gsub(/\n/, '<br/>')&.html_safe %> </dd>
-</dl>
 
 <div class="form-actions">
   <%= link_to edit_family_path(@family), :class => 'btn btn-success btn-sm' do %>

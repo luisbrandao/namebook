@@ -1,37 +1,113 @@
-<p id="notice"><%= notice %></p>
-
-<div class="page-header">
-  <h1>Detalhes do livro</h1>
+<div class="row">
+   <div class="col-xl-12">
+      <div class="card mb-4">
+         <div class="card-header">Detalhes do Livro</div>
+         <div class="card-body">
+             <!-- Form Group (Nome)-->
+             <div class="mb-3">
+                <p class="small mb-1 card-header"> Nome </p>
+                <p class="small mb-1 card-body"> <%= @book.nome %> </p>
+             </div>
+             <!-- Form Row-->
+             <div class="row gx-3 mb-3">
+                <!-- Form Group (Data do Início)-->
+                <div class="col-md-6">
+                   <p class="small mb-1 card-header"> Data do Início </p>
+                   <p class="small mb-1 card-body"> <%= @book.datai %> </p>
+                </div>
+                <!-- Form Group (Data da Conclusão)-->
+                <div class="col-md-6">
+                   <p class="small mb-1 card-header"> Data da Conclusão </p>
+                   <p class="small mb-1 card-body"> <%= @book.dataf %> </p>
+                </div>
+             </div>
+             <!-- Form Group (Descrição)-->
+             <div class="mb-3">
+                <p class="small mb-1 card-header"> Descrição </p>
+                <p class="small mb-1 card-body"> <%= @book.descr&.gsub(/\n/, '<br/>')&.html_safe %> </p>
+             </div>
+             <!-- Form Row-->
+             <div class="row gx-3 mb-3">
+                <!-- Form Group (Famílias)-->
+                <div class="col-md-6">
+                   <p class="small mb-1 card-header"> Famílias </p>
+                   <p class="small mb-1 card-body">
+                      <ul>
+                         <% @book.families.sort.each do |family| %>
+                         <li>
+                            <%= family %>
+                            <% if family.present? %>
+                              <%= link_to family_path(family) do %>
+                                <i class="fa fa-link green-icon"></i>
+                              <% end %>
+                            <% end %>
+                         </li>
+                         <% end %>
+                      </ul>
+                   </p>
+                </div>
+                <!-- Form Group (Personagens)-->
+                <div class="col-md-6">
+                   <p class="small mb-1 card-header"> Personagens </p>
+                   <p class="small mb-1 card-body">
+                      <ul>
+                         <% @book.names.sort.each do |name| %>
+                         <li>
+                            <%= name %>
+                            <% if name.present? %>
+                              <%= link_to name_path(name) do %>
+                                <i class="fa fa-link green-icon"></i>
+                              <% end %>
+                            <% end %>
+                         </li>
+                         <% end %>
+                      </ul>
+                   </p>
+                </div>
+             </div>
+             <!-- Form Row-->
+             <div class="row gx-3 mb-3">
+                <!-- Form Group (Corpos Celestes)-->
+                <div class="col-md-6">
+                   <p class="small mb-1 card-header"> Corpos Celestes </p>
+                   <p class="small mb-1 card-body">
+                      <ul>
+                         <% @book.orbs.sort.each do |orb| %>
+                         <li>
+                            <%= orb %>
+                            <% if orb.present? %>
+                              <%= link_to orb_path(orb) do %>
+                                <i class="fa fa-link green-icon"></i>
+                              <% end %>
+                            <% end %>
+                         </li>
+                         <% end %>
+                      </ul>
+                   </p>
+                </div>
+                <!-- Form Group (Naves)-->
+                <div class="col-md-6">
+                   <p class="small mb-1 card-header"> Naves </p>
+                   <p class="small mb-1 card-body">
+                      <ul>
+                         <% @book.ships.sort.each do |ship| %>
+                         <li>
+                            <%= ship %>
+                            <% if ship.present? %>
+                              <%= link_to ship_path(ship) do %>
+                                <i class="fa fa-link green-icon"></i>
+                              <% end %>
+                            <% end %>
+                         </li>
+                         <% end %>
+                      </ul>
+                   </p>
+                </div>
+             </div>
+         </div>
+      </div>
+   </div>
 </div>
-
-<dl class="dl-horizontal">
-  <dt><strong>Nome:</strong></dt>
-  <dd><%= @book.nome %> </dd>
-</dl>
-
-<dl class="dl-horizontal">
-  <dt><strong>Raças:</strong></dt>
-  <ul>
-    <% @book.races.sort.each do |race| %>
-    <li> <%= race %> </li>
-    <% end %>
-  </ul>
-</dl>
-
-<dl class="dl-horizontal">
-  <dt><strong>Data do inicio:</strong></dt>
-  <dd><%= @book.datai %> </dd>
-</dl>
-
-<dl class="dl-horizontal">
-  <dt><strong>Data da conclusão:</strong></dt>
-  <dd><%= @book.dataf %> </dd>
-</dl>
-
-<dl class="dl-horizontal">
-  <dt><strong>Descrição:</strong></dt>
-  <dd><%= @book.descr&.gsub(/\n/, '<br/>')&.html_safe %> </dd>
-</dl>
 
 <div class="form-actions">
   <%= link_to edit_book_path(@book), :class => 'btn btn-success btn-sm' do %>

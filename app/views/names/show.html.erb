@@ -49,12 +49,19 @@
              <!-- Form Group (Livros)-->
              <div class="mb-3">
                 <p class="small mb-1 card-header"> Livros </p>
-                <p  class="small mb-1 card-body">
-                  <ul>
-                    <% @name.books.sort.each do |book| %>
-                    <li> <%= book %> </li>
-                    <% end %>
-                  </ul>
+                <p class="small mb-1 card-body">
+                   <ul>
+                      <% @name.books.sort.each do |book| %>
+                      <li>
+                         <%= book %>
+                         <% if book.present? %>
+                           <%= link_to book_path(book) do %>
+                             <i class="fa fa-link green-icon"></i>
+                           <% end %>
+                         <% end %>
+                      </li>
+                      <% end %>
+                   </ul>
                 </p>
              </div>
          </div>

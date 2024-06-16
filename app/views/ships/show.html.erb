@@ -1,36 +1,53 @@
-<p id="notice"><%= notice %></p>
-
-<div class="page-header">
-  <h1>Detalhes da nave</h1>
+<div class="row">
+   <div class="col-xl-12">
+      <div class="card mb-4">
+         <div class="card-header">Detalhes da Nave</div>
+         <div class="card-body">
+             <!-- Form Group (Nome)-->
+             <div class="mb-3">
+                <p class="small mb-1 card-header"> Nome </p>
+                <p class="small mb-1 card-body"> <%= @ship.nome %> </p>
+             </div>
+             <!-- Form Row-->
+             <div class="row gx-3 mb-3">
+             <!-- Form Group (Livros)-->
+                <div class="col-md-4">
+                    <p class="small mb-1 card-header"> Livros </p>
+                    <p class="small mb-1 card-body">
+                      <ul>
+                          <% @ship.books.sort.each do |book| %>
+                          <li>
+                            <%= book %>
+                            <% if book.present? %>
+                              <%= link_to book_path(book) do %>
+                                <i class="fa fa-link green-icon"></i>
+                              <% end %>
+                            <% end %>
+                          </li>
+                          <% end %>
+                      </ul>
+                    </p>
+                </div>
+                <!-- Form Group (Tipo Base)-->
+                <div class="col-md-4">
+                   <p class="small mb-1 card-header"> Tipo Base </p>
+                   <p class="small mb-1 card-body"> <%= @ship.base_type %> </p>
+                </div>
+                <!-- Form Group (Classe da Nave)-->
+                <div class="col-md-4">
+                   <p class="small mb-1 card-header"> Classe da Nave </p>
+                   <p class="small mb-1 card-body"> <%= @ship.ship_size %> </p>
+                </div>
+             </div>
+             <!-- Form Group (Descrição)-->
+             <div class="mb-3">
+                <p class="small mb-1 card-header"> Descrição </p>
+                <p class="small mb-1 card-body"> <%= @ship.descr&.gsub(/\n/, '<br/>')&.html_safe %> </p>
+             </div>
+         </div>
+      </div>
+   </div>
 </div>
-<dl class="dl-horizontal">
-  <dt><strong>Nome:</strong></dt>
-  <dd><%= @ship.nome %> </dd>
-</dl>
-
-<dl class="dl-horizontal">
-  <dt><strong>Livros:</strong></dt>
-  <ul>
-    <% @ship.books.sort.each do |book| %>
-    <li> <%= book %> </li>
-    <% end %>
-  </ul>
-</dl>
-
-<dl class="dl-horizontal">
-  <dt><strong>Tipo Base:</strong></dt>
-  <dd><%= @ship.base_type %> </dd>
-</dl>
-
-<dl class="dl-horizontal">
-  <dt><strong>Classe da nave:</strong></dt>
-  <dd><%= @ship.ship_size %> </dd>
-</dl>
-
-<dl class="dl-horizontal">
-  <dt><strong>Descrição:</strong></dt>
-  <dd><%= @ship.descr.gsub(/\n/, '<br/>').html_safe %> </dd>
-</dl>
 
 <div class="form-actions">
   <%= link_to edit_ship_path(@ship), :class => 'btn btn-success btn-sm' do %>

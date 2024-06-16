@@ -1,58 +1,77 @@
-<p id="notice"><%= notice %></p>
-<div class="page-header">
-  <h1>Detalhes do corpo celeste</h1>
+<div class="row">
+   <div class="col-xl-12">
+      <div class="card mb-4">
+         <div class="card-header">Detalhes do Corpo Celeste</div>
+         <div class="card-body">
+             <!-- Form Group (Nome)-->
+             <div class="mb-3">
+                <p class="small mb-1 card-header"> Nome </p>
+                <p class="small mb-1 card-body"> <%= @orb.nome %> </p>
+             </div>
+             <!-- Form Group (Descrição)-->
+             <div class="mb-3">
+                <p class="small mb-1 card-header"> Descrição </p>
+                <p class="small mb-1 card-body"> <%= @orb.descr&.gsub(/\n/, '<br/>')&.html_safe %> </p>
+             </div>
+             <!-- Form Row-->
+             <div class="row gx-3 mb-3">
+                <!-- Form Group (Tipo do corpo celeste)-->
+                <div class="col-md-4">
+                   <p class="small mb-1 card-header"> Tipo do Corpo Celeste </p>
+                   <p class="small mb-1 card-body"> <%= @orb.orb_type %> </p>
+                </div>
+                <!-- Form Group (Orbita)-->
+                <div class="col-md-4">
+                   <p class="small mb-1 card-header"> Orbita </p>
+                   <p class="small mb-1 card-body">
+                      <%= @orb.orbit %>
+                      <% if @orb.orbit.present? %>
+                        <%= link_to orb_path(@orb.orbit) do %>
+                           <i class="fa fa-link green-icon"></i>
+                        <% end %>
+                      <% end %>
+                   </p>
+                </div>
+                <!-- Form Group (Orbitado por)-->
+                <div class="col-md-4">
+                   <p class="small mb-1 card-header"> Orbitado por </p>
+                   <p class="small mb-1 card-body">
+                      <ul>
+                         <% @orb.orbters.sort.each do |orbter| %>
+                         <li>
+                            <%= orbter %>
+                            <% if orbter.present? %>
+                              <%= link_to orb_path(orbter) do %>
+                                <i class="fa fa-link green-icon"></i>
+                              <% end %>
+                            <% end %>
+                         </li>
+                         <% end %>
+                      </ul>
+                   </p>
+                </div>
+             </div>
+             <!-- Form Group (Livros)-->
+             <div class="mb-3">
+                <p class="small mb-1 card-header"> Livros </p>
+                <p class="small mb-1 card-body">
+                   <ul>
+                      <% @orb.books.sort.each do |book| %>
+                      <li>
+                         <%= book %>
+                         <% if book.present? %>
+                           <%= link_to book_path(book) do %>
+                             <i class="fa fa-link green-icon"></i>
+                           <% end %>
+                         <% end %>
+                      </li>
+                      <% end %>
+                   </ul>
+                </p>
+             </div>
+      </div>
+   </div>
 </div>
-<dl class="dl-horizontal">
-  <dt><strong>Nome:</strong></dt>
-  <dd><%= @orb.nome %> </dd>
-</dl>
-
-<dl class="dl-horizontal">
-  <dt><strong>Descrição:</strong></dt>
-  <dd><%= @orb.descr.gsub(/\n/, '<br/>').html_safe %> </dd>
-</dl>
-
-<dl class="dl-horizontal">
-  <dt><strong>Tipo do corpo celeste:</strong></dt>
-  <dd><%= @orb.orb_type %> </dd>
-</dl>
-
-<dl class="dl-horizontal">
-  <dt><strong>Orbita:</strong></dt>
-  <dd>
-    <%= @orb.orbit %>
-    <% if @orb.orbit.present? %>
-      <%= link_to orb_path(@orb.orbit) do %>
-        <i class="fa fa-link green-icon"></i>
-      <% end %>
-    <% end %>
-  </dd>
-</dl>
-
-<dl class="dl-horizontal">
-  <dt><strong>Orbitado por:</strong></dt>
-  <ul>
-    <% @orb.orbters.sort.each do |orbter| %>
-      <li>
-        <%= orbter %>
-        <% if orbter.present? %>
-          <%= link_to orb_path(orbter) do %>
-            <i class="fa fa-link green-icon"></i>
-          <% end %>
-        <% end %>
-      </li>
-    <% end %>
-  </ul>
-</dl>
-
-<dl class="dl-horizontal">
-  <dt><strong>Livros:</strong></dt>
-  <ul>
-    <% @orb.books.sort.each do |book| %>
-    <li> <%= book %> </li>
-    <% end %>
-  </ul>
-</dl>
 
 <div class="form-actions">
   <%= link_to edit_orb_path(@orb), :class => 'btn btn-success btn-sm' do %>
