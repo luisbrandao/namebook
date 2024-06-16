@@ -47,7 +47,7 @@
                   <div class="col-md-6">
                     <div class="col-md-6">
                       <%= form.label :orb_id, "Orbita", :class => "small mb-1" %>
-                      <%= collection_select(:orb, :orbit_id, Orb.order('nome'), :id, :nome, { :include_blank => "Selecione um Tipo de corpo celeste" }, {:class=>'form-select'} ) %>
+                      <%= collection_select(:orb, :orbit_id, Orb.order('nome'), :id, :nome, { :include_blank => "Selecione um Corpo Celeste" }, {:class=>'form-select'} ) %>
                     </div>
                     <!-- Sub-row-->
                     <div class="col-md-6">
