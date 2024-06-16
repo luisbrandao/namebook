@@ -19,14 +19,28 @@
 
 <dl class="dl-horizontal">
   <dt><strong>Orbita:</strong></dt>
-  <dd><%= @orb.orbit %> </dd>
+  <dd>
+    <%= @orb.orbit %>
+    <% if @orb.orbit.present? %>
+      <%= link_to orb_path(@orb.orbit) do %>
+        <i class="fa fa-link green-icon"></i>
+      <% end %>
+    <% end %>
+  </dd>
 </dl>
 
 <dl class="dl-horizontal">
   <dt><strong>Orbitado por:</strong></dt>
   <ul>
     <% @orb.orbters.sort.each do |orbter| %>
-    <li> <%= orbter %> </li>
+      <li>
+        <%= orbter %>
+        <% if orbter.present? %>
+          <%= link_to orb_path(orbter) do %>
+            <i class="fa fa-link green-icon"></i>
+          <% end %>
+        <% end %>
+      </li>
     <% end %>
   </ul>
 </dl>

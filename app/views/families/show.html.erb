@@ -11,8 +11,15 @@
 <dl class="dl-horizontal">
   <dt><strong>Integrantes:</strong></dt>
   <ul>
-    <% @family.names.sort.each do |race| %>
-    <li> <%= race %> </li>
+    <% @family.names.sort.each do |name| %>
+      <li>
+        <%= name %>
+        <% if name.present? %>
+          <%= link_to name_path(name) do %>
+            <i class="fa fa-link green-icon"></i>
+          <% end %>
+        <% end %>
+      </li>
     <% end %>
   </ul>
 </dl>

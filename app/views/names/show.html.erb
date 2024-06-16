@@ -13,7 +13,14 @@
                <!-- Form Group (Família)-->
                <div class="col-md-4">
                   <p class="small mb-1 card-header"> Família </p>
-                  <p class="small mb-1 card-body"> <%= @name.family %> </p>
+                  <p class="small mb-1 card-body">
+                     <%= @name.family %>
+                     <% if @name.family.present? %>
+                        <%= link_to family_path(@name.family) do %>
+                           <i class="fa fa-link green-icon"></i>
+                        <% end %>
+                     <% end %>
+                  </p>
                </div>
                <!-- Form Group (raça)-->
                <div class="col-md-4">
@@ -72,3 +79,7 @@
     <i class="fa fa-plus"></i> Novo
   <% end %>
 </div>
+
+
+
+ 
