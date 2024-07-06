@@ -23,6 +23,12 @@
                   <%= form.text_field :nome, :class => "form-control" %>
                 </div>
 
+                <!-- Form Group (Order)-->
+                <div class="mb-3">
+                  <%= form.label :order, "Ordem", class: "small mb-1" %>
+                  <%= form.number_field :ordem, class: "form-control" %>
+                </div>
+
                 <div class="mb-3">
                   <%= form.label :descr, "Descrição", :class => "small mb-1" %>
                   <%= form.text_area :descr, :class => "form-control" %>

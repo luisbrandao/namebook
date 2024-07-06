@@ -43,7 +43,7 @@
                       <% end %>
                     </div>
                   </div>
-                  <!-- Form Group (orbit + type)-->
+                  <!-- Form Group -->
                   <div class="col-md-6">
                     <div class="col-md-6">
                       <%= form.label :base_type_id, "Tipo base da nave:", :class => "small mb-1" %>
@@ -52,7 +52,7 @@
                     <!-- Sub-row-->
                     <div class="col-md-6">
                       <%= form.label :ship_size_id, "Tamanho da nave:", :class => "small mb-1" %>
-                      <%= collection_select(:ship, :ship_size_id, ShipSize.order('nome'), :id, :nome, { :prompt => "Selecione um tamanho" }, {:class=>'form-select'} ) %>
+                      <%= collection_select(:ship, :ship_size_id, ShipSize.order(:ordem), :id, :nome, { :prompt => "Selecione um tamanho" }, {:class=>'form-select'} ) %>
                     </div>
                   </div>
                 </div>

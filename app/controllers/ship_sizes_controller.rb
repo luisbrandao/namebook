@@ -4,7 +4,7 @@ class ShipSizesController < ApplicationController
   # GET /ship_sizes
   # GET /ship_sizes.json
   def index
-    @ship_sizes = ShipSize.order('nome')
+    @ship_sizes = ShipSize.order(:ordem)
   end
 
   # GET /ship_sizes/1
@@ -76,6 +76,6 @@ class ShipSizesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ship_size_params
-      params.require(:ship_size).permit(:nome, :descr)
+      params.require(:ship_size).permit(:nome, :descr, :ordem)
     end
 end

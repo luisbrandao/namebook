@@ -23,6 +23,11 @@ Para desenvolver, usar o docker de dev:
 ```
 docker build -f Dockerfile.dev -t registry.techsytes.com/namebook-rails:dev .
 docker run --name namedev -v $(pwd):/app -p 3010:3010 -it registry.techsytes.com/namebook-rails:dev
+
+ou
+
+docker start -i namedev
+
 ```
 
 Uma vez dentro do container, é necessário executar a preparação do ambiente
