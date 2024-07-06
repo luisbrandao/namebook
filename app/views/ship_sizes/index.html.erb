@@ -1,36 +1,20 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Listando tamanhos de naves</h1>
+<h1>Tamanhos de naves</h1>
 <p>
   <%= link_to  new_ship_size_path, class: 'btn btn-success' do %>
     <i class="fa fa-plus"></i> Novo tamanho de nave
   <% end %>
 </p>
-<table class="table table-striped table-hover">
-  <thead>
-    <tr>
-      <th>Nome</th>
-      <th>Ações</th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @ship_sizes.each do |ship_size| %>
-      <tr>
-        <td><%= ship_size %></td>
-        <td>
-          <%= link_to ship_size , :class => 'btn btn-primary btn-sm' do %>
-            <i class="fa fa-search"></i> Detalhes
-          <% end %>
-          <%= link_to edit_ship_size_path(ship_size), :class => 'btn btn-success btn-sm' do %>
-            <i class="fa fa-edit"></i> Editar
-          <% end %>
-
-          <%= link_to ship_size, method: :delete, data: {confirm: 'Você tem certeza?'}, :class => 'btn btn-danger btn-sm' do %>
-            <i class="fa fa-trash"></i> Remover
-          <% end %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<% @ship_sizes.in_groups_of(3) do |group| %>
+  <div class="row">
+  <% group.compact.each do |ship_size| %>
+    <div class="card ms-2 mb-2" style="width: 26rem;">
+      <div class="card-body">
+        <h5 class="card-title"><%= link_to ship_size.nome, ship_size %></h5>
+        <p class="card-text"><%= ship_size.descr&.truncate(380).gsub(/\n/, '<br/>')&.html_safe %></p>
+      </div>
+    </div>
+  <% end %>
+  </div>
+<% end %>

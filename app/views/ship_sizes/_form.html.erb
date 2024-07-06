@@ -22,6 +22,12 @@
                   <%= form.label :nome, :class => "small mb-1" %>
                   <%= form.text_field :nome, :class => "form-control" %>
                 </div>
+
+                <div class="mb-3">
+                  <%= form.label :descr, "Descrição", :class => "small mb-1" %>
+                  <%= form.text_area :descr, :class => "form-control" %>
+                </div>
+
                 <div class="actions">
                   <%= form.submit @ship_size.new_record? ? "Criar novo tamanho de nave" : "Atualizar tamanho de nave", :class => "btn btn-success btn-sm" %>
 

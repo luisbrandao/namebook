@@ -35,8 +35,15 @@
                 </div>
                 <!-- Form Group (Classe da Nave)-->
                 <div class="col-md-4">
-                   <p class="small mb-1 card-header"> Classe da Nave </p>
-                   <p class="small mb-1 card-body"> <%= @ship.ship_size %> </p>
+                  <p class="small mb-1 card-header"> Classe da Nave </p>
+                  <p class="small mb-1 card-body">
+                  <%= @ship.ship_size %>
+                  <% if @ship.ship_size.present? %>
+                     <%= link_to ship_size_path(@ship.ship_size) do %>
+                        <i class="fa fa-link green-icon"></i>
+                     <% end %>
+                  <% end %>
+                  </p>
                 </div>
              </div>
              <!-- Form Group (Descrição)-->
