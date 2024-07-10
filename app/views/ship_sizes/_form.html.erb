@@ -29,9 +29,22 @@
                   <%= form.number_field :ordem, class: "form-control" %>
                 </div>
 
+                <!-- Form Group (Descr)-->
                 <div class="mb-3">
                   <%= form.label :descr, "Descrição", :class => "small mb-1" %>
-                  <%= form.text_area :descr, :class => "form-control", :rows =>"10" %>
+                  <%= form.text_area :descr, :class => "form-control", :rows =>"8" %>
+                </div>
+
+                <!-- Form Group (Tamanho)-->
+                <div class="mb-3">
+                  <%= form.label :tamanho, "Tamanho", class: "small mb-1" %>
+                  <%= form.text_area :tamanho, class: "form-control", :rows =>"8" %>
+                </div>
+
+                <!-- Form Group (Tripulação)-->
+                <div class="mb-3">
+                  <%= form.label :tripulacao, "Tripulação", class: "small mb-1" %>
+                  <%= form.text_area :tripulacao, class: "form-control", :rows =>"8" %>
                 </div>
 
                 <div class="actions">

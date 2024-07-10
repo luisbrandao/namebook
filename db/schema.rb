@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_07_06_150957) do
+ActiveRecord::Schema.define(version: 2024_07_10_155603) do
 
   create_table "base_types", force: :cascade do |t|
     t.string "nome", limit: 255
@@ -103,6 +103,8 @@ ActiveRecord::Schema.define(version: 2024_07_06_150957) do
     t.datetime "updated_at", null: false
     t.text "descr", default: ""
     t.integer "ordem", default: 1
+    t.text "tripulacao", default: ""
+    t.text "tamanho", default: ""
   end
 
   create_table "ships", force: :cascade do |t|

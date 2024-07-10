@@ -20,6 +20,16 @@
                 <p class="small mb-1 card-header">Descrição</p>
                 <p class="small mb-1 card-body"><%= @ship_size.descr&.gsub(/\n/, '<br/>')&.html_safe %></p>
              </div>
+             <!-- Form Group (Tamanho)-->
+             <div class="mb-3">
+               <p class="small mb-1 card-header">Tamanho</p>
+               <p class="small mb-1 card-body"><%= @ship_size.tamanho&.gsub(/\n/, '<br/>')&.html_safe %></p>
+             </div>
+             <!-- Form Group (Tripulação)-->
+             <div class="mb-3">
+               <p class="small mb-1 card-header">Tripulação</p>
+               <p class="small mb-1 card-body"><%= @ship_size.tripulacao&.gsub(/\n/, '<br/>')&.html_safe %></p>
+             </div>
              <!-- Form Group (Naves)-->
              <div class="mb-3">
                 <p class="small mb-1 card-header">Naves</p>

@@ -76,6 +76,6 @@ class ShipSizesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ship_size_params
-      params.require(:ship_size).permit(:nome, :descr, :ordem)
+      params.require(:ship_size).permit(:nome, :descr, :ordem, :tripulacao, :tamanho)
     end
 end
